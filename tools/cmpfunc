@@ -1,0 +1,914 @@
+#!/usr/bin/env python3
+"""cmpfunc — compila .cpp e compara cada função do .obj (COFF) com a função do 983 no endereço do par.
+
+Uso: tools/cmpfunc [opções] arquivo.cpp|arquivo.obj ...
+  --ref PE         binário de referência (padrão: ref/wangreal_983.dll; src/projectg/* -> ref/ProjectG_983_dump.exe)
+  --map TSV        mapa nome decorado -> VA no 983 (padrão: map/<wangreal|projectg>.tsv, se existir)
+  --seed TSV       mapa fraco (pares de outra versão): usado só sem lugar único por bytes e se as instruções parecerem (>= 30%)
+  --update-map     grava no mapa os endereços achados sem ambiguidade (IGUAL/QUASE)
+  --funcs ARQ      inícios de função do 983 (jsonl do Ghidra com "a"/"sz", ou tsv com VA na 1ª coluna)
+  --diff NOME      mostra lado a lado as instruções da(s) função(ões) cujo nome contém NOME ('all' = não iguais)
+  --out DIR        grava funcs.tsv, simbolos.tsv e resumo.txt em DIR
+  --no-build       não chama o make (usa o .obj que já estiver em build/obj)
+  --all            lista também funclets de exceção (__unwindfunclet$, __ehhandler$)
+
+Método (por instrução, capstone): ficha = mnemônico + operandos; campo coberto por relocação (no .obj) ou por
+fixup da .reloc / endereço dentro da imagem (no 983) vira A; destino de call/jmp fora da função vira T; desvio
+interno vira L+deslocamento. Tabelas de switch viram fichas .jt.
+  hx = fichas estritas (iguais às da J3: registradores + imediatos, endereços mascarados)
+  hr = todo imediato/deslocamento mascarado      hm = só mnemônicos
+Classes: IGUAL (hx igual e alvos coerentes), QUASE (>= 90% das instruções alinhadas iguais), DIFERENTE, SEM_PAR.
+"%instr" = razão do difflib sobre as fichas estritas com os rótulos L sem deslocamento.
+Alvos: cada relocação do .obj é casada com o endereço que o 983 usa na mesma instrução; um símbolo que aponta
+para dois endereços, ou um literal (string/float) com conteúdo diferente, rebaixa IGUAL para QUASE (nota alvo:).
+"""
+import sys, os, re, struct, subprocess, collections, difflib, argparse, json
+import capstone
+from capstone import x86 as X
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)
+md.detail = True
+TERM = ('ret', 'retf', 'jmp', 'int3')
+# npad do MSVC (enchimento antes de rótulo de laço); nenhum deles sai de código de verdade
+NPAD = {bytes.fromhex(h) for h in ('90', '8bff', '8d4900', '8d642400', '0500000000', '8d9b00000000', '8da42400000000',
+                                   '8d8000000000', '8d8900000000', '8d9200000000', '8db600000000', '8dbf00000000',
+                                   '8d4000', '8d5200', '8d5b00', '8d7600', '8d7f00', '8d6d00', '8dad00000000')}
+EHFUN = ('__unwindfunclet$', '__ehhandler$', '__catch$', '__tryend$')
+
+
+# ---------------------------------------------------------------- COFF (.obj)
+class Obj:
+    def __init__(self, path):
+        d = self.d = open(path, 'rb').read()
+        mach, nsec, _, symoff, nsym, opt, _ = struct.unpack_from('<HHIIIHH', d, 0)
+        if mach != 0x14c:
+            raise SystemExit('%s: esperado COFF i386 (compilado com /GL?)' % path)
+        stroff = symoff + nsym * 18
+
+        def name(raw):
+            if raw[:4] == b'\0\0\0\0':
+                o = struct.unpack_from('<I', raw, 4)[0]
+                return d[stroff + o:d.index(b'\0', stroff + o)].decode('latin1')
+            return raw.rstrip(b'\0').decode('latin1')
+        self.syms = {}      # índice -> (nome, valor, seção, classe)
+        self.comdat = {}    # seção -> seleção COMDAT
+        i = 0
+        while i < nsym:
+            raw, val, sec, typ, cls, naux = struct.unpack_from('<8sIhHBB', d, symoff + i * 18)
+            self.syms[i] = (name(raw), val, sec, cls, typ)
+            if cls == 3 and naux and val == 0 and sec > 0:
+                self.comdat[sec] = d[symoff + (i + 1) * 18 + 14]
+            i += 1 + naux
+        self.secs = []      # (dados, {desloc: (tipo, índice do símbolo)}, características)
+        for i in range(nsec):
+            o = 20 + opt + i * 40
+            _, _, _, size, raw, relp, _, nrel, _, ch = struct.unpack_from('<8sIIIIIIHHI', d, o)
+            rel = {}
+            for r in range(nrel):
+                va, si, typ = struct.unpack_from('<IIH', d, relp + r * 10)
+                rel[va] = (typ, si)
+            self.secs.append((d[raw:raw + size] if raw else b'', rel, ch))
+
+    def funcs(self):
+        """(nome, seção, início, fim, própria?) em ordem de arquivo; própria = COMDAT noduplicates ou sem COMDAT"""
+        by = collections.defaultdict(list)
+        for i, (nm, val, sec, cls, typ) in sorted(self.syms.items()):
+            if sec > 0 and cls in (2, 3) and typ == 0x20 and self.secs[sec - 1][2] & 0x20 \
+                    and not (val and nm.startswith(('__catch$', '__tryend$'))):
+                by[sec].append((val, i, nm))
+        out = []
+        for sec, lst in by.items():
+            data = self.secs[sec - 1][0]
+            lst.sort()
+            for k, (val, i, nm) in enumerate(lst):
+                end = lst[k + 1][0] if k + 1 < len(lst) else len(data)
+                out.append((i, nm, sec, val, end, self.comdat.get(sec, 1) == 1))
+        return [x[1:] for x in sorted(out)]
+
+    def symdata(self, si):
+        """bytes de um símbolo de dados definido aqui em seção COMDAT sem relocação (literal), senão None"""
+        nm, val, sec, cls, typ = self.syms[si]
+        if sec <= 0:
+            return None
+        data, rel, ch = self.secs[sec - 1]
+        if ch & 0x20 or rel or sec not in self.comdat or not data:
+            return None
+        # /GF-: vários literais ($SG…) na mesma seção — o literal vai só até o próximo símbolo
+        end = min([v for n2, v, s2, c2, t2 in self.syms.values() if s2 == sec and v > val] or [len(data)])
+        return data[val:end]
+
+
+# ---------------------------------------------------------------- PE (983)
+class PE:
+    def __init__(self, path):
+        d = self.d = open(path, 'rb').read()
+        pe = struct.unpack_from('<I', d, 0x3c)[0]
+        n = struct.unpack_from('<H', d, pe + 6)[0]
+        opt = pe + 24
+        self.base = struct.unpack_from('<I', d, opt + 28)[0]
+        self.size = struct.unpack_from('<I', d, opt + 56)[0]
+        o = opt + struct.unpack_from('<H', d, pe + 20)[0]
+        self.secs = []
+        for i in range(n):
+            vs, va, rs, ro = struct.unpack_from('<IIII', d, o + 8)
+            ch = struct.unpack_from('<I', d, o + 36)[0]
+            self.secs.append((self.base + va, vs, ro, rs, ch))
+            o += 40
+        # código = seções executáveis (no dump do exe a 1ª seção não tem nome)
+        ex = [s for s in self.secs if s[4] & 0x20]
+        self.tlo, self.thi = ex[0][0], ex[0][0] + min(ex[0][1], ex[0][3])
+        self.text = d[ex[0][2]:ex[0][2] + (self.thi - self.tlo)]
+        # fixups da .reloc (HIGHLOW): na dll dizem exatamente o que é endereço; o dump do exe não tem
+        self.fix = set()
+        rva, sz = struct.unpack_from('<II', d, opt + 96 + 5 * 8)
+        p = self.off(self.base + rva) if rva and sz > 16 else None
+        if p is not None:
+            end = p + sz
+            while p < end:
+                page, bs = struct.unpack_from('<II', d, p)
+                if bs < 8:
+                    break
+                for k in range((bs - 8) // 2):
+                    e = struct.unpack_from('<H', d, p + 8 + 2 * k)[0]
+                    if e >> 12 == 3:
+                        self.fix.add(self.base + page + (e & 0xfff))
+                p += bs
+        self.hasfix = len(self.fix) > 0
+
+    def off(self, va):
+        for sva, vs, ro, rs, ch in self.secs:
+            if sva <= va < sva + max(vs, rs):
+                return ro + va - sva if va - sva < rs else None
+        return None
+
+    def read(self, va, n):
+        o = self.off(va)
+        return self.d[o:o + n] if o is not None else b''
+
+    def u32(self, va):
+        b = self.read(va, 4)
+        return struct.unpack('<I', b)[0] if len(b) == 4 else 0
+
+    def inimg(self, v):
+        return self.base + 0x1000 <= v < self.base + self.size
+
+    def isaddr(self, va, v):
+        """o dword em va é um endereço?"""
+        return va in self.fix if self.hasfix else self.inimg(v)
+
+
+def pe_starts(pe):
+    """candidatos a início de função (alinhados a 16): alvo de call rel32, endereço logo após enchimento int3,
+    entrada de vtable. Erro para menos é barato (o percurso acha o fim sozinho); erro para mais corta função,
+    por isso cada fonte exige contexto: antes do início tem de haver enchimento ou fim de função."""
+    t, lo = pe.text, pe.tlo
+
+    def after_end(q):       # q = deslocamento; o que vem antes parece fim de função?
+        return q == 0 or t[q - 1] == 0xc3 or t[q - 3:q - 2] == b'\xc2' or t[q - 5:q - 4] in (b'\xe9', b'\xe8') \
+            or t[q - 2:q - 1] == b'\xeb' or t[q - 6:q - 4] == b'\xff\x25'
+
+    def padded(q):          # enchimento de verdade: int3 em sequência depois de um fim de função
+        k = q
+        while k > 0 and t[k - 1] == 0xcc:
+            k -= 1
+        return k < q and (q - k >= 3 or after_end(k))
+    st = set()
+    for m in re.finditer(b'[\xe8\xe9]', t):
+        p = m.start()
+        if p + 5 <= len(t):
+            v = (lo + p + 5 + struct.unpack_from('<i', t, p + 1)[0]) & 0xffffffff
+            q = v - lo
+            if pe.tlo <= v < pe.thi and v % 16 == 0 and (padded(q) or after_end(q)):
+                st.add(v)
+    for p in range((16 - lo % 16) % 16, len(t), 16):
+        if p and t[p] != 0xcc and padded(p):
+            st.add(lo + p)
+    for a in pe.fix:
+        v = pe.u32(a)
+        if pe.tlo <= v < pe.thi and v % 16 == 0 and not (pe.tlo <= a < pe.thi):
+            q = v - lo
+            # vtable: vizinho também aponta para código (o endereço de um catch nas tabelas de exceção não tem)
+            vt = any(x in pe.fix and pe.tlo <= pe.u32(x) < pe.thi for x in (a - 4, a + 4))
+            if padded(q) or (vt and after_end(q)):
+                st.add(v)
+    return st
+
+
+# ---------------------------------------------------------------- fichas
+class Toks:
+    __slots__ = ('s', 'l', 'r', 'm', 'txt', 'refs', 'nb', 'raw', 'sec')
+
+    def __init__(self):
+        self.s, self.l, self.r, self.m, self.txt, self.refs = [], [], [], [], [], []
+        self.raw = []       # ficha estrita sem mascarar endereço absoluto (para referência sem .reloc)
+        self.nb = 0
+        self.sec = {}       # índice da instrução -> (símbolo, adendo) de relocação SECREL (deslocamento no bloco TLS)
+
+
+def walk(code, start, end, kind_at, discover, isstart=None):
+    """percorre a função: gera ('ins', pos, instrução) | ('jt', pos, valor) | ('db', pos, byte).
+    Tabelas de switch (dword: jmp [reg*4+T]; de índices: byte [reg+T]) são descobertas pelas instruções que as
+    usam e podem ficar entre trechos de código. discover=True: 'end' é só um teto (início da função seguinte) e
+    o percurso para no primeiro ret/jmp/int3 depois do qual nada mais é alcançado; devolve o fim em walk.end."""
+    tabs = {}       # endereço -> 'd' | 'b'
+    hi = start + 1  # (discover) maior endereço sabidamente da função
+    nd = 0
+    pos = start
+    n = len(code)
+    while pos < end and pos - start < n:
+        k = tabs.get(pos)
+        if k == 'd':
+            cnt = 0
+            while pos + 4 <= end and pos - start + 4 <= n and (cnt == 0 or pos not in tabs):
+                v = struct.unpack_from('<I', code, pos - start)[0]
+                if not (kind_at(pos - start, v) and start <= v < end):
+                    break
+                yield ('jt', pos, v)
+                if v + 1 > hi:
+                    hi = v + 1
+                pos += 4; cnt += 1
+            nd = cnt
+            if cnt:
+                hi = max(hi, pos)
+                if discover and pos >= hi and not any(t >= pos for t in tabs):
+                    break
+                continue
+        elif k == 'b':
+            cnt = 0
+            while pos < end and pos - start < n and (cnt == 0 or pos not in tabs) and code[pos - start] < max(nd, 1):
+                yield ('db', pos, code[pos - start])
+                pos += 1; cnt += 1
+            if cnt:
+                hi = max(hi, pos)
+                if discover and pos >= hi and not any(t >= pos for t in tabs):
+                    break
+                continue
+        it = next(md.disasm(code[pos - start:pos - start + 16], pos), None)
+        nt = min((t for t in tabs if t > pos), default=None)
+        if it is None or pos + it.size > end or (nt is not None and pos + it.size > nt):
+            yield ('db', pos, code[pos - start])
+            pos += 1
+            continue
+        nxt = pos + it.size
+        isbr = X.X86_GRP_JUMP in it.groups
+        for op in it.operands:
+            if op.type == X.X86_OP_IMM:
+                v = op.imm & 0xffffffff
+                if isbr and not (it.imm_size == 4 and kind_at(pos - start + it.imm_offset, v) == 'T'):
+                    if start <= v < end and v + 1 > hi:
+                        hi = v + 1
+                elif it.imm_size == 4 and kind_at(pos - start + it.imm_offset, v) == 'A' and nxt <= v < end:
+                    hi = max(hi, v + 1)         # endereço de rótulo interno (continuação de catch)
+            elif op.type == X.X86_OP_MEM and it.disp_size == 4:
+                t = op.mem.disp & 0xffffffff
+                if nxt <= t < end and kind_at(pos - start + it.disp_offset, t) == 'A':
+                    if op.mem.index and op.mem.scale == 4 and not op.mem.base:
+                        tabs.setdefault(t, 'd')
+                    else:
+                        tabs.setdefault(t, 'b')
+                    hi = max(hi, t + 1)
+        yield ('ins', pos, it)
+        pos = nxt
+        if discover and it.mnemonic in TERM and pos >= hi:
+            # depois do fim aparente: enchimento (int3) ou fronteira de 16 = acabou; código colado sem
+            # enchimento = bloco de catch (só alcançado pelas tabelas de exceção) e a função continua
+            if pos >= end or pos - start >= n or code[pos - start] == 0xcc:
+                break
+            if pos % 16 == 0 and (not isstart or isstart(pos) or code[pos - start:pos - start + 3] == b'\x55\x8b\xec'
+                                  or b'\x64\xa1\x00\x00\x00\x00' not in code[:48]):
+                break       # fronteira sem enchimento: função seguinte conhecida ou com prólogo push ebp/mov ebp,esp,
+                            # ou esta função não monta quadro de exceção (mov eax, fs:[0]) e portanto não tem catch
+            hi = pos + 1
+    walk.end = pos
+
+
+def tokens(code, start, kind_at, target_of):
+    """code: bytes exatos da função; start: endereço base. kind_at(desloc, valor) -> 'A' se o dword ali é endereço
+    absoluto (relocação DIR32 / fixup), 'T' se é rel32 relocado (só .obj), None se é valor literal.
+    target_of(desloc, valor) -> identidade do alvo: ('S', nome, adendo, índice) no .obj, ('V', txt, va) no 983."""
+    t = Toks()
+    end = start + len(code)
+    last = 0
+    for kind, pos, it in walk(code, start, end, kind_at, False):
+        if kind == 'jt':
+            t.s.append('.jt L%x' % (it - start)); t.l.append('.jt L'); t.r.append('.jt L'); t.m.append('.jt')
+            t.txt.append('.jt L%x' % (it - start)); t.refs.append(()); t.raw.append(t.s[-1])
+            last = len(t.s)
+            continue
+        if kind == 'db':
+            tk = '.db %02x' % it
+            for q in (t.s, t.l, t.r, t.m, t.txt, t.raw):
+                q.append(tk)
+            t.refs.append(())
+            if it != 0xcc:
+                last = len(t.s)
+            continue
+        if bytes(it.bytes) in NPAD and not any(kind_at(pos - start + q, 0) for q in range(it.size)):
+            continue            # enchimento de alinhamento (laço/tabela): não é instrução do fonte
+        mn = it.mnemonic
+        os_, ol, orr, refs, oraw = [], [], [], [], {}
+        isbr = X.X86_GRP_JUMP in it.groups or X.X86_GRP_CALL in it.groups
+        txt = it.op_str
+        for op in it.operands:
+            if op.type == X.X86_OP_REG:
+                r = it.reg_name(op.reg); os_.append(r); ol.append(r); orr.append(r)
+            elif op.type == X.X86_OP_IMM:
+                v = op.imm & 0xffffffff
+                fo = pos - start + it.imm_offset
+                k = kind_at(fo, v) if it.imm_size == 4 else None
+                if isbr:
+                    if k != 'T' and start <= v < end:
+                        os_.append('L%x' % (v - start)); ol.append('L'); orr.append('L')
+                        txt = 'L%x' % (v - start)
+                    else:
+                        os_.append('T'); ol.append('T'); orr.append('T')
+                        refs.append(target_of(fo, v))
+                        txt = '<%s>' % (refs[-1][1],)
+                elif k and start <= v < end:
+                    os_.append('L%x' % (v - start)); ol.append('L'); orr.append('N')
+                    txt = txt.replace('0x%x' % v, 'L%x' % (v - start))
+                elif k:
+                    oraw[len(os_)] = '%x' % v
+                    os_.append('A'); ol.append('A'); orr.append('N')
+                    refs.append(target_of(fo, v))
+                else:
+                    os_.append('%x' % v); ol.append('%x' % v); orr.append('N')
+            elif op.type == X.X86_OP_MEM:
+                m = op.mem
+                dv = m.disp & 0xffffffff
+                k = kind_at(pos - start + it.disp_offset, dv) if it.disp_size == 4 else None
+                b = it.reg_name(m.base) if m.base else ''
+                x = it.reg_name(m.index) if m.index else ''
+                sg = it.reg_name(m.segment) + ':' if m.segment else ''
+                if k == 'Z':
+                    ds = dl = 'Z'
+                    t.sec[len(t.s)] = target_of(pos - start + it.disp_offset, dv)[1:3]
+                elif k and start <= dv < end:
+                    ds, dl = 'J%x' % (dv - start), 'J'
+                    txt = txt.replace('0x%x' % dv, 'J%x' % (dv - start))
+                elif k:
+                    ds = dl = 'A'
+                    oraw[len(os_)] = '%s[%s+%s*%d+%x]' % (sg, b, x, m.scale, dv)
+                    refs.append(target_of(pos - start + it.disp_offset, dv))
+                else:
+                    ds = dl = '%x' % dv
+                os_.append('%s[%s+%s*%d+%s]' % (sg, b, x, m.scale, ds))
+                ol.append('%s[%s+%s*%d+%s]' % (sg, b, x, m.scale, dl))
+                orr.append('%s[%s+%s*%d+N]' % (sg, b, x, m.scale))
+        if refs and '<' not in txt:
+            txt += '  <%s>' % ','.join(str(r[1]) for r in refs)
+        t.raw.append(mn + ' ' + ','.join(oraw.get(i, o) for i, o in enumerate(os_)) if oraw else None)
+        t.s.append(mn + ' ' + ','.join(os_)); t.l.append(mn + ' ' + ','.join(ol))
+        t.r.append(mn + ' ' + ','.join(orr)); t.m.append(mn)
+        t.txt.append((mn + ' ' + txt).strip()); t.refs.append(tuple(refs))
+        if mn != 'int3':
+            last = len(t.s)
+    for q in (t.s, t.l, t.r, t.m, t.txt, t.refs, t.raw):
+        del q[last:]
+    t.sec = {i: v for i, v in t.sec.items() if i < last}
+    t.nb = len(code)
+    return t
+
+
+TLS_ARRAY = 0x2c        # valor de __tls_array no x86
+OBJBASE = 0x70000000    # base fictícia do .obj: alta, para imediato pequeno não se confundir com rótulo
+
+
+def obj_tokens(ob, sec, a, b):
+    data, rel, ch = ob.secs[sec - 1]
+    buf = bytearray(data[a:b])
+    ext = {}        # desloc -> (tipo, símbolo, adendo) das relocações para fora da função
+    internal = set()
+    for off, (typ, si) in rel.items():
+        if not (a <= off < b):
+            continue
+        nm, val, ssec, cls, styp = ob.syms[si]
+        add = struct.unpack_from('<i', data, off)[0]
+        if ssec == sec and a <= val + (add if typ == 6 else 0) < b and typ in (6, 0x14):
+            # alvo dentro da própria função (rótulo de switch/catch, chamada recursiva): vira endereço real
+            if typ == 6:
+                struct.pack_into('<I', buf, off - a, OBJBASE + val + add - a)
+                internal.add(off - a)
+            else:
+                struct.pack_into('<i', buf, off - a, val + add - a - (off - a + 4))
+        elif nm == '__tls_array' and typ == 6:
+            # símbolo absoluto do CRT (TEB.ThreadLocalStoragePointer): o ligador grava o valor, não um endereço
+            struct.pack_into('<I', buf, off - a, (TLS_ARRAY + add) & 0xffffffff)
+        else:
+            ext[off - a] = (typ, si, nm, add)
+
+    def kind_at(o, v):
+        if o in internal:
+            return 'A'
+        r = ext.get(o)
+        return None if not r else 'T' if r[0] == 0x14 else 'Z' if r[0] == 0xb else 'A'
+
+    def target_of(o, v):
+        r = ext.get(o)
+        if not r:           # desvio sem relocação para fora do trecho
+            return ('S', '+%x' % ((v - OBJBASE) & 0xffffffff), 0, None)
+        return ('S', r[2], r[3], r[1])
+    return tokens(bytes(buf), OBJBASE, kind_at, target_of)
+
+
+def pe_tokens(pe, va, limit, isstart=None):
+    """fichas da função do 983 em va; o fim é descoberto pelo percurso, limitado ao início da função seguinte"""
+    code = pe.read(va, min(limit - va, 0x20000))
+
+    def kind_at(o, v):
+        return 'A' if pe.isaddr(va + o, v) else None
+    for _ in walk(code, va, va + len(code), kind_at, True, isstart):
+        pass
+    size = walk.end - va
+    if size <= 0:
+        return None, 0
+    return tokens(code[:size], va, kind_at, lambda o, v: ('V', '%08x' % v, v)), size
+
+
+def adapt(to, tr):
+    """referência sem .reloc (dump do exe): 'endereço' é palpite (valor dentro da imagem). Onde o .obj tem
+    um imediato literal igual ao valor cru do 983 (ex.: máscara 0x00ff0000), vale o literal."""
+    have = set(to.s)
+    idx = [i for i, rw in enumerate(tr.raw) if rw is not None and rw in have and tr.s[i] not in have]
+    if not idx:
+        return tr
+    n = Toks()
+    n.s, n.l, n.r, n.m, n.txt, n.raw, n.nb = list(tr.s), list(tr.l), tr.r, tr.m, tr.txt, tr.raw, tr.nb
+    n.refs = list(tr.refs)
+    for i in idx:
+        n.s[i] = n.l[i] = tr.raw[i]
+        n.refs[i] = ()
+    return n
+
+
+def adapt_tls(to, tr):
+    """relocação SECREL (variável __declspec(thread), ex.: __rtti_obj do DYNAMIC_CAST): no 983 é um deslocamento
+    literal dentro do bloco TLS, valor de ligação. Onde a instrução alinhada do 983 só difere nesse campo, a ficha
+    do 983 passa a ser a do .obj; devolve também [(símbolo, deslocamento no 983)] para conferir a coerência."""
+    if not to.sec:
+        return tr, []
+    if to.r == tr.r:
+        pairs = [(i, i) for i in to.sec]
+    else:
+        pairs = []
+        for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, to.r, tr.r, autojunk=False).get_opcodes():
+            if tag == 'equal':
+                pairs += [(i, j1 + i - i1) for i in to.sec if i1 <= i < i2]
+    n, votes = None, []
+    for i, j in pairs:
+        m = re.fullmatch(re.escape(to.s[i]).replace('Z', '([0-9a-f]+)'), tr.s[j])
+        if not m or len(set(m.groups())) != 1:
+            continue
+        if n is None:
+            n = Toks()
+            n.s, n.l, n.r, n.m, n.txt, n.raw, n.nb, n.refs = list(tr.s), list(tr.l), tr.r, tr.m, tr.txt, tr.raw, tr.nb, tr.refs
+        n.s[j] = to.s[i]; n.l[j] = to.l[i]
+        sym, add = to.sec[i]
+        votes.append((sym, (int(m.group(1), 16) - add) & 0xffffffff))
+    return (n or tr), votes
+
+
+def ratio(a, b):
+    if a == b:
+        return 1.0
+    return difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+
+
+def wild(pe, data, rel, a, b):
+    """endereços do 983 onde os bytes [a,b) do .obj aparecem (relocações como curinga)"""
+    code = data[a:b]
+    e = len(code)
+    relb = set()
+    for o in rel:
+        relb.update(range(o - a, o - a + 4))
+    while e > 0 and code[e - 1] in (0xcc, 0x90) and (e - 1) not in relb:
+        e -= 1
+    if e == 0:
+        return [], 0
+    # âncora: maior trecho sem relocação; acha com bytes.find e confere o resto com a máscara
+    runs, i = [], 0
+    while i < e:
+        if i in relb:
+            i += 1; continue
+        j = i
+        while j < e and j not in relb:
+            j += 1
+        runs.append((j - i, i)); i = j
+    if not runs:
+        return [], e
+    ln, at = max(runs)
+    anchor = code[at:at + ln]
+    segs = [(o, code[o:o + n]) for n, o in runs if o != at]
+    t, hits, p = pe.text, [], pe.text.find(anchor)
+    while p >= 0:
+        s0 = p - at
+        if s0 >= 0 and s0 + e <= len(t) and all(t[s0 + o:s0 + o + len(bs)] == bs for o, bs in segs):
+            hits.append(pe.tlo + s0)
+            if len(hits) >= 4096:
+                break
+        p = t.find(anchor, p + 1)
+    return hits, e
+
+
+class Cmp:
+    def __init__(self, pe, mapping, starts, seed=None):
+        self.pe, self.map, self.starts = pe, dict(mapping), starts
+        self.veto = set()
+        self.seed = dict(seed or {})
+        self.sst = None
+        self.rows = []
+        self.symva = collections.defaultdict(collections.Counter)   # símbolo -> {VA: votos}
+        self.lit = {}                                               # (símbolo) -> conteúdo confere?
+        self.tlsva = collections.defaultdict(collections.Counter)   # símbolo TLS (SECREL) -> {deslocamento no 983: votos}
+        self.details = {}
+        self.rtok, self.bags = {}, {}
+
+    def startlist(self):
+        if self.sst is None:
+            self.sst = sorted(self.starts if self.starts else pe_starts(self.pe))
+            self.sset = set(self.sst)
+        return self.sst
+
+    def bag(self, va, tr):
+        b = self.bags.get(va)
+        if b is None:
+            b = self.bags[va] = collections.Counter(tr.m)
+        return b
+
+    def ref_tokens(self, va):
+        if va not in self.rtok:
+            self.rtok[va] = self._ref_tokens(va)
+        return self.rtok[va]
+
+    def _ref_tokens(self, va):
+        import bisect
+        if not (self.pe.tlo <= va < self.pe.thi):
+            return None, 0
+        sl = self.startlist()
+        i = bisect.bisect_right(sl, va)
+        return pe_tokens(self.pe, va, sl[i] if i < len(sl) else self.pe.thi, self.sset.__contains__)
+
+    def compare_one(self, to, va):
+        tr, rsz = self.ref_tokens(va)
+        if tr is None:
+            return None
+        if not self.pe.hasfix:
+            tr = adapt(to, tr)
+        tr = adapt_tls(to, tr)[0]
+        return tr, rsz, ratio(to.l, tr.l)
+
+    def run_obj(self, path, label, show_all):
+        ob = Obj(path)
+        pe = self.pe
+        fl = [f for f in ob.funcs() if show_all or not f[0].startswith(EHFUN)]
+        info = []
+        for nm, sec, a, b, own in fl:
+            data, rel, ch = ob.secs[sec - 1]
+            to = obj_tokens(ob, sec, a, b)
+            hits, e = wild(pe, data, {o: r for o, r in rel.items() if a <= o < b}, a, b)
+            info.append(dict(nm=nm, sec=sec, a=a, b=b, own=own, to=to, hits=hits, sz=e, va=None, org='-'))
+        # 1) mapa; 2) busca por bytes com resultado único
+        for f in info:
+            if f['nm'] in self.map and not (f['hits'] and self.map[f['nm']] not in f['hits']):
+                # o mapa só perde quando os bytes da função existem iguais no 983 em outro endereço (F3.4: o mapa
+                # do exe apontava construtores/MakeInstance para uma gêmea de bytes parecidos)
+                f['va'], f['org'] = self.map[f['nm']], 'mapa'
+            elif len(f['hits']) == 1 and f['hits'][0] % 16 == 0:
+                f['va'], f['org'] = f['hits'][0], 'bytes'
+            elif f['nm'] in self.seed and (not f['hits'] or self.seed[f['nm']] in f['hits']):
+                # mapa fraco (--seed): par vindo de outra versão; só vale se as instruções parecerem
+                r = self.compare_one(f['to'], self.seed[f['nm']])
+                if r is not None and r[2] >= 0.30:
+                    f['va'], f['org'] = self.seed[f['nm']], 'semente'
+        # 3) alvos: compara as já localizadas e colhe símbolo -> VA
+        done = {}
+        for rounds in range(4):
+            for f in info:
+                if f['va'] is not None and f['nm'] not in done:
+                    done[f['nm']] = self.judge(ob, f)
+            changed = False
+            for f in info:
+                if f['va'] is None:
+                    v = self.symva.get(f['nm'])
+                    if v:
+                        va, n = v.most_common(1)[0]
+                        if len(f['hits']) <= 1 or va in f['hits']:
+                            f['va'], f['org'] = va, 'alvo'
+                            changed = True
+                    if f['va'] is None and len(f['hits']) > 1:
+                        pass
+            if not changed:
+                break
+        # 4) vizinhança: as funções próprias seguem a ordem do fonte. Para cada uma sem endereço, candidatos =
+        #    inícios de função do 983 entre as vizinhas já localizadas; atribui do par mais parecido para o menos,
+        #    sempre respeitando a ordem (monotônico) e sem repetir endereço.
+        import bisect
+        own = [f for f in info if f['own']]
+        anchors = [g['va'] for g in own if g['va'] is not None and g['org'] != 'alvo']
+        if anchors and any(f['va'] is None for f in own):
+            sl = self.startlist()
+            used = {g['va'] for g in info if g['va'] is not None}
+
+            def window(i):
+                prev = next((g['va'] for g in reversed(own[:i]) if g['va'] is not None and g['org'] != 'alvo'), None)
+                nxt = next((g['va'] for g in own[i + 1:] if g['va'] is not None and g['org'] != 'alvo'), None)
+                if prev is not None and nxt is not None and nxt < prev:
+                    nxt = None
+                lo = prev + 1 if prev is not None else max(min(anchors) - 0x3000, self.pe.tlo)
+                hi = nxt if nxt is not None else min(max(anchors) + 0x3000, self.pe.thi)
+                return lo, hi
+            cand = []
+            for i, f in enumerate(own):
+                if f['va'] is not None or len(f['to'].l) < 4:
+                    continue
+                lo, hi = window(i)
+                bo = collections.Counter(f['to'].m)
+                for va in sl[bisect.bisect_left(sl, lo):bisect.bisect_left(sl, hi)]:
+                    if va in used or (f['nm'], va) in self.veto or (f['nm'], None) in self.veto:
+                        continue
+                    tr, rsz = self.ref_tokens(va)
+                    if tr is None or not (0.4 <= (len(tr.l) + 1) / (len(f['to'].l) + 1) <= 2.5):
+                        continue
+                    br = self.bag(va, tr)
+                    if 2 * sum((bo & br).values()) / (sum(bo.values()) + sum(br.values())) < 0.5:
+                        continue
+                    r = ratio(f['to'].l, tr.l)
+                    if r >= 0.5:
+                        cand.append((r, i, va))
+            cand.sort(reverse=True)
+            for r, i, va in cand:
+                f = own[i]
+                if f['va'] is not None or va in used:
+                    continue
+                lo, hi = window(i)
+                if lo <= va < hi:
+                    f['va'], f['org'] = va, 'vizinho'
+                    used.add(va)
+        for f in info:
+            if f['va'] is not None and f['nm'] not in done:
+                done[f['nm']] = self.judge(ob, f)
+        for f in info:
+            if f['va'] is None and len(f['hits']) > 1:
+                # igual em vários lugares (função trivial dobrada/duplicada): igual, endereço indeterminado
+                row = dict(file=label, nm=f['nm'], own=f['own'], va=None, org='bytes*%d' % len(f['hits']), cls='IGUAL',
+                           pct=1.0, ni=len(f['to'].s), nr=len(f['to'].s), osz=f['sz'], rsz=f['sz'], hx=1, hr=1, hm=1,
+                           bytes_eq=True, note='em %d lugares: %s' % (len(f['hits']), ','.join('%08x' % h for h in f['hits'][:3])))
+            elif f['va'] is None:
+                row = dict(file=label, nm=f['nm'], own=f['own'], va=None, org='-', cls='SEM_PAR', pct=0.0,
+                           ni=len(f['to'].s), nr=0, osz=f['sz'], rsz=0, hx=0, hr=0, hm=0, bytes_eq=False, note='')
+            else:
+                row = done[f['nm']]
+                row['file'] = label
+            self.rows.append(row)
+            self.details.setdefault(f['nm'], (f['to'], None))
+
+    def judge(self, ob, f):
+        to, va = f['to'], f['va']
+        tr, rsz = self.ref_tokens(va)
+        if tr is None:
+            return dict(nm=f['nm'], own=f['own'], va=va, org=f['org'], cls='SEM_PAR', pct=0.0, ni=len(to.s), nr=0,
+                        osz=f['sz'], rsz=0, hx=0, hr=0, hm=0, bytes_eq=False, note='endereço fora do código')
+        if not self.pe.hasfix:
+            tr = adapt(to, tr)
+        tr, tls = adapt_tls(to, tr)
+        hx, hr, hm = to.s == tr.s, to.r == tr.r, to.m == tr.m
+        pct = ratio(to.l, tr.l)
+        notes = []
+        if pct >= 0.90:
+            for sym, off in tls:
+                self.tlsva[sym][off] += 1
+        # alvos: instruções alinhadas iguais -> (símbolo do .obj, VA do 983)
+        sm = difflib.SequenceMatcher(None, to.l, tr.l, autojunk=False)
+        bad = 0
+        for tag, i1, i2, j1, j2 in sm.get_opcodes():
+            if tag != 'equal':
+                continue
+            for k in range(i2 - i1):
+                for ro, rr in zip(to.refs[i1 + k], tr.refs[j1 + k]):
+                    if ro[0] != 'S' or rr[0] != 'V' or ro[3] is None:
+                        continue
+                    sym, add, si = ro[1], ro[2], ro[3]
+                    tva = (rr[2] - add) & 0xffffffff
+                    lit = ob.symdata(si)
+                    if lit is not None and sym.startswith('$SG') and self.pe.read(tva, len(lit)) != lit:
+                        # /GF-: o último literal da seção vem com o enchimento de alinhamento; no 983 o vizinho
+                        # pode começar logo depois do zero (literais curtos têm alinhamento 1) — compara sem o enchimento
+                        lit = lit.rstrip(b'\0') + b'\0'
+                    if pct >= 0.90 and not (lit is not None and add == 0 and self.pe.read(tva, len(lit)) == lit):
+                        # só vota quem está bem alinhado; literal de conteúdo igual pode ter várias cópias no 983
+                        self.symva[sym][tva] += 10 if hx else 1
+                    if lit is not None and add == 0:
+                        ok = self.pe.read(tva, len(lit)) == lit
+                        if pct >= 0.90:
+                            self.lit[sym] = self.lit.get(sym, True) and ok
+                        if not ok and pct >= 0.90:
+                            bad += 1
+                            notes.append('alvo:literal %s difere (983: %r)' % (sym, self.pe.read(tva, min(len(lit), 24))))
+        cls = 'IGUAL' if hx and not bad else 'QUASE' if pct >= 0.90 else 'DIFERENTE'
+        self.details[f['nm']] = (to, tr)
+        return dict(nm=f['nm'], own=f['own'], va=va, org=f['org'], cls=cls, pct=pct, ni=len(to.s), nr=len(tr.s),
+                    osz=f['sz'], rsz=rsz, hx=int(hx), hr=int(hr), hm=int(hm), bytes_eq=va in f['hits'],
+                    note='; '.join(notes[:3]), refs=None, tls=tls)
+
+    def check_symbols(self):
+        """um símbolo deve apontar para um só endereço do 983; quem discorda da maioria é rebaixado"""
+        for s, c in self.tlsva.items():
+            if len(c) > 1:      # variável TLS em dois deslocamentos: quem discorda da maioria é rebaixado
+                top = c.most_common(1)[0][0]
+                for r in self.rows:
+                    for sym, off in r.get('tls') or ():
+                        if sym == s and off != top:
+                            r['note'] = (r['note'] + '; ' if r['note'] else '') + 'alvo:tls %s+%x (maioria %x)' % (s, off, top)
+                            if r['cls'] == 'IGUAL':
+                                r['cls'] = 'QUASE'
+        conf = {s: c for s, c in self.symva.items() if len(c) > 1}
+        if not conf:
+            return conf
+        for r in self.rows:
+            to, tr = self.details.get(r['nm'], (None, None))
+            if tr is None or r['cls'] == 'SEM_PAR':
+                continue
+            sm = difflib.SequenceMatcher(None, to.l, tr.l, autojunk=False)
+            for tag, i1, i2, j1, j2 in sm.get_opcodes():
+                if tag != 'equal':
+                    continue
+                for k in range(i2 - i1):
+                    for ro, rr in zip(to.refs[i1 + k], tr.refs[j1 + k]):
+                        if ro[0] == 'S' and rr[0] == 'V' and ro[1] in conf:
+                            tva = (rr[2] - ro[2]) & 0xffffffff
+                            top = conf[ro[1]].most_common(1)[0][0]
+                            if tva != top:
+                                r['note'] = (r['note'] + '; ' if r['note'] else '') + 'alvo:%s->%08x (maioria %08x)' % (ro[1], tva, top)
+                                if r['cls'] == 'IGUAL':
+                                    r['cls'] = 'QUASE'
+        return conf
+
+
+def show_diff(nm, to, tr, va):
+    print('\n--- %s  (.obj × 983 %s)' % (nm, '%08x' % va if va else '-'))
+    if tr is None:
+        print('   sem par'); return
+    sm = difflib.SequenceMatcher(None, to.l, tr.l, autojunk=False)
+    for tag, i1, i2, j1, j2 in sm.get_opcodes():
+        if tag == 'equal':
+            dif = [(k) for k in range(i2 - i1) if to.s[i1 + k] != tr.s[j1 + k]]
+            if i2 - i1 > 6 and not dif:
+                print('   ... %d instruções iguais' % (i2 - i1)); continue
+            for k in range(i2 - i1):
+                print(' %s %-46s %s' % ('~' if k in dif else ' ', to.txt[i1 + k][:46], tr.txt[j1 + k]))
+        else:
+            n = max(i2 - i1, j2 - j1)
+            for k in range(n):
+                x = to.txt[i1 + k] if i1 + k < i2 else ''
+                y = tr.txt[j1 + k] if j1 + k < j2 else ''
+                print(' %s %-46s %s' % ('|' if x and y else '<' if x else '>', x[:46], y))
+
+
+def load_map(path):
+    m = {}
+    if path and os.path.exists(path):
+        for l in open(path):
+            p = l.rstrip('\n').split('\t')
+            if len(p) >= 2 and not l.startswith('#'):
+                try:
+                    m[p[0]] = int(p[1], 16)
+                except ValueError:
+                    pass
+    return m
+
+
+def load_starts(path):
+    st = set()
+    for l in open(path):
+        l = l.strip()
+        if l.startswith('{'):
+            st.add(int(json.loads(l)['a'], 16))
+        elif l and not l.startswith('#'):
+            # s42: "Catch@..."/"Catch_All@..." do Ghidra são os blocos catch (funclets) da função anterior, não inícios de
+            # função; o VS2010 os deixa colados no fim do corpo (no .obj são rótulos __catch$ dentro do mesmo COMDAT)
+            if l.split('\t')[-1].startswith(('Catch@', 'Catch_All@')):
+                continue
+            try:
+                st.add(int(l.split('\t')[0], 16))
+            except ValueError:
+                pass
+    return st
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('files', nargs='+')
+    ap.add_argument('--ref'); ap.add_argument('--map'); ap.add_argument('--seed'); ap.add_argument('--funcs'); ap.add_argument('--out')
+    ap.add_argument('--diff', action='append', default=[])
+    ap.add_argument('--update-map', action='store_true'); ap.add_argument('--no-build', action='store_true')
+    ap.add_argument('--all', action='store_true')
+    ap.add_argument('--inline', action='store_true', help='conta também funções COMDAT "any" (inline/modelos) no total')
+    a = ap.parse_args()
+    rels = [os.path.relpath(os.path.abspath(f), ROOT) for f in a.files]
+    isexe = all(r.startswith('src/projectg') for r in rels)
+    ref = a.ref or os.path.join(ROOT, 'ref', 'ProjectG_983_dump.exe' if isexe else 'wangreal_983.dll')
+    mp = a.map or os.path.join(ROOT, 'map', ('projectg' if isexe else 'wangreal') + '.tsv')
+    objs = []
+    for r in rels:
+        if r.endswith('.obj'):
+            objs.append((os.path.join(ROOT, r), r)); continue
+        o = os.path.join(ROOT, 'build', 'obj', os.path.splitext(r)[0] + '.obj')
+        if not a.no_build:
+            p = subprocess.run(['make', '-s', '-C', ROOT, 'obj', 'F=' + r], capture_output=True, text=True)
+            if p.returncode:
+                sys.stdout.write(p.stdout + p.stderr)
+                raise SystemExit('cmpfunc: falhou a compilação de ' + r)
+        objs.append((o, r))
+    pe = PE(ref)
+    c = Cmp(pe, load_map(mp), load_starts(a.funcs) if a.funcs else None, load_map(a.seed) if a.seed else None)
+    # pares vetados (map/projectg_fora.tsv ao lado do mapa: nome decorado, VA): não valem nem por vizinho
+    pf = os.path.join(os.path.dirname(os.path.abspath(mp)), 'projectg_fora.tsv')
+    if os.path.exists(pf):
+        for l in open(pf, errors='replace'):
+            q = l.rstrip('\n').split('\t')
+            if len(q) > 1 and not l.startswith('#'):
+                try: c.veto.add((q[0], None if q[1] == '*' else int(q[1], 16)))  # s109: '*' = nenhum par por vizinho
+                except ValueError: pass
+    for o, r in objs:
+        c.run_obj(o, r, a.all)
+    conf = c.check_symbols()
+    lines = []
+    P = lines.append
+    P('# cmpfunc  ref=%s  (%s)  mapa=%s' % (os.path.relpath(ref, ROOT), 'fixups da .reloc' if pe.hasfix else 'sem .reloc: endereço = valor dentro da imagem',
+                                           os.path.relpath(mp, ROOT) if os.path.exists(mp) else '-'))
+    CL = ('IGUAL', 'QUASE', 'DIFERENTE', 'SEM_PAR')
+    tot = collections.Counter(); totb = collections.Counter(); toti = [0, 0]
+    for o, r in objs:
+        rows = [x for x in c.rows if x['file'] == r]
+        P('\n== %s' % r)
+        P('%-9s %6s %-8s %-8s %5s %5s %5s %-5s %s' % ('classe', '%instr', '983', 'origem', 'n.obj', 'n.983', 'bytes', 'hash', 'função'))
+        cnt = collections.Counter(); cb = collections.Counter(); wi = [0, 0]
+        for x in rows:
+            counted = x['own'] or a.inline
+            hs = ''.join(ch if x[k] else '-' for ch, k in (('x', 'hx'), ('r', 'hr'), ('m', 'hm'))) + ('=' if x['bytes_eq'] else ' ')
+            P('%-9s %5.1f%% %-8s %-8s %5d %5d %5d %-5s %s%s%s' % (
+                x['cls'], 100 * x['pct'], '%08x' % x['va'] if x['va'] else '-', x['org'], x['ni'], x['nr'], x['osz'], hs,
+                '' if x['own'] else '(inline) ', x['nm'], '   [' + x['note'] + ']' if x['note'] else ''))
+            if counted:
+                cnt[x['cls']] += 1; cb[x['cls']] += x['osz']
+                tot['_hr'] += x['hr'] and not x['hx']; cnt['_hr'] += x['hr'] and not x['hx']
+                wi[0] += x['pct'] * x['ni']; wi[1] += x['ni']
+        n = sum(cnt[k] for k in CL)
+        P('-- %s: %d funções: %s; só imediatos/deslocamentos diferem em %d das não iguais; instruções iguais %.1f%% (%d)' % (
+            r, n, ' '.join('%s=%d(%dB)' % (k, cnt[k], cb[k]) for k in CL), cnt['_hr'], 100 * wi[0] / max(wi[1], 1), wi[1]))
+        for k in CL:
+            tot[k] += cnt[k]
+        totb.update(cb); toti[0] += wi[0]; toti[1] += wi[1]
+    P('\nTOTAL: %d funções em %d arquivo(s): %s; só imediatos/deslocamentos diferem em %d; instruções iguais %.1f%% (%d)%s' % (
+        sum(tot[k] for k in CL), len(objs), ' '.join('%s=%d(%dB)' % (k, tot[k], totb[k]) for k in CL), tot['_hr'],
+        100 * toti[0] / max(toti[1], 1), toti[1], '' if a.inline else '  [inline/COMDAT any fora do total]'))
+    if conf:
+        P('símbolos com mais de um endereço no 983: ' + '; '.join(
+            '%s: %s' % (s, ','.join('%08x*%d' % kv for kv in cn.most_common())) for s, cn in sorted(conf.items())))
+    badlit = [s for s, ok in c.lit.items() if not ok]
+    P('alvos: %d símbolos casados com endereço do 983; literais conferidos %d, diferentes %d' % (
+        len(c.symva), len(c.lit), len(badlit)))
+    if c.tlsva:
+        P('tls: ' + '; '.join('%s: %s' % (s, ','.join('+%x*%d' % kv for kv in cn.most_common())) for s, cn in sorted(c.tlsva.items())))
+    print('\n'.join(lines))
+    for pat in a.diff:
+        for x in c.rows:
+            if (pat == 'all' and x['cls'] != 'IGUAL') or (pat != 'all' and pat in x['nm']):
+                to, tr = c.details.get(x['nm'], (None, None))
+                if to:
+                    show_diff(x['nm'], to, tr, x['va'])
+    if a.out:
+        os.makedirs(a.out, exist_ok=True)
+        with open(os.path.join(a.out, 'resumo.txt'), 'w') as f:
+            f.write('\n'.join(lines) + '\n')
+        with open(os.path.join(a.out, 'funcs.tsv'), 'w') as f:
+            f.write('arquivo\tfuncao\tpropria\tclasse\tpct_instr\tva983\torigem\tn_obj\tn_983\tbytes_obj\tbytes_983\thx\thr\thm\tbytes_iguais\tnota\n')
+            for x in c.rows:
+                f.write('%s\t%s\t%d\t%s\t%.4f\t%s\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%s\n' % (
+                    x['file'], x['nm'], x['own'], x['cls'], x['pct'], '%08x' % x['va'] if x['va'] else '-', x['org'],
+                    x['ni'], x['nr'], x['osz'], x['rsz'], x['hx'], x['hr'], x['hm'], x['bytes_eq'], x['note']))
+        with open(os.path.join(a.out, 'simbolos.tsv'), 'w') as f:
+            f.write('simbolo\tva983\tvotos\toutros\n')
+            for s, cn in sorted(c.symva.items()):
+                (va, n), rest = cn.most_common(1)[0], cn.most_common()[1:]
+                f.write('%s\t%08x\t%d\t%s\n' % (s, va, n, ' '.join('%08x*%d' % kv for kv in rest)))
+    if a.update_map:
+        m = load_map(mp)
+        new = 0
+        for x in c.rows:
+            if x['va'] and x['cls'] in ('IGUAL', 'QUASE') and x['nm'] not in m:
+                m[x['nm']] = x['va']; new += 1
+        for s, cn in c.symva.items():
+            if len(cn) == 1 and s not in m and not s.startswith(('$', '+')):
+                m[s] = next(iter(cn)); new += 1
+        os.makedirs(os.path.dirname(mp), exist_ok=True)
+        with open(mp, 'w') as f:
+            f.write('# nome decorado\tVA no 983 (gerado/atualizado por tools/cmpfunc --update-map; editar à mão é permitido)\n')
+            for k, v in sorted(m.items(), key=lambda kv: (kv[1], kv[0])):
+                f.write('%s\t%08x\n' % (k, v))
+        print('mapa %s: %d entradas (+%d)' % (os.path.relpath(mp, ROOT), len(m), new))
+
+
+if __name__ == '__main__':
+    main()

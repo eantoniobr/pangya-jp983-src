@@ -1,0 +1,442 @@
+<title>Progresso JP 983</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --ring: rgba(11,11,11,0.10);
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s7: #4a3aa7;
+    --good: #0ca30c; --warning: #fab219; --critical: #d03b3b; --pending: #e1e0d9;
+    --good-ink: #006300;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s7: #9085e9;
+      --pending: #2c2c2a; --good-ink: #0ca30c;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --ring: rgba(255,255,255,0.10);
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s7: #9085e9;
+    --pending: #2c2c2a; --good-ink: #0ca30c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  h1 { font-size: 18px; margin: 0; font-weight: 600; }
+  h2 { font-size: 14px; margin: 0 0 12px; font-weight: 600; }
+  .meta { color: var(--muted); font-size: 12px; }
+  .live::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+                  background: var(--good); margin-right: 6px; vertical-align: 1px; }
+  .live.stale::before { background: var(--warning); }
+  .card { background: var(--surface); border: 1px solid var(--ring); border-radius: 12px; padding: 16px; margin-top: 16px; }
+  .hero { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .tile .label { color: var(--ink-2); font-size: 12px; }
+  .tile .value { font-size: 32px; font-weight: 600; letter-spacing: -0.02em; }
+  .tile .sub { color: var(--muted); font-size: 12px; }
+  .delta { color: var(--good-ink); font-weight: 600; }
+  .groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px 24px; }
+  .bar { height: 8px; border-radius: 4px; background: var(--pending); overflow: hidden; display: flex; gap: 2px; margin: 6px 0 2px; }
+  .bar > span { display: block; height: 100%; }
+  .bar > span:last-child { border-radius: 0 4px 4px 0; }
+  .row { display: flex; justify-content: space-between; font-size: 13px; }
+  .row .num { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); margin-bottom: 8px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  .chart-wrap { position: relative; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .tick { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--ring);
+         border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.18);
+         min-width: 180px; display: none; z-index: 2; }
+  .tip b { font-weight: 600; }
+  .tip .r { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
+  .tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+  .waffle { display: grid; grid-template-columns: repeat(auto-fill, minmax(12px, 1fr)); gap: 2px; }
+  .waffle div { aspect-ratio: 1; border-radius: 3px; background: var(--pending); }
+  .waffle div:hover { outline: 2px solid var(--ink); outline-offset: 1px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; }
+  td.num { font-variant-numeric: tabular-nums; text-align: right; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; white-space: nowrap; }
+  .badge i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .two { grid-template-columns: 1fr; } .tile .value { font-size: 26px; } }
+  .note { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  details summary { cursor: pointer; color: var(--ink-2); font-size: 12px; margin-top: 8px; }
+  .live.off::before { background: var(--critical); }
+  .phase { padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  .phase:last-child { border-bottom: 0; }
+  .phase details summary { margin-top: 4px; }
+  .phase td:first-child { white-space: nowrap; width: 56px; color: var(--ink-2); }
+  .phase td.st { white-space: nowrap; width: 130px; }
+  .phase .nota { color: var(--muted); font-size: 12px; }
+  .scroll { overflow-x: auto; }
+  .alert { border: 2px solid var(--warning); }
+  .alert h2 { margin-bottom: 6px; }
+  .alert p { margin: 6px 0 0; white-space: pre-wrap; }
+  .fronts { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .front { border: 1px solid var(--ring); border-radius: 10px; padding: 12px; }
+  .front .who { font-weight: 600; }
+  .front .what { color: var(--ink-2); font-size: 12px; }
+  .front .now { margin-top: 8px; font-size: 13px; }
+  .front .now b { font-variant-numeric: tabular-nums; }
+  .tile .value.mid { font-size: 24px; }
+  .queue { margin: 8px 0 0 12px; padding-left: 12px; border-left: 2px solid var(--grid); }
+  .sys { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px 24px; }
+  .sys .tk { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  td.who { white-space: nowrap; width: 70px; font-variant-numeric: tabular-nums; }
+  td.when { white-space: nowrap; color: var(--ink-2); width: 110px; font-variant-numeric: tabular-nums; }
+</style>
+<main>
+  <header>
+    <h1>JP 983: código-fonte do ProjectG.exe e da wangreal.dll</h1>
+    <span class="meta"><span id="live" class="live">–</span> · <span id="updated">carregando…</span></span>
+  </header>
+
+  <section class="card alert" id="ask" hidden></section>
+
+  <section class="card">
+    <div class="hero">
+      <div class="tile">
+        <div class="label">wangreal.dll</div>
+        <div class="value" id="h-dll">–</div>
+        <div class="sub" id="h-dll-sub"></div>
+      </div>
+      <div class="tile">
+        <div class="label">ProjectG.exe</div>
+        <div class="value" id="h-exe">–</div>
+        <div class="sub" id="h-exe-sub"></div>
+      </div>
+      <div class="tile">
+        <div class="label">Total</div>
+        <div class="value" id="h-tot">–</div>
+        <div class="sub" id="h-tot-sub"></div>
+      </div>
+      <div class="tile">
+        <div class="label">Trabalho automático</div>
+        <div class="value" id="h-host">–</div>
+        <div class="sub" id="h-host-sub"></div>
+      </div>
+    </div>
+    <p class="note">O número grande é a parte do código do jogo japonês (versão 983) que o nosso código-fonte, depois de compilado,
+      reproduz de forma <b>idêntica</b>, medida em bytes. “Com quase iguais” soma as funções que só diferem em detalhes
+      (ordem de instruções, registradores). O objetivo final é o jogo funcionar igual, não chegar a 100% aqui.</p>
+  </section>
+
+  <section class="card">
+    <h2>As frentes de trabalho <span class="meta">· cada uma é uma fila automática que roda sozinha, em paralelo</span></h2>
+    <div class="fronts" id="frentes"></div>
+  </section>
+
+  <section class="card">
+    <h2>O que importa para o jogo funcionar</h2>
+    <div class="hero" id="func"></div>
+    <p class="note">O critério é o jogo <b>funcionar</b> como o original: todo arquivo compilando, toda função escrita e
+      as estruturas de dados com o tamanho certo. Função “escrita” = já existe no nosso código e foi achada no 983
+      (igual, quase igual ou diferente só no jeito de compilar). <span id="func-note"></span></p>
+  </section>
+
+  <section class="card">
+    <h2>Por grupo</h2>
+    <div class="legend" id="legend-groups"></div>
+    <div class="groups" id="groups"></div>
+  </section>
+
+  <section class="card">
+    <h2>Evolução (% dos bytes de todo o código)</h2>
+    <div class="legend" id="legend-hist"></div>
+    <div class="chart-wrap" id="hist-wrap">
+      <svg id="hist" viewBox="0 0 1000 300" preserveAspectRatio="none" role="img" aria-label="Evolução do progresso"></svg>
+      <div class="tip" id="hist-tip"></div>
+    </div>
+    <p class="note">Área empilhada = código idêntico (dll embaixo, exe em cima). Linha tracejada = idêntico + quase igual.
+      Os pontos anteriores ao painel foram refeitos a partir dos resultados guardados de cada tarefa; o degrau da dll em
+      10/10 01:00 é a troca de medida (função a função → dll inteira já ligada), não trabalho novo.</p>
+  </section>
+
+  <section class="card">
+    <h2 id="units-title">Mapa das unidades</h2>
+    <div class="legend" id="legend-units"></div>
+    <div class="chart-wrap">
+      <div class="waffle" id="waffle" role="img" aria-label="Estado de cada unidade"></div>
+      <div class="tip" id="unit-tip"></div>
+    </div>
+    <p class="note">Cada quadrado é uma unidade (um arquivo de código) ou um sistema novo do JP, da maior para a menor.
+      Passe o mouse para ver o nome e quanto dela já está igual. “≈” = tamanho estimado pela versão de 2011 (lugar no 983 ainda incerto).</p>
+  </section>
+
+  <div class="two">
+    <section class="card">
+      <h2>Maiores unidades com trabalho pela frente (ProjectG.exe)</h2>
+      <div class="scroll"><table><thead><tr><th>Unidade</th><th>Estado</th><th class="num">Bytes</th><th class="num">Igual</th></tr></thead><tbody id="biggest"></tbody></table></div>
+    </section>
+    <section class="card">
+      <h2>Pedidos entre frentes <span class="meta" id="pedidos-meta"></span></h2>
+      <div class="scroll"><table><thead><tr><th>De → para</th><th>Pedido</th></tr></thead><tbody id="pedidos"></tbody></table></div>
+      <p class="note">Quando uma frente precisa de mudança num arquivo de outra, deixa o pedido escrito; a dona atende na sessão seguinte.</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Sistemas novos do JP <span class="meta" id="sys-meta"></span></h2>
+    <div class="legend" id="legend-sys"></div>
+    <div class="sys" id="sistemas"></div>
+    <p class="note">Sistemas que não existem no código de 2011 e são escritos do zero pela frente B, na ordem da fila dela.
+      A barra mostra quanto do código de cada sistema no 983 já tem função nossa. Sistemas ainda não começados já
+      mostram alguma cor: são funções de outros arquivos que o comparador achou naquele trecho do 983 — funções pequenas
+      compartilhadas (listas, textos) e alguns pares ainda a conferir.</p>
+  </section>
+
+  <section class="card">
+    <h2>Fases do plano <span class="meta" id="fases-meta"></span></h2>
+    <div id="fases"></div>
+  </section>
+
+  <section class="card">
+    <h2>Últimos eventos</h2>
+    <div class="scroll"><table><thead><tr><th style="width:110px">Quando</th><th>Evento</th></tr></thead><tbody id="activity"></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <details><summary>Ver tabela completa por grupo</summary>
+      <div class="scroll"><table><thead><tr><th>Grupo</th><th class="num">Unidades iguais</th><th class="num">Bytes iguais</th><th class="num">%</th><th class="num">% com quase</th></tr></thead>
+      <tbody id="table"></tbody></table></div>
+    </details>
+    <p class="note" id="foot"></p>
+  </section>
+</main>
+<script>
+/*__DADOS__*/
+</script>
+<script>
+const STATES = [
+  ["igual", "Igual ao 983", "--good"],
+  ["quase", "Quase igual (≥ 90%)", "--warning"],
+  ["andamento", "Em andamento (parte já igual)", "--s1"],
+  ["importado", "Importado do 645, sem comparar", "--muted"],
+  ["semfonte", "Sem fonte no rebang (a escrever)", "--s2"],
+  ["novo", "Sistema novo do JP (a escrever)", "--s7"],
+];
+const TASK = { feito: ["Feita", "--good"], em_andamento: ["Em andamento", "--s1"], bloqueado: ["Aguardando o usuário", "--warning"],
+               pendente: ["Pendente", "--pending"] };
+const fmt = n => n.toLocaleString("pt-BR");
+const pct = (a, b) => b ? (100 * a / b).toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%" : "–";
+const p1 = v => v.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + "%";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const when = s => new Date(s).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" });
+
+function legend(el, items) {
+  el.innerHTML = items.map(([, label, v]) => `<span><i style="background:var(${v})"></i>${label}</span>`).join("");
+}
+
+function render(d) {
+  const A = d.dll, E = d.exe, T = { total: A.total + E.total, igual: A.igual + E.igual, quase: A.quase + E.quase };
+  const live = $("live"), FR = d.frentes || [];
+  const nRun = FR.filter(f => f.estado === "rodando").length, nPause = FR.filter(f => f.estado === "pausa").length;
+  live.textContent = `${nRun} de ${FR.length} frentes rodando`;
+  live.className = "live" + (nRun ? "" : nPause ? " stale" : " off");
+  $("updated").textContent = "dados de " + when(d.generated);
+
+  const sub = x => `${fmt(x.igual)} de ${fmt(x.total)} bytes · com quase iguais: <b>${pct(x.igual + x.quase, x.total)}</b>`;
+  $("h-dll").textContent = pct(A.igual, A.total); $("h-dll-sub").innerHTML = sub(A);
+  $("h-exe").textContent = pct(E.igual, E.total); $("h-exe-sub").innerHTML = sub(E);
+  $("h-tot").textContent = pct(T.igual, T.total); $("h-tot-sub").innerHTML = sub(T);
+  $("h-host").textContent = nRun ? `${nRun} de ${FR.length} rodando` : nPause ? "Em pausa" : "Parado";
+  $("h-host-sub").textContent = `${d.tarefas.feitas} de ${d.tarefas.total} tarefas feitas · ${FR.reduce((a, f) => a + f.sessao, 0)} sessões até agora`;
+  const asks = FR.filter(f => f.pergunta);
+  if (asks.length) {
+    $("ask").hidden = false;
+    $("ask").innerHTML = `<h2>Esperando a sua resposta</h2>` + asks.map(f =>
+      `<p><b>Frente ${esc(f.id)}</b> (parada até você responder): ${esc(f.pergunta.slice(0, 500))}${f.pergunta.length > 500 ? "…" : ""}</p>`).join("");
+  }
+
+  // frentes
+  const EST = { rodando: ["Rodando", "--good"], pausa: ["Entre sessões", "--warning"], parado: ["Parada", "--critical"] };
+  $("frentes").innerHTML = FR.map(f => { const [, v] = EST[f.estado] || EST.parado, t = f.tarefa;
+    return `<div class="front"><div class="row"><span class="who">Frente ${esc(f.id)}</span><span class="badge"><i style="background:var(${v})"></i>${esc(f.texto)}</span></div>
+      <div class="what">${esc(f.nome)}</div>
+      <div class="bar"><span style="width:${f.total ? 100 * f.feitas / f.total : 0}%;background:var(--good)"></span></div>
+      <div class="row"><span class="num">${f.feitas} de ${f.total} tarefas feitas</span><span class="num">${f.sessao} ${f.sessao === 1 ? "sessão" : "sessões"}</span></div>
+      <div class="now">${t ? `${t.agora ? "Agora" : "Próxima"}: <b>${esc(t.id)}</b> ${esc(t.titulo.length > 90 ? t.titulo.slice(0, 90) + "…" : t.titulo)}` : "Sem tarefa na fila"}</div></div>`; }).join("");
+
+  // critério funcional
+  const K = d.func, V = K.asserts, PD = d.pedidos || [], abertos = PD.filter(p => p.aberto);
+  const tile = (label, value, subt) => `<div class="tile"><div class="label">${label}</div><div class="value mid">${value}</div><div class="sub">${subt}</div></div>`;
+  $("func").innerHTML =
+    tile("Arquivos que compilam", `${fmt(K.compilam)} de ${fmt(K.unidades)}`,
+         `mais ${fmt(K.jp_comparadas)} dos sistemas novos do JP (de ${fmt(K.jp_propostas)} previstos)`) +
+    tile("Funções escritas", pct(K.funcoes_escritas, K.funcoes_total),
+         `${fmt(K.funcoes_escritas)} de ${fmt(K.funcoes_total)} funções do ProjectG.exe · ${pct(K.bytes_escritos, E.total)} dos bytes`) +
+    tile("Estruturas com tamanho conferido", V ? `${fmt(V.ok)} de ${fmt(V.total)}` : "–",
+         V ? (V.falha ? `<b>${fmt(V.falha)} com tamanho errado</b>, a corrigir` : "nenhuma errada") + ` · conferido em ${when(V.quando)}` : "conferência ainda não rodou") +
+    tile("Pedidos entre frentes", `${abertos.length} ${abertos.length === 1 ? "aberto" : "abertos"}`, `${PD.length - abertos.length} já atendidos`);
+  $("func-note").textContent = (K.nao_compilam.length ? `Ainda não compilam: ${K.nao_compilam.join(", ")}. ` : "") +
+    (V && V.falha ? `Estruturas com tamanho errado: ${V.falhas.slice(0, 14).join(", ")}${V.falha > 14 ? ` e mais ${V.falha - 14}` : ""}.` : "");
+
+  // pedidos
+  $("pedidos-meta").textContent = `· ${abertos.length} ${abertos.length === 1 ? "aberto" : "abertos"} de ${PD.length}`;
+  $("pedidos").innerHTML = PD.slice().sort((a, b) => b.aberto - a.aberto).map(p =>
+    `<tr><td class="who"><span class="badge"><i style="background:var(${p.aberto ? "--warning" : "--good"})"></i>${esc(p.de)} → ${esc(p.para)}</span></td>` +
+    `<td>${esc(p.texto)}<div class="nota" style="color:var(--muted);font-size:12px">${p.aberto ? "aberto" : "atendido"}${p.quando ? " · " + esc(p.quando) : ""}</div></td></tr>`).join("")
+    || `<tr><td colspan="2" style="color:var(--muted)">nenhum pedido</td></tr>`;
+
+  // sistemas novos do JP
+  const SY = d.sistemas || [], sT = SY.reduce((a, x) => a + x.total, 0), sW = SY.reduce((a, x) => a + x.igual + x.quase + x.dif, 0);
+  $("sys-meta").textContent = `· ${SY.length} sistemas, ${fmt(sT)} bytes · ${pct(sW, sT)} já com função nossa`;
+  legend($("legend-sys"), [["i", "Igual", "--good"], ["q", "Quase igual", "--warning"], ["d", "Escrito, ainda diferente", "--s1"]]);
+  const stT = Object.fromEntries(d.fases.flatMap(f => f.tarefas).map(t => [t.id, t.estado]));
+  $("sistemas").innerHTML = SY.map(x => { const w = v => 100 * v / x.total, est = TASK[stT[x.tarefa]];
+    return `<div><div class="row"><span>${esc(x.nome)} <span class="tk">${esc(x.tarefa)}${est && stT[x.tarefa] !== "pendente" ? " · " + est[0].toLowerCase() : ""}</span></span><span class="num">${pct(x.igual + x.quase + x.dif, x.total)}</span></div>
+      <div class="bar" title="${esc(x.nome)}"><span style="width:${w(x.igual)}%;background:var(--good)"></span><span style="width:${w(x.quase)}%;background:var(--warning)"></span><span style="width:${w(x.dif)}%;background:var(--s1)"></span></div>
+      <div class="row"><span class="num">${x.unidades ? `${x.unidades} arquivos previstos` : "arquivos ainda a dividir"}</span><span class="num">${fmt(x.igual + x.quase + x.dif)} / ${fmt(x.total)} B</span></div></div>`; }).join("");
+
+  // grupos
+  legend($("legend-groups"), [["i", "Igual (cor do grupo)", "--ink-2"], ["q", "Quase igual", "--warning"]]);
+  $("groups").innerHTML = d.groups.map(g => {
+    const wI = 100 * g.igual / g.total, wQ = 100 * g.quase / g.total;
+    return `<div><div class="row"><span>${esc(g.label)}</span><span class="num">${pct(g.igual, g.total)}</span></div>
+      <div class="bar" title="${esc(g.label)}"><span style="width:${wI}%;background:var(${g.color})"></span>${wQ > 0 ? `<span style="width:${wQ}%;background:var(--warning)"></span>` : ""}</div>
+      <div class="row"><span class="num">${g.units ? `${g.units_igual}/${g.units} un.` : ""}</span><span class="num">${fmt(g.igual)} / ${fmt(g.total)} B</span></div></div>`;
+  }).join("");
+  $("table").innerHTML = d.groups.map(g =>
+    `<tr><td>${esc(g.label)}</td><td class="num">${g.units ? `${g.units_igual}/${g.units}` : "–"}</td><td class="num">${fmt(g.igual)} / ${fmt(g.total)}</td><td class="num">${pct(g.igual, g.total)}</td><td class="num">${pct(g.igual + g.quase, g.total)}</td></tr>`
+  ).join("") + `<tr><td><b>Total</b></td><td class="num"></td><td class="num">${fmt(T.igual)} / ${fmt(T.total)}</td><td class="num">${pct(T.igual, T.total)}</td><td class="num">${pct(T.igual + T.quase, T.total)}</td></tr>`;
+  $("foot").textContent = `ProjectG.exe: ${E.comparadas} unidades comparadas, ${fmt(E.funcoes_igual)} de ${fmt(E.funcoes)} funções próprias idênticas. ` +
+    `Conta-se por endereço do 983 (cada trecho uma vez; inclui funções pequenas definidas nos cabeçalhos). Último commit: ${d.commit}`;
+
+  renderHistory(d, T);
+  renderWaffle(d);
+
+  const lab = Object.fromEntries(STATES.map(([k, l, v]) => [k, [l, v]]));
+  const badge = s => `<span class="badge"><i style="background:var(${lab[s][1]})"></i>${lab[s][0].replace(/ \(.*/, "")}</span>`;
+  $("biggest").innerHTML = d.units.filter(u => u.group !== "dll" && u.group !== "novo" && u.state !== "igual" && u.size)
+    .sort((a, b) => b.size - a.size).slice(0, 12)
+    .map(u => `<tr><td>${esc(u.name)}</td><td>${badge(u.state)}</td><td class="num">${u.est ? "≈ " : ""}${fmt(u.size)}</td><td class="num">${u.pi === undefined ? "–" : p1(u.pi)}</td></tr>`).join("");
+
+  // fases
+  $("fases-meta").textContent = `· fase atual: ${d.fase}`;
+  const taskRows = ts => ts.map(t => { const [l, v] = TASK[t.estado] || [t.estado, "--pending"];
+    return `<tr><td>${esc(t.id)}</td><td class="st"><span class="badge"><i style="background:var(${v})"></i>${l}</span></td>
+      <td>${esc(t.titulo)}${t.nota ? `<div class="nota">${esc(t.nota)}${t.nota.length >= 400 ? "…" : ""}</div>` : ""}</td></tr>`; }).join("");
+  const taskBar = ts => { const n = ts.length, c = e => ts.filter(t => t.estado === e).length, ok = c("feito"), run = c("em_andamento"), blk = c("bloqueado");
+    return n ? `<div class="bar"><span style="width:${100 * ok / n}%;background:var(--good)"></span>` +
+      (run ? `<span style="width:${100 * run / n}%;background:var(--s1)"></span>` : "") +
+      (blk ? `<span style="width:${100 * blk / n}%;background:var(--warning)"></span>` : "") + `</div>` : `<div class="bar"></div>`; };
+  const taskList = ts => `<details${ts.some(t => t.estado === "em_andamento") ? " open" : ""}><summary>Ver tarefas</summary><div class="scroll"><table><tbody>${taskRows(ts)}</tbody></table></div></details>`;
+  const done = ts => ts.filter(t => t.estado === "feito").length;
+  const frName = Object.fromEntries(FR.map(f => [f.id, f.nome]));
+  $("fases").innerHTML = d.fases.map(f => {
+    const n = f.tarefas.length, quem = [...new Set(f.tarefas.map(t => t.frente))].sort();
+    const head = `<div class="row"><span><b>${f.id}</b> · ${esc(f.nome)}</span><span class="num">${n ? `${done(f.tarefas)}/${n} tarefas` : "tarefas a escrever ao chegar"}</span></div>${taskBar(f.tarefas)}`;
+    if (quem.length < 2) return `<div class="phase">${head}${n ? taskList(f.tarefas) : ""}</div>`;
+    return `<div class="phase">${head}` + quem.map(q => { const ts = f.tarefas.filter(t => t.frente === q);
+      return `<div class="queue"><div class="row"><span>Fila da frente ${esc(q)}${frName[q] ? ` · ${esc(frName[q])}` : ""}</span><span class="num">${done(ts)}/${ts.length} tarefas</span></div>${taskBar(ts)}${taskList(ts)}</div>`; }).join("") + `</div>`;
+  }).join("");
+
+  const tone = t => /feita|passou|ok\b/i.test(t) ? "--good" : /falh|erro|bloque/i.test(t) ? "--critical" : /aguardando|NEEDS_HUMAN/i.test(t) ? "--warning" : "--muted";
+  $("activity").innerHTML = (d.eventos || []).slice().reverse().map(a =>
+    `<tr><td class="when">${when(a.quando)}</td><td><span class="badge" style="white-space:normal"><i style="background:var(${tone(a.texto)});flex:none"></i>${esc(a.texto)}</span></td></tr>`).join("")
+    || `<tr><td colspan="2" style="color:var(--muted)">sem eventos ainda</td></tr>`;
+}
+
+function renderHistory(d, T) {
+  const svg = $("hist"), W = 1000, H = 300, pad = { l: 44, r: 12, t: 10, b: 26 };
+  const hist = d.history.map(r => ({ t: +new Date(r.date), dll: 100 * r.dll_igual / T.total, exe: 100 * r.exe_igual / T.total,
+                                     iq: 100 * (r.dll_iq + r.exe_iq) / T.total, r }));
+  const t0 = hist[0].t, t1 = Math.max(hist[hist.length - 1].t, +new Date(d.generated));
+  const maxPct = Math.max(5, Math.ceil(Math.max(...hist.map(r => r.iq)) / 5) * 5);
+  const x = t => pad.l + (W - pad.l - pad.r) * ((t - t0) / Math.max(1, t1 - t0));
+  const y = p => H - pad.b - (H - pad.t - pad.b) * (p / maxPct);
+  let out = "";
+  for (let p = 0; p <= maxPct; p += maxPct / 4) {
+    out += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(p)}" y2="${y(p)}" stroke="var(--grid)" stroke-width="1"/>` +
+           `<text class="tick" x="${pad.l - 6}" y="${y(p) + 4}" text-anchor="end">${p.toFixed(1)}%</text>`;
+  }
+  const SER = [["dll", "wangreal.dll", "--s2"], ["exe", "ProjectG.exe", "--s1"]];
+  SER.forEach(([k, , v], i) => {
+    let top = "", bot = "";
+    hist.forEach((r, j) => {
+      const xa = x(r.t), xb = j + 1 < hist.length ? x(hist[j + 1].t) : x(t1);
+      const lo = i ? r.dll : 0, hi = lo + r[k];
+      top += `${j ? "L" : "M"}${xa},${y(hi)}L${xb},${y(hi)}`;
+      bot = `L${xb},${y(lo)}L${xa},${y(lo)}` + bot;
+    });
+    out += `<path d="${top}${bot}Z" fill="var(${v})" stroke="var(--surface)" stroke-width="1"/>`;
+  });
+  let line = "";
+  hist.forEach((r, j) => {
+    const xb = j + 1 < hist.length ? x(hist[j + 1].t) : x(t1);
+    line += `${j ? "L" : "M"}${x(r.t)},${y(r.iq)}L${xb},${y(r.iq)}`;
+  });
+  out += `<path d="${line}" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4"/>`;
+  const last = hist[hist.length - 1];
+  out += `<circle cx="${x(t1)}" cy="${y(last.iq)}" r="4" fill="var(--ink)" stroke="var(--surface)" stroke-width="2"/>`;
+  const n = 4, span = t1 - t0;
+  for (let k = 0; k <= n; k++) {
+    const t = new Date(t0 + span * k / n);
+    const txt = span < 3 * 864e5 ? t.toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" })
+                                : t.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+    out += `<text class="tick" x="${x(+t)}" y="${H - 6}" text-anchor="${k === 0 ? "start" : k === n ? "end" : "middle"}">${txt}</text>`;
+  }
+  out += `<line id="xh" y1="${pad.t}" y2="${H - pad.b}" stroke="var(--muted)" stroke-width="1" visibility="hidden"/>`;
+  out += `<rect x="${pad.l}" y="${pad.t}" width="${W - pad.l - pad.r}" height="${H - pad.t - pad.b}" fill="transparent" id="hit"/>`;
+  svg.innerHTML = out;
+  legend($("legend-hist"), SER.map(([k, l, v]) => [k, l + " (igual)", v]).concat([["l", "Igual + quase igual (tracejado)", "--ink"]]));
+
+  const tip = $("hist-tip"), wrap = $("hist-wrap");
+  $("hit").onmousemove = ev => {
+    const r = svg.getBoundingClientRect(), sx = (ev.clientX - r.left) * W / r.width;
+    const t = t0 + (sx - pad.l) / (W - pad.l - pad.r) * (t1 - t0);
+    let j = 0; while (j + 1 < hist.length && hist[j + 1].t <= t) j++;
+    const row = hist[j], q = row.r;
+    $("xh").setAttribute("x1", sx); $("xh").setAttribute("x2", sx); $("xh").setAttribute("visibility", "visible");
+    tip.innerHTML = `<b>${when(q.date)}</b>` +
+      `<div class="r"><span><i style="background:var(--s1)"></i>ProjectG.exe</span><span>${pct(q.exe_igual, q.exe_total)}</span></div>` +
+      `<div class="r"><span><i style="background:var(--s2)"></i>wangreal.dll</span><span>${pct(q.dll_igual, q.dll_total)}</span></div>` +
+      `<div class="r"><span>Total igual</span><b>${pct(q.dll_igual + q.exe_igual, T.total)}</b></div>` +
+      `<div class="r"><span>Com quase iguais</span><span>${pct(q.dll_iq + q.exe_iq, T.total)}</span></div>`;
+    tip.style.display = "block";
+    const left = (ev.clientX - wrap.getBoundingClientRect().left);
+    tip.style.left = Math.max(0, Math.min(left + 12, wrap.clientWidth - tip.offsetWidth)) + "px";
+    tip.style.top = "8px";
+  };
+  $("hit").onmouseleave = () => { tip.style.display = "none"; $("xh").setAttribute("visibility", "hidden"); };
+}
+
+function renderWaffle(d) {
+  const color = Object.fromEntries(STATES.map(([k, , v]) => [k, v]));
+  const name = Object.fromEntries(STATES.map(([k, l]) => [k, l]));
+  const gl = Object.fromEntries(d.groups.map(g => [g.key, g.label]));
+  const units = [...d.units].sort((a, b) => b.size - a.size);
+  const counts = Object.fromEntries(STATES.map(([k]) => [k, 0]));
+  units.forEach(u => counts[u.state] = (counts[u.state] || 0) + 1);
+  $("units-title").textContent = `Mapa das ${units.length} unidades`;
+  legend($("legend-units"), STATES.map(([k, l, v]) => [k, `${l} (${counts[k] || 0})`, v]));
+  const el = $("waffle"), tip = $("unit-tip");
+  el.innerHTML = units.map((u, i) => `<div data-i="${i}" style="background:var(${color[u.state] || "--pending"})"></div>`).join("");
+  el.onmousemove = ev => {
+    const i = ev.target.dataset.i; if (i === undefined) { tip.style.display = "none"; return; }
+    const u = units[i];
+    tip.innerHTML = `<b>${esc(u.name)}</b><div class="r"><span>${esc(gl[u.group] || u.group)}</span><span>${u.size ? (u.est ? "≈ " : "") + fmt(u.size) + " B" : "sem código próprio"}</span></div>` +
+      `<div>${name[u.state] || u.state}</div>` +
+      (u.pi !== undefined ? `<div class="r"><span>Funções próprias iguais</span><span>${p1(u.pi)}</span></div><div class="r"><span>Com quase iguais</span><span>${p1(u.pq)}</span></div>` : "") +
+      (u.obs ? `<div style="color:var(--muted)">${esc(u.obs)}</div>` : "");
+    tip.style.display = "block";
+    const w = el.parentElement.getBoundingClientRect();
+    tip.style.left = Math.max(0, Math.min(ev.clientX - w.left + 12, w.width - tip.offsetWidth)) + "px";
+    tip.style.top = (ev.clientY - w.top + 14) + "px";
+  };
+  el.onmouseleave = () => tip.style.display = "none";
+}
+
+render(window.PROGRESS);
+</script>

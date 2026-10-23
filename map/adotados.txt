@@ -1,0 +1,110 @@
+# F3.5: arquivos de src/ e include/ que deixaram de ser cópia do rebang (editados à mão para o 983).
+# O `make pg-import` e o tools/f32/ajustes.py não tocam neles. Formato: caminho<TAB>sessão/motivo
+src/fresh/include/frwnd.h	s38 F3.5
+src/fresh/source/frwnd.cpp	s38 F3.5
+src/fresh/include/frwndmanager.h	s38 F3.5
+src/fresh/source/frwndmanager.cpp	s38 F3.5
+src/fresh/include/frgraphicinterface.h	s39 F3.5
+src/fresh/source/frgraphicinterface.cpp	s39 F3.5
+src/fresh/include/frgaugebar.h	s40 F3.5
+src/fresh/source/frgaugebar.cpp	s40 F3.5
+src/fresh/include/frelement.h	s40 F3.5
+src/fresh/source/frelement.cpp	s40 F3.5
+src/fresh/include/frcombobox.h	s40 F3.5
+src/fresh/source/frcontextmenuctrl.cpp	s41 F3.5
+src/fresh/source/frframe.cpp	s41 F3.5
+src/fresh/source/frtabbutton.cpp	s41 F3.5
+src/fresh/include/frtabbutton.h	s41 F3.5
+src/fresh/source/frtooltip.cpp	s41 F3.5
+src/fresh/include/frtooltip.h	s41 F3.5
+src/fresh/source/frdesktop.cpp	s41 F3.5
+src/fresh/source/fresh.cpp	s41 F3.5
+src/engine/wresrcmng.cpp	s42 F3.5
+include/engine/wresrcmng.h	s42 F3.5
+include/engine/wresrccache.h	s42 F3.5
+src/engine/wfont.cpp	s43 F3.5
+include/engine/wfont.h	s43 F3.5
+src/engine/wview.cpp	s44 F3.5
+include/engine/wview.h	s44 F3.5
+src/projectg/particle.cpp	s55 F3.5
+src/projectg/taskmanager.cpp	s56 F3.5
+src/projectg/golfplayer.cpp	s57 F3.5
+src/projectg/golfplayer.h	s57 F3.5
+include/engine/wboneset.h	s59 F3.5
+include/engine/wboneset.inl	s59 F3.5
+src/engine/wboneset.cpp	s59 F3.5
+src/engine/wbone.cpp	s59 F3.5
+include/engine/wbone.h	s59 F3.5
+src/engine/wpuppet.cpp	s59 F3.5
+src/fresh/include/frstatic.h	s60 F3.5
+src/fresh/source/frstatic.cpp	s60 F3.5
+src/fresh/include/frarea.h	s60 F3.5
+src/fresh/source/frarea.cpp	s60 F3.5
+src/fresh/include/frlistbox.h	s60 F3.5
+src/fresh/source/frlistbox.cpp	s60 F3.5
+src/fresh/source/frcombobox.cpp	s60 F3.5
+src/projectg/avatar_main.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/avatar_task.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/bingoeventdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/birthdayeventdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/bongdarishopdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/browser.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/cardboxdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/cardremove.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ccardbook.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/dlgquickstartsetting.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/familytask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/frticketexchangedlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ggc_wrapper.cpp	s61: constantes de partida do 983 (pedido C5)
+src/projectg/ghostgamedlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ghosthandler.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ghostmain.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ghostplayer.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ghosttask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/gmtoolkit.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/golftask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/intrusion.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/itembuffactor.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/itemstorage.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/lobbymain.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/lobbytask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/loginunit.cpp	s61: constantes de partida do 983 (pedido C5)
+src/projectg/mascotinfodlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/matchhistory.h	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/messengerdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/missioneventdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/msnunit.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/netresourcemanager.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/packet.h	s61: macro PKT645_SEM_983
+src/projectg/parannickdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/pointeventdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/post_recivedlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/privatetrade.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/questinfodlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/rankingdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/realmyroommainui.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/realmyroomtask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/recycledlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/s5/supplypack.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/s5/utilities.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/scratchdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/securitykeymanager.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/shoptask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/taskmain.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/tutorialmain.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/tutorialtask.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ucccopydlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/ucclibrary.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/uccmanager.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/upgradecaddiedlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/userlistdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/worldtoureventdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/specialboxdlg.cpp	s61: ids de pacote do 983 (tools/f35/pkids.py, rxids.py)
+src/projectg/packet.cpp	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/clientsocket.cpp	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/clientsocket.h	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/networkunit.cpp	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/networkunit.h	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/networksystem.h	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/wind.cpp	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio
+src/projectg/wind.h	s62: WSendPacket/WReceivedPacket do 983 (invólucro + Impl), caminho de envio com destino, virtuais novos da NetworkUnit, métodos do CWind, ids do correio

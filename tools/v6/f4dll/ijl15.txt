@@ -1,0 +1,7 @@
+# ijl15.dll: 6 exports por nome; rugburn (build/C/v5/rugburn/export.def) — o cliente carrega o rugburn como ijl15.dll
+ijlErrorStr
+ijlFree
+ijlGetLibVersion
+ijlInit
+ijlRead
+ijlWrite

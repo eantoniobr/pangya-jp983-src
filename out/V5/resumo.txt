@@ -1,0 +1,6 @@
+patches do ramo JP 983: 6 (certos 1, endereço errado 5); checagem bate
+ijl15.dll: exe importa ['ijlFree', 'ijlInit', 'ijlRead', 'ijlWrite']; wangreal.dll importa nada
+APIs interceptadas: 22; importadas pelo exe: 21; usadas pelo código do jogo: 18
+rede: 30 urls, 3 ips; fora do nosso fonte: 15
+urls que a regra de exemplo (só http://host/...) NÃO pega: 13 (https: 10)
+constantes: 6; diferem do nosso fonte: 0

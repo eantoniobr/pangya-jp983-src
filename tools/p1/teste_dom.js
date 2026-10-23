@@ -1,0 +1,14 @@
+const fs=require('fs');const html=fs.readFileSync(process.argv[2],'utf8');
+const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]));
+const els={};const mk=id=>els[id]||(els[id]={id,innerHTML:'',textContent:'',className:'',hidden:true,style:{},dataset:{},setAttribute(){},getBoundingClientRect(){return{left:0,top:0,width:1000}},parentElement:{getBoundingClientRect(){return{left:0,top:0,width:1000}}}});
+global.window={};global.document={getElementById:id=>{if(!ids.has(id)&&!['xh','hit'].includes(id))throw new Error('id inexistente: '+id);return mk(id)},documentElement:{}};
+global.getComputedStyle=()=>({getPropertyValue:()=>''});
+eval(scripts[0]);if(process.env.PERGUNTA){const f=window.PROGRESS.frentes.find(f=>f.id===process.env.PERGUNTA);f.pergunta='Pergunta de teste <b>?';f.estado='parado';f.texto='parada: esperando você responder';}global.PROGRESS=window.PROGRESS;eval(scripts[1].replace('render(window.PROGRESS);','render(window.PROGRESS);global.__ok=1'));
+console.log('scripts',scripts.length,'ok',global.__ok);
+const used=Object.keys(els);console.log('ids sem uso:',[...ids].filter(i=>!used.includes(i)).join(' ')||'-');
+for(const k of ['live','updated','h-dll','h-dll-sub','h-exe','h-exe-sub','h-tot','h-tot-sub','h-host','h-host-sub','units-title','fases-meta','pedidos-meta','sys-meta','func-note','foot'])console.log(k,'=',(els[k].textContent||els[k].innerHTML).slice(0,170));
+for(const k of ['groups','hist','waffle','biggest','frentes','func','pedidos','sistemas','fases','activity','table','legend-units'])console.log(k,els[k].innerHTML.length,/NaN|undefined|Infinity/.test(els[k].innerHTML)?'TEM NaN/undefined':'limpo');
+console.log(els['biggest'].innerHTML.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').slice(0,600));
+for(const k of ['ask','frentes','func','pedidos','sistemas','fases'])console.log(k+':',!els[k]?'(não usado)':els[k].hidden===false?'(visível)':'',(els[k]||{innerHTML:''}).innerHTML.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').slice(0,700));
+console.log(els['legend-units'].innerHTML.replace(/<[^>]+>/g,' ').replace(/\s+/g,' '));

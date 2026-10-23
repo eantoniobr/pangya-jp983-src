@@ -1,0 +1,862 @@
+# nome decorado	VA no 983	evidência (entradas à mão; tools/f33/mkmap.py junta no map/projectg.tsv e elas vencem)
+??0CSharedDoc@@QAE@XZ	006498d0	grava a vtable 00d16488 (RTTI CSharedDoc) em 00649913 depois de ??0BaseObject
+??1CSharedDoc@@UAE@XZ	006481a0	grava a vtable 00d16488 em 006481cf; destrói os membros na ordem inversa
+?GetCreatePosition@FrWndManager@@QAE?AVWPoint@@ABVWSize@@@Z	00be41c0	s38: chama ConfineRect (00be3930) e devolve WPoint; desmonte confere com a fonte
+?CloseLayout@FrWndManager@@QAEXXZ	00be50f0	s38: SendCmdToOwnerTarget(0xe), CloseChild(NULL,false,true), SetOwner(NULL), m_layoutID = ""
+?CountForms983@FrWndManager@@QAEHXZ	00be4730	s38: função nova do 983, chamada por FrWnd::OnProcess (00be971d)
+?DisplayImeCandidate983@FrWndManager@@QAEXXZ	00be39e0	s38: função nova do 983, chamada no fim de FrWndManager::Display (00be4634); usa CChatMsg::IME_GetCandList
+?GetTextWidth@WFont@@UAEMPAVWView@@PBD@Z	00b5ddc0	s39: slot 5 da vtable do WFont no 983 (o que os chamadores usam); chama a variante nova 00b5dc90
+?GetTextWidthOld983@WFont@@UAEMPAVWView@@PBD@Z	00b61870	s39: slot 6, virtual novo; chama o PrintOut antigo 00b611f0
+?GetTextExtendOld983@FrGraphicInterface@@QAEMPBD@Z	00bec480	s39: função nova, WFont slot 6 com m_pFont12
+?GetTextExtendOld11_983@FrGraphicInterface@@QAEMPBD@Z	00bec4a0	s39: idem com m_pFont11
+?UploadTexture@WResourceManager@@QAEHPBDPAVBitmap@@KPAUtagRECT@@H@Z	00b5c270	s42: 5 argumentos (ret 0x14); mesmo corpo do UploadTexture de 4 do 645 + 1 argumento repassado ao CreateTexture
+?GetTextureWidth@WResourceManager@@QAEHH@Z	00b598a0	s42: laço da texList com trava em +0x184, devolve [tex+0]
+?GetTextureHeight@WResourceManager@@QAEHH@Z	00b59970	s42: idem, devolve [tex+4]
+?Release@WResourceManager@@QAEXH@Z	00b5a870	s42: trava +0x184, laço embutido, DestroyTexture
+?GetCFileRaw983@@YAPAVcFile@@PBDH@Z	00baf3d0	s42: _open(path, O_BINARY) + cFileRaw/cFileMemory; nome provisório
+?GetCFile@WResourceManager@@QAEPAVcFile@@PBDH@Z	00b59d00	s42: corpo novo do 983 (lista +0x1e4, depois matchList)
+?SetValue@FrNumEdit@@QAEXK@Z	008d12f0	s51: única função livre do tamanho entre os métodos de FrNumEdit; lê m_min/m_max em this+0x114…; conferida pelo diff
+?OnProc@FrNumEdit@@MAEXM@Z	008d5d90	s51: 362 B (nosso 349); slot OnProc da vtable de FrNumEdit; conferida pelo diff
+?OnProc@FrPangEdit@@MAEXM@Z	008d5f00	s51: 519 B (nosso 511), logo depois de FrNumEdit::OnProc; conferida pelo diff
+?OpenNumEditWnd@FrPrivateTradeWnd@@IAEXH@Z	008d62c0	s51: 324 B = nosso; chama CreateForm<FrNumEdit> (008d2c30)
+?OnViewDraw@FrTradeToolTip@@IAEXXZ	008d3c00	s51: 817 B (nosso 811), entre OnTextListDraw e OnSendItemUpdate
+?OnInit@FrPrivateTrade@@UAE_NXZ	008d9c20	s51: 937 B (nosso 921); chama os 4 CreateForm
+??$CreateForm@VFrNumEdit@@@@YIPAVFrNumEdit@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	008d2c30	s51: operator new de 0x130 (FrNumEdit), vizinha de CreateForm<FrPangEdit> 008d2b60
+??$CreateForm@VFrMyWareHouse@@@@YIPAVFrMyWareHouse@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	008d8c10	s51: operator new de 0x170 = o de FrMyWareHouseMakeInstance (008d8fb0)
+??$CreateForm@VFrTradeToolTip@@@@YIPAVFrTradeToolTip@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	008d9500	s51: operator new de 0x140 = o de FrTradeToolTipMakeInstance
+?FrTradeToolTipMakeInstance@@YIPAVIObject@@XZ	008d9b60	s51: new 0x140 + call ??0FrTradeToolTip (008d9360)
+?FrPrivateTradeMakeInstance@@YIPAVIObject@@XZ	008d57b0	s51: new 0x180 + call ??0FrPrivateTrade (008d4de0)
+?FrNumEditMakeInstance@@YIPAVIObject@@XZ	008d1230	s51: new 0x130 + call ??0FrNumEdit (008d0280); o mapa tinha 00bf1730 (outra classe de 0x130, igual com o alvo mascarado)
+?FrPangEditMakeInstance@@YIPAVIObject@@XZ	008d15e0	s51: new 0x130 + call ??0FrPangEdit (008d03a0); o mapa tinha 00bf1730
+??0CGolfCaddie@@IAE@XZ	0073a5d0	s52 mkinst.py: construtor chamado pelo MakeInstance 0073b610; grava a vtable de CGolfCaddie (RTTI)
+??0CGolfRule@@QAE@XZ	0068aea0	s52 mkinst.py: construtor chamado pelo MakeInstance 0068b420; grava a vtable de CGolfRule (RTTI)
+??0CGolfTask@@IAE@XZ	0069ec20	s52 mkinst.py: construtor chamado pelo MakeInstance 006a4f00; grava a vtable de CGolfTask (RTTI)
+??0CGrid@@IAE@XZ	007484f0	s52 mkinst.py: construtor chamado pelo MakeInstance 00749ae0; grava a vtable de CGrid (RTTI)
+??0CLetter@@IAE@XZ	00760f10	s52 mkinst.py: construtor chamado pelo MakeInstance 007611e0; grava a vtable de CLetter (RTTI)
+??0CLobbyMain@@QAE@XZ	00aba400	s52 mkinst.py: construtor chamado pelo MakeInstance 00592fb0; grava a vtable de CLobbyMain (RTTI)
+??0CRealMyRoomMain@@QAE@XZ	0061f1f0	s52 mkinst.py: construtor chamado pelo MakeInstance 00620ba0; grava a vtable de CRealMyRoomMain (RTTI)
+??0CScore@@IAE@XZ	00799f10	s52 mkinst.py: construtor chamado pelo MakeInstance 0079a120; grava a vtable de CScore (RTTI)
+??0CScreen@@IAE@XZ	00751400	s52 mkinst.py: construtor chamado pelo MakeInstance 00753cb0; grava a vtable de CScreen (RTTI)
+??0CShopMain@@QAE@XZ	00a91ec0	s52 mkinst.py: construtor chamado pelo MakeInstance 00a92d80; grava a vtable de CShopMain (RTTI)
+??0CSpot@@IAE@XZ	0072ca70	s52 mkinst.py: construtor chamado pelo MakeInstance 0072cc80; grava a vtable de CSpot (RTTI)
+??0CTreasureAlarmDlg@@QAE@XZ	008c5900	s52 mkinst.py: construtor chamado pelo MakeInstance 008c5a50; grava a vtable de CTreasureAlarmDlg (RTTI); o mapa tinha 00b03830
+??0CTutorialMain@@QAE@XZ	007d4820	s52 mkinst.py: construtor chamado pelo MakeInstance 007d5170; grava a vtable de CTutorialMain (RTTI)
+??0FrArea@@QAE@XZ	00beb0d0	s52 mkinst.py: construtor chamado pelo MakeInstance 00beb650; grava a vtable de FrArea (RTTI)
+??0FrBingoGiftDlg@@QAE@XZ	00afeea0	s52 mkinst.py: construtor chamado pelo MakeInstance 00aff5f0; grava a vtable de FrBingoGiftDlg (RTTI)
+??0FrBirthdayEventDlg@@QAE@XZ	00b13500	s52 mkinst.py: construtor chamado pelo MakeInstance 00b136a0; grava a vtable de FrBirthdayEventDlg (RTTI)
+??0FrBongdariShopDlg@@QAE@XZ	008c0340	s52 mkinst.py: construtor chamado pelo MakeInstance 008c12b0; grava a vtable de FrBongdariShopDlg (RTTI)
+??0FrCardAttachDlg@@QAE@XZ	008052b0	s52 mkinst.py: construtor chamado pelo MakeInstance 008058f0; grava a vtable de FrCardAttachDlg (RTTI)
+??0FrCardRemove@@QAE@XZ	007ffd90	s52 mkinst.py: construtor chamado pelo MakeInstance 007fff80; grava a vtable de FrCardRemove (RTTI)
+??0FrCardRemoveConfirm@@QAE@XZ	007fe5f0	s52 mkinst.py: construtor chamado pelo MakeInstance 007fe650; grava a vtable de FrCardRemoveConfirm (RTTI)
+??0FrChangeNickDlg@@QAE@XZ	008cec50	s52 mkinst.py: construtor chamado pelo MakeInstance 008cf000; grava a vtable de FrChangeNickDlg (RTTI)
+??0FrChangeRoomInfoDlg@@QAE@XZ	00acae20	s52 mkinst.py: construtor chamado pelo MakeInstance 00acb760; grava a vtable de FrChangeRoomInfoDlg (RTTI)
+??0FrChatFuncDlg@@QAE@XZ	0074a940	s52 mkinst.py: construtor chamado pelo MakeInstance 0074b520; grava a vtable de FrChatFuncDlg (RTTI)
+??0FrCheckoutDlg@@QAE@XZ	00aa1af0	s52 mkinst.py: construtor chamado pelo MakeInstance 00aa2520; grava a vtable de FrCheckoutDlg (RTTI)
+??0FrChristmasSockEventDescDlg@@QAE@XZ	00b032a0	s52 mkinst.py: construtor chamado pelo MakeInstance 00b03320; grava a vtable de FrChristmasSockEventDescDlg (RTTI); o mapa tinha 00b10690
+??0FrDtRoomDlg@@QAE@XZ	00acf350	s52 mkinst.py: construtor chamado pelo MakeInstance 00ad0360; grava a vtable de FrDtRoomDlg (RTTI)
+??0FrForm@@QAE@XZ	00be5f00	s52 mkinst.py: construtor chamado pelo MakeInstance 00be6450; grava a vtable de FrForm (RTTI)
+??0FrFortuneDlg@@QAE@XZ	00aa7480	s52 mkinst.py: construtor chamado pelo MakeInstance 00aa7560; grava a vtable de FrFortuneDlg (RTTI)
+??0FrFortuneOpenDlg@@QAE@XZ	00aa9a20	s52 mkinst.py: construtor chamado pelo MakeInstance 00aa9d20; grava a vtable de FrFortuneOpenDlg (RTTI)
+??0FrGhostTimeBar@@QAE@XZ	00818cc0	s52 mkinst.py: construtor chamado pelo MakeInstance 0081a520; grava a vtable de FrGhostTimeBar (RTTI)
+??0FrGiftDlg@@QAE@XZ	00aaf030	s52 mkinst.py: construtor chamado pelo MakeInstance 00aaf7a0; grava a vtable de FrGiftDlg (RTTI)
+??0FrItemAttachCardDlg@@QAE@XZ	00806b40	s52 mkinst.py: construtor chamado pelo MakeInstance 008086b0; grava a vtable de FrItemAttachCardDlg (RTTI)
+??0FrJukeBoxDlg@@QAE@XZ	007ba760	s52 mkinst.py: construtor chamado pelo MakeInstance 007bb120; grava a vtable de FrJukeBoxDlg (RTTI); o mapa tinha 007fe5f0
+??0FrListBox@@QAE@XZ	00bf1400	s52 mkinst.py: construtor chamado pelo MakeInstance 00bf1730; grava a vtable de FrListBox (RTTI)
+??0FrLoginDlg@@QAE@XZ	00ada490	s52 mkinst.py: construtor chamado pelo MakeInstance 00ada630; grava a vtable de FrLoginDlg (RTTI)
+??0FrLogoutDlg@@QAE@XZ	00adbdb0	s52 mkinst.py: construtor chamado pelo MakeInstance 00adbe50; grava a vtable de FrLogoutDlg (RTTI); o mapa tinha 008ed070
+??0FrMakeRoomDlg@@QAE@XZ	00adead0	s52 mkinst.py: construtor chamado pelo MakeInstance 00adf370; grava a vtable de FrMakeRoomDlg (RTTI)
+??0FrMessengerDlg@@QAE@XZ	00902780	s52 mkinst.py: construtor chamado pelo MakeInstance 00903750; grava a vtable de FrMessengerDlg (RTTI)
+??0FrOptionDlg@@QAE@XZ	008c9070	s52 mkinst.py: construtor chamado pelo MakeInstance 008cd950; grava a vtable de FrOptionDlg (RTTI)
+??0FrQuickStartSettingDlg@@QAE@XZ	00ad0af0	s52 mkinst.py: construtor chamado pelo MakeInstance 00ad1530; grava a vtable de FrQuickStartSettingDlg (RTTI)
+??0FrQuitForm@@QAE@XZ	006ef350	s52 mkinst.py: construtor chamado pelo MakeInstance 006efbf0; grava a vtable de FrQuitForm (RTTI)
+??0FrRandomBoxProgress@@QAE@XZ	008c52e0	s52 mkinst.py: construtor chamado pelo MakeInstance 008c53d0; grava a vtable de FrRandomBoxProgress (RTTI)
+??0FrRankForm@@QAE@XZ	00781430	s52 mkinst.py: construtor chamado pelo MakeInstance 00784b30; grava a vtable de FrRankForm (RTTI)
+??0FrRankingDlg@@QAE@XZ	00b2a740	s52 mkinst.py: construtor chamado pelo MakeInstance 00b2acf0; grava a vtable de FrRankingDlg (RTTI)
+??0FrRecycleDlg@@QAE@XZ	008e15f0	s52 mkinst.py: construtor chamado pelo MakeInstance 008e25f0; grava a vtable de FrRecycleDlg (RTTI)
+??0FrResultDlg@@QAE@XZ	00aea010	s52 mkinst.py: construtor chamado pelo MakeInstance 00aeb7b0; grava a vtable de FrResultDlg (RTTI)
+??0FrReturnGiftDlg@@QAE@XZ	00ab13c0	s52 mkinst.py: construtor chamado pelo MakeInstance 00ab1420; grava a vtable de FrReturnGiftDlg (RTTI)
+??0FrSPCardBuffDlg@@QAE@XZ	00800dd0	s52 mkinst.py: construtor chamado pelo MakeInstance 00802b00; grava a vtable de FrSPCardBuffDlg (RTTI)
+??0FrScratchDlg@@QAE@XZ	008ec050	s52 mkinst.py: construtor chamado pelo MakeInstance 008ec8b0; grava a vtable de FrScratchDlg (RTTI)
+??0FrScratchResultDlg@@QAE@XZ	008eaaf0	s52 mkinst.py: construtor chamado pelo MakeInstance 008eb220; grava a vtable de FrScratchResultDlg (RTTI)
+??0FrServerDlg@@QAE@XZ	00af4060	s52 mkinst.py: construtor chamado pelo MakeInstance 00af4950; grava a vtable de FrServerDlg (RTTI)
+??0FrStatic@@QAE@XZ	00c022d0	s52 mkinst.py: construtor chamado pelo MakeInstance 00c02440; grava a vtable de FrStatic (RTTI)
+??0FrSubEquipBar@@QAE@XZ	00b23c70	s52 mkinst.py: construtor chamado pelo MakeInstance 00b24090; grava a vtable de FrSubEquipBar (RTTI)
+??0FrTradeBuyDlg@@QAE@XZ	008eed50	s52 mkinst.py: construtor chamado pelo MakeInstance 008f21e0; grava a vtable de FrTradeBuyDlg (RTTI)
+??0FrTradeDlg@@QAE@XZ	008f0fa0	s52 mkinst.py: construtor chamado pelo MakeInstance 008f4f20; grava a vtable de FrTradeDlg (RTTI)
+??0FrTradeEditDlg@@QAE@XZ	008f6ba0	s52 mkinst.py: construtor chamado pelo MakeInstance 008f8460; grava a vtable de FrTradeEditDlg (RTTI)
+??0FrTradeFinishEditDlg@@QAE@XZ	008f4200	s52 mkinst.py: construtor chamado pelo MakeInstance 008f5a50; grava a vtable de FrTradeFinishEditDlg (RTTI)
+??0FrTradeResultDlg@@QAE@XZ	008ef300	s52 mkinst.py: construtor chamado pelo MakeInstance 008f2cd0; grava a vtable de FrTradeResultDlg (RTTI)
+??0FrTreasureCourse@@QAE@XZ	00841600	s52 mkinst.py: construtor chamado pelo MakeInstance 00841ae0; grava a vtable de FrTreasureCourse (RTTI)
+??0FrUccDrawDlg@@QAE@XZ	007e5380	s52 mkinst.py: construtor chamado pelo MakeInstance 007e6160; grava a vtable de FrUccDrawDlg (RTTI)
+??0FrUniteResultDlg@@QAE@XZ	00aebea0	s52 mkinst.py: construtor chamado pelo MakeInstance 00aedc60; grava a vtable de FrUniteResultDlg (RTTI)
+??0FrUserInfoForm@@QAE@XZ	008a7610	s52 mkinst.py: construtor chamado pelo MakeInstance 008a9150; grava a vtable de FrUserInfoForm (RTTI)
+??0ShotPreview@@AAE@XZ	00844d40	s52 mkinst.py: construtor chamado pelo MakeInstance 00844fe0; grava a vtable de ShotPreview (RTTI)
+??0ntAvatarChatTask@@IAE@XZ	007b5150	s52 mkinst.py: construtor chamado pelo MakeInstance 007b5960; grava a vtable de ntAvatarChatTask (RTTI)
+??0ntMsnUserSnapshotDlg@@QAE@XZ	009070c0	s52 mkinst.py: construtor chamado pelo MakeInstance 00907170; grava a vtable de ntMsnUserSnapshotDlg (RTTI); o mapa tinha 00b0ba60
+?CFurniture_AbilityDlgMakeInstance@@YIPAVIObject@@XZ	007f1d10	s52 mkinst.py: new 0x150 + call 007f1b80, que grava a vtable de CFurniture_AbilityDlg (RTTI); o mapa tinha 007f2690
+?CGolfCaddieMakeInstance@@YIPAVIObject@@XZ	0073b610	s52 mkinst.py: new 0xd8 + call 0073a5d0, que grava a vtable de CGolfCaddie (RTTI)
+?CGolfRuleMakeInstance@@YIPAVIObject@@XZ	0068b420	s52 mkinst.py: new 0x650 + call 0068aea0, que grava a vtable de CGolfRule (RTTI)
+?CGolfTaskMakeInstance@@YIPAVIObject@@XZ	006a4f00	s52 mkinst.py: new 0x21c + call 0069ec20, que grava a vtable de CGolfTask (RTTI)
+?CGridMakeInstance@@YIPAVIObject@@XZ	00749ae0	s52 mkinst.py: new 0x6b20 + call 007484f0, que grava a vtable de CGrid (RTTI)
+?CLetterMakeInstance@@YIPAVIObject@@XZ	007611e0	s52 mkinst.py: new 0x53c + call 00760f10, que grava a vtable de CLetter (RTTI); o mapa tinha 00762230
+?CLobbyMainMakeInstance@@YIPAVIObject@@XZ	00592fb0	s52 mkinst.py: new 0x7a4 + call 00aba400, que grava a vtable de CLobbyMain (RTTI)
+?CMascotMakeInstance@@YIPAVIObject@@XZ	00762230	s52 mkinst.py: new 0x84 + call 00761cd0, que grava a vtable de CMascot (RTTI)
+?CPost_ContentsMakeInstance@@YIPAVIObject@@XZ	005b2d60	s52 mkinst.py: new 0x130 + call 005b1730, que grava a vtable de CPost_Contents (RTTI)
+?CPost_ItemCountDlgMakeInstance@@YIPAVIObject@@XZ	0080b2c0	s52 mkinst.py: new 0x130 + call 0080b250, que grava a vtable de CPost_ItemCountDlg (RTTI); o mapa tinha 00bf1730
+?CPost_MessgeDlgMakeInstance@@YIPAVIObject@@XZ	005b2b50	s52 mkinst.py: new 0x140 + call 005b1500, que grava a vtable de CPost_MessgeDlg (RTTI); o mapa tinha 005e0d70
+?CPost_MyItemListMakeInstance@@YIPAVIObject@@XZ	0080d240	s52 mkinst.py: new 0x180 + call 0080c740, que grava a vtable de CPost_MyItemList (RTTI); o mapa tinha 00bf4160
+?CPost_SendDlgMakeInstance@@YIPAVIObject@@XZ	0080f3c0	s52 mkinst.py: new 0x1b0 + call 0080ea70, que grava a vtable de CPost_SendDlg (RTTI)
+?CRealMyRoomMainMakeInstance@@YIPAVIObject@@XZ	00620ba0	s52 mkinst.py: new 0xae0 + call 0061f1f0, que grava a vtable de CRealMyRoomMain (RTTI)
+?CScoreMakeInstance@@YIPAVIObject@@XZ	0079a120	s52 mkinst.py: new 0xa0 + call 00799f10, que grava a vtable de CScore (RTTI); o mapa tinha 00792c70
+?CScreenMakeInstance@@YIPAVIObject@@XZ	00753cb0	s52 mkinst.py: new 0x528 + call 00751400, que grava a vtable de CScreen (RTTI)
+?CShopMainMakeInstance@@YIPAVIObject@@XZ	00a92d80	s52 mkinst.py: new 0x6c0 + call 00a91ec0, que grava a vtable de CShopMain (RTTI); o mapa tinha 00a82010
+?CSpotMakeInstance@@YIPAVIObject@@XZ	0072cc80	s52 mkinst.py: new 0x274 + call 0072ca70, que grava a vtable de CSpot (RTTI); o mapa tinha 00ad0360
+?CTaskMainMakeInstance@@YIPAVIObject@@XZ	0065d3a0	s52 mkinst.py: new 0x218 + call 0065d1f0, que grava a vtable de CTaskMain (RTTI); o mapa tinha 00712920
+?CTreasureAlarmDlgMakeInstance@@YIPAVIObject@@XZ	008c5a50	s52 mkinst.py: new 0x130 + call 008c5900, que grava a vtable de CTreasureAlarmDlg (RTTI); o mapa tinha 00bf1730
+?CTutorialMainMakeInstance@@YIPAVIObject@@XZ	007d5170	s52 mkinst.py: new 0x460 + call 007d4820, que grava a vtable de CTutorialMain (RTTI)
+?FrAboutShopDlgMakeInstance@@YIPAVIObject@@XZ	008b62d0	s52 mkinst.py: new 0x150 + call 008b3e80, que grava a vtable de FrAboutShopDlg (RTTI)
+?FrApproachEndDlgMakeInstance@@YIPAVIObject@@XZ	00861ef0	s52 mkinst.py: new 0x130 + call 00861b50, que grava a vtable de FrApproachEndDlg (RTTI); o mapa tinha 00bf1730
+?FrAutoConnectMakeInstance@@YIPAVIObject@@XZ	00af3fd0	s52 mkinst.py: new 0x130 + call 00af3d60, que grava a vtable de FrAutoConnect (RTTI); o mapa tinha 00bf1730
+?FrAvatarChatLogDlgMakeInstance@@YIPAVIObject@@XZ	007b9100	s52 mkinst.py: new 0x130 + call 007b9040, que grava a vtable de FrAvatarChatLogDlg (RTTI); o mapa tinha 007b98c0
+?FrAvatarTipDlgMakeInstance@@YIPAVIObject@@XZ	007b98c0	s52 mkinst.py: new 0x130 + call 007b9790, que grava a vtable de FrAvatarTipDlg (RTTI); o mapa tinha 00bf1730
+?FrAwardInfoDlgMakeInstance@@YIPAVIObject@@XZ	00ae7d30	s52 mkinst.py: new 0x120 + call 00ae7170, que grava a vtable de FrAwardInfoDlg (RTTI); o mapa tinha 00bf5100
+?FrBingoDetailDlgMakeInstance@@YIPAVIObject@@XZ	00afc250	s52 mkinst.py: new 0x120 + call 00afab10, que grava a vtable de FrBingoDetailDlg (RTTI); o mapa tinha 00bf5100
+?FrBingoEventDlgMakeInstance@@YIPAVIObject@@XZ	00b01a10	s52 mkinst.py: new 0x1e0 + call 00b017c0, que grava a vtable de FrBingoEventDlg (RTTI); o mapa tinha 00bf6900
+?FrBirthdayEventHelpDlgMakeInstance@@YIPAVIObject@@XZ	00b12f80	s52 mkinst.py: new 0x120 + call 00b12630, que grava a vtable de FrBirthdayEventHelpDlg (RTTI); o mapa tinha 00bf5100
+?FrBirthdayEventMissionDlgMakeInstance@@YIPAVIObject@@XZ	00b130b0	s52 mkinst.py: new 0x190 + call 00b126b0, que grava a vtable de FrBirthdayEventMissionDlg (RTTI); o mapa tinha 00bf6900
+?FrBongdariShopDlgMakeInstance@@YIPAVIObject@@XZ	008c12b0	s52 mkinst.py: new 0xb30 + call 008c0340, que grava a vtable de FrBongdariShopDlg (RTTI)
+?FrBongdarishopNoticeDlgMakeInstance@@YIPAVIObject@@XZ	008c15c0	s52 mkinst.py: new 0x150 + call 008c1340, que grava a vtable de FrBongdarishopNoticeDlg (RTTI); o mapa tinha 008c3730
+?FrCardAttachDlgMakeInstance@@YIPAVIObject@@XZ	008058f0	s52 mkinst.py: new 0x170 + call 008052b0, que grava a vtable de FrCardAttachDlg (RTTI)
+?FrCardRemoveConfirmMakeInstance@@YIPAVIObject@@XZ	007fe650	s52 mkinst.py: new 0x120 + call 007fe5f0, que grava a vtable de FrCardRemoveConfirm (RTTI); o mapa tinha 00bf5100
+?FrCardRemoveResultMakeInstance@@YIPAVIObject@@XZ	008006f0	s52 mkinst.py: new 0x150 + call 00800010, que grava a vtable de FrCardRemoveResult (RTTI); o mapa tinha 00b3cc30
+?FrCardUseDlgMakeInstance@@YIPAVIObject@@XZ	008015d0	s52 mkinst.py: new 0x130 + call 00800900, que grava a vtable de FrCardUseDlg (RTTI); o mapa tinha 00bf1730
+?FrChangeNickDlgMakeInstance@@YIPAVIObject@@XZ	008cf000	s52 mkinst.py: new 0x120 + call 008cec50, que grava a vtable de FrChangeNickDlg (RTTI); o mapa tinha 00b12f80
+?FrChangeRoomInfoDlgMakeInstance@@YIPAVIObject@@XZ	00acb760	s52 mkinst.py: new 0x2e0 + call 00acae20, que grava a vtable de FrChangeRoomInfoDlg (RTTI); o mapa tinha 008f8460
+?FrChatFuncDlgMakeInstance@@YIPAVIObject@@XZ	0074b520	s52 mkinst.py: new 0x130 + call 0074a940, que grava a vtable de FrChatFuncDlg (RTTI)
+?FrCheckoutDlgMakeInstance@@YIPAVIObject@@XZ	00aa2520	s52 mkinst.py: new 0x400 + call 00aa1af0, que grava a vtable de FrCheckoutDlg (RTTI)
+?FrChristmasSockEventDescDlgMakeInstance@@YIPAVIObject@@XZ	00b03320	s52 mkinst.py: new 0x120 + call 00b032a0, que grava a vtable de FrChristmasSockEventDescDlg (RTTI); o mapa tinha 00bf5100
+?FrCompoundDlgMakeInstance@@YIPAVIObject@@XZ	00aa4a40	s52 mkinst.py: new 0x2e0 + call 00aa44e0, que grava a vtable de FrCompoundDlg (RTTI); o mapa tinha 00aa6680
+?FrDeleteItemDlgMakeInstance@@YIPAVIObject@@XZ	00a7f8b0	s52 mkinst.py: new 0x130 + call 00a7f770, que grava a vtable de FrDeleteItemDlg (RTTI); o mapa tinha 00a81900
+?FrDtRoomDlgMakeInstance@@YIPAVIObject@@XZ	00ad0360	s52 mkinst.py: new 0x260 + call 00acf350, que grava a vtable de FrDtRoomDlg (RTTI)
+?FrFinalRankDlgMakeInstance@@YIPAVIObject@@XZ	00ad5d70	s52 mkinst.py: new 0x120 + call 00ad5aa0, que grava a vtable de FrFinalRankDlg (RTTI); o mapa tinha 00bf5100
+?FrFortuneDlgMakeInstance@@YIPAVIObject@@XZ	00aa7560	s52 mkinst.py: new 0x130 + call 00aa7480, que grava a vtable de FrFortuneDlg (RTTI); o mapa tinha 00bf1730
+?FrGiftAlarmDlgMakeInstance@@YIPAVIObject@@XZ	008c6eb0	s52 mkinst.py: new 0x140 + call 008c6d60, que grava a vtable de FrGiftAlarmDlg (RTTI); o mapa tinha 00b0fa10
+?FrGiftDlgMakeInstance@@YIPAVIObject@@XZ	00aaf7a0	s52 mkinst.py: new 0x4a0 + call 00aaf030, que grava a vtable de FrGiftDlg (RTTI)
+?FrGuildDlgMakeInstance@@YIPAVIObject@@XZ	00ad7780	s52 mkinst.py: new 0x120 + call 00ad7570, que grava a vtable de FrGuildDlg (RTTI); o mapa tinha 00bf5100
+?FrHalloweenEventDescDlgMakeInstance@@YIPAVIObject@@XZ	00b03d00	s52 mkinst.py: new 0x120 + call 00b038b0, que grava a vtable de FrHalloweenEventDescDlg (RTTI); o mapa tinha 00bf5100
+?FrHalloweenEventGiftDlgMakeInstance@@YIPAVIObject@@XZ	00b03aa0	s52 mkinst.py: new 0x120 + call 00b03830, que grava a vtable de FrHalloweenEventGiftDlg (RTTI); o mapa tinha 00bf5100
+?FrJukeBoxDlgMakeInstance@@YIPAVIObject@@XZ	007bb120	s52 mkinst.py: new 0x170 + call 007ba760, que grava a vtable de FrJukeBoxDlg (RTTI); o mapa tinha 00bf5100
+?FrLevelupItemFormMakeInstance@@YIPAVIObject@@XZ	00ad9020	s52 mkinst.py: new 0x210 + call 00ad8b00, que grava a vtable de FrLevelupItemForm (RTTI); o mapa tinha 00ada630
+?FrListBoxMakeInstance@@YIPAVIObject@@XZ	00bf1730	s52 mkinst.py: new 0x128 + call 00bf1400, que grava a vtable de FrListBox (RTTI); o mapa tinha 00bf4160
+?FrLoginRsDlgMakeInstance@@YIPAVIObject@@XZ	00adbd10	s52 mkinst.py: new 0x120 + call 00adba40, que grava a vtable de FrLoginRsDlg (RTTI); o mapa tinha 00bf5100
+?FrMascotInfoDlgMakeInstance@@YIPAVIObject@@XZ	00a81620	s52 mkinst.py: new 0x1a0 + call 00a80ea0, que grava a vtable de FrMascotInfoDlg (RTTI); o mapa tinha 00c06600
+?FrMessengerDlgMakeInstance@@YIPAVIObject@@XZ	00903750	s52 mkinst.py: new 0x3c0 + call 00902780, que grava a vtable de FrMessengerDlg (RTTI)
+?FrMissionDetailMakeInstance@@YIPAVIObject@@XZ	00b0a240	s52 mkinst.py: new 0x120 + call 00b09860, que grava a vtable de FrMissionDetail (RTTI); o mapa tinha 00bf5100
+?FrOpenCardPackDlgMakeInstance@@YIPAVIObject@@XZ	00801770	s52 mkinst.py: new 0x120 + call 00800980, que grava a vtable de FrOpenCardPackDlg (RTTI)
+?FrOpenCardPackResultDlgMakeInstance@@YIPAVIObject@@XZ	00801910	s52 mkinst.py: new 0x130 + call 008009f0, que grava a vtable de FrOpenCardPackResultDlg (RTTI); o mapa tinha 00bf1730
+?FrPangGiftDlgMakeInstance@@YIPAVIObject@@XZ	00a81900	s52 mkinst.py: new 0x130 + call 00a81880, que grava a vtable de FrPangGiftDlg (RTTI); o mapa tinha 00bf1730
+?FrParanNickDlgMakeInstance@@YIPAVIObject@@XZ	00ae58b0	s52 mkinst.py: new 0x120 + call 00ae5820, que grava a vtable de FrParanNickDlg (RTTI); o mapa tinha 00bf5100
+?FrPointEventDescDlgMakeInstance@@YIPAVIObject@@XZ	00b0c7e0	s52 mkinst.py: new 0x160 + call 00b0bb90, que grava a vtable de FrPointEventDescDlg (RTTI); o mapa tinha 00bf2750
+?FrPointEventDlgMakeInstance@@YIPAVIObject@@XZ	00b0dd80	s52 mkinst.py: new 0x650 + call 00b0c980, que grava a vtable de FrPointEventDlg (RTTI); o mapa tinha 00bf4160
+?FrPointEventNoticeDlgMakeInstance@@YIPAVIObject@@XZ	00b0c430	s52 mkinst.py: new 0x130 + call 00b0ba60, que grava a vtable de FrPointEventNoticeDlg (RTTI); o mapa tinha 00bf1730
+?FrQuickResultDlgMakeInstance@@YIPAVIObject@@XZ	00ad0f40	s52 mkinst.py: new 0x120 + call 00ad09d0, que grava a vtable de FrQuickResultDlg (RTTI); o mapa tinha 00bf5100
+?FrQuitFormMakeInstance@@YIPAVIObject@@XZ	006efbf0	s52 mkinst.py: new 0x130 + call 006ef350, que grava a vtable de FrQuitForm (RTTI); o mapa tinha 00bf1730
+?FrRandomBoxProgressMakeInstance@@YIPAVIObject@@XZ	008c53d0	s52 mkinst.py: new 0x130 + call 008c52e0, que grava a vtable de FrRandomBoxProgress (RTTI); o mapa tinha 00bf1730
+?FrRankForm3MakeInstance@@YIPAVIObject@@XZ	007887a0	s52 mkinst.py: new 0x180 + call 00785190, que grava a vtable de FrRankForm3 (RTTI)
+?FrRankFormMakeInstance@@YIPAVIObject@@XZ	00784b30	s52 mkinst.py: new 0x170 + call 00781430, que grava a vtable de FrRankForm (RTTI)
+?FrReturnGiftDlgMakeInstance@@YIPAVIObject@@XZ	00ab1420	s52 mkinst.py: new 0x120 + call 00ab13c0, que grava a vtable de FrReturnGiftDlg (RTTI); o mapa tinha 00bf5100
+?FrSPCardBuffDlgMakeInstance@@YIPAVIObject@@XZ	00802b00	s52 mkinst.py: new 0x160 + call 00800dd0, que grava a vtable de FrSPCardBuffDlg (RTTI); o mapa tinha 00bf5100
+?FrScoreFormMakeInstance@@YIPAVIObject@@XZ	00792c70	s52 mkinst.py: new 0x210 + call 007911d0, que grava a vtable de FrScoreForm (RTTI)
+?FrScratchDlgMakeInstance@@YIPAVIObject@@XZ	008ec8b0	s52 mkinst.py: new 0x2d0 + call 008ec050, que grava a vtable de FrScratchDlg (RTTI)
+?FrScratchResultDlgMakeInstance@@YIPAVIObject@@XZ	008eb220	s52 mkinst.py: new 0x150 + call 008eaaf0, que grava a vtable de FrScratchResultDlg (RTTI)
+?FrServerDlgMakeInstance@@YIPAVIObject@@XZ	00af4950	s52 mkinst.py: new 0x720 + call 00af4060, que grava a vtable de FrServerDlg (RTTI); o mapa tinha 007af840
+?FrSpCardUseDlgMakeInstance@@YIPAVIObject@@XZ	00801410	s52 mkinst.py: new 0x120 + call 00800890, que grava a vtable de FrSpCardUseDlg (RTTI); o mapa tinha 00bf1730
+?FrSubEquipBarMakeInstance@@YIPAVIObject@@XZ	00b24090	s52 mkinst.py: new 0x150 + call 00b23c70, que grava a vtable de FrSubEquipBar (RTTI)
+?FrTicketExchangeDlgMakeInstance@@YIPAVIObject@@XZ	00b09570	s52 mkinst.py: new 0x140 + call 00b088e0, que grava a vtable de FrTicketExchangeDlg (RTTI); o mapa tinha 00b0a6d0
+?FrTotalItemDlgMakeInstance@@YIPAVIObject@@XZ	008bebd0	s52 mkinst.py: new 0x1f0 + call 008be620, que grava a vtable de FrTotalItemDlg (RTTI)
+?FrTradeBuyDlgMakeInstance@@YIPAVIObject@@XZ	008f21e0	s52 mkinst.py: new 0x200 + call 008eed50, que grava a vtable de FrTradeBuyDlg (RTTI); o mapa tinha 00c07b10
+?FrTradeDlgMakeInstance@@YIPAVIObject@@XZ	008f4f20	s52 mkinst.py: new 0x210 + call 008f0fa0, que grava a vtable de FrTradeDlg (RTTI); o mapa tinha 00c04a10
+?FrTradeEditDlgMakeInstance@@YIPAVIObject@@XZ	008f8460	s52 mkinst.py: new 0x280 + call 008f6ba0, que grava a vtable de FrTradeEditDlg (RTTI); o mapa tinha 007f0540
+?FrTradeFinishEditDlgMakeInstance@@YIPAVIObject@@XZ	008f5a50	s52 mkinst.py: new 0x1a0 + call 008f4200, que grava a vtable de FrTradeFinishEditDlg (RTTI); o mapa tinha 00c06600
+?FrTradeLevelLimitDlgMakeInstance@@YIPAVIObject@@XZ	008f05f0	s52 mkinst.py: new 0x110 + call 008ee480, que grava a vtable de FrTradeLevelLimitDlg (RTTI); o mapa tinha 00c041a0
+?FrTradeResultDlgMakeInstance@@YIPAVIObject@@XZ	008f2cd0	s52 mkinst.py: new 0x1e0 + call 008ef300, que grava a vtable de FrTradeResultDlg (RTTI); o mapa tinha 008bebd0
+?FrTradeWarningDlgMakeInstance@@YIPAVIObject@@XZ	008efe50	s52 mkinst.py: new 0x130 + call 008ee3e0, que grava a vtable de FrTradeWarningDlg (RTTI); o mapa tinha 00bf1730
+?FrTreasureScoreMakeInstance@@YIPAVIObject@@XZ	0083daa0	s52 mkinst.py: new 0x130 + call 0083c080, que grava a vtable de FrTreasureScore (RTTI); o mapa tinha 00bf1730
+?FrUccCopyCompletedDlgMakeInstance@@YIPAVIObject@@XZ	007e1530	s52 mkinst.py: new 0x130 + call 007e0dd0, que grava a vtable de FrUccCopyCompletedDlg (RTTI); o mapa tinha 00bf1730
+?FrUccCopyConfirmDlgMakeInstance@@YIPAVIObject@@XZ	007e1250	s52 mkinst.py: new 0x130 + call 007e0d00, que grava a vtable de FrUccCopyConfirmDlg (RTTI); o mapa tinha 00bf1730
+?FrUccCopyDlgMakeInstance@@YIPAVIObject@@XZ	007e1730	s52 mkinst.py: new 0x140 + call 007e0ed0, que grava a vtable de FrUccCopyDlg (RTTI); o mapa tinha 00bf4160
+?FrUccSetInfoDlgMakeInstance@@YIPAVIObject@@XZ	007f0a40	s52 mkinst.py: new 0x140 + call 007f08f0, que grava a vtable de FrUccSetInfoDlg (RTTI); o mapa tinha 007f27e0
+?FrUpgradeCaddieDlgMakeInstance@@YIPAVIObject@@XZ	00ab1700	s52 mkinst.py: new 0x140 + call 00ab14f0, que grava a vtable de FrUpgradeCaddieDlg (RTTI); o mapa tinha 00ab2410
+?FrWorldTourEventDescDlgMakeInstance@@YIPAVIObject@@XZ	00b11ba0	s52 mkinst.py: new 0x120 + call 00b10690, que grava a vtable de FrWorldTourEventDescDlg (RTTI); o mapa tinha 00bf5100
+?FrWorldTourEventGiftDlgMakeInstance@@YIPAVIObject@@XZ	00b11d00	s52 mkinst.py: new 0x120 + call 00b10700, que grava a vtable de FrWorldTourEventGiftDlg (RTTI); o mapa tinha 00bf5100
+?GroundItemManMakeInstance@@YIPAVIObject@@XZ	0085e120	s52 mkinst.py: new 0xa38 + call 0085dc70, que grava a vtable de GroundItemMan (RTTI)
+?NtDetailDlgMakeInstance@@YIPAVIObject@@XZ	00ace1f0	s52 mkinst.py: new 0x120 + call 00ace170, que grava a vtable de NtDetailDlg (RTTI); o mapa tinha 00bf5100
+?ShotPreviewMakeInstance@@YIPAVIObject@@XZ	00844fe0	s52 mkinst.py: new 0x238 + call 00844d40, que grava a vtable de ShotPreview (RTTI); o mapa tinha 0077a630
+?ntMsnUserSnapshotDlgMakeInstance@@YIPAVIObject@@XZ	00907170	s52 mkinst.py: new 0x130 + call 009070c0, que grava a vtable de ntMsnUserSnapshotDlg (RTTI); o mapa tinha 00bf1730
+??0FxInterpreter@@QAE@PAVWPuppet@@H@Z	0088e520	s54: construtor: grava a vtable 00d34928 (RTTI FxInterpreter); IGUAL por bytes
+?DetachFx@FxInterpreter@@QAEXH@Z	00889df0	s54: chamado com o id do script pelos donos (0073bbfa, 0074dd25); IGUAL por bytes
+?DetachFxAll@FxInterpreter@@QAEXH@Z	0088c420	s54: chamado com -1 pelos donos (0073b6b9, 00761b79); IGUAL por bytes
+?ParseBoundingBoxScript_fx@FxInterpreter@@QAEHPAVWPuppet@@@Z	0088e860	s54: 1 argumento (pet) em 0073bc0f, 007631ae, 0074bf3e; corpo nao escrito
+?SetUnk983_1cc@FxInterpreter@@QAEXH@Z	0088c460	s54: compara e grava +0x1cc; corpo nao escrito
+?Init983@FxInterpreter@@IAEXXZ	0088c6b0	s54: chamado pelo construtor (0088e757)
+?Unk983_880d40@FxInterpreter@@IAEXPAVWPuppet@@@Z	00880d40	s54: chamado pelo construtor (0088e762)
+?Unk983_87f2d0@FxInterpreter@@IAEXPAVWPuppet@@@Z	0087f2d0	s54: chamado pelo construtor (0088e771)
+?DetachA983@FxInterpreter@@IAEXH@Z	0088b140	s54: 1a chamada de DetachFxAll
+?DetachB983@FxInterpreter@@IAEXH@Z	00887cb0	s54: 2a chamada de DetachFxAll
+?DetachC983@FxInterpreter@@IAEXH@Z	0088b8d0	s54: 3a chamada de DetachFxAll
+?DetachSlot983@FxInterpreter@@IAEXHH@Z	00888f00	s54: chamado 4 vezes por DetachFx
+?EmptyFx@FxInterpreter@@UAEXPAX@Z	00884e10	s54: slot 1 da vtable 00d34928
+??0CMascot@@IAE@XZ	00761cd0	s54: construtor: new 0x1e0 + FxInterpreter em +0x7c; IGUAL por bytes
+??0CGolfPlayer@@IAE@XZ	00740ca0	s56: construtor (new 0x1e0 + FxInterpreter em +0x20); nao e IGUAL: falta a 2a base IPetScriptObject
+?OnScriptTail@CGolfPlayer@@UAEXAAPBD@Z	00741660	s57: slot 3 da vtable 00d20540 (IPetScriptObject) do CGolfPlayer
+?OnScriptFx@CGolfPlayer@@UAEXAAPBD_NH@Z	00741890	s57: slot 8 da vtable 00d20540
+?OnScriptPTex@CGolfPlayer@@UAEXAAPBD@Z	00742360	s57: slot 9 da vtable 00d20540
+?OnScriptLockClub@CGolfPlayer@@UAEXAAPBD@Z	0073f420	s57: slot 7 da vtable 00d20540
+?OnScriptOpa@CGolfPlayer@@UAEXAAPBD@Z	0073d860	s57: slot 12 da vtable 00d20540
+?ParsePuppetScript@CGolfPlayer@@IAEXPADH_N@Z	0073da60	s57: chamado pelo ScriptProcess (0073e086); grava 0x88/0x8c/0x1c e chama IPetScriptObject::ParseScript
+?ScriptProcess@CGolfPlayer@@IAEXPAUw_motion_data@@MMH_N1@Z	0073dee0	s57: chama CheckFrameData e 0073da60
+?EndComboState@CGolfPlayer@@IAEXXZ	0073e220	s57: 56 B, grava 0x25c/0x260/0x258 (m_comboTime, m_comboCount, m_bCombo)
+?ApplyBoneKey@WBone@@QAEXPAUWBoneKey@@@Z	00b94cf0	s59: nova no 983 (chamada por ApplyBoneSetList e InsertBoneSetList)
+?InsertBoneSetList@WBone@@QAEXPAVWBoneSet@@MHPAVWPuppet@@@Z	00ba2270	s59: 4 argumentos no 983
+?ApplyBoneSetList@WBone@@QAEXPAVWBoneSet@@@Z	00ba1180	s59
+?GetKeyScale@WBone@@QAE?AVWVector@@M@Z	00b94730	s59: nova no 983 (o mapa dizia GetKeyPos)
+?BlendTo@WBoneSet@@QAEXPAV1@M@Z	00b4f250	s59: nova no 983
+??0WBoneSet@@QAE@XZ	00b4f520	s59
+??0WBoneSet@@QAE@H@Z	00b4f580	s59
+?GetKeyPos@WBone@@QAE?AVWVector@@M@Z	00b945f0	s59
+?FindBoneKey@WBoneSet@@QAEPAUWBoneKey@@PAD@Z	00b4f190	s59: 9 B (jmp para WList::Find 00b4ef60); o pareamento por vizinho ia para 00b4d7f0
+?ScrollText983@FrStatic@@QAEXMM@Z	00c01e40	s60
+?MoveWindow@FrStatic@@UAEXABVWPoint@@@Z	00c01ec0	s60
+?IsLongCaption983@FrStatic@@SI_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	00c01f30	s60
+?OnProc@FrStatic@@MAEXM@Z	00c02160	s60
+?Step@FrAreaEntrance983@@SGMMMMMPA_N@Z	00bea560	s60
+?SetFrom@FrAreaEntrance983@@QAEXPBD@Z	00beaa90	s60
+?Opening@FrAreaEntrance983@@QAEXM@Z	00beab90	s60
+?Closing@FrAreaEntrance983@@QAEXM@Z	00beacc0	s60
+?OnProc@FrAreaEntrance983@@QAEXM@Z	00beae60	s60
+?OnProc@FrArea@@MAEXM@Z	00beaf80	s60
+??1FrArea@@UAE@XZ	00beafe0	s60
+??0FrAreaEntrance983@@QAE@PAVFrArea@@@Z	00beb2e0	s60
+?Parse@FrAreaEntrance983@@QAEXPBD@Z	00beb400	s60
+??1FrStatic@@UAE@XZ	00c02390	s60
+??0WReceivedPacket@@QAE@XZ	00a4e940	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WReceivedPacketImpl@_private@@QAE@XZ	005ab5d0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WSendPacket@@QAE@H@Z	00a4e8a0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WSendPacket@@QAE@W4enumClientPacket@@@Z	00a4e800	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WSendPacket@@QAE@XZ	00a4e750	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WSendPacketImpl@_private@@QAE@H@Z	00a4da10	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??0WSendPacketImpl@_private@@QAE@XZ	005ab870	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??1WReceivedPacket@@UAE@XZ	00a4ea90	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??1WReceivedPacketImpl@_private@@UAE@XZ	005ab5f0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??1WSendPacket@@UAE@XZ	00a4e590	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??1WSendPacketImpl@_private@@UAE@XZ	005ab310	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??4WReceivedPacket@@QAEXABV0@@Z	00a4eca0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??4WSendPacket@@QAEXABV0@@Z	00a4ec50	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??_GWReceivedPacket@@UAEPAXI@Z	00a4ec70	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??_GWReceivedPacketImpl@_private@@UAEPAXI@Z	005ab9c0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??_GWSendPacket@@UAEPAXI@Z	00a4e7d0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??_GWSendPacketImpl@_private@@UAEPAXI@Z	005ab7e0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Copy@WReceivedPacket@@QAEXPAV1@@Z	00a4df50	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Copy@WReceivedPacketImpl@_private@@QAEXPAV12@@Z	005ab650	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode1@WReceivedPacket@@QAEEXZ	00a4deb0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode1@WReceivedPacketImpl@_private@@QAEEXZ	005ab140	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode2@WReceivedPacket@@QAEGXZ	00a4dec0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode2@WReceivedPacketImpl@_private@@QAEGXZ	005ab150	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode4@WReceivedPacket@@QAEKXZ	00a4ded0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode4@WReceivedPacketImpl@_private@@QAEKXZ	005ab180	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode8@WReceivedPacket@@QAE_JXZ	00a4dee0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Decode8@WReceivedPacketImpl@_private@@QAE_JXZ	005ab1a0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeBuffer@WReceivedPacket@@QAEXPAXH@Z	00a4df00	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeBuffer@WReceivedPacketImpl@_private@@QAEXPAXH@Z	005ab1c0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeCheckSum@WReceivedPacket@@QAE_NXZ	00a4df10	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeCheckSum@WReceivedPacketImpl@_private@@QAE_NXZ	005ab130	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeEncryptedStr@WReceivedPacket@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@K@Z	00a4e220	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeEncryptedStr@WReceivedPacketImpl@_private@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@K@Z	005abd60	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeStr@WReceivedPacket@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ	00a4e1f0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeStr@WReceivedPacket@@QAE_NAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	00a4def0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeStr@WReceivedPacketImpl@_private@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ	005abbc0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?DecodeStr@WReceivedPacketImpl@_private@@QAE_NAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	005abce0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode1@WSendPacket@@QAEXE@Z	00a4dd50	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode1@WSendPacketImpl@_private@@QAEXE@Z	005ab3f0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode2@WSendPacket@@QAEXG@Z	00a4dd60	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode2@WSendPacketImpl@_private@@QAEXG@Z	005ab420	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode4@WSendPacket@@QAEXK@Z	00a4dd70	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode4@WSendPacketImpl@_private@@QAEXK@Z	005ab450	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode8@WSendPacket@@QAEX_J@Z	00a4dd80	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Encode8@WSendPacketImpl@_private@@QAEX_J@Z	005ab490	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeBuffer@WSendPacket@@QAEXPBXG@Z	00a4ddc0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeBuffer@WSendPacketImpl@_private@@QAEXPBXG@Z	005ab540	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeData@WSendPacket@@QAEXHPADH@Z	00a4ddd0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeData@WSendPacketImpl@_private@@QAEXHPADH@Z	005ab100	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeEncryptedStr@WSendPacket@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	00a4ddb0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeEncryptedStr@WSendPacketImpl@_private@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	005ab9b0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeStr@WSendPacket@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	00a4dda0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?EncodeStr@WSendPacketImpl@_private@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	005ab950	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetBuffer@WSendPacket@@QBEPBEXZ	00a4dcd0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetLength@WSendPacket@@QBEIXZ	00a4dcf0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetLengthData@WSendPacket@@QAEIXZ	00a4de00	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetLengthData@WSendPacketImpl@_private@@QAEIXZ	005ab5c0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetMark@WSendPacket@@QBEHXZ	00a4dd40	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetMark@WSendPacketImpl@_private@@QBEHXZ	005ab0f0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetPacketType@WSendPacket@@QBEHXZ	00a4dd10	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetPacketType@WSendPacketImpl@_private@@QBEHXZ	005ab0e0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetPubKey@WReceivedPacket@@QBEHXZ	00a4dea0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetPubKey@WReceivedPacketImpl@_private@@QBEHXZ	00a4da70	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRcvLength@WReceivedPacket@@QBEIXZ	00a4df20	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRcvLength@WReceivedPacketImpl@_private@@QBEIXZ	00a4da80	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRemainBuffer@WReceivedPacket@@QAEPAEXZ	00a4df80	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRemainBuffer@WReceivedPacketImpl@_private@@QAEPAEXZ	005ab200	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRemainLength@WReceivedPacket@@QAEHXZ	00a4df90	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?GetRemainLength@WReceivedPacketImpl@_private@@QAEHXZ	005ab210	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?InitPacket@WSendPacket@@QAEXH@Z	00a4dde0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?InitPacket@WSendPacketImpl@_private@@QAEXH@Z	005ab890	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?IsValid@WReceivedPacket@@QAE_N_N@Z	00a4df30	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?IsValid@WReceivedPacketImpl@_private@@QAE_N_N@Z	005ab680	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?LockBuffer@WSendPacket@@QAEPAEH@Z	00a4dce0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?MakeCheckSum@WSendPacket@@QAEXXZ	00a4de10	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?MakeCheckSum@WSendPacketImpl@_private@@QAEXXZ	005ab8e0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?MakePacketComplete@WSendPacket@@QAEXH@Z	00a4dd20	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?MakePacketComplete@WSendPacketImpl@_private@@QAEXH@Z	005ab320	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Reset@WReceivedPacket@@QAEXXZ	00a4df70	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Reset@WReceivedPacketImpl@_private@@QAEXXZ	005ab1f0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?ResetBuffer@WSendPacket@@QAEXXZ	00a4dd00	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?RollBack@WSendPacket@@QAEXXZ	00a4dd30	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?RollBack@WSendPacketImpl@_private@@QAEXXZ	005ab3c0	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?Send@WSendPacket@@QAEXW4eSendTo@@@Z	00a4dab0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?SetRcvPacket@WReceivedPacket@@QAE_NPBEIEE@Z	00a4df40	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?SetRcvPacket@WReceivedPacketImpl@_private@@QAE_NPBEIEE@Z	005ab600	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?SetSendPacket@WSendPacket@@QAE_NPBEIEE@Z	00a4ddf0	s62: packet do 983 — invólucro de 0xc; desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+?SetSendPacket@WSendPacketImpl@_private@@QAE_NPBEIEE@Z	005ab590	s62: packet do 983 — Impl (005ab...); desmonte em out/F3.5/s62/desmonte (repasse para m_impl / vtable RTTI)
+??8WSendPacket@@QBE_NABV0@@Z	00a4dc50	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??8WSendPacket@@QAE_NAAV0@@Z	00a4dc70	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??9WSendPacket@@QBE_NABV0@@Z	00a4dc90	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??9WSendPacket@@QAE_NAAV0@@Z	00a4dcb0	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??8WReceivedPacket@@QBE_NABV0@@Z	00a4de20	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??8WReceivedPacket@@QAE_NAAV0@@Z	00a4de40	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??9WReceivedPacket@@QBE_NABV0@@Z	00a4de60	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+??9WReceivedPacket@@QAE_NAAV0@@Z	00a4de80	s62: packet do 983 — invólucro de 0xc; comparação dos m_impl (sem chamador; qual cópia é a const é palpite)
+?MakePacketComplete@WSendPacketImpl@_private@@QAEXHH@Z	005ab320	s62: 2 argumentos (ret 8): chave e destino; contador só com destino 0; IGUAL por bytes
+?MakePacketComplete@WSendPacket@@QAEXHH@Z	00a4dd20	s62: invólucro (jmp 005ab320); único chamador 00a4d1b4 (PutPacket) empilha chave e destino
+?PutPacket@WClientSocket@@QAEHAAVWSendPacket@@W4eSendTo@@@Z	00a4d160	s62: ret 8; repassa o 2º argumento ao MakePacketComplete; texto "! socket send buffer overflow"
+?SendPacket@WClientSocket@@QAEHAAVWSendPacket@@W4eSendTo@@@Z	00a4d270	s62: ret 8; m_cs em +0x54, testa m_bConnected == 1, PutPacket + Flush; IGUAL por bytes
+?SendPacket@NetworkUnit@@UAE_NAAVWSendPacket@@W4eSendTo@@@Z	00a53000	s62: slot 2 da vtable 00d41e94 (RTTI NetworkUnit); chama 00a4d270 com this+4
+?IsConnected@NetworkUnit@@UAEHXZ	00a530e0	s62: slot 11 da vtable 00d41e94; devolve [this+0x1c] = m_socket.m_bConnected
+?SendPacket@WNetworkSystem@@QAE_NW4eNetUnit@1@AAVWSendPacket@@W4eSendTo@@@Z	00a4da90	s62: m_pUnit[unit] (+0x30) -> slot 2 com (pacote, destino); sem chamador (embutida em WSendPacket::Send)
+?SetClassicDirection@CWind@@QAEXM@Z	006c9290	s62 (pedido B6): grava o float cifrado em this+0x44 (m_cryptic44_983); ret 4
+?ApplyClassicDirection@CWind@@QAEXXZ	006c92e0	s62 (pedido B6): decifra this+0x24 (m_direction) e chama CWind::SetDirection (006c9030)
+?IsCurrentActor983@CTask@@QAE_NPBD@Z	009bd4f0	s65: compara com `name` o nome (+0x64) do objeto em +0x1a0 do ator de this+0x1fc; chamada no caso 0x11f do despachante comum (009c8c30)
+?IsNaviForwardSameHistory@CTaskManager@@IAE_NPBD@Z	009bc490	s65: par por vizinho QUASE 0,93 em out/F3.5/s65/inicio (14 × 14 instrucoes); perdeu o vizinho quando IsCurrentActor983 entrou no mapa
+?OnTradeDlgInit@FrTradeDlg@@IAEXH@Z	008ede10	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnVisitorBackInit@FrTradeDlg@@IAEXH@Z	008ee8c0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnVisitorBackOwnerDraw@FrTradeDlg@@IAEXXZ	008ede20	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(IGUAL -)
+?OnMyPangInit@FrTradeDlg@@IAEXH@Z	008ee930	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnMyPangOwnerDraw@FrTradeDlg@@IAEXXZ	008f4fb0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(IGUAL -)
+?OnTradeItemListInit@FrTradeDlg@@IAEXH@Z	008ee980	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnTradeItemListLClick@FrTradeDlg@@IAEXXZ	008f6970	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=3" MUDA(SEM_PAR -)
+?OnTradeItemListRClick@FrTradeDlg@@IAEXXZ	008f1410	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=5" MUDA(SEM_PAR -)
+?OnTradeItemListOwnerDraw@FrTradeDlg@@IAEXH@Z	008f16d0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(SEM_PAR -)
+?OnNoItem01Init@FrTradeDlg@@IAEXH@Z	008eea00	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnNoItem02Init@FrTradeDlg@@IAEXH@Z	008eea80	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnVisitorInit@FrTradeDlg@@IAEXH@Z	008f4fc0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnUserIdInit@FrTradeDlg@@IAEXH@Z	008eeb00	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnTitleInit@FrTradeDlg@@IAEXH@Z	008f5e20	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnEditBnInit@FrTradeDlg@@IAEXH@Z	008eeb70	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnEditBnUp@FrTradeDlg@@IAEXXZ	008f8120	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(DIFERENTE 008f8730)
+?OnCloseBnInit@FrTradeDlg@@IAEXH@Z	008eebe0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnCloseBnUp@FrTradeDlg@@IAEXXZ	008ede30	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnHideBnInit@FrTradeDlg@@IAEXH@Z	008eec50	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnHideBnUp@FrTradeDlg@@IAEXXZ	008ede40	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnExitBnInit@FrTradeDlg@@IAEXH@Z	008eecc0	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnExitBnUp@FrTradeDlg@@IAEXXZ	008ede50	s84: mapa de mensagens FrTradeDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnTradeBuyDlgInit@FrTradeBuyDlg@@IAEXH@Z	008edfb0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnOkBnInit@FrTradeBuyDlg@@IAEXH@Z	008eeef0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnOkBnUp@FrTradeBuyDlg@@IAEXXZ	008f81f0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnBuyItemIconInit@FrTradeBuyDlg@@IAEXH@Z	008eef40	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnBuyItemIconOwnerDraw@FrTradeBuyDlg@@IAEXXZ	008f2270	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" ok
+?OnBuyItemNameInit@FrTradeBuyDlg@@IAEXH@Z	008eefb0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnBuyItemAbilityInit@FrTradeBuyDlg@@IAEXH@Z	008ef020	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnMyPangInit@FrTradeBuyDlg@@IAEXH@Z	008f27c0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnPriceInit@FrTradeBuyDlg@@IAEXH@Z	008ef090	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnPangLeftInit@FrTradeBuyDlg@@IAEXH@Z	008ef100	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnNumberInit@FrTradeBuyDlg@@IAEXH@Z	008ef170	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnNumberNextBnInit@FrTradeBuyDlg@@IAEXH@Z	008ef1e0	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnNumberNextBnUp@FrTradeBuyDlg@@IAEXXZ	008f5080	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnNumberPrevBnInit@FrTradeBuyDlg@@IAEXH@Z	008ef270	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnNumberPrevBnUp@FrTradeBuyDlg@@IAEXXZ	008f5140	s84: mapa de mensagens FrTradeBuyDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(DIFERENTE 00a7f7d0)
+?OnTradeResultDlgInit@FrTradeResultDlg@@IAEXH@Z	008ee090	s84: mapa de mensagens FrTradeResultDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnResultItemIconInit@FrTradeResultDlg@@IAEXH@Z	008ef470	s84: mapa de mensagens FrTradeResultDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnResultItemIconOwnerDraw@FrTradeResultDlg@@IAEXXZ	008f2d60	s84: mapa de mensagens FrTradeResultDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" ok
+?OnResultItemNameInit@FrTradeResultDlg@@IAEXH@Z	008ef4e0	s84: mapa de mensagens FrTradeResultDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnResultItemAbilityInit@FrTradeResultDlg@@IAEXH@Z	008ef550	s84: mapa de mensagens FrTradeResultDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnTradeEditDlgInit@FrTradeEditDlg@@IAEXH@Z	008ee0c0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnMyItemListInit@FrTradeEditDlg@@IAEXH@Z	008ef5d0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnMyItemListLClick@FrTradeEditDlg@@IAEXXZ	008f5430	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=3" ok
+?OnMyItemListRClick@FrTradeEditDlg@@IAEXXZ	008f5480	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=5" ok
+?OnMyItemListOwnerDraw@FrTradeEditDlg@@IAEXH@Z	008f5770	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(SEM_PAR -)
+?OnTradeItemListInit@FrTradeEditDlg@@IAEXH@Z	008ef650	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00921ac0)
+?OnTradeItemListLClick@FrTradeEditDlg@@IAEXXZ	008f7440	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=3" MUDA(SEM_PAR -)
+?OnTradeItemListOwnerDraw@FrTradeEditDlg@@IAEXH@Z	008f3580	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" ok
+?OnVisitorInit@FrTradeEditDlg@@IAEXH@Z	008f37b0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnUserIdInit@FrTradeEditDlg@@IAEXH@Z	008ef6c0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a7fb30)
+?OnTitleInit@FrTradeEditDlg@@IAEXH@Z	008f5f50	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnTitleEditInit@FrTradeEditDlg@@IAEXH@Z	008ef750	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTitleEditEnterKey@FrTradeEditDlg@@IAE_NH@Z	008f8520	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=9" MUDA(SEM_PAR -)
+?OnTitleEditBnInit@FrTradeEditDlg@@IAEXH@Z	008ef7c0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTitleEditBnUp@FrTradeEditDlg@@IAEXXZ	008f8540	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnTradeMyItemIconInit@FrTradeEditDlg@@IAEXH@Z	008ef810	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTradeMyItemIconOwnerDraw@FrTradeEditDlg@@IAEXXZ	008f5960	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(SEM_PAR -)
+?OnTradeMyItemNameInit@FrTradeEditDlg@@IAEXH@Z	008ef880	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTradeMyItemAbilityInit@FrTradeEditDlg@@IAEXH@Z	008ef8f0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTradeMyItemNumberInit@FrTradeEditDlg@@IAEXH@Z	008ef960	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(DIFERENTE 00a7fbb0)
+?OnTradeMyItemPriceInit@FrTradeEditDlg@@IAEXH@Z	008ef9d0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(SEM_PAR -)
+?OnTradeMyItemPriceClick@FrTradeEditDlg@@IAEXXZ	008ee0d0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" ok
+?OnTradeMyItemOkBnInit@FrTradeEditDlg@@IAEXH@Z	008efa40	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(DIFERENTE 00a7fc40)
+?OnTradeMyItemOkBnUp@FrTradeEditDlg@@IAEXXZ	008f8560	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnTradeMyItemCancelBnInit@FrTradeEditDlg@@IAEXH@Z	008efab0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a80200)
+?OnTradeMyItemCancelBnUp@FrTradeEditDlg@@IAEXXZ	008f59b0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnOpenBnInit@FrTradeEditDlg@@IAEXH@Z	008efb20	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a80370)
+?OnOpenBnUp@FrTradeEditDlg@@IAEXXZ	008f8730	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnCloseBnInit@FrTradeEditDlg@@IAEXH@Z	008efb90	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a819c0)
+?OnCloseBnUp@FrTradeEditDlg@@IAEXXZ	008f7550	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnExitBnInit@FrTradeEditDlg@@IAEXH@Z	008efc00	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a81a30)
+?OnExitBnUp@FrTradeEditDlg@@IAEXXZ	008ee0f0	s84: mapa de mensagens FrTradeEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(IGUAL 008f3890)
+?OnTradeFinishEditDlgInit@FrTradeFinishEditDlg@@IAEXH@Z	008ee370	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnTradeItemListInit@FrTradeFinishEditDlg@@IAEXH@Z	008efde0	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a81aa0)
+?OnTradeItemListOwnerDraw@FrTradeFinishEditDlg@@IAEXH@Z	008f44a0	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=8" MUDA(SEM_PAR -)
+?OnUserIdInit@FrTradeFinishEditDlg@@IAEXH@Z	008efcb0	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00921bc0)
+?OnTitleInit@FrTradeFinishEditDlg@@IAEXH@Z	008efd20	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(QUASE 00a7fac0)
+?OnOkBnInit@FrTradeFinishEditDlg@@IAEXH@Z	008efd90	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(DIFERENTE 00a80560)
+?OnOkBnUp@FrTradeFinishEditDlg@@IAEXXZ	008f7cb0	s84: mapa de mensagens FrTradeFinishEditDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(SEM_PAR -)
+?OnTradeWarningDlgInit@FrTradeWarningDlg@@IAEXH@Z	008ee450	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" MUDA(IGUAL -)
+?OnMsg01Init@FrTradeWarningDlg@@IAEXH@Z	008eff10	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnMsg02Init@FrTradeWarningDlg@@IAEXH@Z	008eff80	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnOkBnInit@FrTradeWarningDlg@@IAEXH@Z	008efff0	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnOkBnUp@FrTradeWarningDlg@@IAEXXZ	008f7dc0	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(DIFERENTE 008b9c90)
+?OnCancelBnInit@FrTradeWarningDlg@@IAEXH@Z	008f0060	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=1" ok
+?OnCancelBnUp@FrTradeWarningDlg@@IAEXXZ	008ee460	s84: mapa de mensagens FrTradeWarningDlg do 983 (out/F3.5/s84/msgmaps_983.txt), entrada "cmd=4" MUDA(IGUAL -)
+?OnInit@FrTradeDlg@@MAE_NXZ	008f1fb0	s84: posicao 32 da vtable 00d3b0f4 (RTTI FrTradeDlg)
+?OnCancel@FrTradeDlg@@MAEXXZ	008f6af0	s84: posicao 34 da vtable 00d3b0f4; IGUAL
+?OnInit@FrTradeEditDlg@@MAE_NXZ	008f9870	s84: posicao 32 da vtable 00d3b44c (RTTI FrTradeEditDlg)
+?OnInit@FrTradeLevelLimitDlg@@MAE_NXZ	008ee4e0	s84: posicao 32 da vtable 00d3aae4
+?SetOpenAfterTitle983@FrTradeEditDlg@@QAEX_N@Z	008ee290	s84: grava o byte de +0x1e0; chamado pelo construtor 008f71e3 e pelo caso de pacote 009cd341; IGUAL
+?IsOpenAfterTitle983@FrTradeEditDlg@@QAE_NXZ	008ee2a0	s84: le o byte de +0x1e0 (009cd32d); IGUAL
+?SetListTradingItem@FrTradeEditDlg@@QAEXXZ	008f76b0	s84: 2a chamada do FrTradeEditDlg::OnInit do 983 (008f9885), na ordem do nosso OnInit
+?SetWarningMessageType@FrTradeWarningDlg@@QAEXHE@Z	008f0180	s85: chamada por SetTradeResultCode (008f6831) com (codigo, byte); switch de 31 casos com os textos do aviso
+?SetTradeResultCode@@YIXHHPAUsTradeItem@@@Z	008f65f0	s85: 30 chamadas com ecx = codigo, edx = id do pacote (out/F3.5/s84/resultcode_983.tsv)
+?EnableButton983@CLobbyState983a@@QAEXV?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@H@Z	005fa910	s85: chamada pelo destrutor da FrTradeDlg (008f80f7) com L"btn_exit" e 1; visao local do CLobbyState983 da B
+?ms_pInstance@CLobbyState983a@@2PAV1@A	00e78ca8	s85: o mesmo ponteiro de CLobbyState983::ms_pInstance (jp.tsv)
+??1FrTradeDlg@@UAE@XZ	008f7ff0	s84/s85: pela vtable da FrTradeDlg; chama SendTradeExitShop e 005fa910
+?CheckTradeEdit@FrTradeEditDlg@@QAEHXZ	008f7900	s85: 1a chamada do OnOpenBnUp (008f8739); devolve 1, 5, 6, 7, 8, 9 ou 0x13
+?SetTradeUserId@FrTradeFinishEditDlg@@QAEXXZ	008ee390	s85: chamada pelo OnOpenBnUp (008f87af); poe "nome da loja" na caixa de +0x114
+?ShotDataSave@CGolfRule@@AAEHPBD@Z	006884f0	s88: save/pangya_%03d.sav, 1 argumento (ret 4), chamado por 00688af0 e ReplayWriteExtension983 em 006889d7
+?IsSeventhCaddieCardGr983@@YI_NKH@Z	0066f7e0	s88: copia do 00809950 (slot 7 e tid & 0x3c00000 == 0x400000), chamada em 006887ff
+?vChangeScreenSize@COption@@IAE_NHHH_N@Z	00494120	s89: 4 argumentos; grava +0x7fc/+0x800/+0x804 (vChangeScreenSize do 983)
+?vApplyLobbyScreenSize@COption@@QAEXXZ	00494950	s89: CShadowManager::Reset + 00494120(+0xd8,+0xdc,+0xec,1) + 005fa900
+?SetScreenSize983@COption@@QAEXHH@Z	004949a0	s89: pedido B57; como 00494950 com (w,h,+0xec,0)
+?vApplyGameScreenSize@COption@@QAEXXZ	00496f80	s89: minimo por +0xe0 e 00494120(...,0) + 00496b20 + 006c2b50
+?gGetRestore@COption@@QAEHXZ	00494430	s89: soma do id em CSharedDoc+0x7a2, campo +0x1c8
+?gSetRestore@COption@@QAEXXZ	004944e0	s89: GetLocalTime + WriteReg_I(0x38, +0x1c8)
+?gResetRestore@COption@@QAEXXZ	00492560	s89: le +0x1c8 (gRestore do 983)
+?Init@COption@@IAEXXZ	004951c0	s89: tabela de 0x4a, chaves Pangya_Jp/Hangame/Atgames/Lievo
+?SaveReg@COption@@IAEXXZ	00493010	s89: WriteReg_* de 1 a 0x49 (sem vGamma)
+?InitVars@COption@@IAEXXZ	00491f10	s89: zera +0x788.. e poe 800x600 em +0x7fc/+0x800
+?CheckDebugRegValid@COption@@QAEXXZ	004934a0	s89: limites dos campos de depuracao +0x788..+0x7f0
+?vChangeGameScreenSize@COption@@QAEXHHH_N@Z	00495060	s89: grava +0xd8/+0xdc/+0xec ou vCheckScreenSize; +0x7f4/+0x7f8
+??0COption@@QAE@PAUHWND__@@PAVWDeviceManager@@PAVWResourceManager@@@Z	004964a0	s89: chamado depois do operator new(0x808) em 00a66f84
+?SetVideoDevice@COption@@QAEXPAVWVideoDev@@@Z	00496770	s89: grava o argumento em +0xbc (m_pVideoDev)
+?gIsFriendConfirmNeeded@COption@@QAE_NXZ	004924f0	s89: le +0x180 (o par antigo 00492490 le +0x160 = aMssEnableHwSound do 983)
+?aIsMssHwSoundEnabled@COption@@QAE_NXZ	00492490	s89: le +0x160
+?vGetScrResNum@COption@@QAEHXZ	004939a0	s89: le +0x764 (tamanho da lista de modos); o par antigo era dGetGameType
+?dIsVersionInfoEnabled@COption@@QAE_NXZ	00492740	s89: le +0x7f0 (bool), na ordem dos acessores do 645
+?ResetVideoDevice@WDeviceManager@@QAE_N_NHHHHHJH@Z	00b689a0	s89: ret 0x20 (8 argumentos)
+?DecreaseMyItem@CSharedDoc@@QAEFAAV?$_List_iterator@V?$_List_val@UsItemInfo@@V?$allocator@UsItemInfo@@@std@@@std@@@std@@@Z	006407d0	s89: pedido C19; --Common[0], apaga com < 0, devolve short
+?CheckDisplayModeList@COption@@QAEXPAVWVideoDev@@_N1@Z	004965a0	s90: so repassa &m_displayModeList (+0x760) a 00496180 se pVideoDev != 0
+?CheckDisplayModeList@COption@@QAEXPAVWVideoDev@@_N1AAV?$list@UsDisplayMode@COption@@V?$allocator@UsDisplayMode@COption@@@std@@@std@@@Z	00496180	s90: limpa a lista do 4o argumento; tabelas 00e044f0 (10) / 00e04568 (34); "%dx%dx%d"
+?UpdatePowerGaugeLayout983@COption@@IAEXXZ	00496b20	s90: "d_default_pangya_x", "d_thumb_rounded_w", "r_to_be_updated_when_captured"; chamada de vApplyGameScreenSize
+?ScaleByViewHeight983@@YIMPAVWView@@M@Z	0098edc0	s90: Dim scltype 4 com escala (1, altura/480); ret 4, vista em ecx
+?SetA4983@CUiFrameSetManagerOpt983@@QAEX_NPAVWView@@@Z	006c3070	s90: compara/grava +0xa4 do CUiFrameSetManager e chama 006c2b50 (ReloadImages983)
+?ReloadImages983@CUiFrameSetManager@@QAE_NPAVWView@@@Z	006c2b50	s90: da frente B (jp.tsv)
+?FindNamedDim@CUiFrameSetManager@@QAEPAVNamedDim@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	006b8ee0	s90: da frente B (jp.tsv)
+?FindNamedRect@CUiFrameSetManager@@QAEPAVNamedRect@1@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z	006b8fc0	s90: da frente B (jp.tsv)
+?Calc@Rect@CUiFrameSetManager@@QBEXABUSize@2@AAVWRect@@@Z	006b4fa0	s90: da frente B (jp.tsv)
+?Calc@Dim@CUiFrameSetManager@@QBEMABUSize@2@@Z	006b4dd0	s90: da frente B (jp.tsv)
+??0Dim@CUiFrameSetManager@@QAE@XZ	006c2310	s90: da frente B (jp.tsv)
+?CenterQuitWindow983@COption@@IAEXXZ	00493a60	s90: [00e74240] (CQuitWindow) -> 006ef2d0; chamada de 00497284
+?OnScreenSizeChildWnd983@COption@@KI_NPAVFrWnd@@PAX@Z	00494bb0	s90: callback do EnumerateChildWindow em 00497370; "realmyroom"/"shopmain"/"gameroom_single"
+?CenterQuitForm983@CQuitWindow@@QAEXXZ	006ef2d0	s90: +0x2c (m_pQuitForm) -> SetRect (vtable+0x8c) centrado em [00f02458]
+?GetWindowName983@FrWnd@@QBEABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ	00be76b0	s90: lea eax,[ecx+0x64]; chamada de 00494c2b
+?ResetPosition983@FrForm@@QAEXVWPoint@@@Z	00be6d70	s90: GetForm(m_wndName) + GetCreatePosition + SetRect; ret 8
+?CommandWeather@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a75fd0	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandWind@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77510	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandDestroy@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77390	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandKickUser@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76f30	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandNotice@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a79c20	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandGiveItem@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a778f0	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandIdentity@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77690	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandGoldenBell@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77bc0	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandNoticePrize@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a781f0	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?CommandDiscon_UID@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77220	s113 (C45.1): par da C45 (map/pkt_c.tsv; 00a770c0 e o CommandDisconnect)
+?IsAdministrator@CGMToolkit@@QBE_NXZ	00a764b0	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?SendPrize@CGMToolkit@@QAEXPAVFrListBox@@@Z	00a76610	s91 (C21): par pela assinatura de pacote (map/pkt_c.tsv)
+?LoadFromPacket@CGimmickContainer@@QAEXAAVWReceivedPacket@@@Z	009103e0	s91 (C21): Decode4 + 18 x Decode1/DecodeBuffer(0x24); chave m_holeOrder (+0x1051e); +0x9c
+?GetGuidSelectedCoupon@FrCheckoutDlg@@IAEKXZ	00a9f680	s91 (C21): +0x1dc / find(+0x1e0) no mapa +0x1cc; chamado antes do Encode4 do 0x1d em 00aa281c
+?AddText@FrEdit@@QAEXPBD_N1KK@Z	00bfb1d0	s93: ret 0x14; 4º = cor e 5º = estilo repassados ao AddLine (00bfad50)
+?AddLine@FrEdit@@QAEPBDPBDK_NK@Z	00bfad50	s93: new(0x2c) FrLine; 4º argumento gravado em FrLine+0x28 (estilo)
+?SetLine@FrEdit@@UAEPBDHPBDK_NKK@Z	00bfaf60	s93: 6º argumento gravado em FrLine+0x28 (estilo); slot 24 da vtable 00d5eb94
+?LimitText@FrEdit@@IAEHAAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z	00bf92c0	s93: ret 8, limite no 2º argumento; teste de Shift-JIS; devolve o corte
+?FindGrandPrixSpecialHole983@CItemManager@@QAEPAV?$vector@UsGrandPrixSpecialHole@IFF983@@V?$allocator@UsGrandPrixSpecialHole@IFF983@@@std@@@std@@K@Z	00a17b50	s93: busca no mapa +0x504 (irmã de 00a17b90)
+?HasGrandPrixSpecialHole983@CItemManager@@QAE_NK@Z	00a17c10	s93: chama 00a17b50 e devolve != NULL
+?GetShotCntData@CGolfRule@@AAE_NXZ	00680200	s96: cmp [doc+0x11224],0xe e a contagem [doc+0x1127c] como o nosso; o comparador perdeu o par por vizinhança
+?RequestShotReview@CGolfRule30Battle@@UAEXM@Z	006a5230	s101: slot 13 da vtable 00d19704 (C31)
+?RequestShotReview@CGolfRuleGuildMatch@@UAEXM@Z	006a8ad0	s101: slot 13 da vtable 00d1982c (C31)
+?SetRivalState983@CSharedDoc@@QAEXE@Z	0062fdf0	s101: única chamada em 006a52d5 (30Battle::RequestShotReview)
+?UpdateShotResultStat@CGolfRule@@IAEXXZ	00675e00	s101: guarda + m_pRuleBase->OnHoleIn() (C30); IGUAL
+?Net_EquipPoster983@@YIXPBK@Z	0060e6c0	s101: do map/pkt_c.tsv (C)
+?Net_EquipCutIn983@@YIXXZ	0060e810	s101: do map/pkt_c.tsv (C)
+?OpenLayout@CShopMain@@IAEXPBD@Z	00a86990	s101: do map/pkt_c.tsv (C)
+?OnPostSendDlgResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	0065c2d0	s101: do map/pkt_c.tsv (C)
+?OnPostReciveDlgResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	00651070	s101: do map/pkt_c.tsv (C)
+?OnItemEquipResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	00653be0	s101: do map/pkt_c.tsv (C)
+?SendShopRefresh983@CShopMain@@IAEXXZ	00a87980	s101: método (era o estático da C; C30)
+?OnPreLoadInit@CGolfRule@@UAEXXZ	0068bdb0	s101: vtable do CGolfRule 00d1853c; reescrito do 983
+?OnReload@CGolfRule@@UAEXXZ	00678a30	s101: vtable 00d18548; reescrito do 983
+?SetCurrentGolfRule@CGolfRule@@QAEXXZ	00677290	s101: único chamador 0068c193 (OnPreLoadInit); RTTI dos construtores
+??0CGolfRule30Battle@@QAE@PAVCGolfRule@@@Z	006a5030	s101: grava a vtable 00d19704 (RTTI CGolfRule30Battle)
+?GetWorkShopRankUpExp983@CItemManager@@QAE_NKHPAH@Z	00a07030	s102: B81, chamada por 004c761c (FrClubSetRankUpWnd::UpdateNeedExp983)
+?SumWorkShopRankUpExp983@CItemManager@@QAE_NKHHPAH@Z	00a07070	s102: vizinho de 00a07030 (mesmo vetor +0x39c)
+?OnRecycleDlgInit@FrRecycleDlg@@IAEXH@Z	008db6d0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL -)
+?OnCloseBnUp@FrRecycleDlg@@IAEXXZ	008db6e0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL -)
+?OnRecycleNumberEnterKey@FrRecycleDlg@@IAE_NH@Z	008db6f0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008db6f0)
+?OnArrowLeftBnUp@FrRecycleDlg@@IAEXXZ	008db700	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008db700)
+?OnArrowRightBnUp@FrRecycleDlg@@IAEXXZ	008db710	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008db710)
+?OnCancel@FrRecycleDlg@@MAEXXZ	008db720	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008db720)
+?InitDataCharacterSelect@FrRecycleDlg@@QAEXXZ	008db740	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era SEM_PAR -)
+?ControlRecycleNumber@FrRecycleDlg@@QAEXH@Z	008db960	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era QUASE 008db960)
+?SetMaxEnableRecycle@FrRecycleDlg@@QAEXH@Z	008dba70	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dba70)
+?OnSelectPartDlgResult@FrRecycleDlg@@IAE_NHPAVFrForm@@@Z	008dbcf0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dbcf0)
+?OnMagicBoxBnUp983@FrRecycleDlg@@IAEXXZ	008db6c0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL -)
+?OnRecycleItemListInit@FrRecycleDlg@@IAEXH@Z	008dcaa0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era QUASE 008dcaa0)
+?StartMix983@FrRecycleDlg@@IAEXXZ	008dbdd0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dbdd0)
+?OnMixConfirmResult983@FrRecycleDlg@@IAE_NHPAVFrForm@@@Z	008dbe10	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL -)
+?OnClubSetMixConfirmResult983@FrRecycleDlg@@IAE_NHPAVFrForm@@@Z	008dd910	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dbe10)
+?OnArrowMinimumBnDown@FrRecycleDlg@@IAEXXZ	008dcd70	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dcd70)
+?OnArrowLeftBnDown@FrRecycleDlg@@IAEXXZ	008dcdf0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dcdf0)
+?OnArrowRightBnDown@FrRecycleDlg@@IAEXXZ	008dcec0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dcec0)
+?OnArrowMaximumBnDown@FrRecycleDlg@@IAEXXZ	008dcf90	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dcf90)
+?InitPositionItemData@FrRecycleDlg@@QAEXXZ	008dd0e0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008dd0e0)
+?OnSelectPartInit@FrRecycleDlg@@IAEXH@Z	008dd870	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dd870)
+?OnCardSlotResultInit@FrRecycleDlg@@IAEXH@Z	008dd930	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dd930)
+?OnMagicBoxBnInit983@FrRecycleDlg@@IAEXH@Z	008dc3f0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dc3f0)
+?OnCardComposeBnInit983@FrRecycleDlg@@IAEXH@Z	008dc4a0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dc4a0)
+?OnCardComposeBnUp983@FrRecycleDlg@@IAEXXZ	008de490	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008de490)
+?OnExchangeBnInit983@FrRecycleDlg@@IAEXH@Z	008dc550	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dc550)
+?OnExchangeBnUp983@FrRecycleDlg@@IAEXXZ	008de4f0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008de4f0)
+?OnBackCenterInit983@FrRecycleDlg@@IAEXH@Z	008dc600	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dc600)
+?OnBackBottomInit983@FrRecycleDlg@@IAEXH@Z	008dc670	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008dc670)
+?SetLabels983@FrRecycleDlg@@IAEXHH@Z	008dd9a0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008dd9a0)
+?OnMixBnUp@FrRecycleDlg@@IAEXXZ	008de6a0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008de6a0)
+?OnCadieMessageInit@FrRecycleDlg@@IAEXH@Z	008dd060	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era QUASE 008dd060)
+?OnRecycleItemListOwnerDraw@FrRecycleDlg@@IAEXH@Z	008e06f0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e06f0)
+?InitListCharacterSelect@FrRecycleDlg@@QAEXXZ	008e0a50	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e0a50)
+?DrawRecycleItem@FrRecycleDlg@@QAEXXZ	008dfc50	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008dfc50)
+?DrawArrow@FrRecycleDlg@@QAEXXZ	008e0b10	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e0b10)
+?OnSelectPartLBDown@FrRecycleDlg@@IAEXXZ	008e1140	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e1140)
+?OnAreaPictureOwnerDraw@FrRecycleDlg@@IAEXXZ	008e1290	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e1290)
+?SetListRecycleItem@FrRecycleDlg@@QAEXHH@Z	008e2680	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e2680)
+?SetDataTotalItem@FrRecycleDlg@@QAEXH@Z	008e1b80	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era SEM_PAR -)
+?OnLevelLowBnUp@FrRecycleDlg@@IAEXXZ	008e2f10	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e2f10)
+?OnLevelMidBnUp@FrRecycleDlg@@IAEXXZ	008e2f90	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e2f90)
+?OnLevelHighBnUp@FrRecycleDlg@@IAEXXZ	008e3010	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e3010)
+?OnLevelSpecialBnUp@FrRecycleDlg@@IAEXXZ	008e3090	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e3090)
+?OnLevelEventBnUp@FrRecycleDlg@@IAEXXZ	008e3120	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL 008e3120)
+?OnCharacterSelectListLBnUp@FrRecycleDlg@@IAEXXZ	008e31b0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e31b0)
+?OnInit@FrRecycleDlg@@MAE_NXZ	008e31f0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era QUASE 008e31f0)
+?ClickRecycleItem@FrRecycleDlg@@QAEXXZ	008e2860	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era SEM_PAR -)
+?OnRecycleItemListLBnUp@FrRecycleDlg@@IAEXXZ	008e31e0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era IGUAL -)
+?OnRecycleItemListRBnUp@FrRecycleDlg@@IAEXXZ	008e1270	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era DIFERENTE 008e1270)
+?OnProc@FrRecycleDlg@@MAEXM@Z	008e33d0	s102: FrRecycleDlg do 983 (mapa de mensagens 00e2a930 / chamadas; era QUASE 008e33d0)
+??__E?_MsgEntries@FrRecycleDlg@@0PAUsFRESH_ENTRY@@A@@YAXXZ	00ce3fa0	s102: grava os tratadores da tabela 00e2a930 ("MagicBox".."card_slotresult"); o 00ced140 do mapa era o do FrChangeRoomInfoDlg
+??__E?_MsgEntries@FrChangeRoomInfoDlg@@0PAUsFRESH_ENTRY@@A@@YAXXZ	00ced140	s102: tabela 00e37390 ("text","title",...,"ok")
+?OpenInformation@FrRecycleDlg@@QAEXK@Z	008e0c80	s102: chamado pelo OnRecycleItemListRBnUp 983 (008e1283)
+?Net_StartPeriodItem@CShopMain@@IAEXK@Z	00a82650	s109 (pedido C39.1): ICF com Net_StartPeriodItem@CRealMyRoomMain (IGUAL em 00a82650); 008b4c80 (vizinho) é o 0x17f do bongdarishopdlg
+?OnUnderBar_AchievementUp983@CTaskMain@@IAEXXZ	006582f0	s110 (pedido C40.3): "ubar.achievement" FRCMD_LBUTTONUP nos mapas TOPPAGE/GHOST/FAMILY do 983 (00e0dda0, 00e1f340, 00e3f0d0)
+?OnUnderBar_AchievementInit983@CTaskMain@@IAEXH@Z	00651e30	s110 (pedido C40.3): "ubar.achievement" FRCMD_INIT (grava +0x30)
+?IsBackClosesWidget983@@YI_NXZ	0065bf70	s110: par da C (map/pkt_c.tsv); o vizinho 00844b00 era errado
+?OnToppage_ServerUp@CLobbyMain@@IAEXXZ	005930d0	s111: handler de "TOPPAGE.server" FRCMD_LBUTTONDOWN no mapa do 983 (00e0d3c0); 00659340 (mesma forma) é o "utab.point_shop"
+?OnUnderBar_PointShopInit983@CTaskMain@@IAEXH@Z	00652520	s111: "utab.point_shop" FRCMD_INIT nos mapas TOPPAGE/GHOST/FAMILY (grava +0x78)
+?OnUnderBar_PointShopUp983@CTaskMain@@IAEXXZ	00659340	s111: "utab.point_shop" FRCMD_LBUTTONUP (CloseAllDialogs + jmp 00655d70)
+?OnUnderBar_CardComposeInit983@CTaskMain@@IAEXH@Z	00652600	s111: "utab.card_compose" FRCMD_INIT (grava +0x6c)
+?OnUnderBar_CardComposeUp983@CTaskMain@@IAEXXZ	00659600	s111: "utab.card_compose" FRCMD_LBUTTONUP (jmp 00659490)
+?OpenAlchemyDlg983@CTaskMain@@IAEXXZ	00655d70	s111: cria "AlchemyDlg" em +0x1a8; caso 0x2e3 do HandleMsgCommon (0065f24f)
+?OpenCardComposeDlg983@CTaskMain@@IAEXXZ	00659490	s111: cria "card_compose" em +0x18c; caso 0x324 (0065f34d)
+?ResetAlchemyDlg983@CTaskMain@@IAEXXZ	00651080	s111: caso 0x2e6 (0065f299); jmp 004fb460
+?OpenRecycleDlg983@CTaskMain@@IAEXXZ	00659540	s111: cria "recycledlg" em +0x164; caso 0x338 (0065f1a0) e 0065a20b
+?OnUnderBar_MagicBoxUp@CTaskMain@@IAEXXZ	0065a160	s111: "utab.magicbox" FRCMD_LBUTTONUP do mapa TOPPAGE do 983 (00e0e100); caso 0x339 (0065f1ac)
+?OnAlchemyDlgResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	006525a0	s111: imediato do Open em 00655dc4
+?OnCardComposeDlgResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	00653ae0	s111: imediato do Open em 006594f5
+?OnOverBar_EqItemInit983@CTaskMain@@IAEXH@Z	00656700	s111: "TOPPAGE.obar.eqitem" FRCMD_INIT (00e0e7a0; grava +0xcc)
+?OnOverBar_EqItemDown983@CTaskMain@@IAEXXZ	006567e0	s111: "TOPPAGE.obar.eqitem" FRCMD_LBUTTONDOWN (msg 0x81)
+?OnOverBar_EqItemOwnerDraw983@CTaskMain@@IAEXH@Z	00659bd0	s111: "TOPPAGE.obar.eqitem" FRCMD_OWNERDRAW ("overbar_equip_item")
+?GetHighPart983@UTIL@S5@@YIH_J@Z	00b2ddc0	s111: chamada pelo 00b2e8c0 (metade alta)
+?GetLowPart983@UTIL@S5@@YIH_J@Z	00b2ddd0	s111: chamada pelo 00b2e8c0 (metade baixa)
+?NotifyServiceStopped983@UTIL@S5@@YIX_J@Z	00b2e8c0	s111: msg 0x2ee ao ator principal; chamada por 00655d8c/006594ac
+?SelectLevel983@FrRecycleDlg@@QAEXH@Z	008e3600	s111: switch 0..4 -> OnLevel{Low,Mid,High,Special,Event}BnUp; caso 0x339 (0065f1c5)
+?IsGrandPrixGameType983@@YI_NH@Z	0046e6d0	s112 (C42.3): tipo real 0x14..0x15 = Grand Prix; 10 chamadas (golftask 4, lobbytask 1, taskmanager 5)
+?OnToppage_OneDayQuestInit983@CLobbyMain@@IAEXH@Z	00593900	s112
+?OnToppage_OneDayQuestDown983@CLobbyMain@@IAEXXZ	00593990	s112
+?OnToppage_RankUpInit983@CLobbyMain@@IAEXH@Z	005949d0	s112
+?OnToppage_RankUpDown983@CLobbyMain@@IAEXXZ	00594a90	s112
+?OnToppage_GuildRankInit983@CLobbyMain@@IAEXH@Z	00594b00	s112
+?OnToppage_GuildRankDown983@CLobbyMain@@IAEXXZ	00594bb0	s112
+?GetStatus@CGMToolkit@@QAE_NW4eGMStatusFlag@@@Z	00a75a70	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?PhraseSaperator@CGMToolkit@@IAE_NPBD@Z	00a75b20	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?Confirm@CGMToolkit@@IAE_NXZ	00a75ea0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?SendStatus@CGMToolkit@@QAEXW4eGMCommandTag@@@Z	00a75d80	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?SendCharacterBuffer@CGMToolkit@@QAEXW4eGMCommandTag@@PBD@Z	00a75e00	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandMatchMapSetting@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a761a0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandMatchHoleSetting@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76260	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?SendStringBuffer@CGMToolkit@@QAEXW4eGMCommandTag@@PBD@Z	00a76960	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandHelp@CGMToolkit@@IAE?AW4eGMToolResult@@H@Z	00a76a30	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandVisible@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76b80	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandWhisper@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76c90	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandChannel@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76da0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandShowStatus@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77490	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandGetTID@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a782c0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandSetMission@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a78300	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandCategory@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a784c0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandHioHolecupScale983@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a783c0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandList@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a76eb0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandUnsetPrize@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77e20	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandShowPrize@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a77f30	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandDisconnect@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a770c0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandSetPrize@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a78f40	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandFindItem@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a79810	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandClose@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a7a0f0	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?CommandOpen@CGMToolkit@@IAE?AW4eGMToolResult@@W4eGMToolkitStatus@@@Z	00a7a230	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?Command@CGMToolkit@@QAE_NPBD@Z	00a7a640	s113: par da C45 (map/pkt_c.tsv, tabela de saltos do Parser)
+?OnCreate_Init@CLobbyMain@@IAEXH@Z	00abaf40	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_Finish@CLobbyMain@@IAEXXZ	00ab34a0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_Destroy@CLobbyMain@@IAEXXZ	00ab9670	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreatePetInit@CLobbyMain@@IAEXH@Z	00abc070	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreatePetOwnerDraw@CLobbyMain@@IAEXXZ	00abb610	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_CharPrevInit@CLobbyMain@@IAEXH@Z	00ab3bd0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_CharNextInit@CLobbyMain@@IAEXH@Z	00ab3c50	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_HairInit@CLobbyMain@@IAEXH@Z	00ab3cd0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_HairPrevBtnUp@CLobbyMain@@IAEXXZ	00abb800	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_HairNextBtnUp@CLobbyMain@@IAEXXZ	00abb8e0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_ShirtsInit@CLobbyMain@@IAEXH@Z	00ab3e70	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_ShirtsPrevBtnUp@CLobbyMain@@IAEXXZ	00abb9d0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_ShirtsNextBtnUp@CLobbyMain@@IAEXXZ	00abbab0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_CreateBtnUp@CLobbyMain@@IAEXXZ	00aba0c0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreateConfirmResult983@CLobbyMain@@IAE_NHPAVFrForm@@@Z	00ab6fc0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_DescInit@CLobbyMain@@IAEXH@Z	00ab8130	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_WarningInit@CLobbyMain@@IAEXH@Z	00ab4010	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?SetHairClr983@CPetFrame@@QAE_NPAVCPartTidList@@EKH@Z	008af6b0	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+??0CGaugeBar983@@QAE@XZ	00923410	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+??1CGaugeBar983@@QAE@XZ	00923290	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?Init@CGaugeBar983@@QAE_NPBD0VWRect@@H_NM22@Z	00923450	s113: mapa de mensagens do CLobbyMain do 983 (00e0edc0..00e0f1a0, "CREATE*") / chamada direta
+?OnCreate_CharacterListInit983@CLobbyMain@@IAEXH@Z	00ab8850	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnCreate_CharacterListDown983@CLobbyMain@@IAEXH@Z	00abc0e0	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnCreate_CharacterListOwnerDraw983@CLobbyMain@@IAEXH@Z	00ab70b0	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnCreate_DrawAreaInit983@CLobbyMain@@IAEXH@Z	00ab4330	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnCreate_DrawAreaOwnerDraw983@CLobbyMain@@IAEXH@Z	00ab4380	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnCreate_CharNameImageInit983@CLobbyMain@@IAEXH@Z	00ab82a0	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?SelectCreateChar983@CLobbyMain@@IAEXE@Z	00abbb90	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?SetFirstChar@CLobbyMain@@IAE_NPAVCPartTidList@@@Z	00ab6ee0	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?SetLevelBar@CLobbyMain@@IAEXXZ	00ab9c50	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnUseTikiReportResult983@CLobbyMain@@IAE_NHPAVFrForm@@@Z	00ab2fa0	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+??$CreateForm@VFrUseTikiReportDlg@@@@YIPAVFrUseTikiReportDlg@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	00ab4c10	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OpenPointShopDlg983@CTaskMain@@IAEXXZ	00659360	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?RefreshPointShopDlg983@CTaskMain@@IAEXXZ	00651030	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?OnPointShopDlgResult983@CTaskMain@@IAE_NHPAVFrForm@@@Z	00651260	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+??$CreateForm@VFrPointShopDlg@@@@YIPAVFrPointShopDlg@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	00654630	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+??$CreateForm@VFrPointShopMessageDlg@@@@YIPAVFrPointShopMessageDlg@@PAVFrWndManager@@PAVFrCmdTarget@@PBDPAVFrWnd@@@Z	00655680	s114: CREATE do CLobbyMain (mapa 00e0f100..00e0f1a0) / C47.2 / B106 (desmonte em out/F3.5/s114)
+?HandleMsg@CLobbyMain@@UAEXABVMsgObject@@@Z	00abc140	s114: CLobbyMain::HandleMsg do 983 (00abc140; caso 0x8b em 00abcc8a); era par so pela semente
+?SendStateBongdariShop@FrBongdariShopDlg@@IAEX_N@Z	008bb130	s115: grava CSharedDoc+0x11410 com IsLocalContent(1) (antes 0xaf aos atores); vizinho de SendReBuildMyInventory 008bb160
+?InitBongdariShop@CTaskMain@@IAEXXZ	006559b0	s115: zera word +0x14c (m_bBongdariShop0/1) e CSharedDoc+0x11410
+?ChangeMotion@ntAvatar@@QAEXHPBDM@Z	007a77d0	s115 (B110.1): grava o tipo, switch 0..5 de nomes, CMotionAdvisor::GetMotionName 005a6540 e FindMotionData; 007a5000 (par antigo) é o envio chamado de dentro dele
+?CreateAvatar@ntAvatarManager@@QAEPAVntAvatar@@ABUsSlotInfo@@ABUsCharacterInfo@@PAVntAvatarChatMain@@@Z	007a8680	s115: new 0xc88 (ntAvatar do 983) e as chamadas do 645; era par por vizinho (DIFERENTE 0,83) que caiu ao corrigir o ChangeMotion
+??0CExhibition@@QAE@MMMK_N@Z	00877e30	s116: construtor da base (vtable 00d3454c, uid em +0x644, new FxInterpreter 0x1e0 em +0x548; ret 0x14)
+??1CExhibition@@UAE@XZ	00877180	s116: destrutor da base (vtable 00d3454c, ReleasePet, ClearAll, texParts, delete FxInterpreter)
+?Init@CExhibition@@IAEXXZ	00874930	s116: chamado pelo construtor; flags 0x16, 15/25, luz 0x969696
+?UpdateCamera@CExhibition@@IAEXM@Z	00873b60	s116: RotMat x2, pivot = za * -dist * (YS/600), pes "Bip01 L/R Foot" com flag 0x10
+?SetCenter@CExhibition@@QAEXMM@Z	00873e30	s116: SetScreenCenter do fxBox, FOV pi/2, /600, AttachFx no fim
+?AttachFx@CExhibition@@QAEXXZ	00873a30	s116: DetachFxAll(-1) + 0088ecd0 + 0088fe40 x2 no FxInterpreter +0x548
+?AttachAngelWingFx@CExhibition@@QAEXXZ	00873aa0	s116: 0088fe40("angeliceffect", 1, -1)
+?ReleasePet@CExhibition@@IAEXXZ	00873ae0	s116: m_type==0 -> delete CPetFrame; senao Release do puppet; Release da textura +0xe0
+?SetAlpha@CExhibition@@QAEXE@Z	00873a00	s116: CPetFrame::SetAlpha / WPuppet::SetAlpha por m_type
+?DisplayTnL@CExhibition@@IAEX_NMM@Z	00874af0	s116: corpo comum chamado por 00874e70 (1) e 00874e90 (0); Render com !modo
+?SetModelTnL@CExhibition@@IAE_N_NAAVCPartTidList@@PAKPBDMH@Z	00876d90	s116: corpo comum chamado por 00877120 (1) e 00877150 (0); Build com 6 argumentos
+?Display@CExhibitionByHardwareTnL@@UAEXMM@Z	00874e70	s116: vtable 00d05e9c [1]
+?SetModel@CExhibitionByHardwareTnL@@UAE_NAAVCPartTidList@@PAKPBDMH@Z	00877120	s116: vtable 00d05e9c [2]
+?Display@CExhibitionBySoftwareTnL@@UAEXMM@Z	00874e90	s116: vtable 00d13f30 [1]
+?SetModel@CExhibitionBySoftwareTnL@@UAE_NAAVCPartTidList@@PAKPBDMH@Z	00877150	s116: vtable 00d13f30 [2]
+??_GCExhibitionByHardwareTnL@@UAEPAXI@Z	004ff0d0	s116: vtable 00d05e9c [0]
+??_GCExhibitionBySoftwareTnL@@UAEPAXI@Z	006047a0	s116: vtable 00d13f30 [0]
+??0CExhibitionByHardwareTnL@@QAE@MMM_NK@Z	004ff080	s116: chama 00877e30 com (x, y, a, uid, bool) e grava a vtable 00d05e9c
+?SetModel@CExhibition@@QAE_NK@Z	00877ff0	s116: FindCadItem/FindCaddie/FindBall/FindClubSet/FindMatch/FindMascot/FindItem/FindCard/FindFurniture (ordem do 645)
+?SetModel@CExhibition@@QAE_NPBDW4eExhibitType@@@Z	00876f90	s116: MakeStr + GetPuppet por tipo (0xc, 2, 1) + AttachFx
+?SetMotion@CExhibition@@QAE_NPBD_NM@Z	00876b90	s116: ClearAll + AttachFx; CMotionAdvisor (e768f8) 005a6540; FindMotionData; 008900e0
+?NextMotion@CExhibition@@QAE_NXZ	00876ce0	s116: tabela de m_type (0..0xd), "default"/"Default"
+?ScriptProcess@CExhibition@@IAEXPBUw_motion_data@@MM_N@Z	008769d0	s116: chamado do SetMotion com (pMotion, s, s, 1)
+?GetDistance@CExhibition@@QAEMXZ	00873800	s116: fld [ecx+0x44] (m_targetDistance)
+?GetMotionName@CExhibition@@QAEPBDXZ	00873810	s116: [0xa4] ? [[0xa4]+0x18] : 0
+?SetDirection@CExhibition@@QAEXM@Z	00873830	s116: grava +0x2c (m_yaw); o 008b3420 era par de outra classe
+?SetDefaultDirection@CExhibition@@QAEXM@Z	00873840	s116: +0x18 = 1, +0x50 = 10, +0x3c = arg
+?IsDirectionChanged@CExhibition@@QAE_NXZ	00873860	s116: +0x1d e +0x574
+?GetCenter@CExhibition@@QAEABVWVector2D@@XZ	008738d0	s116: lea eax, [ecx+0x64]
+?SetArea@CExhibition@@QAEXM@Z	008738e0	s116: zera +0x5c/+0x60, raio +0x6c
+?SetArea@CExhibition@@QAEXMM@Z	00873900	s116: zera +0x6c, +0x5c/+0x60
+?GetMotionData@CExhibition@@QAEPAUw_motion_data@@XZ	008739f0	s116: mov eax, [ecx+0xa4]
+?SetDistance@CExhibition@@QAEXM_N0@Z	00874a20	s116: limites +0x100/+0x104, UpdateCamera, SetCamera
+?SetChatFacial@CExhibition@@QAEXHK@Z	00875c30	s116: nome da B39 (B: lobbyavataractor.h)
+?SetScreenPos@CExhibition@@IAEXPAVWPuppet@@@Z	008754a0	s116: chamado pelo SetModelTnL/SetModel(tid) com o puppet
+??0sUserInfoTime@@QAE@XZ	00644f10	s117: C51.1 — 12x22 bMap=0xff, sCharacterInfo 00500230, sSeasonRecord 006443b0, sUserPosition, 3 vetores, memset info 0x31c6 e userPosition 0x4b
+??1sUserInfoTime@@QAE@XZ	00644a00	s117: C51.1 — libera os 3 vetores (+0x3b2c, +0x3b1c, +0x3b0c) e chama 00644460 (oldSeason)
+??0sSeasonRecord@@QAE@XZ	006443b0	s117: C51.1 — bMap=0xff nos 2x22, 3 vetores zerados, memset userStat 0x109, mapas 0x3b2 x2, trophyStat 0x4e
+??1sSeasonRecord@@QAE@XZ	00644460	s117: C51.1 — libera os vetores +0x8db, +0x8cb, +0x8bb
+?SetFOV@WView@@QAEXM@Z	00b4fa90	s118: tan(fov/2) * XS/YS * 0,75 -> atan * 2 em +0x1c4, update |= 2; par do GetFOV 00b4fa30 (inverso)
+?Display@CBase@@QAEXXZ	006e37c0	s118: ground_info; GetFOV + SetProjectionMode(0) + SetFOV(pi/2), SetClip 0,1-10, Display do CFxBox, restaura modo/clip/FOV
+?MakeTopViewCameraMatrix@CGolfDoc@@QAE?AVWMatrix@@_N@Z	00666950	s118: LCONTROL/RCONTROL, (dz + 480) / (tan(GetFOV/2) * YS/XS); nome no projectg_funcs.tsv
+??0WView@@QAE@XZ	00b54890	s118: vtable 00d559c0 (RTTI WView) depois de ??0BaseObject; SetFOV(pi/2) com XS=YS=1, SetClip(6,4, 1600)
+?GetFOV@WView@@QBEMXZ	00b4fa30	s118: função de verdade no 983 (24 chamadores); tan(FOV/2) * YS/XS * 4/3 -> atan * 2
+?ResetMix983@FrRecycleDlg@@QAEXXZ	008db940	s118: C54.1 — m_mixResultTime = 3 (+0x680), m_mixing = 0 (+0x668), EnableTotalControls(true)
+?OnLogin_Copyright1Init983@CLobbyMain@@IAEXH@Z	005934b0	s169: "LOGIN.copyright1" FRCMD_INIT (msgmap 00e0d02c idx 2); IGUAL
+?OnLogin_Copyright2Init983@CLobbyMain@@IAEXH@Z	005935c0	s169: "LOGIN.copyright2" FRCMD_INIT (idx 3); IGUAL
+?SetPlayer@CGolfRuleMatch@@UAEXXZ	006a8fd0	D2: vtable 00d19874 slot 0
+?AddPlayer@CGolfRuleMatch@@UAEXEPBDKKK@Z	006a9160	D2: vtable 00d19874 slot 3
+?SetPlayer@CGolfRuleSkins@@UAEXXZ	006a9ed0	D2: vtable 00d1990c slot 0
+?SetPlayer@CGolfRuleStroke@@UAEXXZ	006aa6a0	D2: vtable 00d19994 slot 0
+?AddPlayer@CGolfRuleTeam@@UAEXEPBDKKK@Z	006ab150	D2: vtable 00d199dc slot 3
+?SetAccuracy@CClub@@QAEXXZ	006adc00	D3: vizinho funcs.tsv (media)
+?ClubProcess@CClub@@AAEXM@Z	006ae1f0	D3: funcs.tsv (alta); chamada por 006ae8d0
+?Process@CClub@@QAEXM@Z	006ae8d0	D3: chama ClubProcess 006ae1f0
+?AddClubSet@CClub@@QAEPAUsClubSet@@K@Z	006aeba0	D3: funcs.tsv (alta)
+?GetPower@CClub@@QAEMXZ	006b0180	D3: funcs.tsv (baixa), 921 B
+?Process@CWind@@QAEXM@Z	006caaf0	D3: comentario wind.h
+?Display@CWind@@QAEXPAVWPuppet@@MM@Z	006c83b0	D3: comentario wind.cpp:4270
+?SetApproachMode@CClub@@QAEXXZ	006ad3c0	D3: era vizinho (0.84); fixado
+?OnLoad@CGolfRule@@UAEXXZ	00686a70	D4: vtable 00d18534 slot 3 (OnPreLoadInit,slot2); 206 B
+?OnInit@CGolfRule@@UAEXXZ	00685860	D4: vtable 00d18534 slot 4
+?OnDisplay@CGolfRule@@UAEXXZ	00673740	D4: vtable 00d18534 slot 7; funcs.tsv par645 00443660
+?OnChatTargetEnterKey@CGolfRule@@IAE_NH@Z	0066e240	D4: similaridade de fichas 0.84 (match.py, unico candidato)
+?OnChatViewInit@CGolfRule@@IAEXH@Z	00685270	D4: fichas 0.82
+??0BallSpeedFactor@@QAE@KPAVCGolfBall@@M@Z	00672700	D4: fichas 0.97
+?TopViewClick@CGolfRule@@AAE_NXZ	00680560	D4: fichas 0.86
+?DoDrive@CGolfRule@@IAEXM@Z	00696310	D4: fichas 0.97
+?DoFlyBall_Flying@CGolfRule@@IAEXM@Z	0067f4e0	D4: fichas 0.75
+?HoleComboGaugeSetting@CGolfRule@@AAEXXZ	0067d5a0	D4: fichas 0.63
+?DoGameOver@CGolfRule@@IAEXM@Z	0067f130	D4: fichas 0.63
+?Cancel@CGolfRule@@IAEXXZ	00687050	D4: fichas 0.63
+?PangyaCorrection983@@YIPAVCPangyaCorrectionObject@@PAVCGolfDoc@@@Z	0065fe70	D4: CGolfDoc +0x860 [cur]; corpo identico (comentario golfrule.cpp:49853)
+?PangyaAddCorrection983@@YIPAVCPangyaAddCorrectionObj@@PAVCGolfDoc@@@Z	0065fec0	D4: CGolfDoc +0x870 [cur]
+?PangyaCorrectionSet983@@YIPAVCPangyaCorrectionSetObject@@PAVCGolfDoc@@@Z	0065fef0	D4: CGolfDoc +0x880 [cur]
+?ResetPangyaCorrectionSet983@@YIXPAVCGolfDoc@@@Z	0065fed0	D4: zera +0x880..0x88c
+?GetHolePang@CGolfRule@@IAEKE@Z	00672240	D34: mesma logica (0x10a99 canal 0x800/0x1000/0x2000 -> 1/2.5/5, *20*(1+0.5*((hole-1)/3)), dobra no ultimo buraco 0x10699); 983 fastcall sem this, fistp
+?SpecialHoleOffset983@@YIKXZ	006c7fd0	D37: holeRandom[hole-1]/0x29 (somado a vec.y em SetIntensity do canhao silvia)
+?AddSomeInfo@CGolfRule@@AAEXAAVWSendPacket@@@Z	006809e0	D39: 983 sem IsGlobalWind_Compare/m_netWind; item 5 casos->(1,1); GetPower983 arredondada; flag Wind+0x170
+?RenderNormals@WBone@@QAEXPAVWView@@M@Z	00b959a0	D121: WisEqual(normal,orig,eps)->cor 0xffff0000/0xff00ff00, mesmas flags/loops que o fonte
+?CalcHilightCoord@WBone@@QAEXPAVWView@@ABULightSet@@PAUw_mesh@@@Z	00b9d250	D121: 3968 B, muitos Normalize; chamada por 00b9e1d0 (Render) como no fonte
+?Render@WBone@@QAEXPAVWView@@ABULightSet@@@Z	00b9e1d0	D121: chama CalcHilightCoord (b9d250), RotVec/operator*(matriz)
+?SaveAnimationKey@WBone@@QAEHPAU_iobuf@@HPAY01MH@Z	00b9eea0	D121: OptimizePosKey+OptimizeRotKey+WriteID x2 como no fonte
+?SetKeyframe@WBone@@QAEXPAUw_keyframe@@MM@Z	00b9a230	D121: QUATEQU+WisEqual+memcpy x3 (sem chamadores 645; 851 B)
+?ReplaceKeyframe@WBone@@QAEXPAV1@M@Z	00b9f6f0	D121: 1026 B, 4 alocacoes de chaves (candidato por tamanho/estrutura)
+?ChangeTextureByHandle@WBone@@QAEXHH_N0@Z	00b97db0	D121: chamada por WPuppet::ChangeTextureByHandle (00b6f1e0) 2x; recursiva child/next, ReplaceTexture do WxShaderMtl
+?ApplySpecularMap@WBone@@QAEXH@Z	00ba90a0	D121: chamada por LoadPET (00b92760) apos Extra983; operator_new + resize das UVs + recursiva child/next
+?Velocity@ntCatmullRom@@QAE?AVWVector@@M@Z	00765630	npc D122: nome RTTI/funcs.tsv ntCatmullRom::Velocity, tamanho ~igual
+?ParsePuppetScript@CCreature@@QAEXPBD@Z	00769b40	npc D122: nome RTTI/funcs.tsv CCreature::ParsePuppetScript, tamanho ~igual
+?PlayEvent@CMole@@UAEXXZ	00769db0	npc D122: nome RTTI/funcs.tsv CMole::PlayEvent, tamanho ~igual
+?PlayEvent@CCrab@@UAEXXZ	0076a020	npc D122: nome RTTI/funcs.tsv CCrab::PlayEvent, tamanho ~igual
+?Process@ntNpc_PolaPenguin1@@UAEXM@Z	0076a960	npc D122: nome RTTI/funcs.tsv ntNpc_PolaPenguin1::Process, tamanho ~igual
+?Process@CNPC_BIRD@@UAEXM@Z	0076aa10	npc D122: nome RTTI/funcs.tsv CNPC_BIRD::Process, tamanho ~igual
+?Process@CSanta@@UAEXM@Z	0076b140	npc D122: nome RTTI/funcs.tsv CSanta::Process, tamanho ~igual
+?Process@CUfo@@UAEXM@Z	0076b230	npc D122: nome RTTI/funcs.tsv CUfo::Process, tamanho ~igual
+?Process@ntPenguin@@UAEXM@Z	0076b2e0	npc D122: nome RTTI/funcs.tsv ntPenguin::Process, tamanho ~igual
+?Process@ntPenguin_Duck@@UAEXM@Z	0076b550	npc D122: nome RTTI/funcs.tsv ntPenguin_Duck::Process, tamanho ~igual
+?Process@ntNpc_Dragon@@UAEXM@Z	0076b900	npc D122: nome RTTI/funcs.tsv ntNpc_Dragon::Process, tamanho ~igual
+?Process@ntNpc_PolaShip@@UAEXM@Z	0076bbd0	npc D122: nome RTTI/funcs.tsv ntNpc_PolaShip::Process, tamanho ~igual
+?Process@ntNpc_PolaPenguin2@@UAEXM@Z	0076bcb0	npc D122: nome RTTI/funcs.tsv ntNpc_PolaPenguin2::Process, tamanho ~igual
+?Process@CNPC_TORTOISE@@UAEXM@Z	0076bdb0	npc D122: nome RTTI/funcs.tsv CNPC_TORTOISE::Process, tamanho ~igual
+?Process@CNPC_TRSHIP@@UAEXM@Z	0076be60	npc D122: nome RTTI/funcs.tsv CNPC_TRSHIP::Process, tamanho ~igual
+?Process@ntNpc_AreaWalker@@UAEXM@Z	0076c8a0	npc D122: nome RTTI/funcs.tsv ntNpc_AreaWalker::Process, tamanho ~igual
+?CheckTarget@CCreature@@UAEXM@Z	0076cd10	npc D122: nome RTTI/funcs.tsv CCreature::CheckTarget, tamanho ~igual
+?CheckTarget@CSanta@@UAEXM@Z	0076daa0	npc D122: nome RTTI/funcs.tsv CSanta::CheckTarget, tamanho ~igual
+?CheckTarget@CFighter@@UAEXM@Z	0076e200	npc D122: nome RTTI/funcs.tsv CFighter::CheckTarget, tamanho ~igual
+?CheckTarget@CUfo@@UAEXM@Z	0076e760	npc D122: nome RTTI/funcs.tsv CUfo::CheckTarget, tamanho ~igual
+?CheckTarget@ntPenguin@@UAEXM@Z	0076ede0	npc D122: nome RTTI/funcs.tsv ntPenguin::CheckTarget, tamanho ~igual
+?CheckTarget@ntPenguin_Sailor@@UAEXM@Z	0076f320	npc D122: nome RTTI/funcs.tsv ntPenguin_Sailor::CheckTarget, tamanho ~igual
+?CheckTarget@ntNpc_BlackSparrow@@UAEXM@Z	0076fd60	npc D122: nome RTTI/funcs.tsv ntNpc_BlackSparrow::CheckTarget, tamanho ~igual
+?CheckTarget@CNPC_TORTOISE@@UAEXM@Z	00770820	npc D122: nome RTTI/funcs.tsv CNPC_TORTOISE::CheckTarget, tamanho ~igual
+?PlayEvent@CSparrow@@UAEXXZ	00767090	npc D122: RTTI funcs.tsv CSparrow::PlayEvent 559B x 553B
+?Display@ntPenguin_Sailor@@UAEXXZ	007672c0	npc D122: funcs.tsv ntPenguin_Sailor::Display 396B x 381B
+?Display@ntPenguin_Duck@@UAEXXZ	00767450	npc D122: funcs.tsv ntPenguin_Duck::Display 348B x 349B
+?Acceleration@ntCatmullRom@@QAE?AVWVector@@M@Z	00765b30	npc D122: logo apos Velocity 00765630 (834B x 495B, mesma estrutura de ntCatmullRom)
+?Record@CCreature@@QAEXXZ	0076d510	npc D122: logo apos CCreature::CheckTarget (0076cd10+2042), 238B x 246B
+?ChangeTurn@CBase@@QAEXXZ	006e4520	ground_info D166: FUN_006e4520, chama ChangeBall(tidBall do jogador atual)
+?V7_983@CGolfRule30Battle@@UAEXXZ	006a50b0	D191: slot 7 da vtable 00d19704
+?ReadyNextShot@CGolfRule30Battle@@UAEXXZ	006a5120	D191: slot 12
+?GetShortGameBallPos983@CGolfRule30Battle@@QAE?AVWVector@@K@Z	006a5500	D191: posicao da bola do shortgame por guid
+?StartGrandPrixAwards983@CGolfRule30Battle@@QAEXXZ	006a55b0	D191: premiacao do Grand Prix (chamada pelo slot 14)
+?V14_983@CGolfRule30Battle@@UAEXXZ	006a58c0	D191: slot 14
+?ShowScore@CGolfRule30Battle@@UAEXH@Z	006a5340	D191: slot 15 (arg = tempo float)
+?ProcessCamera983@CGolfRule30Battle@@QAEXM@Z	006a5000	D191: camera Process(t,0)
+?AddPlayer@CGolfRuleTutorial@@UAEXEPBDKKK@Z	006aba80	D192: slot 3 (copia do AddPlayer da base, atributos fixos)
+?_RealDownLoad@NetResourceManager@@IAE_NABUsResource@@@Z	009a9eb0	D207: chamada de WorkDownloadThread
+?vResetByOverall@sOption@@QAEXPBD@Z	00493df0	D208: chamado por optiondlg; corpo no 983
+??1COption@@UAE@XZ	00494f60	D208: dtor sob o scalar deleting 00495190 (vtable d0005c slot 0)
+?GetVolume@CAmbientSound@@IAEMABVWobb@@M@Z	0070e530	D209: pareamento por vizinho se perdia com OnLoad novo
+?UpdateRandomSound@CAmbientSound@@IAEXM@Z	0070e6b0	D209: sons aleatorios por mapa (OnProcess 007108c7)
+?Has@sRandomSoundContainer983@@QAE_NE@Z	0090b7a0	D209: container 0x9f find!=end
+?IsInclude@Wobb@@QBE_NABVWVector@@@Z	0070e390	D209: Wobb::IsInclude copia no exe
+??1CAmbientSound@@UAE@XZ	007100e0	D209: dtor (vtable d1c86c slot 1 -> deleting 007104c0)
+??_GCAmbientSound@@UAEPAXI@Z	007104c0	D209
+?InsertContainer@CContentsDoc@@QAEHW4localContentType_t@@PAUIContentsDataContainer@@@Z	00913d10	D210: icontentsdoc
+??1CContentsDoc@@UAE@XZ	00914340	D210: icontentsdoc
+??_GCContentsDoc@@UAEPAXI@Z	009147d0	D210: icontentsdoc
+??_GCRandomCourseSound@@UAEPAXI@Z	00915490	D210: icontentsdoc
+?Initialize@CRandomCourseSound@@UAE_NXZ	0090f700	D210: icontentsdoc
+?Release@CRandomCourseSound@@UAE_NXZ	00907920	D210: icontentsdoc
+?AddIceInferno@CRandomCourseSound@@AAEXXZ	0090edb0	D210: icontentsdoc
+?AddHio1@CRandomCourseSound@@AAEXXZ	0090ef10	D210: icontentsdoc
+?AddAbbotMine@CRandomCourseSound@@AAEXXZ	0090f030	D210: icontentsdoc
+??_GLobbyAvatarContainer@@UAEPAXI@Z	00913c40	D210: icontentsdoc
+?Initialize@LobbyAvatarContainer@@UAE_NXZ	00907930	D210: icontentsdoc
+?Release@LobbyAvatarContainer@@UAE_NXZ	00907940	D210: icontentsdoc
+?Reset@LobbyAvatarContainer@@UAE_NXZ	0090c620	D210: icontentsdoc
+?DestroyLobbyAvatars983@@YG_NPAU_Node@?$_List_nod@PAUsLobbyAvatar983@@V?$allocator@PAUsLobbyAvatar983@@@std@@@std@@0_N@Z	0090bb20	D210: icontentsdoc
+?ForEachCreators983@@YI?AUsInsertCreated983@@PAV?$function@$$A6IPAUIContentsDataContainer@@XZ@tr1@std@@0U1@@Z	00914030	D210: icontentsdoc
+??1sLobbyAvatar983@@QAE@XZ	0058ea00	D210: icontentsdoc
+?GetMovingRate@CSpot@@CIMM@Z	007282e0	D211: funcao sem this, 3*t*t-2*t*t*t (_DAT_00d66cf8=3.0); chamada por OnProcess-helper/OnDisplay
+?DrawRange@CSpot@@IAEX_N@Z	00728700	D211 parfeat: DrawRange (static GolfClub + 004d1740); chamada de 00729e90/0072c430
+?DrawHoleIndicator@CSpot@@IAEX_N@Z	00728e00	D211: DrawHoleIndicator (sqrt x2, Min<float>); chamada de 00729e90/0072c430
+?DrawIndicator@CSpot@@IAEXABVWVector@@H@Z	00729130	D211: DrawIndicator (chama ClipIndicator 00728930, Projection); 4x em 0072a9c0
+?OnLoad@CSpot@@UAEXXZ	00729f80	D211: CSpot::OnLoad slot 3 da vtable 00d1fd78 (RTTI)
+?OnProcess@CSpot@@UAEXM@Z	0072d0d0	D211: CSpot::OnProcess slot da vtable (RTTI)
+?HandleMsg@CSpot@@MAEXABVMsgObject@@@Z	0072d490	D211: CSpot::HandleMsg slot da vtable (RTTI)
+?Display@CSpot@@UAEXXZ	0072c3f0	D211: CSpot::Display slot da vtable (RTTI)
+?GetRivalColor@CSpot@@CGXEPAK@Z	007282a0	D212 fallingspot: Display/OnDisplay do 983
+?DrawQuad@CSpot@@AAEXABVWVector@@MK@Z	00728a80	D212 fallingspot: Display/OnDisplay do 983
+?DrawLabel@CSpot@@AAEXABVWVector@@KPBDH@Z	00728c10	D212 fallingspot: Display/OnDisplay do 983
+?IsAtTee@CSpot@@AAE_NABUsRivalData@@@Z	00729620	D212 fallingspot: Display/OnDisplay do 983
+?UpdateColor@CSpot@@AAEXXZ	00729970	D212 fallingspot: Display/OnDisplay do 983
+?DisplayTutorial@CSpot@@AAEXXZ	00729af0	D212 fallingspot: Display/OnDisplay do 983
+?DisplayDistance@CSpot@@AAEXXZ	00729e90	D212 fallingspot: Display/OnDisplay do 983
+?DisplayPlayers3D@CSpot@@AAEXXZ	0072a9c0	D212 fallingspot: Display/OnDisplay do 983
+?DisplayRivalNames@CSpot@@AAEXXZ	0072b210	D212 fallingspot: Display/OnDisplay do 983
+?DisplayPlayers2D@CSpot@@AAEXXZ	0072b8c0	D212 fallingspot: Display/OnDisplay do 983
+?DisplayTopView@CSpot@@AAEXXZ	0072c430	D212 fallingspot: Display/OnDisplay do 983
+?OnDisplay@CSpot@@UAEXXZ	0072ca30	D212 fallingspot: Display/OnDisplay do 983
+?SetShopMode983@CLobbyState983a@@QAEXH@Z	005fbe70	E90: ChangeMainTab 00a8fa30 chama com 2/3/4 (aba) antes das mensagens 0x1ce/0x1cf a LobbyAvatar/LobbyCaddie
+?EndShopMode983@CLobbyState983a@@QAEXXZ	005f8020	E90: ChangeMainTab 00a8fa30, depois das mensagens (this = 00e78ca8, sem args)
+?SetMyItemSlot@CShopMain@@IAEXXZ	00a88c80	E90: troca por subTab==9/0xa: BuildMyItemSlot(false/true) e mostra moldura/slot; senao esconde (+0x194/198/19c)
+?ReleaseExhibition@CShopMain@@IAEX_N@Z	00a82610	E90: (bWait) WaitUntilWorkDone(9999) na m_hand e delete m_pExhibition (+0x4b4)
+?OnPreLoadInit@CGolfPlayer@@UAEXXZ	00740f20	A491: RegisterElement(4,"클락",0x28) e ("tail",5); achado pelo push "tail" 00740f81
+?ShowScore983@CGolfRuleBase@@QAEXXZ	006a8130	B761: ShowScore do HoleInOne/GuildMatch/NewApproach (strings Score/DoScoreBoard em 006a8164/006a81f8)
+?OnComponentRBtnDown@FrSetItemDlg@@IAEXXZ	008ed670	msgmap 00ce51a2 (component RBUTTONDOWN, C442); CreateForm "information" 008ed6b2, esconde reset/icon_clubsetworkshop (C470)
+?SelectContents@FrUserInfoForm@@AAEXW4eSeasonType@1@PAPAUsPangYaUserStatistics@@PAPAUsTrophyStatistics@@PAPAV?$list@UsSpecialTrophy@@V?$allocator@UsSpecialTrophy@@@std@@@std@@3PAPAV?$list@UsGuildTrophy@@V?$allocator@UsGuildTrophy@@@std@@@6@@Z	00899dc0	unico chamador SetContent 008a846d; devolve 0x42f/0x538/0x34c8/0x34e0/0x34d4 (A555)
+?BuildGpTrophy983@FrUserInfoForm@@AAEXPBV?$list@UsSpecialTrophy@@V?$allocator@UsSpecialTrophy@@@std@@@std@@@Z	008a7f10	unico chamador SetContent 008a8e37; agrupa a lista GP (0x34e0) em 0x34ec por byte 2 do tid, filtro 008a1830(2) (A557)
+?FillGpTrophyBox983@FrUserInfoForm@@AAEHXZ	008a5500	unico chamador SetContent 008a8e3e; 008999d0(2) = caixa 0x294, soma count (A557)
+?OnGpSpecialBoxOwnerDraw983@FrUserInfoForm@@IAEXH@Z	008a0bc0	msgmap FrUserInfoForm 00e256c8 entrada 164 listbox_gp_special OWNERDRAW (A558)
+?OnGpNormalBoxOwnerDraw983@FrUserInfoForm@@IAEXH@Z	008a6290	msgmap FrUserInfoForm 00e256c8 entrada 162 listbox_gp_normal OWNERDRAW (A558)
+?IsEquipParts@FrTradeEditDlg@@QAE_NKK@Z	008f6410	chamado por SetListEnableTradingMyItem 008f8800 (A624)
+?PrintTitleFont983@FrGraphicInterface@@QAEXPAVWTitleFont@@MMPBDMHMK@Z	00bed170	WTitleFont alinhado; chamado por CShopMain::OnItemSlotOwnerDraw 00a86530, roomlist 0059a600, FrSubEquipBar 00b21930 (A639)

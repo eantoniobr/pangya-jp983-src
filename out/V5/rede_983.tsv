@@ -1,0 +1,34 @@
+tipo	va983	texto	refs_codigo	refs_dado	quem_usa	nosso_fonte_tem	onde	regra_exemplo_casa
+url	00d04e0c	http://<IP interno do 983>:8888/client/updatetest/	1	0	FUN_004df070 [realmyroommain.cpp]	sim	src/projectg/jp/extraresource.cpp	sim
+url	00d04e3c	http://dl.pangya.jp/pangya/season4/patch/	1	0	FUN_004df070 [realmyroommain.cpp]	sim	src/projectg/jp/extraresource.cpp	sim
+url	00d09678	http://157.7.172.65:50007/Translation/Read.aspx	2	0	FUN_005420a0 []; CConsole::Command [console.cpp]	sim	src/projectg/jp/gamestringmanager.cpp	sim
+url	00d0b62c	http://www.pangya.jp/shop/ika/gacha_index.aspx	0	1	dado 00e0d03c	NAO		sim
+url	00d0b65c	http://www.pangya.jp/shop/event/shizuku/gacha_index.aspx	0	1	dado 00e0d038	NAO		sim
+url	00d0b698	http://pangya.jp/shop/	0	1	dado 00e0d034	NAO		sim
+url	00d0b750	https://www5.pangya.jp/on_client/201012_NoviceTutorial/login.aspx?ID=%s&KID=%s	1	0	00594ac3	sim	src/projectg/lobbymain.cpp	NAO
+url	00d0b7a0	https://www5.pangya.jp/on_client/club/login.aspx?ID=%s&KID=%s	2	0	00594be3; CTaskMain::FUN_00659240 [taskmain.cpp]	sim	src/projectg/lobbymain.cpp;src/projectg/taskmain.cpp	NAO
+url	00d0b810	https://www5.pangya.jp/on_client/200911_netcafe/login.aspx?ID=%s&KID=%s	1	0	00594d43	NAO		NAO
+url	00d0b858	https://www5.pangya.jp/on_client/201104_cadiecard/login.aspx?ID=%s&KID=%s	1	0	00594e23	NAO		NAO
+url	00d0ba98	https://www5.pangya.jp/on_client/201110_halloween/login.aspx?ID=%s&KID=%s	1	0	FUN_00597dc0 [lobbymain.cpp]	NAO		NAO
+url	00d0bae8	https://www5.pangya.jp/on_client/201110_quiz/login.aspx?ID=%s&KID=%s	1	0	FUN_00597e10 [lobbymain.cpp]	NAO		NAO
+url	00d16ad4	http://www.pangya.jp	2	0	FUN_006512c0 [taskmain.cpp]; ?OnJoinDlgResult@FrLoginDlg@@IAE_NHPAVFrForm@ [logindlg.cpp]	sim	src/projectg/taskmain.cpp	NAO
+url	00d16ce0	https://www3.pangya.jp/payment/login.aspx?ID=%s&KID=%s	3	0	CTaskMain::FUN_006584e0 [taskmain.cpp]; FUN_00a9d180 [checkoutdlg.cpp]; FUN_00aacae0 [giftdlg.cpp]	sim	src/projectg/checkoutdlg.cpp;src/projectg/giftdlg.cpp;src/projectg/taskmain.cpp	NAO
+url	00d16e48	https://www5.pangya.jp/on_client/entrance.aspx?ID=%s&KID=%s	1	0	FUN_00658e20 [taskmain.cpp]	sim	src/projectg/taskmain.cpp	NAO
+url	00d16e84	https://www5.pangya.jp/on_client/gacha/login.aspx?ID=%s&KID=%s	1	0	FUN_00658e70 [taskmain.cpp]	sim	src/projectg/taskmain.cpp	NAO
+url	00d1f560	http://<IP interno do 983>:50007/Translation/Read.aspx	1	0	CConsole::Command [console.cpp]	NAO		sim
+url	00d1f598	http://157.7.172.67:50007/Translation/Read.aspx	1	0	CConsole::Command [console.cpp]	NAO		sim
+url	00d2fae8	http://202.213.206.154/real/upload/ghost/upload.asp	1	0	FUN_00828bd0 [ghostmanager.cpp]	NAO		sim
+url	00d2fb1c	http://202.213.206.154/real/upload/ghost/ghost/	1	0	?LoadDocument@CGhostManager@@QAEXABV?$basic_s [ghostmanager.cpp]	NAO		sim
+url	00d35124	http://157.7.172.65:50007/Report/ReportError.aspx	1	0	CPangFBI::ProcessReport [pangfbi.cpp]	NAO		sim
+url	00d351a0	http://157.7.172.65:50007/Report/CrimeReport.aspx	1	0	CPangFBI::ProcessReport [pangfbi.cpp]	NAO		sim
+url	00d36108	https://www5.pangya.jp/on_client/club	3	0	FUN_008aa150 []; RSSThreadFunc [rssmanager.cpp]; FUN_009c20a0 [itemmanager.cpp]	sim	src/projectg/taskmanager.cpp;src/projectg/lobbymain.cpp;src/projectg/taskmain.cpp	NAO
+url	00d3d830	http://dl.pangya.jp	1	0	DownloadUpdateList [commonutil.cpp]	sim	src/projectg/jp/extraresource.cpp	NAO
+url	00d3e790	http://www.hjwon.com:8000/test.swf	1	0	CPPL::IsPPLEnable [ppl.cpp]	sim	src/projectg/ppl.cpp	sim
+url	00d3f4ac	http://157.7.172.65:50007/SelfDesign/UploadFiles.aspx	1	0	NetResourceManager::Init [rssmanager.cpp]	sim	src/projectg/netresourcemanager.cpp	sim
+url	00d3f4e4	http://157.7.172.65:50007/_Files/SelfDesign/	1	0	NetResourceManager::Init [rssmanager.cpp]	sim	src/projectg/netresourcemanager.cpp	sim
+url	00d3f514	http://www5.pangya.jp/upload/club/mark/	1	0	NetResourceManager::Init [rssmanager.cpp]	sim	src/projectg/netresourcemanager.cpp	sim
+url	00d42173	http://pangya.gametree.co.kr	0	0		NAO		NAO
+url	00d4b7a8	http://kwanny.ntreev.net/tt/index.xml	1	0	FrGuildDlg::LoadRSS [guilddlg.cpp]	sim	src/projectg/guilddlg.cpp	sim
+ip	00d41cb8	0.0.0.0	2	0	FUN_00a4d550 [networksystem.cpp]; FUN_00a4f420 [socket.cpp]	NAO		-
+ip	00d41e18	157.7.173.48	0	1	dado 00e30834	sim	src/projectg/loginunit.cpp	-
+ip	00d41f34	127.0.0.1	1	0	ShopUnit::Connect [blowfish.cpp]	sim	src/projectg/shopunit.cpp	-

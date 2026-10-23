@@ -1,0 +1,19 @@
+va983	funcao	chamada_em	quem_va	quem	unidade
+00a5bea0	GGC_Helper::GGC_Helper	00a5cc01	00a5cbc0	?GGC_GetHelper@@YIPAVGGC_Helper@@XZ	ggc_helper.cpp
+00a5cbc0	?GGC_GetHelper@@YIPAVGGC_Helper@@XZ	00a59f9d	00a59ef0	FUN_00a59ef0	ggc_helper.cpp
+00a5cbc0	?GGC_GetHelper@@YIPAVGGC_Helper@@XZ	00a5cfc7	00a5cf80	?_GGC_Init@@YIHXZ	ggc_wrapper.cpp
+00a5cbc0	?GGC_GetHelper@@YIPAVGGC_Helper@@XZ	00a5d203	00a5d160	GameGuardMsgHandler::Process	ccrc32.cpp
+00a5cd50	?StackError@GGC_Helper@@QAE_NK_N@Z	00a5cfce	00a5cf80	?_GGC_Init@@YIHXZ	ggc_wrapper.cpp
+00a5cd50	?StackError@GGC_Helper@@QAE_NK_N@Z	00a5d20a	00a5d160	GameGuardMsgHandler::Process	ccrc32.cpp
+00a5ced0	FUN_00a5ced0			(sem chamada direta)	
+00a5cf10	FUN_00a5cf10			(sem chamada direta)	
+00a5cf40	FUN_00a5cf40			(sem chamada direta)	
+00a5cf60	FUN_00a5cf60			(sem chamada direta)	
+00a5cf80	?_GGC_Init@@YIHXZ	00a72d09	00a72a30	FUN_00a72a30	parallelwork.cpp
+00a5cfe0	FUN_00a5cfe0			(sem chamada direta)	
+00a5d010	?_GGC_SetHwnd@@YIXPAUHWND__@@@Z	00a72919	00a727d0	FUN_00a727d0	parallelwork.cpp
+00a5d030	?_GGC_SendUserID@@YIXPBD@Z	00ac21a6	00ac03a0	CLobbyTask::OnPacket	lobbytask.cpp
+00a5d050	?_GGC_CheckGameMon@@YIHXZ	00a6186f	00a61760	?Main@CMainFrame@@QAEHH@Z	projectg.cpp
+00a5d080	?_GGC_End@@YIXXZ	00a72992	00a727d0	FUN_00a727d0	parallelwork.cpp
+00a5d080	?_GGC_End@@YIXXZ	00a72d90	00a72a30	FUN_00a72a30	parallelwork.cpp
+00a5d0b0	_GGC_CSAuth2	00a5d150	00a5d150	thunk_FUN_00a5d0b0	ccrc32.cpp

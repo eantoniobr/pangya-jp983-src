@@ -1,0 +1,20 @@
+# V3: classe (decorada ou C++) -> unidade onde ela é completa; `-` = não gerar assert; `-anot` = não gerar só os de anotação. Corrige a escolha automática do gen.py.
+classe	unidade
+WxShaderMtl	-
+WxShaderMtlParamDesc	-
+ntAvatarManager	-anot
+CScore::CScoreBg	-anot
+CControlledObject	src/projectg/jp/statusslotplusobject.cpp
+CControlledRecord	src/projectg/jp/statusslotplusobject.cpp
+sControlledParam	src/projectg/jp/statusslotplusobject.cpp
+sControlledSource	src/projectg/jp/statusslotplusobject.cpp
+CGatewayHandler@_gateway	-
+RFTextStyle983	src/projectg/jp/refreshinterface.cpp
+RFWnd	src/projectg/jp/rfscenemanager.cpp
+FrPointShopDlg	src/projectg/jp/pointshopdlg.cpp
+FrPointShopMessageDlg	src/projectg/jp/pointshopdlg.cpp
+RFScrollBar	src/projectg/jp/rfcharmasterycardselectdlg.cpp
+RFList	src/projectg/jp/rfcharmasterycardselectdlg.cpp
+RFTextArea	src/projectg/jp/rfcharmasterycardselectdlg.cpp
+CMouseCursorJp983	src/projectg/jp/taskwidget.cpp
+sClubSet	src/projectg/club.cpp

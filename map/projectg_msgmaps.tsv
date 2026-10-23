@@ -1,0 +1,269 @@
+mapa	getmessagemap	classes	entradas	mapa_base	classes_base	controles
+00e034b0	0047c940	FrAttendanceDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	image_area
+00e037c8	0047f2a0	FrAvatarMotionDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	motionlist
+00e03948	00488d60	FrCardComposeDlg	32	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	my_card_list compose_card compose_card_btn1 compose_card_btn2 compose_card_btn3 about whole_card_button normal_card_button rare_card_button super_rare_card_button print_pang_area MagicBox
+00e03950	004890d0	FrCardComposeCheckDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	card_compose_viewer1 card_compose_viewer2 card_compose_viewer3 accept_compose cancel_compose
+00e03958	00489100	FrCardComposeAboutDlg	17	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	about_viewer index01 index02 index03 index04 index05 index06 backward forward
+00e03960	00489250	FrCardComposeResultDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	synthesized_card fx_player
+00e04210	0048f0a0	FrChatDlg	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	chat_group.chatbg chat_group.chatwndbtn chat_group.emoticon chat_group.language chat_group.chatinput chat_group.chattarget chat_group.chatview chat_group.report
+00e04a10	00498810	FrClubSetInfoDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait name level avility static_avility icon_clubsetworkshop
+00e04d30	004a39f0	FrClubSetWorkshopSelector	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	lt_item bt_ok bt_cancel static_notice
+00e05640	004ccce0	FrClubSetWorkshopMainDlg	179	00e07948	FrClubSetResetDlgBase,FrClubSetResetQuestionDlg,FrClubSetResetResultDlg	area_bg1 area_bg2 area_bg3 area_bg4 area_bg5 area_bg6 btn_tab_levelup btn_tab_rankup btn_tab_care btn_help btn_exit static_notice_clubworkhop
+00e0708c	004e13a0	_gateway::_questoneday::FrAchievement	29	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	btn_summary btn_char btn_gamemode btn_adventure btn_statistics btn_item btn_system btn_challenge btn_event area_summary area_element_layer list_ach_recent
+00e075d8	004edd90	FrClubSetWorkshopAboutDlg	25	00e07948	FrClubSetResetDlgBase,FrClubSetResetQuestionDlg,FrClubSetResetResultDlg	about_viewer index01 index02 index03 index04 index05 index06 index07 index08 index09 index10 backward
+00e07948	004ee580	FrClubSetResetDlgBase,FrClubSetResetQuestionDlg,FrClubSetResetResultDlg,ClubSetWorkShopForm	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel cancel2 message image
+00e07ac0	004f3110	FrItemCountController	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item_name dlg_desc item_count increase_cnt Decrease_cnt
+00e07ac8	004f31c0	FrMPBreakAboutDlg	25	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	aboutviewer index01 index02 index03 index04 index05 index06 index07 index08 index09 backward forward
+00e07ad0	004f3350	FrAlchemyMPBreakNoticeDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	FocuseMsg Msg CautionMsg Apply Exit
+00e07ad8	004f3450	FrAlchemyMPBreakDlg	39	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	My_TP_Point Alchemy_Exit Alchemy_Help MagicBox CardCompose Exchange Cookie_Item Pang_Item Rare_Item TikiTalk_Edit Exchange_ListBG1 Exchange_ListBG2
+00e08570	004fb5f0	FrFormBase	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel cancel2 message image caption
+00e0870c	004ff1c0	FrGameRoomDlg	69	00e04210	FrChatDlg	title frame_bg background close_wnd map_background map mapprev mapnext mapcomboex start_tip ready_tip start
+00e09074	0050f1e0	FrGrandPrixRoomDlg	19	00e09fdc	FrRoomListDlg	roomlist btn_sort_event btn_sort_rookie btn_sort_c1 btn_sort_c2 btn_sort_c3 gp_limited_tooltip gpstate_ticket gpstate
+00e09340	005100c0	FrHoleSelector	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	hole_preview holeIds
+00e09464	00510a10	FrMassTypeRoomDlg	32	00e0870c	FrGameRoomDlg	invite group_30s.room_event group_30s.user group_30s.30_team1 group_30s.30_team2 group_30s.30_guild1 group_30s.30_guild2 group_30s.30_team_num group_30s.30_guild_num group_30s.countdown group_result.user_info group_result.rankframe
+00e0946c	00510bf0	FrGPTypeRoomDlg	10	00e09464	FrMassTypeRoomDlg	group_gp.user group_gp.gp_detail group_gp.grandprixinfo group_gp.game_start_waiting
+00e09a38	00517140	FrMultiplayRoomDlg	5	00e09fdc	FrRoomListDlg	roomlist
+00e09b3c	00517740	_gateway::_questoneday::FrOnedayQuest	18	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	futurework currentwork req_today_quest giveup_quest quest_btn1 quest_btn2 quest_btn3 last_gift close draw_gauge
+00e09b44	00517a00	_gateway::_questoneday::FrOnedayQuestComplete	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	subject gift bg1 bg2
+00e09b4c	00517a40	_gateway::_questoneday::FrOnedayMentionSelect	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	arin_yes arin_no
+00e09fdc	0051c9e0	FrRoomListDlg	60	00e04210	FrChatDlg	room_no btn_cate_total btn_cate_vs btn_cate_mass btn_cate_battle btn_cate_chat room_hole room_course room_state cate_vs_list cate_mass_list cate_battle_list
+00e0a788	00521710	FrSingleModeStarter	13	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	expl close img_course img_chipin btn_course btn_repeat btn_chipin btn_tutorial
+00e0a99c	00521f70	FrSingleTypeDlg	22	00e0870c	FrGameRoomDlg	mode_title course_ctrl course_ctrl.bg_course course_ctrl.fix_hole course_ctrl.fix_holecup_pos chipin_ctrl chipin_ctrl.slope chipin_ctrl.size chipin_ctrl.ticket assist assist_tip course_ctrl.modify
+00e0acc0	00523250	FrStrokeTypeRoomDlg	11	00e0870c	FrGameRoomDlg	invite group_stroke.pet0 group_stroke.pet1 group_stroke.pet2 group_stroke.pet3 group_stroke.overgauge group_stroke.user
+00e0b564	00546b90	FrGrandPrixAwardDlg	41	00e08570	FrFormBase	common_area area_bg1 area_bg2 area_bg3 area_bg4 outback0 outback1 outback2 outback3 outback4 outback5 outback6
+00e0bcc4	0055aa50	_gateway::_grandprix::FrGrandPrixOpenDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	starttime finishtime diff prize warningmsg title specialrule cancel
+00e0c884	0057e8f0	_gateway::FrHoleinoneMissionDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	clicklist
+00e0cd58	005832d0	FrItemSearchDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	combo_SearchItemGroup edit_SearchWord btn_Search list_Result
+00e0d02c	00593050	CLobbyMain	273	00e14fc8	CTaskMain,CScreen,CTutorial	LOGIN LOGIN.copyright1 LOGIN.copyright2 BLANK TOPPAGE TOPPAGE.premium_service_end_notice TOPPAGE.gameplay TOPPAGE.family TOPPAGE.pangyastudy TOPPAGE.notice TOPPAGE.oneday_quest TOPPAGE.server
+00e0f2f8	0059e260	FrRoomListSelector	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	normallobby grandprixlobby expl img_multi img_gp
+00e0f300	0059e350	FrGrandPrixLimitDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	detail title condition contition_txt
+00e11878	005b1330	CPost_ReceiveDlg	30	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	recive_post send_post receive_1page delete_letter write_letter post_slot page_list btn_minus btn_pluse Edit_Page tooltip index_area
+00e11880	005b14f0	CPost_MessgeDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	recive_user letter_contents letter_date
+00e11888	005b1720	CPost_Contents	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	recive_user send_user letter_contents letter_date post_slot
+00e1347c	00604b50	CRealMyRoomMain	176	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	chat_bg middle_ui middle_ui.main_bg1 middle_ui.main_bg2 middle_ui.main_bg3 middle_ui.main_bg4 middle_ui.item_list middle_ui.tab_main middle_ui.tab_sub item_search_btn close_wnd middle_ui.storage_open_btn
+00e14b78	006275c0	SelfDesignHotkeyDescImgDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close
+00e14fc8	00650e60	CTaskMain,CScreen,CTutorial	0	00f1ac38	-	
+00e15160	0066e210	CGolfRule	76	00e14fc8	CTaskMain,CScreen,CTutorial	MAIN.chatview MAIN.emoticon MAIN.language MAIN.report MAIN.chattarget MAIN.chatinput MAIN.spcard MAIN.myinfo MAIN.option MAIN.caddiebook MAIN.unplayable MAIN.pause
+00e165b4	006eef50	FrQuitForm	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	option next tolobby exit cancel
+00e17bac	0074a930	FrChatFuncDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	chatview hidechat showchat savechat accuse closedlg
+00e17d88	0075a1d0	FrGuideBookDlg	24	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	content prev next tip1 tip2 tip3 tip4 tip5 tip6 tip7 tip8 tip9
+00e18600	0077ba20	FrRankForm	11	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list center info size billboard bar01 bar02
+00e18608	0077ba70	FrRankForm2	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list
+00e18610	0077bad0	FrRankForm3	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list size billboard score_gb score_info
+00e18618	0077bb10	FrRankFormEx	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	stage list billboard
+00e18620	0077be10	FrGrandPrixRankForm	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ranklist gamename issueboard hole_limited_time bg1 bg2 bg3 bg4 bg5 bg6
+00e18628	0077c090	FrAwardForm	31	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tab0 tab1 userlist expbar0 expbar1 expbar2 expbar3 exp0 exp1 exp2 exp3 expend0
+00e18630	0077c310	FrScoreForm	44	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bar2 bar3 front9btn back9btn shotbtn graphbtn versusbtn puttbtn pangbtn hole_list par_list pang_list
+00e18638	0077c4f0	FrMatchItems	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	view
+00e18640	0077c500	CScore	1	00f1ac38	-	.score.close
+00e19970	007af9a0	ntAvatarChatMain	32	00e14fc8	CTaskMain,CScreen,CTutorial	AVATARCHAT_MAIN AVATARCHAT_MAIN.portrait AVATARCHAT_MAIN.portrait_mask_area AVATARCHAT_MAIN.portrait_mask AVATARCHAT_MAIN.portrait_tipbtn AVATARCHAT_MAIN.portrait_jukeboxbtn_area AVATARCHAT_MAIN.portrait_jukeboxbtn AVATARCHAT_MAIN.portrait_chatlogbtn AVATARCHAT_MAIN.userlistbtn AVATARCHAT_MAIN.motion_btn_start AVATARCHAT_MAIN.chatframe AVATARCHAT_MAIN.chatview
+00e19df0	007b9030	FrAvatarChatLogDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	chatview hidechat showchat savechat accuse closedlg
+00e19f40	007b9780	FrAvatarTipDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tip prev next cancel
+00e1a088	007b9b80	FrAvatarUserListDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	userlist
+00e1a158	007ba3d0	FrJukeBoxDlg	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	jukeboxbtn jukeboxplay jukeboxclose jukeboxprev jukeboxnext jukeboxlist jukeboxframe_1
+00e1aaf0	007cff50	FrQuestInfoDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	quest_info reward_item name message explane
+00e1aaf8	007d01b0	FrQuestGift	11	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	reward_item select itemback4 itemback5 itemback6 itemback7 itemback8 itemback9
+00e1ada8	007d17b0	FrQuizDlg	11	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cases button_quiz1 button_quiz2 button_quiz3 button_quiz4
+00e1b070	007d2070	CTutorialMain	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	pet_pipin tutorial_list close_wnd
+00e1b1b8	007d73c0	FrNotifyForm	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ok_btn cancel_btn yes_btn no_btn
+00e1b318	007e0c30	FrUccCopyDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	char_icon item_list ok_btn cancel_btn etc
+00e1b320	007e0cf0	FrUccCopyConfirmDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	icon ok_btn cancel_btn etc
+00e1b328	007e0dc0	FrUccCopyCompletedDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ok_btn etc
+00e1b638	007e20d0	FrUccDrawDlg	83	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ucccanvas undo_btn redo_btn flip_btn reset_btn side1_area side2_area temp_save_btn hotkey_desc_btn grid_btn drag_btn zoomin_btn
+00e1c0e0	007e7e90	FrUccEditBrushDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	canvas cancel
+00e1c1a8	007ef720	FrUccPickColorDlg	16	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel_btn ok_btn usecolor_btn color_list canvas canvas_cursor brightness_canvas brightness_cursor1 brightness_cursor2 new_color prev_color
+00e1c3f8	007f08e0	FrUccSetInfoDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	name ok_btn cancel_btn icon_area
+00e1c540	007f13c0	CFurniture_AbilityDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	myitem_list select_itemlist select_item_img Edit_array Btn_Array select_text_img
+00e1c6b8	007f1da0	CRealMyRoom_AuthorityDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	kind_authority authority_pw auth_frm03 storage_lock storage_unlock storage_changepass
+00e1c6c0	007f1eb0	CRealMyRoom_EnterSetting	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	input_pw
+00e1c9a0	007f7080	FrItemStorageNotice	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	confirm print_out
+00e1c9a8	007f7330	FrItemStorageAccessPanel	30	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	print_out btn_option btn_slot_0 btn_slot_1 btn_slot_2 btn_slot_3 btn_slot_4 btn_slot_5 btn_slot_6 btn_slot_7 btn_slot_8 btn_slot_9
+00e1c9b0	007f75a0	FrItemCounter	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area edit_count btn_confirm btn_cancel
+00e1c9b8	007f76e0	FrItemStoragePangBank	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area edit_count btn_confirm btn_cancel
+00e1c9c0	007f7730	FrItemConfirm	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area btn_confirm btn_cancel
+00e1d1e8	007fe4f0	FrCardRemove	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area item_list btn_confirm btn_cancel
+00e1d1f0	007fe6e0	FrCardRemoveConfirm	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area btn_confirm btn_cancel
+00e1d1f8	007fe730	FrCardRemoveResult	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area btn_confirm
+00e1d508	00800880	FrSpCardUseDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item text1
+00e1d510	008008f0	FrCardUseDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item card_desc
+00e1d518	00800970	FrOpenCardPackDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item levelImg
+00e1d520	008009e0	FrOpenCardPackResultDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item cardpack_frm_num
+00e1d528	00800a60	FrCardAttachDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item cardavility cardavilityold
+00e1d530	00800a90	FrItemAttachCardDlg	52	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	attach_item_list attach_card_icon attach_card_name attach_card_ability attach_item_icon attach_item_name attach_item_ability attach_char_img foldbtn unfoldbtn card_frm_04 card_frm_05
+00e1d538	00800dc0	FrSPCardBuffDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	spcardlist
+00e1e058	0080b0b0	CPost_SendDlg	16	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	recive_user user_Nick recive_msg search_user friend_list item_appending post_slot Btnemoticon edit_servicecharge
+00e1e060	0080b100	CPost_MyItemList	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	myitem_list select_itemlist select_item_img Edit_array Btn_Array
+00e1e068	0080b350	CPost_ItemCountDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	btn_minus btn_pluse input_count
+00e1e630	00812400	CStandingInLine	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	Viewer_Total List_BtnArray
+00e1e8c0	00818a20	FrRecentMatch	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bg_area match_list text1
+00e1e8c8	00818aa0	FrGhostGameMapDlg	13	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	yes recent bg_area map_select choice_text choice_map
+00e1e8d0	00818cb0	FrGhostTimeBar	4	00e283c0	FrFormBar	gauge_area mouse_area
+00e1e8d8	00818f50	FrGhostAward	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	text_desc gauge_exp gauge_text bg_pouch bg_score
+00e1ee54	008226d0	CGhostMain	155	00e14fc8	CTaskMain,CScreen,CTutorial	GHOST GHOST.start GHOST.pet_user GHOST.pet_ghost GHOST.tip_ghost GHOST.user_stat GHOST.ghost_stat GHOST.select_course GHOST.user_equip GHOST.ghost_equip GHOST.ubar GHOST.ubar.back
+00e205c8	0082e980	_gateway::FrWorkShopEventDlg	26	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	WorkShopEvent_bg1 WorkShopEvent_bg2 WorkShopEvent_bg3 WorkShopEvent_bg4 WorkShopEvent_bg5 WorkShopEvent_bg6 WorkShopEvent_bg7 WorkShopEvent_bg8 WorkShopEvent_bg9 WorkShopEvent_bg10 WorkShopEvent_bg11 WorkShopEvent_bg12
+00e20c68	0083bf50	FrNextHole	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	next outback1 outback2 outback3
+00e20c70	0083bf60	FrTreasureGauge	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	pointgauge gaugearrow outback1 outback2 outback3
+00e20c78	0083bf70	FrTreasureCourse	73	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	selectmap demon_land_map bluelagoon bluewater sepiawind windhill wizwiz westwiz bluemoon silvia icecannon whitewiz
+00e20c80	0083c070	FrTreasureScore	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	imagebar back team
+00e20c88	0083c0f0	FrTreasureGift	18	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	outback3 outback4 outback5 outback6 outback7 outback8 inback3 inback4 inback5 inback6 inback7 inback8
+00e21c10	0084b8d0	FrPointShopHelp	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e21c18	0084b940	FrPointShopMessageDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	background
+00e21c20	0084b960	FrPointShopNoticeDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	background tag desc Apply Exit
+00e21c28	0084ba80	FrPointShopDlg	42	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	MyPoint PointShop_Exit PointShop_Main PointShop_Help GotoMainBg Intro_bg1 Intro_bg2 Intro_notice Exchange Buy Exchange_ListBG1 Exchange_ListBG2
+00e23430	008616a0	FrApproachResultDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	left_area left_list right_area right_list
+00e23438	00861b40	FrApproachEndDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area app_list
+00e23440	00861bd0	FrAppTreasureGiftDlg	0	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	
+00e23678	00863f90	FrReplayControlDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	replay_play replay_before replay_next replay_exit replay_minimize replay_record
+00e238a0	008649d0	FrTrainingOptionDlg	21	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	map mapprev mapnext weather weatherprev weathernext direction directionprev directionnext intensity intensityprev intensitynext
+00e238a8	00864d80	FrNewTrainingOptionDlg	25	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	training_map training_mapprev training_mapnext training_fronthole training_backhole training_randomhole training_shufflehole training_hare training_kumori training_ame training_windedit training_play
+00e251f8	00898330	FrOnelineReqDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	explain chatinput emoticon language yes
+00e25200	008983f0	FrOnelineReqChkOutDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	explain yes
+00e256c8	00899b50	FrUserInfoForm	174	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	friend whisper ignore cancel pet pet_load nick general special record trophy guild
+00e256d0	0089a0c0	FrAIInfoForm	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel pet pet_load nick
+00e26fa8	008b34d0	FrBongdariShopDlg	42	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bongdari_shop back_select_gacha_stage aboutshop totalitem bongdarishopnotice close bongdari bonusball01 bonusball02 bonusball03 bonusball04 bonusball05
+00e270a0	008b3e70	FrAboutShopDlg	30	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	about_shop aboutviewer index01 index02 index03 index04 index05 index06 index07 index08 index09 backward
+00e270a8	008b4190	FrTotalItemDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	total_item totalitemlist
+00e270c4	008b41d0	FrBongdarishopNoticeDlg	16	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bongdarishop_notice noticeviewer listindex backward forward out
+00e270cc	008b4270	FrBongdarishopRareItemDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bongdarishop_rareitem rareitemicon rareitemname rareitemability msg02
+00e270d4	008b4320	FrBongdarishopWarningDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	bongdarishop_warning warning_back
+00e270dc	008b4560	FrClosedBonusBallResultDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	closed_bonusball closedbonusballlist closedbonusballname01 closedbonusballability01 closedbonusballname02 closedbonusballability02
+00e28190	008c1690	FrCardBoxDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ID_BTN_ABOUT ID_BTN_CLOSE ID_AREA_BG ID_BTN_PACKOPEN ID_NEXT_OPEN_OK
+00e28318	008c3670	FrEmoticonDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list
+00e283c0	008c4110	FrFormBar	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	gauge_area msg
+00e284c8	008c52d0	FrClubSetResetProgress,FrRandomBoxProgress	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	waitbar cancle explane image
+00e28570	008c5750	FrGiftAlarmDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	giftlist infomsg
+00e28578	008c58f0	CTreasureAlarmDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	giftlist infomsg
+00e286c0	008c6f40	FrItemInfoDlg	24	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait name level static_power static_control static_accuracy static_spin static_curve epower1 econtrol1 eaccuracy1 espin1
+00e28a08	008c82f0	FrKbdManualDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close
+00e28a50	008c8a70	FrChangeNickDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	sprice price smycookie mycookie sremaincookie remaincookie checkout
+00e28a58	008c8a80	FrOptionDlg	159	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	game video audio macro shader g_ssensi g_sensi g_swhisper g_whisper g_sinvite g_invite g_sconfirm
+00e2a098	008cf3b0	FrPlayerInfoDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	user character caddie
+00e2a140	008d0270	FrNumEdit	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea NumEdit
+00e2a148	008d0390	FrPangEdit	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea EditPang
+00e2a150	008d0570	FrMyWareHouse	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea ItemList SortItem PartItem ClubItem WareItem CardItem
+00e2a158	008d06e0	FrTradeToolTip	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea TextList
+00e2a160	008d0700	FrPrivateTradeWnd	13	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea ItemList NumEditBtn01 NumEditBtn02 NumEditBtn03 NumEditBtn04
+00e2a168	008d0800	FrPrivateTrade	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	RenderArea Confirm Permit Cancel
+00e2a90c	008db6b0	FrRecycleDlg	51	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	MagicBox CardCompose Exchange back_center_01 back_bottom_01 recycledlg about close level_low level_mid level_high level_special
+00e2a920	008dbb60	FrRecycleAboutDlg	18	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	recycle_about aboutviewer index01 index02 index03 index04 index05 backward forward
+00e2a928	008dbe30	FrSelectPartDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list_box
+00e2b360	008e3660	FrSchoolDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	like school search
+00e2b468	008e5330	FrScratchDlg	19	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	scratchdlg scratch_bottom_02 scratch_cover_01 scratch_cover_02 scratch_card scratch_nextpage serial_number serial_number_bn about close
+00e2b470	008e55c0	FrScratchResultDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	scratchresultdlg resultitem_icon resultitem_name resultitem_name_2nd msg01 msg02
+00e2b478	008e55f0	FrScratchAboutDlg	17	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	aboutviewer index01 index02 index03 index04 index05 backward forward
+00e2bae0	008ed060	FrSetItemDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait name component
+00e2bbc8	008ede00	FrTradeDlg	22	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tradedlg visitor_back mypang trade_item_list noitem01 noitem02 visitor userid trade_title edit close hide
+00e2bbd0	008edef0	FrTradeBuyDlg	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tradebuydlg buyitem_icon buyitem_name buyitem_ability my_pang price pang_left num num_next num_prev
+00e2bbd8	008edfd0	FrTradeResultDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	traderesultdlg resultitem_icon resultitem_name resultitem_ability
+00e2bbe0	008ee0b0	FrTradeEditDlg	32	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tradeeditdlg my_item_list trade_item_list visitor userid trade_title trade_title_edit trade_title_edit_bn trade_myitem_icon trade_myitem_name trade_myitem_ability trade_myitem_number
+00e2bbe8	008ee2b0	FrTradeFinishEditDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	tradefinisheditdlg trade_item_list userid trade_title
+00e2bbf0	008ee3d0	FrTradeWarningDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	TradeWarningDlg msg01 msg02 cancel
+00e2bbf8	008ee470	FrTradeLevelLimitDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	
+00e2c920	008f98f0	FrAddGuildMemeberDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	nick check
+00e2ca30	008fa3d0	FrGuildManageDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	rmenu_reqJoin addmember memberlist
+00e2cb78	008fb8e0	FrMessengerChatDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel send receive emoticon caption
+00e2ccc8	008fdaf0	FrMessengerDlg	28	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	friendlist guildlist cancel myinfo friend_btn guild_btn notice find_btn guild_manage rmenu state state_menu
+00e2d0f8	009070b0	ntMsnUserSnapshotDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	gender level guild school status detail
+00e2d678	009218d0	_gateway::FrSpecialBoxDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	notify_area explane progressbar
+00e31a60	00a59e90	GGC_Dlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	message
+00e34448	00a7f760	FrDeleteItemDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	item desc warn item_num num num_prev num_next check
+00e34610	00a801f0	FrMascotInfoDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait vacation limit name text_message mascot_msg cancel
+00e34798	00a81870	FrPangGiftDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	my_pang send_pang total_pang item
+00e34880	00a81e20	FrReplayModeDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel
+00e34948	00a822c0	CShopMain	61	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	shopview searchgoods exportselectlist main_bg1 main_bg2 main_bg3 main_bg4 item_list tab_main tab_sub item_search_btn buy_all
+00e35190	00a99a00	FrCaddieInfoDlg	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait vacation limit name contract caddiefee signup cancel warning_button warning_text
+00e353ac	00a9ac20	FrCheckoutDlg	40	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	checkout cart price my_money money_left price_cookie my_money_cookie money_left_cookie num_static explane num num_prev
+00e358f8	00aa4370	FrCompoundDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	yes gauge etext compres
+00e35a80	00aa4fa0	FrDowngradeDlg	30	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	title help power control impact spin curve epower1 econtrol1 eimpact1 espin1 ecurve1
+00e35ea0	00aa65c0	FrEnchantDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	yes gauge etext title base
+00e36028	00aa7470	FrFortuneDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	fortune_img text_name text_open caption_img
+00e360f0	00aa85b0	FrFortuneOpenDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list caption1 caption1_1 caption2 total_price caption_img
+00e36238	00aaacf0	FrFriendDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	friend_listbox cancel
+00e36340	00aaba40	FrGiftDlg	39	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	checkout friend cart sxid edid id_check sxnick ednick emoticon nick_check message confirm
+00e36860	00ab02d0	FrHelpDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	title view
+00e368e8	00ab06b0	FrRepayDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cart price my_money money_left price_cookie my_money_cookie money_left_cookie
+00e36a50	00ab14e0	FrUpgradeCaddieDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	message Yes
+00e36d40	00ac56b0	FrAddFriendDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	nick check emoticon
+00e36e68	00ac6370	FrAwardDlg	27	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	sgold ssilver sbronze winner1 winner2 winner3 winner4 winner5 winner6 luck speeder runner
+00e37210	00ac88f0	FrCaddieWarningDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	portrait vacation limit name message warning_button warning_text
+00e37380	00ac9230	FrChangeRoomInfoDlg	45	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	text title password map_ctrl map_ctrl.text_map map_ctrl.mapprev map_ctrl.mapnext gametype userlimit hole timelimit map_ctrl.course
+00e37980	00acd520	FrCreateNickDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	editnick dispnick message check cancel emoticon
+00e37b08	00ace160	NtDetailDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close caption view
+00e37bd0	00ace3e0	FrDtRoomDlg	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	gamedesc join userinfo level status userlist
+00e37df8	00ad09c0	FrQuickResultDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ok1
+00e37e00	00ad0a70	FrQuickStartDlg	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	stroke strokestop tournament tournamentstop battle battlestop chat chatstop option
+00e37e08	00ad0ae0	FrQuickStartSettingDlg	11	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	chk_stroke chk_tournament chk_battle chk_chat combo_condition_1 combo_condition_2 combo_condition_3
+00e38288	00ad3420	FrEquipDlg	16	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	additem delitem reset close warehouse itemslot
+00e384d0	00ad5170	FrEventPrizeDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel view
+00e38558	00ad5490	FrFinalRankDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	list_left list_right
+00e38620	00ad5f40	FrFriendInfoDlg	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	nick sex server channel whisper ignore close
+00e38788	00ad6570	FrImageNoticeDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel lefttop centertop righttop leftmiddle centermiddle rightmiddle leftbottom centerbottom rightbottom
+00e38bd0	00ad6ef0	FrQuickMoveDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view button_prev button_next button_move
+00e38d18	00ad7560	FrGuildDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	board view
+00e38e20	00ad7d90	FrGuildNoticeDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close index article prev next
+00e38f68	00ad85e0	FrLevelupItemForm	9	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	levelupitem cancel level frame2 frame3 itemsend leveluplist itemexplane
+00e390d8	00ad9180	FrLoginDlg	34	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	password auto_id view login loginfb idbox passwordbox join_jp quit login_img s_id s_password
+00e39580	00adba00	FrLoginRsDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel
+00e395e8	00adbda0	FrLogoutDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	server logout exit
+00e396f0	00adc770	FrMailBoxDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	note cancel
+00e397d8	00adce90	FrMakeRoomDlg	69	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	make_vs make_mass make_battle make_chat make_chaos make_event picture text title password map_ctrl map_ctrl.text_map
+00e3a0c8	00ae27d0	FrMapSelectDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	select
+00e3a170	00ae3880	FrMemoDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	memo
+00e3a218	00ae3af0	FrNewRecordDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	courselist
+00e3a280	00ae3e80	FrNoteDlg	10	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	paid nick snick received sreceived note snote
+00e3a410	00ae4580	FrNoticeDlg	11	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel view num prev next caption
+00e3a5b8	00ae5810	FrParanNickDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	nick
+00e3a640	00ae5c50	FrPasswordDlg	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	password
+00e3a6e8	00ae5ee0	FrReportDlg	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	emoticon reason
+00e3a7e4	00ae69e0	FrResultDlg	18	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	stage trophy match smatch score sscore pang bonus sbonus getitem level exp
+00e3a7ec	00ae6b30	FrResultTeamDlg	29	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	stage trophy match score pang bonus getitem level exp exp_gb levelup red
+00e3a7f4	00ae6d00	FrUniteResultDlg	22	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	cancel awardinfo myinfoarea exp_gb exp_area resultlist resultwinner awardarea itemarea teamarea tooltip nextlevel
+00e3a7fc	00ae7160	FrAwardInfoDlg	0	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	
+00e3b190	00af0600	FrScoreDlg	33	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	front9btn back9btn shotbtn graphbtn pangbtn versusbtn puttbtn hole_list par_list golfer_list record_list total_list
+00e3b5f8	00af30d0	FrAutoConnect	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	drawingArea proc_msg yes
+00e3b600	00af30e0	FrServerDlg	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	serverlist channellist connectmessage connect_cancle message curserver cancel serverlist_premium_tooltip
+00e3b8e0	00af80d0	FrTikiMagicBoxDlg	31	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	back_img myitem_list mtr_list category_list character_list help_btn close_btn char_tab item_tab insert_btn mix_btn cancel_btn
+00e3bd08	00af8b30	FrTrainingDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	training close
+00e3be00	00af9150	FrUserListDlg	18	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	invite whisper addfriend sex level guild user
+00e3c088	00afa390	FrUseTikiReportDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	notice amount yes
+00e3c5d4	00afa9f0	FrBingoEventDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	start detail boardNumber
+00e3c5dc	00afab00	FrBingoDetailDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	detailview
+00e3c5e4	00afab60	FrBingoGiftDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	giftList
+00e3c7d8	00b01aa0	FrChristmasEventDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close caption xmas_btn1 xmas_btn2 xmas_btn3 xmas_ex1 xmas_ex2 xmas_ex3 xmas_socks1 xmas_socks2 snow_falling
+00e3c9a8	00b03290	FrChristmasSockEventDescDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e3ca20	00b03460	FrFindEbortEventDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	current_ebort
+00e3ca90	00b03820	FrHalloweenEventGiftDlg	2	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	giftframe_01 giftframe_01_cover
+00e3ca98	00b038a0	FrHalloweenEventDescDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e3caa0	00b03910	FrHalloweenEventDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_button map_icon_area current_candy
+00e3cc60	00b05030	FrTicketExchangeDescDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e3cc68	00b050b0	FrTicketExchangeDlg	41	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	num_0 num_1 num_2 num_3 help icon_0 icon_1 icon_2 icon_3 icon_4 icon_5 icon_6
+00e3d288	00b09630	FrMissionEventDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	eventdetail daygift termgift clear_mission clear_course
+00e3d290	00b09850	FrMissionDetail	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	detailview
+00e3d4b8	00b0a650	FrNewMapEventDlg	14	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	caption info1 score0 score1 score2 score3 score4 score5
+00e3d6c4	00b0ba50	FrPointEventNoticeDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	yes_button no_button draw_area
+00e3d6cc	00b0bb80	FrPointEventDescDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e3d6d4	00b0bc00	FrPointEventDlg	26	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_button commodity_button01 commodity_button02 commodity_button03 commodity_button04 commodity_button05 commodity_button06 commodity_button07 commodity_button08 commodity_button09 data_area contribution_area
+00e3dc90	00b0e7c0	NtNotifyImgDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close caption img
+00e3dc98	00b0e7e0	NtValentineEventDlg	33	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	close detail caption bg1 bg2 bg3 bg4 valen0 valen1 valen2 valen3 white0
+00e3dca0	00b0ea60	ntHolesEventDlg	6	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	prize0 prize1 prize2 prize3 prize4 gauge
+00e3e2f8	00b10500	FrWorldTourEventDlg	12	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	map_icon_area show_desc_left_top show_desc_right_top show_desc_left_bottom show_desc_right_bottom desc_button gift_button_cover gift_button course_button
+00e3e300	00b10680	FrWorldTourEventDescDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	desc_view
+00e3e308	00b106f0	FrWorldTourEventGiftDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	yes_button no_button
+00e3e608	00b12440	FrBirthdayEventDlg	7	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	Help Gift board boardNumber BirthdayEvent_bg1
+00e3e610	00b12620	FrBirthdayEventHelpDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	HelpView
+00e3e618	00b126a0	FrBirthdayEventMissionDlg	1	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	MissionNumber
+00e3e8a0	00b16c30	CFamilyMain	181	00e14fc8	CTaskMain,CScreen,CTutorial	FAMILY FAMILY.pet_area1 FAMILY.pet_area2 FAMILY.pet_area3 FAMILY.pet_area4 FAMILY.globalgui FAMILY.start_btn FAMILY.course_btn FAMILY.limit_time_btn FAMILY.hole_type_btn FAMILY.hole_num_btn FAMILY.create_pet3
+00e3ffe8	00b1d780	FrSubEquipBar	3	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	sub_equip
+00e3fff0	00b1d8b0	FrPlayerDlg	40	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	base select pet charprev charnext caddie caddie_limit caddieprev caddienext club club_limit clubprev
+00e3fff8	00b1db20	FrPlayerEmptyDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	base create index
+00e406a0	00b24a30	FrRankingDlg	68	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	class_type btn_current_season course user_rank user prev_page next_page cur_page tot_page rlist_myinfo rlist_s6 search_user
+00e406a8	00b24ed0	FrRankingAboutDlg	15	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	aboutviewer index01 index02 index03 index04 backward forward
+00e41790	00b33d70	S5::FrRentalExtensionDlg	4	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	ar_dialog bt_extension bt_destroy bt_cancel
+00e41860	00b34810	S5::FrSupplyPackDlg	8	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	lt_item bt_cancel bt_ok bg_area
+00e419b0	00b3b3a0	FrSelfDesignAccept	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	view btn_confirm btn_cancel
+00e419b8	00b3b3c0	FrSelfDesignExhibit	5	00e434ac	FrTaskForm,FrReturnGiftDlg,FrInviteDlg	draw_area btn_confirm btn_cancel
+00e434ac	00be5ed0	FrTaskForm,FrReturnGiftDlg,FrInviteDlg,ntMightyMACEventDlg,FrForm	4	00f1ac38	-	cancel yes
+00e43660	00beea80	FrListBox	0	00f1ac38	-	
+00e43700	00bfe700	FrComboBox	4	00f1ac38	-	unfold list
+00e43708	00bfe710	FrComboCtlEx	5	00f1ac38	-	unfold list
+00e43910	00c030e0	FrGaugeBarEx	2	00f1ac38	-	left right

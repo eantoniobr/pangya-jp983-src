@@ -1,0 +1,13 @@
+build/
+ref/
+proj/
+out/
+# exceções: os arquivos de out/ que o make exe lê e as fontes do docs/ESTADO.md já estão no git (git add -f)
+*.obj
+*.exe
+*.dll
+*.pdb
+*.lib
+*.pak
+__pycache__/
+*.log

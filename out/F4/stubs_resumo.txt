@@ -1,0 +1,7 @@
+stubs do 1º exe (make f4-stubs): 34 símbolos de out/F4/link/nao_resolvidos.tsv
+  funções: 1 (__thiscall 1); modo com JP983_STUB=continuar: continua 1
+  dados:   30 em 27 armazenamentos (mesma VA do 983 = mesmo armazenamento) + 1 literal ""
+  já com /alternatename noutro .obj (stub responde também pelo alvo): 0 — 
+  por frente (do v6-link): B 22, AB 5, A 4, lib 1
+  fora dos stubs: __iob, _jp983_rastro (resolvido pela libpng/zlib VC10: make f4-terc)
+compilação: ok (build/C/f4/stubs/stubs983.obj, 39870 bytes)

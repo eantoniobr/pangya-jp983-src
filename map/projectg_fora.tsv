@@ -1,0 +1,300 @@
+# nome decorado	VA vetado	motivo (s52: tools/f35/foradolugar.py sobre out/F3.5/s52/imp — função própria pareada a mais de 0x10000 do bloco da unidade; tools/f33/mkmap.py não põe este par no mapa)
+?SetHeadIcon@ntAvatar@@QAEXH@Z	008d06f0	projectg_avatar_avatar: bloco 007a33f0-007a87f0, estava IGUAL por bytes
+?IsTargetPositionChanged@ntAvatar@@QAE_N_N@Z	008d11a0	projectg_avatar_avatar: bloco 007a33f0-007a87f0, estava DIFERENTE por vizinho
+?SetLocalPVS@ntAvatar@@IAEXAAVCQuadTree@@@Z	008d2e20	projectg_avatar_avatar: bloco 007a33f0-007a87f0, estava QUASE por vizinho
+?GetMySpItem@ntAvatar@@QAEAAVSpecialPrizeItem@@W4eSPAVILITYTYPE@@@Z	008d2ed0	projectg_avatar_avatar: bloco 007a33f0-007a87f0, estava DIFERENTE por vizinho
+?OnPortraitJukeBoxButtonAreaInit@ntAvatarChatMain@@IAEXH@Z	00ab4520	projectg_avatar_mainui: bloco 007afa70-007b0120, estava IGUAL por mapa
+?OnPortraitMaskAreaInit@ntAvatarChatMain@@IAEXH@Z	00ab4520	projectg_avatar_mainui: bloco 007afa70-007b0120, estava IGUAL por mapa
+?OnUnderBar_RankingUp@ntAvatarChatMain@@MAEXXZ	00ab5a70	projectg_avatar_mainui: bloco 007afa70-007b0120, estava DIFERENTE por vizinho
+?OnInitStartButton@FrBingoEventDlg@@IAEXH@Z	00b26c60	projectg_bingoeventdlg: bloco 00afa9d0-00b01a10, estava QUASE por mapa
+?OnInitEventDetail@FrBingoEventDlg@@IAEXH@Z	00b34b90	projectg_bingoeventdlg: bloco 00afa9d0-00b01a10, estava QUASE por mapa
+?OnInitBoardNumberArea@FrBingoEventDlg@@IAEXH@Z	00b34c70	projectg_bingoeventdlg: bloco 00afa9d0-00b01a10, estava IGUAL por mapa
+?FrBingoDetailDlgMakeInstance@@YIPAVIObject@@XZ	00b36990	projectg_bingoeventdlg: bloco 00afa9d0-00b01a10, estava QUASE por vizinho
+?OnBongdariInit@FrBongdariShopDlg@@IAEXH@Z	00864ae0	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBonusBall04BnInit@FrBongdariShopDlg@@IAEXH@Z	00864c90	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBonusBall05BnInit@FrBongdariShopDlg@@IAEXH@Z	00864d00	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnTotalItemBnInit@FrBongdariShopDlg@@IAEXH@Z	00865110	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBongdariOwnerDraw@FrBongdariShopDlg@@IAEXXZ	00865310	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBonusBall01BnInit@FrBongdariShopDlg@@IAEXH@Z	008653f0	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBonusBall02BnInit@FrBongdariShopDlg@@IAEXH@Z	008654a0	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBonusBall03BnInit@FrBongdariShopDlg@@IAEXH@Z	00865560	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnForwardBnUp@FrAboutShopDlg@@IAEXXZ	008fdc20	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?OnBackwardBnUp@FrAboutShopDlg@@IAEXXZ	009068d0	projectg_bongdarishopdlg: bloco 008b3500-008c15c0, estava DIFERENTE por alvo
+?Init@BuddyManager@@QAE_NXZ	005259c0	projectg_buddymanager: bloco 0099d580-0099e5e0, estava IGUAL por mapa
+?UnRegisterDNS@BuddyManager@@QAEXXZ	008fa3f0	projectg_buddymanager: bloco 0099d580-0099e5e0, estava DIFERENTE por vizinho
+?SetListEquipParts@FrItemAttachCardDlg@@IAEXXZ	008f7570	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por mapa
+?OnInit@FrItemAttachCardDlg@@MAE_NXZ	0090f700	projectg_carddlg: bloco 00800890-00808c70, estava DIFERENTE por vizinho
+?OnText2Init@FrSpCardUseDlg@@IAEXH@Z	00aca5b0	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por mapa
+?OnItemInit@FrCardUseDlg@@IAEXH@Z	00aca8d0	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por vizinho
+?OnLevelImgInit@FrOpenCardPackDlg@@IAEXH@Z	00aca940	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por vizinho
+?OnItemInit@FrOpenCardPackDlg@@IAEXH@Z	00aca9b0	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por vizinho
+?FrOpenCardPackResultDlgMakeInstance@@YIPAVIObject@@XZ	00acb760	projectg_carddlg: bloco 00800890-00808c70, estava QUASE por vizinho
+?OnCancelLBDown@FrCardRemove@@IAEXXZ	00b24a40	projectg_cardremove: bloco 007fc5b0-00800290, estava IGUAL por mapa
+??0FrCardRemoveConfirm@@QAE@XZ	00b33e90	projectg_cardremove: bloco 007fc5b0-00800290, estava DIFERENTE por vizinho
+?FrCardRemoveResultMakeInstance@@YIPAVIObject@@XZ	00b3cc30	projectg_cardremove: bloco 007fc5b0-00800290, estava IGUAL por mapa
+??0FrCheckoutDlg@@QAE@XZ	004d9760	projectg_checkoutdlg: bloco 00a9ac40-00a9ed10, estava DIFERENTE por alvo
+?FrCheckoutDlgMakeInstance@@YIPAVIObject@@XZ	004d9a70	projectg_checkoutdlg: bloco 00a9ac40-00a9ed10, estava IGUAL por bytes
+?OnNumPrevInit@FrCheckoutDlg@@IAEXH@Z	007d1c20	projectg_checkoutdlg: bloco 00a9ac40-00a9ed10, estava QUASE por mapa
+?OnNumNextInit@FrCheckoutDlg@@IAEXH@Z	007d1cc0	projectg_checkoutdlg: bloco 00a9ac40-00a9ed10, estava QUASE por mapa
+?gSetPPLSize@COption@@QAEXH@Z	005d82c0	projectg_clientsetting: bloco 00491950-004940e0, estava IGUAL por mapa
+?gIsChatWinTransparent@COption@@QAE_NXZ	00650e70	projectg_clientsetting: bloco 00491950-004940e0, estava IGUAL por mapa
+?gResetRestore@COption@@QAEXXZ	009b0150	projectg_clientsetting: bloco 00491950-004940e0, estava DIFERENTE por vizinho
+?SendUpdateGameOptionPacket@COption@@QAEXXZ	009b7690	projectg_clientsetting: bloco 00491950-004940e0, estava DIFERENTE por vizinho
+?gSetPPLEnable@COption@@QAEX_N@Z	00b0b730	projectg_clientsetting: bloco 00491950-004940e0, estava DIFERENTE por vizinho
+?vGetTexResText@sOption@@QAEPBDH@Z	00b76cf0	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?vGetParticleText@sOption@@QAEPBDH@Z	00b76d00	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?dSetCaptureFormat@COption@@QAEXH@Z	00ba0a70	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?dSetReplayMode@COption@@QAEXH@Z	00ba0ab0	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?aGetOverallText@sOption@@QAEPBDH@Z	00bb0d80	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?vGetOverallLvl@sOption@@QAEHPBD@Z	00bb0d90	projectg_clientsetting: bloco 00491950-004940e0, estava IGUAL por mapa
+?ApplyChange@COption@@QAEXAAUsOption@@_N@Z	00bb1330	projectg_clientsetting: bloco 00491950-004940e0, estava DIFERENTE por vizinho
+?vGetTexResLvl@sOption@@QAEHPBD@Z	00bcee70	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?vGetParticleLvl@sOption@@QAEHPBD@Z	00bf6590	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+?gIsWhisperAllowed@COption@@QAE_NXZ	00bf7d10	projectg_clientsetting: bloco 00491950-004940e0, estava IGUAL por mapa
+?aGetOverallLvl@sOption@@QAEHPBD@Z	00bf8e90	projectg_clientsetting: bloco 00491950-004940e0, estava QUASE por mapa
+??1COption@@UAE@XZ	00bf8f40	projectg_clientsetting: bloco 00491950-004940e0, estava DIFERENTE por vizinho
+?DrawProjPolygonFan@WView@@QAEXPAPAUWTVertex@@HH@Z	006b2040	projectg_fallingspot: bloco 00728370-007293b0, estava IGUAL por mapa
+?InFrustum@WView@@QAE_NABVWVector@@@Z	006b2060	projectg_fallingspot: bloco 00728370-007293b0, estava QUASE por mapa
+??0CSpot@@IAE@XZ	00acf350	projectg_fallingspot: bloco 00728370-007293b0, estava DIFERENTE por alvo
+?CSpotMakeInstance@@YIPAVIObject@@XZ	00ad0360	projectg_fallingspot: bloco 00728370-007293b0, estava IGUAL por mapa
+?Display@CShotCountInfo@@QAEXMME@Z	0053d990	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho
+?Init@CFontInfo@@UAEXPADPAUsFont@1@@Z	006e1610	projectg_fontinfo: bloco 00525bc0-0052cd60, estava QUASE por alvo
+??0CFontInfo@@QAE@XZ	006e27c0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por alvo
+?Fix@CDistToHoleInfo@@QAEXXZ	0099e6c0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por alvo
+?Fix@CHoleCupInfo@@QAEXXZ	00be5ec0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava IGUAL por bytes
+?GetScreenPos@CHoleCupInfo@@UAEXPAM0@Z	00be6430	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho
+??0CTreasureAlarmDlg@@QAE@XZ	00b03830	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava IGUAL por mapa
+?OnInfoMsgInit@FrGiftAlarmDlg@@IAEXH@Z	00b0aa60	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava IGUAL por mapa
+?CTreasureAlarmDlgMakeInstance@@YIPAVIObject@@XZ	00b0c430	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava IGUAL por vizinho
+?FrGiftAlarmDlgMakeInstance@@YIPAVIObject@@XZ	00b0fa10	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava IGUAL por mapa
+?OnListBox_Gift_Init@CTreasureAlarmDlg@@IAEXH@Z	00b11c60	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava DIFERENTE por vizinho
+?OnStatic_Msg_Init@CTreasureAlarmDlg@@IAEXH@Z	00b11e30	projectg_giftalarmdlg: bloco 008c5750-008c6d60, estava QUASE por vizinho
+?OnGuildJoinFormResult@CGuildActor@_guild@@QAE_NHPAVFrForm@@@Z	005ee160	projectg_guildactor: bloco 0075a680-0075c640, estava IGUAL por mapa
+?RequestMember_Page@CGuildMainForm@_guild@@QAEXH@Z	00605060	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?DisableJoinButton@CGuildMainForm@_guild@@QAEXXZ	006059a0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?LockScrollMemberList@CGuildMainForm@_guild@@QAEXXZ	006dcd00	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?UnLockScrollMemberList@CGuildMainForm@_guild@@QAEXXZ	006dcd10	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?ResetEditState@CGuildMainForm@_guild@@AAEXPAX@Z	007329f0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+?GuildMsg@CGuildMainForm@_guild@@AAEPBDH@Z	007c3380	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?OnGuildInfo_ButtonInit@CGuildMainForm@_guild@@IAEXH@Z	007f9070	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+?OnGuildMember_ButtonInit@CGuildMainForm@_guild@@IAEXH@Z	007f90e0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+??1FrGuildJoin@_guild@@UAE@XZ	00800e10	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava IGUAL por mapa
+?OnGuildSearch_ButtonInit@CGuildMainForm@_guild@@IAEXH@Z	008014d0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+?OnGuildForm_CloseInit@CGuildMainForm@_guild@@IAEXH@Z	00801830	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+?OnInit@FrGuildJoin@_guild@@UAE_NXZ	008052a0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?SetGuildNumber@FrGuildJoin@_guild@@QAEXH@Z	0080b240	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava IGUAL por mapa
+??0FrGuildJoin@_guild@@QAE@XZ	0080b250	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por alvo
+?FrGuildJoinMakeInstance@_guild@@YIPAVIObject@@XZ	0080b2c0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava IGUAL por mapa
+?OnGuildJoin_AreaInit@FrGuildJoin@_guild@@IAEXH@Z	0080b710	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por vizinho
+?OnJoin_EditInit@FrGuildJoin@_guild@@IAEXH@Z	0080b780	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava IGUAL por mapa
+?OnRequestJoin_ButtonInit@FrGuildJoin@_guild@@IAEXH@Z	0080b860	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por vizinho
+?OnRequestOK_ButtonInit@FrGuildJoin@_guild@@IAEXH@Z	0080bb90	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho
+?OnFormClose_ButtonInit@FrGuildJoin@_guild@@IAEXH@Z	0080bca0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por mapa
+?CGuildMainFormMakeInstance@_guild@@YIPAVIObject@@XZ	0080d240	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava QUASE por vizinho
+??0FrLogoutDlg@@QAE@XZ	008ed070	projectg_logoutdlg: bloco 00adbda0-00adc440, estava IGUAL por mapa
+?OnMakeBattleDown@FrMakeRoomDlg@@IAEXXZ	00612420	projectg_makeroomdlg: bloco 00adce90-00ae26c0, estava IGUAL por mapa
+?OnMakeChatDown@FrMakeRoomDlg@@IAEXXZ	006dcd10	projectg_makeroomdlg: bloco 00adce90-00ae26c0, estava DIFERENTE por vizinho
+?OnMapPrevInit@FrMakeRoomDlg@@IAEXH@Z	007d1c20	projectg_makeroomdlg: bloco 00adce90-00ae26c0, estava QUASE por mapa
+?OnMapNextInit@FrMakeRoomDlg@@IAEXH@Z	007d1cc0	projectg_makeroomdlg: bloco 00adce90-00ae26c0, estava QUASE por mapa
+?OnMapPrevChatInit@FrMakeRoomDlg@@IAEXH@Z	00ac9640	projectg_makeroomdlg: bloco 00adce90-00ae26c0, estava QUASE por mapa
+?GetMessageMap@ntMsnUserSnapshotDlg@@MBEPBUsFRESH_MSGMAP@@XZ	009070b0	projectg_msnusersnapshot: bloco 00b0ba60-00b0c910, estava IGUAL por mapa
+??1ntMsnUserSnapshotDlg@@UAE@XZ	00907120	projectg_msnusersnapshot: bloco 00b0ba60-00b0c910, estava QUASE por mapa
+?OnNextInit@FrNoticeDlg@@IAEXH@Z	007d1ae0	projectg_noticedlg: bloco 00ae4580-00ae5610, estava QUASE por mapa
+??0FrOptionDlg@@QAE@XZ	004fa3d0	projectg_optiondlg: bloco 008c8360-008cebb0, estava DIFERENTE por alvo
+?FrOptionDlgMakeInstance@@YIPAVIObject@@XZ	004fa9d0	projectg_optiondlg: bloco 008c8360-008cebb0, estava IGUAL por bytes
+?vOnWideModeStaticInit@FrOptionDlg@@IAEXH@Z	00671250	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?gOnCutinDisplayBtnInit@FrOptionDlg@@IAEXH@Z	00b119b0	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?gOnWhisperStaticInit@FrOptionDlg@@IAEXH@Z	00b11dc0	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?gOnWhisperBtnInit@FrOptionDlg@@IAEXH@Z	00b11e30	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+??0FrChangeNickDlg@@QAE@XZ	00b12630	projectg_optiondlg: bloco 008c8360-008cebb0, estava DIFERENTE por alvo
+?gOnInvitationStaticInit@FrOptionDlg@@IAEXH@Z	00b12c10	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?gOnInvitationBtnInit@FrOptionDlg@@IAEXH@Z	00b12c80	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?vOnFullScreenStaticInit@FrOptionDlg@@IAEXH@Z	00b12ea0	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?vOnNpcBtnInit@FrOptionDlg@@IAEXH@Z	00b12f10	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?FrChangeNickDlgMakeInstance@@YIPAVIObject@@XZ	00b12f80	projectg_optiondlg: bloco 008c8360-008cebb0, estava IGUAL por mapa
+?vOnParticleStaticInit@FrOptionDlg@@IAEXH@Z	00b13040	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?vOnParticleCmbInit@FrOptionDlg@@IAEXH@Z	00b13210	projectg_optiondlg: bloco 008c8360-008cebb0, estava QUASE por mapa
+?Send@WSendPacket@@QAEXW4eSendTo@@@Z	00a4dab0	projectg_packet: bloco 005ab070-005abd60, estava DIFERENTE por semente
+?OnCreateInit@FrPlayerEmptyDlg@@IAEXH@Z	00b0c4f0	projectg_playerdlg: bloco 00b1d770-00b24980, estava QUASE por mapa
+?OnCharPrevInit@FrPlayerDlg@@IAEXH@Z	00b0c570	projectg_playerdlg: bloco 00b1d770-00b24980, estava QUASE por mapa
+?OnOwnerDrawDataArea@FrPointEventDlg@@IAEXH@Z	00ac6820	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnInitBtnDescContribution@FrPointEventDlg@@IAEXH@Z	00ac6890	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnInitBtnContribution@FrPointEventDlg@@IAEXH@Z	00ac6900	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnOwnerDrawContribution@FrPointEventDlg@@IAEXH@Z	00ac7d90	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnLBDownBtnDescContribution@FrPointEventDlg@@IAEXXZ	00ac8040	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnLBDownBtnContribution@FrPointEventDlg@@IAEXXZ	00ac82f0	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnOwnerDrawCoverArea@FrPointEventDlg@@IAEXH@Z	00ac87b0	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por alvo
+?OnInitDrawArea@FrPointEventNoticeDlg@@IAEXH@Z	00b34c70	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava QUASE por mapa
+?FrPointEventDescDlgMakeInstance@@YIPAVIObject@@XZ	00b45630	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava QUASE por vizinho
+?SetMyCount@CCommoditySlot@@QAEXK@Z	00be2910	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava IGUAL por mapa
+?SetTotalCount@CCommoditySlot@@QAEXK@Z	00be4510	projectg_pointeventdlg: bloco 00b0b0c0-00b0e050, estava DIFERENTE por vizinho
+?CPost_ReciveDlgMakeInstance@@YIPAVIObject@@XZ	005efeb0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?DrawStatus2@CPost_ReciveDlg@@IAEXPAVFrGraphicInterface@@PAUFrListItem@@QAF2M@Z	00604d10	projectg_post_recivedlg: bloco 005b1430-005b6550, estava DIFERENTE por vizinho
+?OnPageUpInit@CPost_ReciveDlg@@IAEXH@Z	00607190	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por mapa
+?OnPostMessage_ReciveUserInit@CPost_MessgeDlg@@QAEXH@Z	006074b0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava IGUAL por mapa
+?OnPostMessage_LetterContentsInit@CPost_MessgeDlg@@QAEXH@Z	00607fa0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostMessage_LetterDateInit@CPost_MessgeDlg@@QAEXH@Z	00608010	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostMessage_ReciveUserInit@CPost_Contents@@QAEXH@Z	00608080	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostMessage_SendUserInit@CPost_Contents@@QAEXH@Z	006080f0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostMessage_LetterContentsInit@CPost_Contents@@QAEXH@Z	00608160	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostMessage_LetterDateInit@CPost_Contents@@QAEXH@Z	006081d0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?OnPostListInit@CPost_Contents@@QAEXH@Z	006083c0	projectg_post_recivedlg: bloco 005b1430-005b6550, estava QUASE por vizinho
+?CPost_MyItemListMakeInstance@@YIPAVIObject@@XZ	00ada630	projectg_post_senddlg: bloco 0080b0d0-0080f480, estava IGUAL por vizinho
+??1CPost_ItemCountDlg@@UAE@XZ	00be5f60	projectg_post_senddlg: bloco 0080b0d0-0080f480, estava QUASE por mapa
+?CPost_ItemCountDlgMakeInstance@@YIPAVIObject@@XZ	00be6450	projectg_post_senddlg: bloco 0080b0d0-0080f480, estava QUASE por vizinho
+??0FrRankingDlg@@QAE@XZ	008c0340	projectg_rankingdlg: bloco 00b249d0-00b2adc0, estava DIFERENTE por alvo
+?FrRankingDlgMakeInstance@@YIPAVIObject@@XZ	008c12b0	projectg_rankingdlg: bloco 00b249d0-00b2adc0, estava IGUAL por bytes
+?OnLevelSpecialBnInit@FrRecycleDlg@@IAEXH@Z	00ac96e0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnRecycleItemListInit@FrRecycleDlg@@IAEXH@Z	00ac9a50	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnRecycleItemListOwnerDraw@FrRecycleDlg@@IAEXH@Z	00ac9f10	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnMixBnUp@FrRecycleDlg@@IAEXXZ	00aca360	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnArrowLeftBnDown@FrRecycleDlg@@IAEXXZ	00aca510	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnArrowLeftBnUp@FrRecycleDlg@@IAEXXZ	00aca5b0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnLevelLowBnUp@FrRecycleDlg@@IAEXXZ	00aca710	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnArrowRightBnDown@FrRecycleDlg@@IAEXXZ	00aca780	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnArrowRightBnUp@FrRecycleDlg@@IAEXXZ	00aca7f0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnAreaPictureOwnerDraw@FrRecycleDlg@@IAEXXZ	00aca9b0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnSelectPartInit@FrRecycleDlg@@IAEXH@Z	00acaab0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnCardSlotInit@FrRecycleDlg@@IAEXH@Z	00acab40	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnCardSlotOwnerDraw@FrRecycleDlg@@IAEXH@Z	00acac20	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnLevelEventBnUp@FrRecycleDlg@@IAEXXZ	00acb300	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnLevelMidBnUp@FrRecycleDlg@@IAEXXZ	00acbac0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnLevelHighBnUp@FrRecycleDlg@@IAEXXZ	00acbaf0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnCharacterSelectListLBnUp@FrRecycleDlg@@IAEXXZ	00acbbf0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnRecycleItemListRBnUp@FrRecycleDlg@@IAEXXZ	00acbee0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnCadieMessageInit@FrRecycleDlg@@IAEXH@Z	00acbfe0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnSelectPartLBDown@FrRecycleDlg@@IAEXXZ	00acc040	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnCardSlotResultInit@FrRecycleDlg@@IAEXH@Z	00acc1d0	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnLevelSpecialBnUp@FrRecycleDlg@@IAEXXZ	00acd210	projectg_recycledlg: bloco 008db770-008e33d0, estava DIFERENTE por alvo
+?OnAwardInfoInit@FrUniteResultDlg@@IAEXH@Z	00b05c40	projectg_resultdlg: bloco 00ae6ae0-00af03d0, estava QUASE por mapa
+?OnMyInfoAreaInit@FrUniteResultDlg@@IAEXH@Z	00b05ce0	projectg_resultdlg: bloco 00ae6ae0-00af03d0, estava QUASE por mapa
+??0FrServerDlg@@QAE@XZ	007af220	projectg_serverdlg: bloco 00af3120-00af72e0, estava DIFERENTE por alvo
+?FrServerDlgMakeInstance@@YIPAVIObject@@XZ	007af840	projectg_serverdlg: bloco 00af3120-00af72e0, estava QUASE por mapa
+?Clear@SpotHistory@@UAEXXZ	007d71c0	projectg_shotreview: bloco 0084a450-0084c1a0, estava IGUAL por mapa
+??0FirstBoundHistory@@QAE@XZ	007db890	projectg_shotreview: bloco 0084a450-0084c1a0, estava DIFERENTE por vizinho
+?CTaskMainMakeInstance@@YIPAVIObject@@XZ	00712920	projectg_taskmain: bloco 00650e70-0065ced0, estava IGUAL por mapa
+?OnOverBar_MyInfoUp@CTaskMain@@IAEXXZ	007892d0	projectg_taskmain: bloco 00650e70-0065ced0, estava DIFERENTE por vizinho
+?OnOverBar_SiteInit@CTaskMain@@IAEXH@Z	0089f8e0	projectg_taskmain: bloco 00650e70-0065ced0, estava DIFERENTE por vizinho
+?OnRMR_ResultSetting@CTaskMain@@IAE_NHPAVFrForm@@@Z	008dd910	projectg_taskmain: bloco 00650e70-0065ced0, estava DIFERENTE por vizinho
+?OnUnderBar_ItemStorageUp@CTaskMain@@IAEXXZ	008ed040	projectg_taskmain: bloco 00650e70-0065ced0, estava DIFERENTE por vizinho
+?OnQuitDlgResult@CTaskMain@@IAE_NHPAVFrForm@@@Z	008fdc70	projectg_taskmain: bloco 00650e70-0065ced0, estava IGUAL por mapa
+?OnMaketListDlgResult@CTaskMain@@IAE_NHPAVFrForm@@@Z	008fddd0	projectg_taskmain: bloco 00650e70-0065ced0, estava IGUAL por mapa
+??0FrTradeEditDlg@@QAE@XZ	007ef840	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por alvo
+?FrTradeEditDlgMakeInstance@@YIPAVIObject@@XZ	007f0540	projectg_tradedlg: bloco 008ede60-008f8730, estava IGUAL por mapa
+??1FrTradeEditDlg@@UAE@XZ	007fdfb0	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?SetListEquipParts@FrTradeEditDlg@@QAEXXZ	00808e30	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?SetListTradingItem@FrTradeEditDlg@@QAEXXZ	0082b2e0	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?SumForTradeItemList@@YI_J_JABUsTradeItem@@@Z	008374d0	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+??1FrTradeResultDlg@@UAE@XZ	00841770	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+??0FrTradeResultDlg@@QAE@XZ	008be620	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por alvo
+?FrTradeResultDlgMakeInstance@@YIPAVIObject@@XZ	008bebd0	projectg_tradedlg: bloco 008ede60-008f8730, estava IGUAL por mapa
+?SetResultItemList@FrTradeResultDlg@@QAEXPAV?$vector@UsTradeItem@@V?$allocator@UsTradeItem@@@std@@@std@@@Z	00911000	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?OnNumberNextBnUp@FrTradeBuyDlg@@IAEXXZ	00a7f7d0	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?OnNumberPrevBnUp@FrTradeBuyDlg@@IAEXXZ	00a7f830	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?OnUserIdInit@FrTradeEditDlg@@IAEXH@Z	00a7fb30	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por bytes
+?OnTradeItemListInit@FrTradeEditDlg@@IAEXH@Z	00a81f30	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTitleEditInit@FrTradeEditDlg@@IAEXH@Z	00aa5890	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemIconInit@FrTradeEditDlg@@IAEXH@Z	00aa5900	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemNameInit@FrTradeEditDlg@@IAEXH@Z	00aa5970	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemAbilityInit@FrTradeEditDlg@@IAEXH@Z	00aa59e0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemNumberInit@FrTradeEditDlg@@IAEXH@Z	00aa5a50	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemPriceInit@FrTradeEditDlg@@IAEXH@Z	00aabe70	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemOkBnInit@FrTradeEditDlg@@IAEXH@Z	00aac060	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeMyItemCancelBnInit@FrTradeEditDlg@@IAEXH@Z	00aac0d0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnOpenBnInit@FrTradeEditDlg@@IAEXH@Z	00aac140	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnCloseBnInit@FrTradeEditDlg@@IAEXH@Z	00aac1b0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnExitBnInit@FrTradeEditDlg@@IAEXH@Z	00aac220	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnPackageSaleInit@FrTradeEditDlg@@IAEXH@Z	00aac570	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?OnTooltipAreaInit@FrTradeEditDlg@@IAEXH@Z	00aca710	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnUserIdInit@FrTradeFinishEditDlg@@IAEXH@Z	00b12c10	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTitleInit@FrTradeFinishEditDlg@@IAEXH@Z	00b1f5f0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnOkBnInit@FrTradeFinishEditDlg@@IAEXH@Z	00b25f10	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnTradeItemListInit@FrTradeFinishEditDlg@@IAEXH@Z	00b26c60	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por mapa
+?OnMsg02Init@FrTradeWarningDlg@@IAEXH@Z	00b26ce0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por vizinho
+?OnOkBnInit@FrTradeWarningDlg@@IAEXH@Z	00b26d60	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por vizinho
+?OnCancelBnInit@FrTradeWarningDlg@@IAEXH@Z	00b26de0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por vizinho
+?OnOkBnInit@FrTradeLevelLimitDlg@@IAEXH@Z	00b26fa0	projectg_tradedlg: bloco 008ede60-008f8730, estava QUASE por vizinho
+?FrTradeDlgMakeInstance@@YIPAVIObject@@XZ	00b27060	projectg_tradedlg: bloco 008ede60-008f8730, estava DIFERENTE por vizinho
+?OnViewer_CurrMap_Init@FrTreasureCourse@@IAEXH@Z	0089cdf0	projectg_treasuredlg: bloco 0083be70-00842920, estava QUASE por mapa
+?OnArea_Explane_Init@FrTreasureCourse@@IAEXH@Z	0089ce60	projectg_treasuredlg: bloco 0083be70-00842920, estava QUASE por mapa
+?OnInit_Cloud_Area@FrTreasureCourse@@IAEXH@Z	0089ced0	projectg_treasuredlg: bloco 0083be70-00842920, estava QUASE por mapa
+?DrawCurrentMap@FrTreasureCourse@@AAEXPAVFrGraphicInterface@@H@Z	00921b30	projectg_treasuredlg: bloco 0083be70-00842920, estava DIFERENTE por vizinho
+?SetMapGauge@FrTreasureCourse@@QAEXXZ	00a8f9e0	projectg_treasuredlg: bloco 0083be70-00842920, estava DIFERENTE por vizinho
+?OnInit_Gift_List@FrTreasureGift@@IAEXH@Z	00aca8d0	projectg_treasuredlg: bloco 0083be70-00842920, estava QUASE por mapa
+?FrTreasureScoreMakeInstance@@YIPAVIObject@@XZ	00b0c430	projectg_treasuredlg: bloco 0083be70-00842920, estava IGUAL por vizinho
+?OnInit_GridArea@FrTreasureGift@@IAEXH@Z	00b1f070	projectg_treasuredlg: bloco 0083be70-00842920, estava QUASE por mapa
+?OnTutorialAreaPipin@CTutorialMain@@IAEXH@Z	005012b0	projectg_tutorialmain: bloco 007d1fc0-007d4ff0, estava QUASE por mapa
+?OnListBoxInit_TRI_NORMALBOX@FrUserInfoForm@@IAEXH@Z	0051e230	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnStaticInit_TRI_NOTROPHY@FrUserInfoForm@@IAEXH@Z	00522500	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnTrophyNormalNumInit@FrUserInfoForm@@IAEXH@Z	00780010	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnBtn_RmrVisitorInit@FrUserInfoForm@@IAEXH@Z	007e33e0	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnTrophySpecialNumInit@FrUserInfoForm@@IAEXH@Z	007f0070	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnTrophySpecialBtnInit@FrUserInfoForm@@IAEXH@Z	007f00e0	projectg_user_info: bloco 00899b70-008a9ec0, estava DIFERENTE por vizinho
+?OnListBoxInit_TRI_SPECIALBOX@FrUserInfoForm@@IAEXH@Z	007f01b0	projectg_user_info: bloco 00899b70-008a9ec0, estava QUASE por mapa
+?OnArinBtnInit@FrValEventDlg@@IAEXH@Z	00864c90	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnLuciaBtnInit@FrValEventDlg@@IAEXH@Z	00864d00	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnBackImgOwnerDraw@FrValEventDlg@@IAEXH@Z	00865070	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnAzerBtnLBDown@FrValEventDlg@@IAEXXZ	008651b0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnMaxBtnLBDown@FrValEventDlg@@IAEXXZ	00865260	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnKazBtnLBDown@FrValEventDlg@@IAEXXZ	00865310	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnHanaBtnInit@FrValEventDlg@@IAEXH@Z	008653f0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnCecilBtnInit@FrValEventDlg@@IAEXH@Z	008654a0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnKoohBtnInit@FrValEventDlg@@IAEXH@Z	00865560	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnGaugeImgOwnerDraw@FrValEventDlg@@IAEXH@Z	00866230	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnNuriBtnLBDown@FrValEventDlg@@IAEXXZ	008662e0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+??0FrValEventDlg@@QAE@XZ	00af8530	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?FrValEventDlgMakeInstance@@YIPAVIObject@@XZ	00af8680	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava IGUAL por mapa
+?BindButton@FrValEventDlg@@IAEXAAPAVFrButton@@H@Z	00af8740	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava DIFERENTE por alvo
+?OnNuriBtnInit@FrValEventDlg@@IAEXH@Z	00af8990	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava IGUAL por mapa
+?OnAzerBtnInit@FrValEventDlg@@IAEXH@Z	00af89b0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava IGUAL por mapa
+?OnMaxBtnInit@FrValEventDlg@@IAEXH@Z	00af89d0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava IGUAL por mapa
+?OnKazBtnInit@FrValEventDlg@@IAEXH@Z	00af89f0	projectg_valentineeventdlg: bloco 00b0bbe0-00b10370, estava IGUAL por mapa
+??0CWind@@QAE@XZ	006cb590	A506: ctor real (grava o vftable d1a3dc; 004850f0 era alvo errado)
+?Wind@@YIAAVCWind@@XZ	004852e0	projectg_wind: bloco 006c7720-006cc600, estava IGUAL por mapa
+??0CDistToHoleInfo@@QAE@XZ	006c3d40	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?Print@CFontInfo@@QAEMMMPBDMHMPAUsFont@1@@Z	006e0ec0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por alvo (s54, sobre out/F3.5/s53/depois)
+??0CGuildInfo@@QAE@XZ	007705d0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+??1CGuildInfo@@UAE@XZ	0098b250	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+??1CHoleCupInfo@@UAE@XZ	00a4d860	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?Reset@CHoleCupInfo@@UAEXXZ	00a5cbc0	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+??0CClubRangeInfo@@QAE@XZ	00ab2a90	projectg_fontinfo: bloco 00525bc0-0052cd60, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+??0FrGuildJoin@_guild@@QAE@XZ	007fe5f0	projectg_ingameguildlobbydlg: bloco 0051d0d0-00521690, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+??0ntMsnUserSnapshotDlg@@QAE@XZ	009070c0	projectg_msnusersnapshot: bloco 00b0a830-00b0f5e0, estava IGUAL por mapa (s54, sobre out/F3.5/s53/depois)
+?ntMsnUserSnapshotDlgMakeInstance@@YIPAVIObject@@XZ	00907170	projectg_msnusersnapshot: bloco 00b0a830-00b0f5e0, estava IGUAL por mapa (s54, sobre out/F3.5/s53/depois)
+?DeleteSingletonClasses@@YIXXZ	009180c0	projectg_projectg: bloco 00a61b70-00a69400, estava DIFERENTE por alvo (s54, sobre out/F3.5/s53/depois)
+?OnOverBar_MyInfoUp@CTaskMain@@IAEXXZ	006818b0	projectg_taskmain: bloco 00650e70-0065d3a0, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnOnelineReqDlgResult@CTaskMain@@IAE_NHPAVFrForm@@@Z	00681940	projectg_taskmain: bloco 00650e70-0065d3a0, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?SetWarningMessageForPackage@FrTradeWarningDlg@@QAEXH@Z	00848950	projectg_tradedlg: bloco 008edcb0-008f8800, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?IsEquipParts@FrTradeEditDlg@@QAE_NKK@Z	00970670	projectg_tradedlg: bloco 008edcb0-008f8800, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTradeItemListInit@FrTradeEditDlg@@IAEXH@Z	00a7f970	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnUserIdInit@FrTradeFinishEditDlg@@IAEXH@Z	00a7f9e0	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTitleEditInit@FrTradeEditDlg@@IAEXH@Z	00a7fc40	projectg_tradedlg: bloco 008edcb0-008f8800, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTradeMyItemOkBnInit@FrTradeEditDlg@@IAEXH@Z	00a80200	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTradeMyItemCancelBnInit@FrTradeEditDlg@@IAEXH@Z	00a80370	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnOpenBnInit@FrTradeEditDlg@@IAEXH@Z	00a80560	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTitleInit@FrTradeFinishEditDlg@@IAEXH@Z	00a819c0	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnCloseBnInit@FrTradeEditDlg@@IAEXH@Z	00a81a30	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnExitBnInit@FrTradeEditDlg@@IAEXH@Z	00a81aa0	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnPackageSaleInit@FrTradeEditDlg@@IAEXH@Z	00a81b10	projectg_tradedlg: bloco 008edcb0-008f8800, estava DIFERENTE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTradeItemListInit@FrTradeFinishEditDlg@@IAEXH@Z	00a81f30	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?OnTooltipAreaInit@FrTradeEditDlg@@IAEXH@Z	00a81fa0	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?FrTradeResultDlgMakeInstance@@YIPAVIObject@@XZ	00a82010	projectg_tradedlg: bloco 008edcb0-008f8800, estava QUASE por vizinho (s54, sobre out/F3.5/s53/depois)
+?GetKeyPos@WBone@@QAE?AVWVector@@M@Z	00b94730	s59: 00b94730 e GetKeyScale (chaves de escala em +0xe4); GetKeyPos e 00b945f0
+?OnToppage_ValEventDown@CLobbyMain@@IAEXXZ	0062ba80	projectg_lobbymain: 0062ba80 fica no nucleo de shareddoc.cpp (s63/s64: par por vizinho, DIFERENTE 0,89; difere_id na ferramenta da V4)
+?OnGameRoom_RoomUserDClick@CLobbyMain@@IAEXXZ	00b123a0	projectg_lobbymain: 00b123a0 fica em worldtoureventdlg/birthdayeventdlg (s63/s64: par por vizinho, DIFERENTE 0,78; difere_id na ferramenta da V4)
+?SetUnk26c_983@CGolfRule@@QAEXM@Z	0066f970	s75: auxiliar nosso sem funcao no 983 (a base grava +0x2c8 direto); par por vizinho falso
+?OpenPost@CBrowser@@QAEXPBD_N1@Z	0099daa0	s103: sem equivalente no 983 (o 983 abre so pelo CBrowser::OpenWeb983 00870d90); par por vizinho/bytes falso
+?Open@CBrowser@@QAEXPBD_N1@Z	00873080	s103: sem equivalente no 983 (o 983 abre so pelo CBrowser::OpenWeb983 00870d90); par por vizinho/bytes falso
+?OpenWebPage983@@YIXPBD_NH@Z	0099e5b0	s103: sem equivalente no 983 (o 983 abre so pelo CBrowser::OpenWeb983 00870d90); par por vizinho/bytes falso
+?OnApproachGiftDlgResult@CLobbyMain@@IAE_NHPAVFrForm@@@Z	006704b0	s109 (pedido C39.1): par por vizinho; 006704b0 é OnOnelineReqChkOutDlgResult (CTaskMain/CGolfRule, IGUAL); o pacote do presente só existe em outra função do 983
+?OnItemEquipResult@CLobbyMain@@IAE_NHPAVFrForm@@@Z	00ab6620	s109 (pedido C39.1): par por vizinho (DIFERENTE 57%); equipar do 983 é do CTaskMain (0x81, C35)
+?OnRoomList_RoomListRUp@CLobbyMain@@IAEXXZ	005d9290	s109 (pedido C39.1): par por vizinho (DIFERENTE 58%); o pacote não existe nesta função do 983
+?OnPangGiftDlgResult@CRealMyRoomMain@@IAE_NHPAVFrForm@@@Z	00ab3000	s109 (pedido C39.1): par por vizinho; 00ab3000 é OnVoteDlgResult@CLobbyMain (IGUAL por bytes)
+?OnFortuneDlgResult@CRealMyRoomMain@@IAE_NHPAVFrForm@@@Z	007b0d20	s109 (pedido C39.1): par por vizinho (DIFERENTE 64%); pacote 0x59 não existe no 983
+?OnApproachGiftDlgResult@CLobbyMain@@IAE_NHPAVFrForm@@@Z	*	s109 (C39.1): sem par por vizinho (vetar só o endereço fazia o vizinho cair em outro: 00a87980, 007fc870); a lógica do 983 está em outra função já pareada
+?OnItemEquipResult@CLobbyMain@@IAE_NHPAVFrForm@@@Z	*	s109 (C39.1): sem par por vizinho (vetar só o endereço fazia o vizinho cair em outro: 00a87980, 007fc870); a lógica do 983 está em outra função já pareada
+?OnRoomList_RoomListRUp@CLobbyMain@@IAEXXZ	*	s109 (C39.1): sem par por vizinho (vetar só o endereço fazia o vizinho cair em outro: 00a87980, 007fc870); a lógica do 983 está em outra função já pareada
+?OnPangGiftDlgResult@CRealMyRoomMain@@IAE_NHPAVFrForm@@@Z	*	s109 (C39.1): sem par por vizinho (vetar só o endereço fazia o vizinho cair em outro: 00a87980, 007fc870); a lógica do 983 está em outra função já pareada
+?OnFortuneDlgResult@CRealMyRoomMain@@IAE_NHPAVFrForm@@@Z	*	s109 (C39.1): sem par por vizinho (vetar só o endereço fazia o vizinho cair em outro: 00a87980, 007fc870); a lógica do 983 está em outra função já pareada
+?OnPacket@CShopTask@@MAEHAAVWReceivedPacket@@@Z	005e0ff0	s115 C50.1: 005e0ff0 = CShopWidget::OnPacket (B109, jp.tsv); o 983 não tem CShopTask
+?ChangeMotion@ntAvatar@@QAEXHPBDM@Z	007a5000	s115: 007a5000 é o auxiliar de envio chamado pelo ChangeMotion 007a77d0

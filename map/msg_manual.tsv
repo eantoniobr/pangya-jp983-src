@@ -1,0 +1,6 @@
+# Pares manuais de mensagem entre atores 645 -> 983 (lidos por tools/f35/msgaplica.py; passam na frente dos votos).
+# Evidência: out/F3.5/s70/RELATORIO.md (classe do documento de cada tipo do Gateway) e out/F3.5/s71/RELATORIO.md.
+msg_645	msg_983	motivo
+0x26f	0x7532	item de jogo: documento 0xa9 CGolfItemDoc -> 0x7532 na tabela 0091ecf0; manipulador 0091a8c0 com os mesmos sub-códigos 0-6
+0x276	0x7531	caixa especial: documento 0xab CSpecialBoxDoc -> 0x7531; CSpecialBoxHandler::Initialize IGUAL (00921820)
+0xaa	0xce	caixa de correio: o 0x210 do 983 (009d38b2) = 0x15e do 645 manda 0xce com m_bRefreshCamera; vizinhos 0xa8->0xcc, 0xa9->0xcd (pedido C37.1, out/PKT/s30)

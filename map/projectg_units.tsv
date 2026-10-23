@@ -1,0 +1,571 @@
+unidade	grupo	estado_rebang	modulo645	obj645	ini645	bytes645	funcs645	ancoras	classe_mapa	ini983	fim983	bytes983	funcs983	concorda	discorda	novas_j7	alteradas	identicas_839	outros_trechos	onda	proprias_obj	bytes_obj	pct_bytes_igual_quase	pct_bytes_sem_par
+source/client/ProjectG/clientsetting.cpp	ProjectG	cpp	440	<projectg>\ClientSetting.obj	00401000	23628	255	58	forte	00491950	00496fdf	19276	198	51	4	2	11	180		2 cpp, alterada	117	14054	15.1	73.5
+source/client/ProjectG/shareddoc.cpp	ProjectG	cpp	438	<projectg>\SharedDoc.obj	004071d0	96531	2422	116	forte	0062b380	0064b1dc	102221	1067	95	0	83	37	664		2 cpp, alterada	149	35347	43.8	20.9
+source/client/ProjectG/taskmain.cpp	ProjectG	cpp	437	<projectg>\TaskMain.obj	00422890	60647	458	47	forte	00650e60	0065f635	54920	287	38	3	8	25	100		2 cpp, fora da linha de base				
+source/client/ProjectG/golfdoc.cpp	ProjectG	cpp	436	<projectg>\GolfDoc.obj	00431910	44835	876	55	forte	0065fc80	0066dd6e	46944	506	47	0	10	3	455		2 cpp, alterada	53	17303	44.2	23.2
+source/client/ProjectG/golfrule.cpp	ProjectG	cpp	435	<projectg>\GolfRule.obj	0043de90	169922	783	85	forte	0066e210	0069a2f6	170519	456	71	2	19	69	189		2 cpp, fora da linha de base				
+source/client/ProjectG/golftask.cpp	ProjectG	cpp	434	<projectg>\GolfTask.obj	00467410	30789	218	19	forte	0069d010	006a4b80	30984	37	14	0	0	5	25		2 cpp, fora da linha de base				
+source/client/ProjectG/golfrule30battle.cpp	ProjectG	cpp	433	<projectg>\GolfRule30Battle.obj	0046ed30	1361	13	9	forte	006a4fb0	006a58de	2226	11	7	0	0	1	3		2 cpp, alterada	5	935	5.0	95.0
+source/client/ProjectG/golfruleapproach.cpp	ProjectG	cpp	432	<projectg>\GolfRuleApproach.obj	0046f2c0	1524	8	0	ordem	006a58de	006a5e70	1410	1							1 cpp, mudou pouco	6	1392	84.1	0.0
+source/client/ProjectG/golfrulebase.cpp	ProjectG	cpp	431	<projectg>\GolfRuleBase.obj	0046f8f0	4522	12	17	forte	006a5e70	006a8438	9349	32	17	0	1	7	13		2 cpp, alterada	10	4387	21.9	31.9
+source/client/ProjectG/golfruleguildmatch.cpp	ProjectG	cpp	430	<projectg>\GolfRuleGuildMatch.obj	00470ae0	949	6	8	forte	006a8950	006a8ebb	1315	9	8	0	0	1	6		1 cpp, mudou pouco	5	890	100.0	0.0
+source/client/ProjectG/golfrulematch.cpp	ProjectG	cpp	429	<projectg>\GolfRuleMatch.obj	00470eb0	1904	7	5	fraco+ordem	006a8ebb	006a96b0	1957	8							2 cpp, alterada	6	1835	10.6	89.4
+source/client/ProjectG/golfrulenewapproach.cpp	ProjectG	cpp	428	<projectg>\GolfRuleNewApproach.obj	00471640	1486	7	8	forte	006a96b0	006a9821	276	8	7	0	0	0	5		1 cpp, mudou pouco	6	1408	84.3	0.0
+source/client/ProjectG/golfrulequickrace.cpp	ProjectG	cpp	427	<projectg>\GolfRuleQuickrace.obj	00471c40	975	6	0	ordem	006a9821	006a9d60	1313	4							2 cpp, alterada	5	893	4.7	95.3
+source/client/ProjectG/golfruleskins.cpp	ProjectG	cpp	426	<projectg>\GolfRuleSkins.obj	00472020	691	6	7	forte	006a9d60	006aa583	2009	7	7	0	0	1	2		2 cpp, alterada	5	596	32.7	67.3
+source/client/ProjectG/golfrulestroke.cpp	ProjectG	cpp	425	<projectg>\GolfRuleStroke.obj	004722e0	712	6	4	fraco+ordem	006aa583	006aa880	686	8							2 cpp, alterada	5	615	31.7	68.3
+source/client/ProjectG/golfruleteam.cpp	ProjectG	cpp	424	<projectg>\GolfRuleTeam.obj	004725c0	2664	10	9	forte	006aa880	006ab771	3734	10	9	0	0	1	3		2 cpp, alterada	8	2471	1.9	98.1
+source/client/ProjectG/golfruletimeattack.cpp	ProjectG	cpp	423	<projectg>\GolfRuleTimeattack.obj	00473050	975	6	0	ordem	006ab771	006ac440	3138	11							2 cpp, alterada	5	893	4.7	95.3
+source/client/ProjectG/golfruletutorial.cpp	ProjectG	cpp	422	<projectg>\GolfRuleTutorial.obj	00473430	1181	7	7	fraco+ordem	006ab771	006ac440	3138	11							2 cpp, alterada	6	1450	2.9	97.1
+source/client/ProjectG/club.cpp	ProjectG	cpp	421	<projectg>\club.obj	004738e0	14981	116	31	forte	006ac440	006b0fec	17693	85	31	0	0	5	65		2 cpp, alterada	32	13905	36.1	28.6
+source/client/ProjectG/golfball.cpp	ProjectG	cpp	420	<projectg>\golfball.obj	00477630	538	6	0	ordem	006b0fec	006c75c0	77484	829							2 cpp, alterada	6	492	1.2	98.8
+source/client/ProjectG/wind.cpp	ProjectG	cpp	419	<projectg>\wind.obj	00477860	13163	103	19	forte	006c75c0	006cc5fa	18814	115	16	0	7	6	84		2 cpp, alterada	24	12561	7.7	54.2
+source/client/ProjectG/3dfont.cpp	ProjectG	cpp	418	<projectg>\3dfont.obj	0047ae70	1474	8	6	forte	006cc6c0	006cc9e1	704	10	6	0	0	0	10		2 cpp, alterada	8	1548	33.8	4.8
+source/client/ProjectG/ani_overlay.cpp	ProjectG	cpp	417	<projectg>\ani_overlay.obj	0047b450	786	13	0	ordem	006cc9e1	006ccd60	873	2							2 cpp, alterada	8	727	4.0	96.0
+source/client/ProjectG/autotarget.cpp	ProjectG	cpp	416	<projectg>\AutoTarget.obj	0047b790	2960	10	9	forte	006ccd60	006cde21	4244	8	8	0	0	0	6		1 cpp, mudou pouco	9	4217	64.8	0.0
+source/client/ProjectG/camerawork.cpp	ProjectG	cpp	415	<projectg>\camerawork.obj	0047c350	44553	151	17	forte	006ce060	006d801e	40043	74	15	0	1	1	59		2 cpp, alterada	74	54665	3.1	54.2
+source/client/ProjectG/capturedbg.cpp	ProjectG	cpp	414	<projectg>\CapturedBg.obj	00487530	517	13	7	forte	006dcb10	006dcd0e	362	8	6	0	0	0	8		1 cpp, mudou pouco	5	185	100.0	0.0
+source/client/ProjectG/effect.cpp	ProjectG	cpp	413	<projectg>\effect.obj	00487790	1295	8	7	forte	006dcd20	006dd52a	1969	6	7	0	0	0	6		2 cpp, alterada	7	2017	26.4	68.6
+source/client/ProjectG/extendedeffect.cpp	ProjectG	cpp	412	<projectg>\ExtendedEffect.obj	00487cb0	9616	252	6	fraco	006dd52a	006e2ca0	18326	205							2 cpp, alterada	7	1793	45.9	12.5
+source/client/ProjectG/fontinfo.cpp	ProjectG	cpp	411	<projectg>\fontinfo.obj	0048a780	83226	381	99	forte	00525a60	0053eefe	96999	357	92	5	3	22	263		2 cpp, alterada	163	80800	3.2	77.4
+source/client/ProjectG/ground_info.cpp	ProjectG	cpp	410	<projectg>\ground_info.obj	0049f310	9860	183	15	forte	006e2ca0	006e48d8	6470	39	10	1	1	1	32		2 cpp, alterada	14	5396	45.7	41.8
+source/client/ProjectG/headicon.cpp	ProjectG	cpp	409	<projectg>\HeadIcon.obj	004a1f00	5314	26	4	fraco+ordem	006e48d8	006e61e0	6038	21							2 cpp, alterada	10	5134	0.0	100.0
+source/client/ProjectG/helpmsg.cpp	ProjectG	cpp	408	<projectg>\HelpMsg.obj	004a3410	6752	22	10	forte	006e61e0	006e8016	7483	20	10	0	1	5	13		2 cpp, alterada	12	6302	13.9	23.4
+source/client/ProjectG/obmarker.cpp	ProjectG	cpp	407	<projectg>\OBmarker.obj	004a4ef0	2304	32	8	forte	006e8130	006e83fe	677	6	6	0	0	0	6		1 cpp, mudou pouco	6	775	100.0	0.0
+source/client/ProjectG/particleparty.cpp	ProjectG	cpp	406	<projectg>\ParticleParty.obj	004a5890	24186	155	101	forte	006e8490	006ee84b	24330	105	98	0	0	0	101		2 cpp, alterada	83	25051	38.2	16.9
+source/client/ProjectG/quitwindow.cpp	ProjectG	cpp	405	<projectg>\QuitWindow.obj	004ab920	5315	49	20	forte	006eef50	006ef95e	2221	26	18	0	0	1	19		2 cpp, alterada	24	4169	29.1	55.5
+source/client/ProjectG/randomhouse.cpp	ProjectG	cpp	404	<projectg>\RandomHouse.obj	004acc60	930	9	6	forte	006f0640	006f09ee	872	8	6	0	0	0	8		1 cpp, mudou pouco	4	751	100.0	0.0
+source/client/ProjectG/simpleoverlay.cpp	ProjectG	cpp	403	<projectg>\SimpleOverlay.obj	004ad020	2353	22	5	fraco+ordem	006f09ee	006f1ab0	3628	32							1 cpp, mudou pouco	5	892	100.0	0.0
+source/client/ProjectG/taileffect.cpp	ProjectG	cpp	402	<projectg>\TailEffect.obj	004ad980	3753	68	8	forte	006f1ab0	006f2837	3068	30	6	0	0	0	28		1 cpp, mudou pouco	8	2825	68.4	28.1
+source/client/ProjectG/talkbox.cpp	ProjectG	cpp	401	<projectg>\talkbox.obj	004ae940	2947	55	2	fraco+ordem	006f2837	006f45b0	6173	72							2 cpp, alterada	5	2241	0.0	83.1
+source/client/ProjectG/titlefontex.cpp	ProjectG	cpp	400	<projectg>\TitleFontEx.obj	004af630	2349	33	19	forte	006f45b0	006f5abe	4795	37	18	0	1	0	35		1 cpp, mudou pouco	14	1695	100.0	0.0
+source/client/ProjectG/rival.cpp	ProjectG	cpp	399	<projectg>\rival.obj	004affd0	5449	10	7	forte	006f5e70	006f7d2c	7786	8	7	0	0	1	5		2 cpp, alterada	6	7560	20.4	0.0
+source/client/ProjectG/beach.cpp	ProjectG	cpp	398	<projectg>\beach.obj	004b1540	2175	24	3	fraco+ordem	006f7d2c	006f8520	1885	8							1 cpp, mudou pouco	3	1811	100.0	0.0
+source/client/ProjectG/icesnow.cpp	ProjectG	cpp	396	<projectg>\IceSnow.obj	004b1e40	1708	18	11	forte	006f8520	006f8c81	1793	7	7	0	0	0	6	0056c090-0056c0df(4)	1 cpp, mudou pouco	6	1763	100.0	0.0
+source/client/ProjectG/lensflare.cpp	ProjectG	cpp	395	<projectg>\LensFlare.obj	004b2550	2133	6	4	fraco+ordem	006f8c81	006f9590	2191	12							2 cpp, alterada	6	2609	10.0	75.6
+source/client/ProjectG/petal.cpp	ProjectG	cpp	394	<projectg>\Petal.obj	004b2db0	2002	13	7	forte	006f9590	006f9d22	1873	6	6	0	0	0	5		1 cpp, mudou pouco	7	2066	100.0	0.0
+source/client/ProjectG/pool.cpp	ProjectG	cpp	393	<projectg>\pool.obj	004b35a0	9721	62	30	forte	006f9e30	006fc69f	9995	32	28	0	0	0	31		2 cpp, alterada	22	8671	44.7	0.0
+source/client/ProjectG/rain.cpp	ProjectG	cpp	392	<projectg>\rain.obj	004b5ce0	1445	9	7	forte	006fc760	006fcae8	829	6	6	0	0	0	6		1 cpp, mudou pouco	6	1552	100.0	0.0
+source/client/ProjectG/river.cpp	ProjectG	cpp	391	<projectg>\river.obj	004b62a0	18027	246	27	forte	006fce00	007006d8	12402	96	24	0	0	0	85		2 cpp, alterada	18	12378	13.8	64.9
+source/client/ProjectG/sea.cpp	ProjectG	cpp	390	<projectg>\sea.obj	004baec0	2582	14	0	ordem	007006d8	007045f0	13252	158							2 cpp, alterada	8	2484	0.0	100.0
+source/client/ProjectG/sky.cpp	ProjectG	cpp	389	<projectg>\sky.obj	004bb910	10186	39	20	forte	007045f0	00707102	10560	28	19	0	0	0	19		2 cpp, alterada	26	11024	46.4	17.1
+source/client/ProjectG/snow.cpp	ProjectG	cpp	388	<projectg>\snow.obj	004be1b0	1692	11	7	forte	00707400	00707a91	1587	6	6	0	0	0	5		1 cpp, mudou pouco	7	1811	100.0	0.0
+source/client/ProjectG/wavelet.cpp	ProjectG	cpp	387	<projectg>\wavelet.obj	004be860	7588	113	8	forte	00707fc0	0070980d	5561	63	8	0	0	0	58		1 cpp, mudou pouco	7	2831	100.0	0.0
+source/client/ProjectG/weather.cpp	ProjectG	cpp	386	<projectg>\weather.obj	004c0890	101	2	2	fraco+ordem	0070980d	007098e0	160	5							1 cpp, mudou pouco	2	100	100.0	0.0
+source/client/ProjectG/petbody.cpp	ProjectG	cpp	385	<projectg>\PetBody.obj	004c08f0	14904	182	33	forte	007098e0	0070db39	15361	90	33	0	0	2	85		1 cpp, mudou pouco	41	11549	55.8	6.5
+source/client/ProjectG/ambientsound.cpp	ProjectG	cpp	384	<projectg>\ambientsound.obj	004c47b0	6087	122	12	forte	0070ea70	00710a61	7504	54	6	0	0	0	50		2 cpp, alterada	6	1814	5.4	94.6
+source/client/ProjectG/ball.cpp	ProjectG	cpp	383	<projectg>\ball.obj	004c6210	8597	85	23	forte	00710d30	00712fd4	8049	46	21	0	0	1	40		1 cpp, mudou pouco	18	6901	63.4	19.8
+source/client/ProjectG/bubble.cpp	ProjectG	cpp	382	<projectg>\bubble.obj	004c8580	1745	20	10	forte	00713120	00713987	1975	10	9	0	0	0	8		2 cpp, alterada	7	1542	47.5	0.0
+source/client/ProjectG/camera.cpp	ProjectG	cpp	381	<projectg>\camera.obj	004c8c30	12698	36	25	forte	00713a10	007176a3	15210	27	24	0	0	3	13		1 cpp, mudou pouco	26	14917	51.7	0.4
+source/client/ProjectG/clock.cpp	ProjectG	cpp	380	<projectg>\clock.obj	004cbdf0	1670	14	9	forte	00717720	00717cbc	1328	7	7	0	0	0	5		2 cpp, alterada	6	1389	37.4	0.0
+source/client/ProjectG/console.cpp	ProjectG	cpp	379	<projectg>\console.obj	004cc420	25203	243	9	forte	007184a0	00727122	52256	411	7	0	7	8	365		2 cpp, alterada	16	17711	13.1	83.4
+source/client/ProjectG/fallingspot.cpp	ProjectG	cpp	378	<projectg>\fallingspot.obj	004d2ca0	16689	39	16	forte	00728390	0072d83c	21099	35	13	1	0	3	17		2 cpp, alterada	23	20410	9.0	84.3
+source/client/ProjectG/galleryreaction.cpp	ProjectG	cpp	377	<projectg>\galleryreaction.obj	004d6de0	1047	10	7	forte	0072d9b0	0072dd45	819	6	6	0	0	0	4		2 cpp, alterada	5	927	37.9	0.0
+source/client/ProjectG/golfbg.cpp	ProjectG	cpp	376	<projectg>\golfbg.obj	004d71d0	10503	81	17	forte	0072ddf0	0072f021	4070	32	14	0	0	0	25		2 cpp, alterada	17	8758	10.4	57.7
+source/client/ProjectG/golfcadie.cpp	ProjectG	cpp	375	<projectg>\golfcadie.obj	004d9bf0	32885	453	44	forte	00730cf0	0073d0a7	43349	350	43	1	2	4	328		2 cpp, alterada	38	21026	36.4	17.3
+source/client/ProjectG/golfplayer.obj	ProjectG	obj	374	<projectg>\golfplayer.obj	004e2420	51811	321	36	forte	0073d830	00744b73	28426	66	33	0	4	20	12		4 sem fonte no rebang				
+source/client/ProjectG/grid.cpp	ProjectG	cpp	373	<projectg>\grid.obj	004ef540	7152	27	13	forte	007481a0	00749ce1	6705	19	12	0	0	5	4		2 cpp, alterada	19	7892	0.0	100.0
+source/client/ProjectG/gui_control.obj	ProjectG	obj	372	<projectg>\gui_control.obj	004f1170	47913	164	26	forte	0074a720	00759708	58368	132	25	0	6	16	65		4 sem fonte no rebang				
+source/client/ProjectG/guidebook.cpp	ProjectG	cpp	371	<projectg>\guidebook.obj	004fcae0	5199	49	31	forte	0075a1d0	0075b103	3345	31	30	1	0	0	18		1 cpp, mudou pouco	33	3158	100.0	0.0
+source/client/ProjectG/guideline.cpp	ProjectG	cpp	370	<projectg>\guideline.obj	004fdac0	3300	21	13	forte	0075b1e0	0075c62d	4992	15	13	0	0	0	12		2 cpp, alterada	12	4645	38.7	0.0
+source/client/ProjectG/itemwindow.cpp	ProjectG	cpp	369	<projectg>\ItemWindow.obj	004fe7c0	8634	34	23	forte	0075c6c0	0075eb6f	8857	25	21	0	0	2	12		2 cpp, alterada	22	8436	44.8	0.0
+source/client/ProjectG/letter_effect.cpp	ProjectG	cpp	368	<projectg>\letter_effect.obj	00500970	6944	35	14	forte	0075ec40	007611cf	9260	31	13	2	0	3	27		2 cpp, alterada	13	5578	12.0	61.8
+source/client/ProjectG/logo.cpp	ProjectG	cpp	367	<projectg>\logo.obj	005024d0	710	13	10	forte	007612b0	007614d9	445	8	8	0	0	0	8		1 cpp, mudou pouco	8	506	62.1	0.0
+source/client/ProjectG/magiccarpet.cpp	ProjectG	cpp	366	<projectg>\MagicCarpet.obj	00502780	1352	17	11	forte	00761540	00761afe	1297	12	10	0	0	0	11		1 cpp, mudou pouco	10	1231	60.7	0.0
+source/client/ProjectG/mascot.cpp	ProjectG	cpp	365	<projectg>\Mascot.obj	00502cd0	4620	58	20	forte	00761b70	0076334e	5488	30	18	1	0	4	23		2 cpp, alterada	15	3958	28.1	11.6
+source/client/ProjectG/npc.cpp	ProjectG	cpp	364	<projectg>\npc.obj	00504000	57147	511	148	forte	00763590	00775bc2	69718	344	147	0	0	0	331		2 cpp, alterada	144	53070	25.9	34.8
+source/client/ProjectG/particle.cpp	ProjectG	cpp	362	<projectg>\particle.obj	005125d0	16948	200	33	forte	00775d10	0077a281	15908	108	32	1	0	0	107		2 cpp, alterada	38	11901	45.6	22.2
+source/client/ProjectG/privatetrade.cpp	ProjectG	cpp	361	<projectg>\PrivateTrade.obj	00516be0	4199	62	22	forte	0077a750	0077b1b0	2307	26	21	0	0	4	20		2 cpp, alterada	25	3307	40.2	0.0
+source/client/ProjectG/scoreboard.cpp	ProjectG	cpp	360	<projectg>\scoreboard.obj	00517bf0	101276	662	77	forte	0077ba20	0079a10e	114767	621	76	2	6	52	433		2 cpp, fora da linha de base				
+source/client/ProjectG/spin.cpp	ProjectG	cpp	358	<projectg>\spin.obj	0052fb70	4071	20	9	forte	0079a230	0079b45d	4464	12	7	1	0	0	10		2 cpp, alterada	13	4672	5.6	23.4
+source/client/ProjectG/trajectory.cpp	ProjectG	cpp	357	<projectg>\trajectory.obj	00530b40	17134	112	69	forte	0079b960	007a136e	22162	70	67	0	0	0	68		1 cpp, mudou pouco	58	23141	60.6	0.0
+source/client/ProjectG/effectmanager.cpp	ProjectG	cpp	354	<projectg>\EffectManager.obj	00534f00	4337	98	8	forte	007a18e0	007a2f81	4579	58	7	0	0	0	58		1 cpp, mudou pouco	8	1182	100.0	0.0
+source/client/ProjectG/avatar_avatar.cpp	ProjectG	cpp	353	<projectg>\Avatar_Avatar.obj	005362a0	21656	118	37	forte	007a3000	007a87e2	21470	77	31	0	1	7	64		2 cpp, alterada	62	20600	9.6	19.7
+source/client/ProjectG/avatar_main.cpp	ProjectG	cpp	352	<projectg>\Avatar_Main.obj	0053b8a0	24775	120	23	forte	007a89f0	007af782	27018	42	21	0	0	3	24		2 cpp, alterada	24	24226	0.0	100.0
+source/client/ProjectG/avatar_mainui.cpp	ProjectG	cpp	351	<projectg>\Avatar_MainUI.obj	005419f0	22462	100	23	forte	007af9a0	007b3279	13662	74	21	2	3	8	16		2 cpp, fora da linha de base				
+source/client/ProjectG/avatar_task.cpp	ProjectG	cpp	350	<projectg>\Avatar_Task.obj	00544d70	14374	165	21	forte	007b3760	007b79c7	15046	79	21	1	2	3	72		2 cpp, alterada	19	11333	6.4	13.8
+source/client/ProjectG/balloontext.cpp	ProjectG	cpp	349	<projectg>\BalloonText.obj	005485a0	4695	45	13	forte	007b7b10	007b8f6f	4596	39	11	0	0	1	38		2 cpp, alterada	13	3951	31.8	0.0
+source/client/ProjectG/avatarchatlogdlg.cpp	ProjectG	cpp	348	<projectg>\AvatarChatLogDlg.obj	005498b0	2151	22	9	forte	007b9030	007b91ae	254	8	7	0	0	0	8		2 cpp, alterada	14	1533	27.5	50.4
+source/client/ProjectG/avatartipdlg.cpp	ProjectG	cpp	347	<projectg>\AvatarTipDlg.obj	00549f30	1444	16	11	forte	007b9780	007b98b8	232	8	8	0	0	0	8		1 cpp, mudou pouco	11	783	100.0	0.0
+source/client/ProjectG/avataruserlistdlg.cpp	ProjectG	cpp	346	<projectg>\AvatarUserListDlg.obj	0054a330	2176	16	11	forte	007b9b80	007b9e87	651	10	10	0	0	0	10		2 cpp, alterada	10	1841	46.7	0.0
+source/client/ProjectG/jukeboxdlg.cpp	ProjectG	cpp	344	<projectg>\JukeBoxDlg.obj	0054aad0	2891	25	9	forte	007ba3d0	007bc187	6773	49	7	0	18	9	14		2 cpp, alterada	18	2655	7.9	92.1
+source/client/ProjectG/ts_parser.cpp	ProjectG	cpp	343	<projectg>\ts_Parser.obj	0054b4e0	16304	216	23	forte	007bc4c0	007bfa0e	10623	103	22	0	0	0	102		2 cpp, alterada	24	8522	36.7	0.0
+source/client/ProjectG/tutorial.cpp	ProjectG	cpp	342	<projectg>\tutorial.obj	0054ea30	56269	313	70	forte	007bfde0	007cf9a0	60022	209	69	0	2	9	147		2 cpp, alterada	69	48438	47.0	1.8
+source/client/ProjectG/questinfodlg.cpp	ProjectG	cpp	341	<projectg>\QuestInfoDlg.obj	0055cd40	7470	46	31	forte	007cff50	007d0c87	2952	32	30	0	0	0	19		1 cpp, mudou pouco	30	5504	50.4	20.5
+source/client/ProjectG/quizdlg.cpp	ProjectG	cpp	340	<projectg>\QuizDlg.obj	0055e440	3197	49	19	forte	007d1700	007d1eeb	1745	25	17	0	0	0	20		1 cpp, mudou pouco	23	1811	86.9	2.6
+source/client/ProjectG/tutorialmain.cpp	ProjectG	cpp	339	<projectg>\TutorialMain.obj	0055ed10	22758	117	27	forte	007d1fd0	007d5275	11514	69	27	0	0	1	54		2 cpp, alterada	59	11675	6.3	76.5
+source/client/ProjectG/tutorialtask.cpp	ProjectG	cpp	337	<projectg>\TutorialTask.obj	005624f0	1017	20	1	ordem	007d5275	007d57f0	1322	7							2 cpp, alterada	12	823	32.7	67.3
+source/client/ProjectG/fadingtext.cpp	ProjectG	cpp	336	<projectg>\FadingText.obj	005628f0	733	4	3	fraco+ordem	007d5275	007d57f0	1322	7							1 cpp, mudou pouco	4	642	100.0	0.0
+source/client/ProjectG/generichttpclient.cpp	ProjectG	cpp	335	<projectg>\GenericHTTPClient.obj	00562be0	7205	83	24	forte	007d57f0	007d7328	5971	57	23	0	0	0	55		1 cpp, mudou pouco	26	4635	100.0	0.0
+source/client/ProjectG/notifyform.cpp	ProjectG	cpp	334	<projectg>\NotifyForm.obj	00564a50	842	17	12	forte	007d73c0	007d766e	528	12	12	0	0	0	12		1 cpp, mudou pouco	8	476	100.0	0.0
+source/client/ProjectG/overlaycursor.cpp	ProjectG	cpp	333	<projectg>\OverlayCursor.obj	00564cb0	3991	85	4	fraco+ordem	007d766e	007d90e0	5176	67							2 cpp, alterada	4	924	46.6	0.0
+source/client/ProjectG/securitykeymanager.cpp	ProjectG	cpp	332	<projectg>\SecurityKeyManager.obj	00565ed0	2471	74	5	forte	007d90e0	007d9720	1393	24	4	0	0	0	24		2 cpp, alterada	10	1262	22.3	39.9
+source/client/ProjectG/tabmanager.cpp	ProjectG	cpp	331	<projectg>\TabManager.obj	005669b0	5791	132	5	forte	007d9ce0	007dafcb	4170	58	5	0	0	0	55		1 cpp, mudou pouco	5	907	100.0	0.0
+source/client/ProjectG/tooltipmanager.cpp	ProjectG	cpp	330	<projectg>\ToolTipManager.obj	00568300	2113	54	4	fraco+ordem	007dafcb	007db8f0	1793	27							1 cpp, mudou pouco	4	662	100.0	0.0
+source/client/ProjectG/uccbase.cpp	ProjectG	cpp	329	<projectg>\UccBase.obj	00568ca0	15086	191	42	forte	007db8f0	007df46e	13287	119	42	0	0	1	117		1 cpp, mudou pouco	47	10406	58.4	24.7
+source/client/ProjectG/uccbrush.cpp	ProjectG	cpp	328	<projectg>\UccBrush.obj	0056cb30	4100	79	17	forte	007df4b0	007e04b7	3288	50	16	0	0	0	49		1 cpp, mudou pouco	17	1892	100.0	0.0
+source/client/ProjectG/uccclothes.cpp	ProjectG	cpp	327	<projectg>\UccClothes.obj	0056dca0	94	3	2	fraco+ordem	007e04b7	007e0520	59	3							1 cpp, mudou pouco	2	29	100.0	0.0
+source/client/ProjectG/ucccolorpicker.cpp	ProjectG	cpp	326	<projectg>\UccColorPicker.obj	0056dd00	1591	21	18	forte	007e0520	007e0bfe	1551	19	17	0	0	0	19		2 cpp, alterada	11	1456	38.0	0.0
+source/client/ProjectG/ucccopydlg.cpp	ProjectG	cpp	325	<projectg>\UccCopyDlg.obj	0056e3c0	5616	58	30	forte	007e0c30	007e1de8	3989	43	29	0	0	4	29		1 cpp, mudou pouco	36	3845	66.5	9.5
+source/client/ProjectG/uccdrawdlg.cpp	ProjectG	cpp	324	<projectg>\UccDrawDlg.obj	0056f610	25275	211	97	forte	007e20d0	007e71d9	19178	134	96	0	0	7	79		1 cpp, mudou pouco	116	17578	51.4	15.3
+source/client/ProjectG/ucceditbrushdlg.cpp	ProjectG	cpp	323	<projectg>\UccEditBrushDlg.obj	00574a70	3004	35	24	forte	007e7cd0	007e8673	2186	23	23	0	0	0	22		1 cpp, mudou pouco	17	2408	74.4	0.0
+source/client/ProjectG/ucclibrary.cpp	ProjectG	cpp	322	<projectg>\UccLibrary.obj	00575520	11641	93	43	forte	007e8830	007eb4fc	10939	53	41	1	0	5	37		1 cpp, mudou pouco	49	11195	66.8	8.5
+source/client/ProjectG/uccmanager.cpp	ProjectG	cpp	321	<projectg>\UccManager.obj	005782c0	11883	342	26	forte	007eb630	007ef6a9	12413	173	25	1	0	0	153		1 cpp, mudou pouco	32	5305	81.1	7.0
+source/client/ProjectG/uccpickcolordlg.cpp	ProjectG	cpp	320	<projectg>\UccPickColorDlg.obj	0057ba80	5247	46	27	forte	007ef720	007f07d6	3962	34	26	0	0	0	23		1 cpp, mudou pouco	31	3953	86.4	0.0
+source/client/ProjectG/uccsetinfodlg.cpp	ProjectG	cpp	319	<projectg>\UccSetInfoDlg.obj	0057cbf0	2996	23	7	forte	007f08e0	007f0a38	292	7	6	0	0	0	7		2 cpp, alterada	12	2332	30.6	69.4
+source/client/ProjectG/furniture_ability.cpp	ProjectG	cpp	318	<projectg>\Furniture_Ability.obj	0057d560	3068	22	15	forte	007f13c0	007f1b73	1631	14	14	0	0	0	7		1 cpp, mudou pouco	15	2286	91.4	8.6
+source/client/ProjectG/realmyroom_authoritydlg.cpp	ProjectG	cpp	317	<projectg>\RealMyRoom_AuthorityDlg.obj	0057dee0	3973	46	30	forte	007f1da0	007f2a7f	2906	34	29	0	0	0	23		1 cpp, mudou pouco	30	2883	90.7	9.3
+source/client/ProjectG/realmyroom_avatar.cpp	ProjectG	cpp	316	<projectg>\RealMyRoom_Avatar.obj	0057eb50	19131	85	0	sem_ancora											2 cpp, fora da linha de base				
+source/client/ProjectG/realmyroomdata.cpp	ProjectG	cpp	315	<projectg>\RealMyRoomData.obj	00583670	23534	108	2	so_ancoras_soltas											2 cpp, fora da linha de base				
+source/client/ProjectG/realmyroommain.cpp	ProjectG	cpp	314	<projectg>\RealMyRoomMain.obj	005894b0	22018	123	3	fraco	004b5fef	00500760	261870	2371							2 cpp, alterada	20	20461	0.0	100.0
+source/client/ProjectG/realmyroommainui.cpp	ProjectG	cpp	313	<projectg>\RealMyRoomMainUI.obj	0058eb40	175533	1011	39	forte	00608430	00626629	115334	416	31	5	6	35	232	00604510-00606b58(5)	2 cpp, fora da linha de base				
+source/client/ProjectG/realmyroomtask.cpp	ProjectG	cpp	312	<projectg>\RealMyRoomTask.obj	005b2d90	31005	240	2	so_ancoras_soltas											2 cpp, alterada	16	26180	0.0	100.0
+source/client/ProjectG/ccardbook.cpp	ProjectG	cpp	311	<projectg>\CCardBook.obj	005ba9f0	15702	142	42	forte	007f2bf0	007f6d13	15431	74	41	0	0	12	49		2 cpp, alterada	50	13063	38.0	31.4
+source/client/ProjectG/itemstorage.cpp	ProjectG	cpp	310	<projectg>\ItemStorage.obj	005bea20	28847	352	32	forte	007f7080	007fe3ee	25677	203	32	2	0	12	165		2 cpp, fora da linha de base				
+source/client/ProjectG/cardremove.cpp	ProjectG	cpp	309	<projectg>\CardRemove.obj	005c56a0	9573	64	34	forte	007fe440	00800282	6909	45	30	1	0	2	31		2 cpp, alterada	43	8521	26.5	46.8
+source/client/ProjectG/carddlg.cpp	ProjectG	cpp	308	<projectg>\CardDlg.obj	005c7850	33629	273	56	forte	00800880	00801adb	3508	77	30	0	0	0	69	00802b90-00808870(24)	2 cpp, fora da linha de base				
+source/client/ProjectG/cardsystem.cpp	ProjectG	cpp	307	<projectg>\CardSystem.obj	005cf1a0	3648	37	3	fraco	00808870	0080b0b0	9341	77							2 cpp, alterada	31	3499	0.4	99.6
+source/client/ProjectG/post_recivedlg.cpp	ProjectG	cpp	306	<projectg>\Post_ReciveDlg.obj	005d0080	21499	149	47	forte	005b1480	005b670b	18600	155	36	2	0	12	140	00607190-00608237(8)	2 cpp, alterada	82	17795	30.4	60.2
+source/client/ProjectG/post_senddlg.cpp	ProjectG	cpp	305	<projectg>\Post_SendDlg.obj	005d4cc0	20238	127	54	forte	0080b0b0	0080f6f5	16239	100	54	0	0	15	61		2 cpp, alterada	78	17117	30.2	49.9
+source/client/ProjectG/transferableitem.cpp	ProjectG	cpp	304	<projectg>\TransferableItem.obj	005d93f0	9302	93	23	forte	0080f7c0	00812394	9841	73	21	0	0	2	66		2 cpp, alterada	35	6604	50.0	2.3
+source/client/ProjectG/offlinetradedlg.cpp	ProjectG	cpp	303	<projectg>\OfflineTradeDlg.obj	005dba80	41139	240	21	so_ancoras_soltas											2 cpp, alterada	137	33093	11.7	55.1
+source/client/ProjectG/standinginline.cpp	ProjectG	cpp	302	<projectg>\StandingInLine.obj	005e3a60	1433	16	9	forte	00812400	0081257e	236	8	8	0	0	0	8		1 cpp, mudou pouco	11	767	52.3	5.1
+source/client/ProjectG/itembuffactor.cpp	ProjectG	cpp	301	<projectg>\ItemBuffActor.obj	005e3df0	4884	32	17	forte	008128a0	00813cf8	4936	24	17	0	0	3	16		1 cpp, mudou pouco	18	4615	76.0	15.8
+source/client/ProjectG/ghostdocument.cpp	ProjectG	cpp	300	<projectg>\GhostDocument.obj	005e5090	15850	271	26	forte	00813da0	00818421	15145	150	24	0	0	1	139		2 cpp, alterada	33	8574	26.0	19.4
+source/client/ProjectG/ghostgamedlg.cpp	ProjectG	cpp	299	<projectg>\GhostGameDlg.obj	005e9540	31088	497	70	forte	00818a20	00820325	25307	269	69	0	0	5	234		2 cpp, alterada	66	16778	41.0	25.4
+source/client/ProjectG/ghosthandler.cpp	ProjectG	cpp	298	<projectg>\GhostHandler.obj	005f1050	7587	85	18	forte	008208d0	008215ac	2686	34	17	0	0	0	30		2 cpp, fora da linha de base				
+source/client/ProjectG/ghostmain.cpp	ProjectG	cpp	297	<projectg>\GhostMain.obj	005f2d50	29933	224	23	forte	008226d0	00826e56	16166	107	22	2	0	1	76		2 cpp, fora da linha de base				
+source/client/ProjectG/ghostmanager.cpp	ProjectG	cpp	296	<projectg>\GhostManager.obj	005f7fe0	5525	55	11	forte	00827c60	00828e14	3506	37	10	0	0	3	33		2 cpp, alterada	15	2480	39.0	12.7
+source/client/ProjectG/ghostplayer.cpp	ProjectG	cpp	295	<projectg>\GhostPlayer.obj	005f95c0	12917	208	26	forte	00829430	0082c62e	10861	100	26	0	0	1	92		2 cpp, fora da linha de base				
+source/client/ProjectG/ghosttask.cpp	ProjectG	cpp	294	<projectg>\GhostTask.obj	005fccc0	696	15	11	forte	0082c670	0082c95e	573	12	10	0	0	1	11		1 cpp, mudou pouco	8	550	66.9	0.0
+source/client/ProjectG/sequencestatemachine.cpp	ProjectG	cpp	293	<projectg>\SequenceStateMachine.obj	005fcf70	2100	78	9	forte	0082d280	0082d88e	1311	14	8	0	0	0	14		1 cpp, mudou pouco	15	1056	77.9	0.0
+source/shared/titlemanager.cpp	shared	cpp	292	<projectg>\TitleManager.obj	005fd9e0	3606	82	4	fraco	008304f0	00835970	18140	166							1 cpp, mudou pouco	4	526	100.0	0.0
+source/client/ProjectG/titles_client.cpp	ProjectG	cpp	291	<projectg>\Titles_Client.obj	005fea70	4544	97	37	forte	00835970	008372c3	5122	130	37	0	65	2	50		2 cpp, alterada	52	2620	32.5	42.9
+source/client/ProjectG/frreadytoall.cpp	ProjectG	cpp	289	<projectg>\FrReadyToAll.obj	005fff90	1195	25	0	ordem	008372c3	0083be70	14579	231							1 cpp, mudou pouco	13	681	51.5	48.5
+source/client/ProjectG/s5/demonlanddlg.cpp	ProjectG	cpp	286	<projectg>\DemonLandDlg.obj	00600310	7583	93	1	ordem	008372c3	0083be70	14579	231							2 cpp, alterada	60	5107	32.6	58.1
+source/client/ProjectG/treasure.cpp	ProjectG	cpp	284	<projectg>\Treasure.obj	00601d60	16165	370	5	fraco+ordem	008372c3	0083be70	14579	231							2 cpp, fora da linha de base				
+source/client/ProjectG/treasuredlg.cpp	ProjectG	cpp	283	<projectg>\TreasureDlg.obj	00606670	32934	392	122	forte	0083be70	0084290e	22784	199	120	1	0	4	138		2 cpp, alterada	157	19963	48.5	9.9
+source/client/ProjectG/shotpreview.cpp	ProjectG	cpp	282	<projectg>\ShotPreview.obj	0060d9e0	14970	167	17	forte	008429c0	008466e2	15071	41	15	0	0	1	31		2 cpp, alterada	27	11900	3.5	91.9
+source/client/ProjectG/shotreview.cpp	ProjectG	cpp	281	<projectg>\ShotReview.obj	006116d0	14089	314	31	forte	00847140	0084b7fe	15663	176	30	0	0	0	159		2 cpp, fora da linha de base				
+source/client/ProjectG/guildactor.cpp	ProjectG	cpp	280	<projectg>\GuildActor.obj	006154c0	6471	57	1	ordem	0084b7fe	008531a0	26626	245							2 cpp, alterada	25	5397	6.2	89.5
+source/client/ProjectG/approachdesc.cpp	ProjectG	cpp	275	<projectg>\ApproachDesc.obj	00616dd0	9474	161	75	forte	008531a0	0085569f	8043	95	75	0	0	49	46		2 cpp, alterada	32	5106	0.9	0.0
+source/client/ProjectG/intrusion.cpp	ProjectG	cpp	274	<projectg>\Intrusion.obj	00619580	6497	47	15	forte	00855ea0	008572b0	4923	17	13	0	0	3	11		2 cpp, alterada	17	6212	31.4	26.2
+source/client/ProjectG/voiceitem.cpp	ProjectG	cpp	273	<projectg>\VoiceItem.obj	0061af40	7399	128	10	forte	00857dc0	0085ab3d	10106	75	8	1	8	7	48		2 cpp, alterada	12	4051	20.8	23.1
+source/client/ProjectG/shufflebonus.cpp	ProjectG	cpp	272	<projectg>\ShuffleBonus.obj	0061cf00	844	10	6	forte	0085ada0	0085aecb	244	5	5	0	0	0	4		2 cpp, alterada	5	537	34.3	0.0
+source/client/ProjectG/caddiebonus.cpp	ProjectG	cpp	271	<projectg>\CaddieBonus.obj	0061d270	1642	20	9	forte	0085b060	0085b74f	1586	11	9	0	0	0	9		1 cpp, mudou pouco	9	1550	100.0	0.0
+source/client/ProjectG/powergauge.cpp	ProjectG	cpp	270	<projectg>\PowerGauge.obj	0061d870	1606	21	3	fraco+ordem	0085b74f	0085ce80	4445	80							2 cpp, alterada	14	1483	2.8	79.8
+source/client/ProjectG/netsyncactor.cpp	ProjectG	cpp	269	<projectg>\NetSyncActor.obj	0061df30	1302	22	9	forte	0085ce80	0085d12a	563	9	8	0	0	0	8		2 cpp, alterada	7	576	33.2	0.0
+source/client/ProjectG/grounditemman.cpp	ProjectG	cpp	268	<projectg>\GroundItemMan.obj	0061e4e0	4562	99	22	forte	0085d1f0	0085e548	3840	46	20	0	0	0	38		2 cpp, alterada	18	2934	22.4	33.5
+source/client/ProjectG/grounditem.cpp	ProjectG	cpp	267	<projectg>\GroundItem.obj	0061f860	5208	63	20	forte	0085e5b0	0085fd58	5615	41	19	0	0	0	37		2 cpp, alterada	22	4323	37.8	43.0
+source/client/ProjectG/util.cpp	ProjectG	cpp	266	<projectg>\Util.obj	00620d70	1690	21	3	fraco+ordem	0085fd58	008616a0	5622	62							1 cpp, mudou pouco	4	1337	68.6	31.4
+source/client/ProjectG/approachresultdlg.cpp	ProjectG	cpp	265	<projectg>\ApproachResultDlg.obj	00621470	10578	50	37	forte	008616a0	00863a93	8671	40	36	0	0	4	31		2 cpp, alterada	31	9716	35.6	0.0
+source/client/ProjectG/replaydlg.cpp	ProjectG	cpp	264	<projectg>\ReplayDlg.obj	00623af0	3027	37	24	forte	00863f90	00864991	2040	25	23	0	0	0	23		1 cpp, mudou pouco	24	2009	74.2	8.6
+source/client/ProjectG/trainingoptiondlg.cpp	ProjectG	cpp	263	<projectg>\TrainingOptionDlg.obj	00624500	8493	75	36	forte	008649d0	008662dd	5595	55	35	0	4	5	43		1 cpp, mudou pouco	57	5333	65.2	0.0
+source/client/ProjectG/browser.cpp	ProjectG	cpp	262	<projectg>\Browser.obj	00625e80	35826	692	231	forte	008663a0	008734f1	42603	524	229	0	1	5	512		2 cpp, alterada	26	5703	7.8	49.9
+source/client/ProjectG/codetinker.cpp	ProjectG	cpp	261	<projectg>\CodeTinker.obj	0062f7f0	325	5	2	fraco+ordem	008734f1	00873880	647	10							1 cpp, mudou pouco	4	257	77.0	23.0
+source/client/ProjectG/exhibition.cpp	ProjectG	cpp	260	<projectg>\Exhibition.obj	0062f940	19440	58	14	forte	00873880	008779c7	15981	45	12	0	0	5	38		2 cpp, alterada	45	20108	0.1	99.6
+source/client/ProjectG/fx.cpp	ProjectG	cpp	259	<projectg>\fx.obj	006345d0	20612	288	61	forte	00878ca0	0087f2ae	22303	213	60	0	1	3	205		2 cpp, fora da linha de base				
+source/client/ProjectG/fxinterpreter.cpp	ProjectG	cpp	258	<projectg>\FxInterpreter.obj	00639cb0	2380	64	2	fraco+ordem	0087f2ae	008907d0	59886	620							2 cpp, alterada	13	1310	9.8	90.2
+source/client/ProjectG/indexcontrol.cpp	ProjectG	cpp	257	<projectg>\IndexControl.obj	0063a7b0	1613	17	11	forte	008907d0	00890db1	1383	13	10	0	0	0	13		1 cpp, mudou pouco	15	1465	100.0	0.0
+source/client/ProjectG/mousecursor.cpp	ProjectG	cpp	256	<projectg>\mousecursor.obj	0063ae40	9953	44	23	forte	00890f40	008940fe	12283	29	23	0	0	1	26		2 cpp, alterada	25	10012	32.8	36.3
+source/client/ProjectG/newsreader.cpp	ProjectG	cpp	255	<projectg>\NewsReader.obj	0063d570	4784	90	8	forte	008947d0	008957c5	3581	46	6	0	0	0	46		1 cpp, mudou pouco	7	869	100.0	0.0
+source/client/ProjectG/noticeboard.cpp	ProjectG	cpp	254	<projectg>\NoticeBoard.obj	0063e850	3759	77	6	forte	00895950	00896b66	3755	35	6	0	0	3	30		1 cpp, mudou pouco	6	2647	56.3	0.0
+source/client/ProjectG/noticeimage.cpp	ProjectG	cpp	253	<projectg>\NoticeImage.obj	0063f8d0	792	7	1	fraco+ordem	00896b66	008971d0	1510	8							2 cpp, alterada	1	823	0.0	0.0
+source/client/ProjectG/onelineboard.cpp	ProjectG	cpp	252	<projectg>\OnelineBoard.obj	0063fbe0	3179	85	10	forte	008971d0	008980fe	2858	46	9	0	1	0	45		1 cpp, mudou pouco	11	2078	100.0	0.0
+source/client/ProjectG/onelinereqdlg.cpp	ProjectG	cpp	251	<projectg>\OnelineReqDlg.obj	00640a60	3256	32	21	forte	00898330	00898e90	2584	26	21	0	0	3	22		2 cpp, alterada	19	2439	39.9	0.0
+source/client/ProjectG/pangfbi.cpp	ProjectG	cpp	250	<projectg>\PangFBI.obj	00641550	889	9	4	fraco+ordem	00898e90	00899380	1145	6							2 cpp, alterada	3	714	2.9	0.0
+source/client/ProjectG/threadload.cpp	ProjectG	cpp	249	<projectg>\ThreadLoad.obj	006418d0	589	12	10	forte	00899380	0089962e	546	11	10	0	3	1	7		1 cpp, mudou pouco	8	439	100.0	0.0
+source/client/ProjectG/tooltip.cpp	ProjectG	cpp	248	<projectg>\ToolTip.obj	00641b80	504	6	4	fraco+ordem	0089962e	00899b50	1074	25							1 cpp, mudou pouco	6	483	96.9	0.0
+source/client/ProjectG/user_info.cpp	ProjectG	cpp	247	<projectg>\user_info.obj	00641d80	49300	274	129	forte	00899b50	008a9282	57290	382	127	0	7	26	249		2 cpp, alterada	184	40267	38.2	24.1
+source/client/ProjectG/winnernotice.cpp	ProjectG	cpp	246	<projectg>\WinnerNotice.obj	0064c4e0	7560	105	14	forte	008aa260	008ac123	6802	53	13	0	0	5	47		2 cpp, alterada	17	6135	17.9	39.8
+source/client/ProjectG/partsinfo.cpp	ProjectG	cpp	241	<projectg>\PartsInfo.obj	0064e350	11670	101	35	forte	008ac9a0	008b289a	20559	213	34	0	0	3	199		2 cpp, alterada	49	9821	16.4	43.5
+source/client/ProjectG/parttidlist.cpp	ProjectG	cpp	240	<projectg>\PartTidList.obj	006512c0	2834	11	7	fraco+ordem	008b289a	008b34d0	2895	18							2 cpp, alterada	11	2768	23.7	37.1
+source/client/ProjectG/bongdarishopdlg.cpp	ProjectG	cpp	239	<projectg>\BongdariShopDlg.obj	00651e00	41808	327	66	forte	008b34d0	008c13d8	52229	289	65	4	1	14	215		2 cpp, fora da linha de base				
+source/client/ProjectG/cardboxdlg.cpp	ProjectG	cpp	238	<projectg>\CardBoxDlg.obj	0065b480	11508	146	20	forte	008c1690	008c331b	6775	31	18	0	0	1	25		2 cpp, fora da linha de base				
+source/client/ProjectG/emoticondlg.cpp	ProjectG	cpp	237	<projectg>\EmoticonDlg.obj	0065e270	2599	17	13	forte	008c3670	008c3e6a	1877	13	12	1	0	2	11		1 cpp, mudou pouco	9	2478	100.0	0.0
+source/client/ProjectG/formbar.cpp	ProjectG	cpp	236	<projectg>\FormBar.obj	0065ebf0	3920	84	30	forte	008c4110	008c51de	3427	52	29	0	0	1	51		1 cpp, mudou pouco	30	2600	84.0	0.0
+source/client/ProjectG/frrandomboxprogress.cpp	ProjectG	cpp	235	<projectg>\FrRandomBoxProgress.obj	0065fbc0	1378	16	9	forte	008c52d0	008c5501	418	10	7	0	1	1	8		2 cpp, alterada	10	1056	36.3	48.8
+source/client/ProjectG/giftalarmdlg.cpp	ProjectG	cpp	234	<projectg>\GiftAlarmDlg.obj	00660060	5582	31	18	forte	008c5750	008c6e7c	5577	23	17	0	0	5	16		2 cpp, alterada	17	5020	25.7	12.4
+source/client/ProjectG/iteminfodlg.cpp	ProjectG	cpp	233	<projectg>\ItemInfoDlg.obj	006614b0	5943	41	29	forte	008c6f40	008c7f5e	3731	37	29	0	0	2	34		1 cpp, mudou pouco	35	4350	73.5	4.6
+source/client/ProjectG/kbdmanualdlg.cpp	ProjectG	cpp	232	<projectg>\KbdManualDlg.obj	006627f0	315	5	2	fraco+ordem	008c7f5e	008c8380	938	7							1 cpp, mudou pouco	3	119	100.0	0.0
+source/client/ProjectG/optiondlg.cpp	ProjectG	cpp	231	<projectg>\OptionDlg.obj	00662890	31836	192	29	forte	008c8380	008ceff3	25077	168	28	1	1	25	138		2 cpp, fora da linha de base				
+source/client/ProjectG/playerinfodlg.cpp	ProjectG	cpp	230	<projectg>\PlayerInfoDlg.obj	00668b50	3163	13	12	forte	008cf3b0	008cffc4	2961	12	12	0	0	1	11		2 cpp, alterada	8	2724	17.4	0.0
+source/client/ProjectG/privatetradedlg.cpp	ProjectG	cpp	229	<projectg>\PrivateTradeDlg.obj	006696f0	44843	485	154	forte	008d0170	008da59e	37523	325	152	2	0	8	287		1 cpp, mudou pouco	156	28994	63.5	10.9
+source/client/ProjectG/recycledlg.cpp	ProjectG	cpp	228	<projectg>\RecycleDlg.obj	006741c0	33496	285	30	forte	008dd860	008e33c1	21735	106	16	0	3	9	77	008db4f0-008dc348(12)	2 cpp, fora da linha de base				
+source/client/ProjectG/schooldlg.cpp	ProjectG	cpp	226	<projectg>\SchoolDlg.obj	0067bd60	6593	99	17	forte	008e3660	008e5304	6219	52	17	0	0	5	47		1 cpp, mudou pouco	20	4876	57.9	0.0
+source/client/ProjectG/scratchdlg.cpp	ProjectG	cpp	225	<projectg>\ScratchDlg.obj	0067d5c0	17827	121	222	forte	008e5330	008ecfbe	27262	292	220	1	138	23	64		2 cpp, alterada	92	14588	24.3	62.3
+source/client/ProjectG/setitemdlg.cpp	ProjectG	cpp	224	<projectg>\SetItemDlg.obj	00681450	2036	14	9	forte	008ed060	008ed287	423	9	8	0	0	0	7		2 cpp, alterada	8	1627	22.8	39.7
+source/client/ProjectG/tradedlg.cpp	ProjectG	cpp	223	<projectg>\TradeDlg.obj	00681b60	59589	404	99	forte	008ede00	008f94ce	42942	223	92	1	0	46	90		2 cpp, alterada	195	47016	20.4	63.6
+source/client/ProjectG/messengerchatdlg.cpp	ProjectG	cpp	220	<projectg>\MessengerChatDlg.obj	0068f630	6620	116	23	forte	008fb8e0	008fceb5	4709	54	21	0	1	2	46		2 cpp, alterada	22	4469	41.3	12.9
+source/client/ProjectG/messengerdlg.cpp	ProjectG	cpp	219	<projectg>\MessengerDlg.obj	00690fb0	31990	309	24	forte	008fdaf0	0090709e	33783	175	23	2	23	25	83		2 cpp, fora da linha de base				
+source/client/ProjectG/msnusersnapshot.cpp	ProjectG	cpp	217	<projectg>\MsnUserSnapshot.obj	00698bd0	1521	16	6	fraco+ordem	0090709e	00907530	915	18							1 cpp, mudou pouco	11	821	100.0	0.0
+source/client/ProjectG/contentsdoc.cpp	ProjectG	cpp	216	<projectg>\ContentsDoc.obj	00699060	31062	714	22	forte	00907530	009105f3	28499	479	20	0	1	0	429		2 cpp, alterada	102	12187	10.7	81.8
+source/client/ProjectG/icontentsdoc.cpp	ProjectG	cpp	215	<projectg>\IContentsDoc.obj	006a1cd0	16059	345	16	forte	00911c60	00915a4e	13651	157	10	0	0	0	150	004b5eb0-004b5fef(4)	2 cpp, alterada	6	1668	36.8	54.3
+source/client/ProjectG/bonusticket.cpp	ProjectG	cpp	214	<projectg>\BonusTicket.obj	006a6480	6188	121	8	forte	00916ae0	00917fdd	4909	28	5	0	0	0	28		1 cpp, mudou pouco	9	1902	60.4	39.6
+source/client/ProjectG/initdelegate.cpp	ProjectG	cpp	213	<projectg>\InitDelegate.obj	006a7f20	160	4	0	ordem	00917fdd	00918170	304	9							1 cpp, mudou pouco	4	124	100.0	0.0
+source/client/ProjectG/messagemanager.cpp	ProjectG	cpp	212	<projectg>\MessageManager.obj	006a7fc0	4036	90	10	forte	00918170	0091967e	4346	58	10	0	0	1	57		1 cpp, mudou pouco	7	840	100.0	0.0
+source/client/ProjectG/secondarypassword.cpp	ProjectG	cpp	211	<projectg>\SecondaryPassword.obj	006a9240	8906	149	2	ordem	0091967e	0091d510	12212	179							2 cpp, alterada	31	4457	1.8	76.1
+source/client/ProjectG/secondarypassworddlg.cpp	ProjectG	cpp	210	<projectg>\SecondaryPasswordDlg.obj	006ab8c0	14054	132	4	ordem	0091967e	0091d510	12212	179							2 cpp, alterada	95	9517	18.3	72.1
+source/client/ProjectG/golfitemhandler.cpp	ProjectG	cpp	209	<projectg>\GolfItemHandler.obj	006ae600	2681	48	6	fraco+ordem	0091967e	0091d510	12212	179							2 cpp, alterada	21	2266	2.2	87.0
+source/client/ProjectG/tradehandler.cpp	ProjectG	cpp	208	<projectg>\TradeHandler.obj	006af150	5779	66	1	ordem	0091967e	0091d510	12212	179							2 cpp, alterada	15	3687	4.3	94.4
+source/client/ProjectG/gatewayactor.cpp	ProjectG	cpp	207	<projectg>\GatewayActor.obj	006b0910	8316	192	12	forte	0091d510	0091febe	9494	84	12	0	0	1	80		2 cpp, alterada	13	1557	6.8	10.3
+source/client/ProjectG/gatewaydoc.cpp	ProjectG	cpp	206	<projectg>\GatewayDoc.obj	006b2e00	1770	37	9	forte	00920400	00920fbe	2684	29	6	0	2	7	15		2 cpp, alterada	16	1505	1.5	44.3
+source/client/ProjectG/eventactor.cpp	ProjectG	cpp	205	<projectg>\EventActor.obj	006b3590	5201	141	0	ordem	00920fbe	009218d0	2095	17							2 cpp, alterada	10	1130	0.4	99.6
+source/client/ProjectG/specialbox.cpp	ProjectG	cpp	204	<projectg>\SpecialBox.obj	006b4d00	1046	9	0	ordem	00920fbe	009218d0	2095	17							2 cpp, alterada	6	600	3.8	96.2
+source/client/ProjectG/specialboxdlg.cpp	ProjectG	cpp	203	<projectg>\SpecialBoxDlg.obj	006b5110	1565	19	16	forte	009218d0	00921e41	1220	16	16	0	0	0	15		1 cpp, mudou pouco	12	1159	63.9	0.0
+source/client/ProjectG/miles.cpp	ProjectG	cpp	201	<projectg>\Miles.obj	006b5640	10925	81	31	forte	00923b40	0092683e	10442	69	31	0	0	2	67		1 cpp, mudou pouco	45	7282	71.3	4.1
+source/client/ProjectG/background.cpp	ProjectG	cpp	200	<projectg>\BackGround.obj	006b82f0	718	11	11	forte	00926880	00926b5a	637	9	9	0	0	0	9		1 cpp, mudou pouco	10	695	100.0	0.0
+source/client/ProjectG/polysoup.cpp	ProjectG	cpp	199	<projectg>\Polysoup.obj	006b8610	72644	847	53	forte	00926c50	0094ad6b	126452	1153	50	3	13	3	1088		2 cpp, alterada	79	52382	12.9	62.3
+source/client/ProjectG/quadtree.cpp	ProjectG	cpp	198	<projectg>\QuadTree.obj	006cb540	97447	374	65	forte	0094af70	0096694d	109397	257	64	2	3	7	210		2 cpp, alterada	141	107130	5.4	79.8
+source/client/ProjectG/shadow.cpp	ProjectG	cpp	197	<projectg>\Shadow.obj	006e3a90	13299	295	28	forte	00967780	0096c747	16545	189	28	0	0	0	189		2 cpp, alterada	49	6744	24.5	54.7
+source/client/ProjectG/fxbox.cpp	ProjectG	cpp	196	<projectg>\FxBox.obj	006e7610	21606	419	27	forte	0096c7e0	0097395e	24032	267	26	0	0	0	266		2 cpp, fora da linha de base				
+source/client/ProjectG/fxsequence.cpp	ProjectG	cpp	195	<projectg>\FxSequence.obj	006ed5b0	11046	168	13	forte	00974b40	00976b3e	7744	38	11	0	0	1	37		1 cpp, mudou pouco	13	6315	100.0	0.0
+source/client/ProjectG/fxspray.cpp	ProjectG	cpp	194	<projectg>\FxSpray.obj	006f0470	60172	971	34	forte	00977490	009899f7	62857	535	33	0	0	4	523		2 cpp, alterada	30	36993	8.3	72.4
+source/client/ProjectG/anotherhand.cpp	ProjectG	cpp	193	<projectg>\AnotherHand.obj	00700d20	796	8	7	forte	0098ad40	0098af9e	534	7	6	0	0	0	7		1 cpp, mudou pouco	7	727	100.0	0.0
+source/client/ProjectG/binstr.cpp	ProjectG	cpp	192	<projectg>\Binstr.obj	00701050	3644	37	28	forte	0098b090	0098be40	3211	32	27	0	0	7	25		1 cpp, mudou pouco	27	3005	63.0	0.0
+source/client/ProjectG/commonutil.cpp	ProjectG	cpp	191	<projectg>\commonutil.obj	00701f40	12446	168	30	forte	0098bf20	0098fbdc	13806	105	30	0	2	6	78		2 cpp, alterada	39	8380	17.4	56.3
+source/client/ProjectG/dxdiaginfo.cpp	ProjectG	cpp	190	<projectg>\DxDiagInfo.obj	007052a0	612	4	3	fraco+ordem	0098fbdc	00990730	2723	10							1 cpp, mudou pouco	3	581	85.0	0.0
+source/shared/exceptionreport.cpp	shared	cpp	189	<projectg>\ExceptionReport.obj	007054e0	8063	50	31	forte	00990730	009928ff	7607	30	30	0	0	1	24		1 cpp, mudou pouco	33	7354	88.4	0.0
+source/client/ProjectG/inifile.cpp	ProjectG	cpp	188	<projectg>\INIFile.obj	00707460	824	9	5	fraco+ordem	009928ff	00992c50	761	7							1 cpp, mudou pouco	8	797	60.9	0.0
+source/client/ProjectG/monitor.cpp	ProjectG	cpp	187	<projectg>\Monitor.obj	007077a0	402	7	7	forte	00992c50	00992dfe	386	7	7	0	0	0	7		1 cpp, mudou pouco	6	359	100.0	0.0
+source/client/ProjectG/networkmonitor.cpp	ProjectG	cpp	186	<projectg>\NetworkMonitor.obj	00707940	647	11	8	forte	00992e50	0099311e	609	9	7	0	0	0	9		1 cpp, mudou pouco	7	526	84.6	0.0
+source/client/ProjectG/ppl.cpp	ProjectG	cpp	185	<projectg>\PPL.obj	00707c10	405	8	5	fraco+ordem	0099311e	00993310	355	6							1 cpp, mudou pouco	3	255	100.0	0.0
+source/client/ProjectG/registry.cpp	ProjectG	cpp	183	<projectg>\Registry.obj	00707de0	7101	45	36	forte	00993310	009950a0	7338	38	35	0	0	0	38		1 cpp, mudou pouco	35	7244	95.3	0.0
+source/client/ProjectG/slicestr.cpp	ProjectG	cpp	182	<projectg>\slicestr.obj	00709a10	537	1	1	fraco+ordem	009950a0	00995290	410	1							1 cpp, mudou pouco	1	489	100.0	0.0
+source/client/ProjectG/splash.cpp	ProjectG	cpp	181	<projectg>\Splash.obj	00709c10	1852	23	19	forte	00995290	0099602c	3203	30	18	1	0	0	30		1 cpp, mudou pouco	18	1473	100.0	0.0
+source/client/ProjectG/tweaker.cpp	ProjectG	cpp	180	<projectg>\tweaker.obj	0070a3c0	15366	282	23	forte	009960f0	0099b422	18159	170	21	0	0	0	170		1 cpp, mudou pouco	25	6743	85.6	0.0
+source/client/ProjectG/wtimer.cpp	ProjectG	cpp	179	<projectg>\WTimer.obj	0070e4a0	4618	133	8	forte	0099be90	0099cfae	3851	46	8	0	0	0	45		1 cpp, mudou pouco	10	2180	75.5	0.0
+source/client/ProjectG/buddymanager.cpp	ProjectG	cpp	178	<projectg>\BuddyManager.obj	0070fa30	4483	73	15	forte	0099d260	0099e577	4200	44	13	0	0	2	20		1 cpp, mudou pouco	26	2393	70.1	10.2
+source/client/ProjectG/chatmsg.cpp	ProjectG	cpp	177	<projectg>\ChatMsg.obj	00710cd0	13086	86	45	forte	0099e6c0	009a1a08	12379	56	44	0	5	9	32		2 cpp, alterada	55	12622	48.7	18.8
+source/client/ProjectG/hackingmanager.cpp	ProjectG	cpp	175	<projectg>\HackingManager.obj	00714120	3140	112	10	forte	009a1d10	009a2ebe	3127	40	10	0	0	0	40		1 cpp, mudou pouco	11	1992	100.0	0.0
+source/client/ProjectG/hatmanager.cpp	ProjectG	cpp	174	<projectg>\hatManager.obj	007150e0	14216	85	19	forte	009a30a0	009a592e	10000	31	17	0	0	7	22		2 cpp, alterada	27	12553	14.5	26.2
+source/client/ProjectG/inputmanager.cpp	ProjectG	cpp	173	<projectg>\InputManager.obj	00718630	4181	49	30	forte	009a6380	009a76b1	4408	40	29	0	0	0	39		1 cpp, mudou pouco	29	2924	62.5	1.0
+source/client/ProjectG/netresourcemanager.cpp	ProjectG	cpp	172	<projectg>\NetResourceManager.obj	00719790	24165	383	18	forte	009a77a0	009abb61	15220	93	17	0	1	2	88		2 cpp, alterada	30	14616	15.7	32.5
+source/client/ProjectG/rssmanager.cpp	ProjectG	cpp	171	<projectg>\RSSManager.obj	0071fb30	1762	16	10	forte	009abf10	009ac53e	1512	11	9	0	1	1	9		1 cpp, mudou pouco	11	1614	90.6	0.0
+source/client/ProjectG/scenemanager.cpp	ProjectG	cpp	170	<projectg>\SceneManager.obj	00720200	30919	436	56	forte	009ac600	009b4eae	29785	256	55	2	1	4	238		2 cpp, alterada	51	18554	34.3	43.4
+source/client/ProjectG/soundmanager.cpp	ProjectG	cpp	169	<projectg>\SoundManager.obj	007282e0	5544	55	30	forte	009b5930	009b71a8	5704	52	30	0	0	0	52		1 cpp, mudou pouco	34	4080	66.9	8.3
+source/client/ProjectG/taskmanager.obj	ProjectG	obj	168	<projectg>\TaskManager.obj	007299f0	116656	845	39	forte	009b7700	009c2091	34653	458	35	0	36	18	370		4 sem fonte no rebang				
+source/shared/itemmanager.cpp	shared	cpp	167	<projectg>\ItemManager.obj	00746aa0	163195	2917	104	forte	009d8b70	00a4094e	335294	4310	102	2	177	65	3347		2 cpp, alterada	129	34807	11.2	49.9
+source/client/ProjectG/gamedatadb.cpp	ProjectG	cpp	166	<projectg>\GameDataDB.obj	00773270	5885	124	13	forte	00a40a80	00a42bbe	6823	77	12	0	1	1	70		1 cpp, mudou pouco	11	1637	86.7	0.0
+source/client/ProjectG/gdbitmapbox.cpp	ProjectG	cpp	165	<projectg>\GDBitmapBox.obj	00774b80	4956	100	7	forte	00a43700	00a448ce	4229	24	5	0	0	0	24		1 cpp, mudou pouco	5	1656	100.0	0.0
+source/client/ProjectG/gdeventnotice.cpp	ProjectG	cpp	164	<projectg>\GDEventNotice.obj	00776110	992	14	5	fraco+ordem	00a448ce	00a44f00	1424	9							1 cpp, mudou pouco	4	1170	100.0	0.0
+source/client/ProjectG/gdtextbox.cpp	ProjectG	cpp	163	<projectg>\GDTextBox.obj	00776490	1312	18	6	forte	00a44f00	00a4564e	1763	8	6	0	0	1	7		1 cpp, mudou pouco	5	1608	100.0	0.0
+source/client/ProjectG/gdvoiceitem.cpp	ProjectG	cpp	162	<projectg>\GDVoiceItem.obj	00776930	1949	52	5	forte	00a45dd0	00a4626b	1116	5	4	0	0	0	5		2 cpp, alterada	3	923	20.2	0.0
+source/client/ProjectG/actor.cpp	ProjectG	cpp	161	<projectg>\Actor.obj	00777160	5311	135	20	forte	00a462c0	00a47192	3060	50	18	0	0	0	49		1 cpp, mudou pouco	20	1091	95.7	0.0
+source/client/ProjectG/exception.cpp	ProjectG	cpp	160	<projectg>\Exception.obj	00778960	51	1	1	fraco	00a47192	00a49170	6820	86							1 cpp, mudou pouco	1	21	100.0	0.0
+source/client/ProjectG/objectfactory.cpp	ProjectG	cpp	159	<projectg>\ObjectFactory.obj	00778980	8433	170	7	forte	00a49170	00a4c022	10135	109	6	0	0	0	109		1 cpp, mudou pouco	6	589	100.0	0.0
+source/client/ProjectG/rtti.cpp	ProjectG	cpp	158	<projectg>\RTTI.obj	0077ae10	52	1	0	sem_ancora											1 cpp, mudou pouco	1	20	100.0	0.0
+source/client/ProjectG/chttp.cpp	ProjectG	cpp	157	<projectg>\cHttp.obj	0077ae30	2283	11	0	ordem	00a4c022	00a4cc80	2866	22							2 cpp, alterada	10	1496	0.7	99.3
+source/client/ProjectG/clientsocket.cpp	ProjectG	cpp	156	<projectg>\ClientSocket.obj	0077b750	1469	23	7	forte	00a4cc80	00a4d15d	1149	10	6	0	0	1	1		2 cpp, alterada	10	1304	29.4	25.2
+source/client/ProjectG/csharedmemory.cpp	ProjectG	cpp	155	<projectg>\cSharedMemory.obj	0077bd00	509	12	6	forte	00a4d2c0	00a4d42d	307	5	5	0	0	0	5		1 cpp, mudou pouco	12	423	100.0	0.0
+source/client/ProjectG/networksystem.cpp	ProjectG	cpp	154	<projectg>\NetworkSystem.obj	0077bf30	906	21	9	forte	00a4d4a0	00a4d8fe	992	16	9	0	1	1	13		1 cpp, mudou pouco	10	720	77.9	0.0
+source/client/ProjectG/packet.cpp	ProjectG	cpp	153	<projectg>\Packet.obj	0077c2c0	4129	63	40	forte	005ab070	005abd55	2794	51	28	0	0	1	49	00a4dd50-00a4dee8(9)	1 cpp, mudou pouco	43	2327	88.2	1.3
+source/client/ProjectG/socket.cpp	ProjectG	cpp	152	<projectg>\Socket.obj	0077d3f0	1812	29	17	forte	00a4ecd0	00a4f527	1901	22	17	0	0	0	21		1 cpp, mudou pouco	19	1611	78.9	4.8
+source/client/ProjectG/finitestate.cpp	ProjectG	cpp	151	<projectg>\FiniteState.obj	0077db70	4481	96	8	forte	00a4f7d0	00a4fa00	485	6	6	0	0	0	6		1 cpp, mudou pouco	6	480	100.0	0.0
+source/client/ProjectG/finitestatemachine.cpp	ProjectG	cpp	150	<projectg>\FiniteStateMachine.obj	0077f000	4488	93	9	forte	00a509c0	00a5137e	2323	21	8	0	0	0	21		1 cpp, mudou pouco	8	891	95.1	0.0
+source/client/ProjectG/networkstate.cpp	ProjectG	cpp	149	<projectg>\NetworkState.obj	00780440	82	3	1	fraco+ordem	00a5137e	00a513e0	37	2							1 cpp, mudou pouco	2	16	100.0	0.0
+source/client/ProjectG/gameunit.cpp	ProjectG	cpp	148	<projectg>\GameUnit.obj	00780490	1718	22	13	forte	00a513e0	00a51743	765	13	12	0	3	4	3		2 cpp, alterada	11	1745	27.3	0.0
+source/client/ProjectG/loginunit.cpp	ProjectG	cpp	147	<projectg>\LoginUnit.obj	00780b40	1371	19	10	forte	00a51e30	00a525d2	1863	10	9	0	5	3	0		2 cpp, alterada	10	1703	4.5	95.5
+source/client/ProjectG/msnunit.cpp	ProjectG	cpp	146	<projectg>\MSNUnit.obj	00781090	2168	28	12	forte	00a52600	00a52f3c	2205	15	11	0	1	1	5		2 cpp, alterada	14	2224	45.8	0.0
+source/client/ProjectG/networkunit.cpp	ProjectG	cpp	145	<projectg>\NetworkUnit.obj	007818e0	705	14	10	forte	00a52f70	00a53235	618	11	9	0	0	3	4		1 cpp, mudou pouco	10	604	82.1	0.0
+source/client/ProjectG/rankunit.cpp	ProjectG	cpp	144	<projectg>\RankUnit.obj	00781bb0	807	13	11	forte	00a53270	00a534b9	516	10	10	0	4	3	1		1 cpp, mudou pouco	10	793	83.9	0.0
+source/client/ProjectG/shopunit.cpp	ProjectG	cpp	143	<projectg>\ShopUnit.obj	00781f00	563	15	10	forte	00a53600	00a537ff	412	10	9	0	0	0	7		2 cpp, alterada	10	526	43.3	0.0
+source/client/ProjectG/blowfish.cpp	ProjectG	cpp	142	<projectg>\blowfish.obj	00782160	3419	8	8	forte	00a53890	00a5474d	3682	7	8	0	0	0	7		1 cpp, mudou pouco	8	3750	100.0	0.0
+source/client/ProjectG/jrencrypt.cpp	ProjectG	cpp	141	<projectg>\JrEncrypt.obj	00782ed0	854	4	4	fraco+ordem	00a5474d	00a54a80	794	4							1 cpp, mudou pouco	4	800	100.0	0.0
+source/client/ProjectG/rc4.cpp	ProjectG	cpp	140	<projectg>\RC4.obj	00783230	491	7	6	forte	00a54a80	00a54c4e	401	6	6	0	0	0	6		1 cpp, mudou pouco	6	382	100.0	0.0
+source/client/ProjectG/imessage.cpp	ProjectG	cpp	139	<projectg>\IMessage.obj	00783430	1796	36	24	forte	00a54ca0	00a5522e	891	22	22	0	0	0	22		1 cpp, mudou pouco	28	1528	88.1	7.7
+source/client/ProjectG/udpspoon.cpp	ProjectG	cpp	138	<projectg>\UDPSpoon.obj	00783c10	831	10	9	forte	00a55370	00a556de	805	10	9	0	0	0	10		1 cpp, mudou pouco	9	775	100.0	0.0
+source/client/ProjectG/tinystr.cpp	ProjectG	cpp	137	<projectg>\tinystr.obj	00783f90	1402	12	11	forte	00a55750	00a55afb	867	10	9	0	0	0	10		1 cpp, mudou pouco	11	1177	100.0	0.0
+source/client/ProjectG/tinyxml.cpp	ProjectG	cpp	136	<projectg>\tinyxml.obj	00784510	10149	144	80	forte	00a55bf0	00a5827b	8796	91	77	0	0	0	91		1 cpp, mudou pouco	72	8108	97.8	0.0
+source/client/ProjectG/tinyxmlparser.cpp	ProjectG	cpp	135	<projectg>\tinyxmlparser.obj	00786da0	4596	32	17	forte	00a58310	00a5920a	3659	19	16	0	0	0	19		1 cpp, mudou pouco	15	4239	93.0	0.0
+source/client/ProjectG/uwin.cpp	ProjectG	cpp	134	<projectg>\UWIN.obj	00787f80	2234	14	14	forte	00a59500	00a59d80	1962	13	14	0	0	0	13		1 cpp, mudou pouco	14	2054	100.0	0.0
+source/client/ProjectG/ggc_dlg.cpp	ProjectG	cpp	133	<projectg>\GGC_Dlg.obj	007888a0	820	11	6	forte	00a59de0	00a59eb8	160	4	4	0	0	0	4		2 cpp, alterada	3	547	26.3	0.0
+source/client/ProjectG/ggc_helper.cpp	ProjectG	cpp	132	<projectg>\GGC_Helper.obj	00788b60	7749	115	12	forte	00a5a370	00a5cd46	9741	74	11	0	0	2	71		2 cpp, alterada	11	3833	34.7	0.0
+source/client/ProjectG/ggc_wrapper.cpp	ProjectG	cpp	131	<projectg>\GGC_Wrapper.obj	0078abb0	623	15	6	forte	00a5cf80	00a5d149	361	7	6	0	0	1	6		1 cpp, mudou pouco	7	540	65.0	35.0
+source/client/ProjectG/ccrc32.cpp	ProjectG	cpp	130	<projectg>\cCRC32.obj	0078aeb0	6007	96	15	forte	00a5d250	00a5ea95	4964	65	14	0	0	0	63		1 cpp, mudou pouco	16	2814	73.4	0.0
+source/client/ProjectG/md5.cpp	ProjectG	cpp	128	<projectg>\md5.obj	0078c8c0	2768	5	4	forte	0082fcd0	008304f0	2039	4	4	0	0	0	4		1 cpp, mudou pouco	5	2212	92.2	0.0
+source/client/ProjectG/paper.cpp	ProjectG	cpp	127	<projectg>\Paper.obj	0078d3a0	10730	228	18	forte	00a5eb20	00a61493	9038	95	17	0	0	0	95		1 cpp, mudou pouco	20	3107	85.0	3.1
+source/shared/LuaSystem/luascript.cpp	shared	cpp	126	<projectg>\LuaScript.obj	007902b0	1570	23	11	forte	00c201b0	00c20739	1292	12	10	0	0	0	12		1 cpp, mudou pouco	13	1250	60.0	15.0
+source/shared/LuaSystem/luascriptmanager.cpp	shared	cpp	125	<projectg>\LuaScriptManager.obj	007908c0	2239	69	3	fraco	00c1d39f	00c201b0	8648	141							2 cpp, alterada	10	1191	20.0	60.2
+source/shared/LuaSystem/luautilitylib.cpp	shared	cpp	124	<projectg>\LuaUtilityLib.obj	00791300	8688	166	9	forte	00c207a0	00c2388b	10553	86	9	0	0	0	86		2 cpp, alterada	20	2971	45.2	34.4
+<projectg>\lua_tinker.obj	lib	fora	123	<projectg>\lua_tinker.obj	00793830	5953	130	2	fraco	00c1d39f	00c201b0	8648	141							- biblioteca externa				
+source/client/ProjectG/mainframe.cpp	ProjectG	cpp	122	<projectg>\MainFrame.obj	00795330	850	13	9	forte	00a61530	00a61760	460	10	8	0	0	0	10		1 cpp, mudou pouco	8	717	100.0	0.0
+source/client/ProjectG/projectg.cpp	ProjectG	cpp	121	<projectg>\ProjectG.obj	007956d0	27955	358	52	forte	00a61a40	00a69323	26632	149	50	0	6	14	118		2 cpp, alterada	50	21365	26.3	13.2
+source/client/ProjectG/stdafx.obj	ProjectG	obj	120	<projectg>\stdafx.obj	0079c7a0	6405	80	0	ordem	00a69323	00a69fd0	2899	14							4 sem fonte no rebang				
+source/client/ProjectG/winmain.cpp	ProjectG	cpp	119	<projectg>\Winmain.obj	0079df00	29551	355	35	forte	00a69fd0	00a727be	30151	260	34	0	1	2	255		2 cpp, alterada	25	9174	20.2	3.7
+source/client/ProjectG/parallelwork.cpp	ProjectG	cpp	118	<projectg>\ParallelWork.obj	007a59b0	232	6	7	fraco+ordem	00a727be	00a72e80	1656	8							1 cpp, mudou pouco	5	130	100.0	0.0
+source/client/ProjectG/threadowner.cpp	ProjectG	cpp	117	<projectg>\ThreadOwner.obj	007a5ab0	703	13	11	forte	00a72e80	00a73145	550	11	10	0	0	0	11		1 cpp, mudou pouco	10	564	100.0	0.0
+source/client/ProjectG/threadpool.cpp	ProjectG	cpp	116	<projectg>\ThreadPool.obj	007a5dd0	5958	130	28	forte	00a731d0	00a75a1e	7916	112	27	0	3	4	100		1 cpp, mudou pouco	10	579	100.0	0.0
+source/client/ProjectG/gmtoolkit.cpp	ProjectG	cpp	115	<projectg>\GMToolkit.obj	007a7810	18516	114	35	forte	00a75ac0	00a7a6b6	17984	64	34	0	0	28	23		2 cpp, alterada	54	15750	12.8	2.6
+source/shared/localize.cpp	shared	cpp	114	<projectg>\Localize.obj	007abbc0	3307	17	2	fraco+ordem	00a7a6b6	00a7e480	13331	124							2 cpp, alterada	4	3581	3.1	96.9
+<projectg>\minilzo.obj	lib	fora	113	<projectg>\minilzo.obj	007ac8e0	3651	13	0	sem_ancora											- biblioteca externa				
+source/shared/tikimagicboxtable.cpp	shared	cpp	110	<projectg>\TikiMagicBoxTable.obj	007ad7b0	10955	205	4	forte	00a7e480	00a7f22f	3277	16	4	0	0	0	16		2 cpp, alterada	5	4155	37.7	62.3
+source/shared/uselzo.cpp	shared	cpp	109	<projectg>\uselzo.obj	007b0840	1271	8	4	fraco+ordem	00a7f22f	00a7f760	1182	8							1 cpp, mudou pouco	7	1163	100.0	0.0
+source/client/ProjectG/deleteitem.cpp	ProjectG	cpp	108	<projectg>\DeleteItem.obj	007b0d60	3105	24	9	forte	00a7f760	00a7f95e	373	9	6	0	0	2	7		2 cpp, alterada	17	2332	25.2	57.5
+source/client/ProjectG/mascotinfodlg.cpp	ProjectG	cpp	107	<projectg>\MascotInfoDlg.obj	007b1720	5000	28	14	forte	00a801f0	00a816fd	4989	19	13	0	0	2	9		2 cpp, alterada	17	4232	35.0	33.7
+source/client/ProjectG/panggiftdlg.cpp	ProjectG	cpp	106	<projectg>\PangGiftDlg.obj	007b2850	1688	15	6	forte	00a81870	00a818f8	86	5	5	0	0	0	5		2 cpp, alterada	9	1193	39.7	60.3
+source/client/ProjectG/replaymodedlg.cpp	ProjectG	cpp	105	<projectg>\ReplayModeDlg.obj	007b2de0	1312	17	9	forte	00a81e20	00a81f1e	153	9	7	0	0	0	9		1 cpp, mudou pouco	9	755	52.3	0.0
+source/client/ProjectG/shopmain.cpp	ProjectG	cpp	103	<projectg>\ShopMain.obj	007b3220	82352	353	55	forte	00a822c0	00a94ef1	71392	271	38	1	16	43	94		2 cpp, alterada	199	72083	9.6	81.3
+source/client/ProjectG/shoptask.cpp	ProjectG	cpp	102	<projectg>\ShopTask.obj	007c4b20	9376	21	0	ordem	00a94ef1	00a99a00	17296	42							2 cpp, alterada	9	9438	2.3	96.9
+source/client/ProjectG/caddieinfodlg.cpp	ProjectG	cpp	101	<projectg>\CaddieInfoDlg.obj	007c6f60	5370	32	26	forte	00a99a00	00a9aa01	3807	26	25	0	0	2	11		2 cpp, alterada	23	4406	43.9	0.0
+source/client/ProjectG/checkoutdlg.cpp	ProjectG	cpp	100	<projectg>\CheckoutDlg.obj	007c8200	22746	169	22	forte	00a9ac20	00aa1f0e	25998	173	22	0	79	11	50		2 cpp, alterada	37	17901	11.2	76.6
+source/client/ProjectG/compounddlg.cpp	ProjectG	cpp	99	<projectg>\CompoundDlg.obj	007cda60	3343	29	16	forte	00aa4370	00aa4a40	1541	17	15	0	0	0	11		1 cpp, mudou pouco	18	2652	59.9	40.1
+source/client/ProjectG/downgradedlg.cpp	ProjectG	cpp	98	<projectg>\DowngradeDlg.obj	007ce540	6963	53	32	forte	00aa4fa0	00aa64a3	4809	43	31	0	2	5	18		1 cpp, mudou pouco	40	4709	62.6	2.6
+source/client/ProjectG/enchantdlg.cpp	ProjectG	cpp	97	<projectg>\EnchantDlg.obj	007cfbb0	4090	23	12	forte	00aa65c0	00aa7223	2906	16	12	0	1	2	7		2 cpp, alterada	15	3452	28.5	0.0
+source/client/ProjectG/fortunedlg.cpp	ProjectG	cpp	96	<projectg>\FortuneDlg.obj	007d0980	1289	14	6	fraco+ordem	00aa7223	00aa85b0	3752	19							1 cpp, mudou pouco	9	810	67.2	24.9
+source/client/ProjectG/fortuneopendlg.cpp	ProjectG	cpp	95	<projectg>\FortuneOpenDlg.obj	007d0da0	4261	65	9	forte	00aa85b0	00aa9d85	5425	45	8	0	15	4	17		2 cpp, alterada	11	3026	13.7	76.3
+source/client/ProjectG/frienddlg.cpp	ProjectG	cpp	94	<projectg>\FriendDlg.obj	007d1f00	3277	49	14	forte	00aaacf0	00aab9e5	2784	24	13	0	0	2	15		1 cpp, mudou pouco	14	2226	73.9	20.9
+source/client/ProjectG/giftdlg.cpp	ProjectG	cpp	93	<projectg>\GiftDlg.obj	007d2ab0	18677	76	29	forte	00aaba40	00aaff54	17107	49	28	1	1	11	9		2 cpp, alterada	51	15381	18.8	52.9
+source/client/ProjectG/helpdlg.cpp	ProjectG	cpp	92	<projectg>\HelpDlg.obj	007d6c30	1348	10	4	fraco+ordem	00aaff54	00ab06b0	1697	6							1 cpp, mudou pouco	6	1045	100.0	0.0
+source/client/ProjectG/repaydlg.cpp	ProjectG	cpp	91	<projectg>\RepayDlg.obj	007d7080	3496	18	14	forte	00ab06b0	00ab13ae	3130	16	14	0	1	2	5		2 cpp, alterada	12	2766	33.7	45.2
+source/client/ProjectG/returngiftdlg.cpp	ProjectG	cpp	90	<projectg>\ReturnGiftDlg.obj	007d7c90	293	8	4	fraco+ordem	00ab13ae	00ab14e0	185	6							1 cpp, mudou pouco	2	133	75.9	0.0
+source/client/ProjectG/upgradecaddiedlg.cpp	ProjectG	cpp	89	<projectg>\UpgradeCaddieDlg.obj	007d7d90	1230	15	7	forte	00ab14e0	00ab16f8	464	6	5	0	0	1	5		2 cpp, alterada	7	859	34.7	63.9
+source/client/ProjectG/lobbybg.cpp	ProjectG	cpp	88	<projectg>\LobbyBg.obj	007d8180	1570	17	9	forte	00ab1990	00ab29fd	3743	32	8	1	0	0	26		2 cpp, alterada	10	1393	7.0	37.3
+source/client/ProjectG/lobbymain.cpp	ProjectG	cpp	87	<projectg>\LobbyMain.obj	007d8780	186552	736	113	forte	00ab2d50	00aba9fe	28701	192	37	0	2	23	75	00593050-00596954(28) 00597060-0059fc3b(13) 005027b0-0050522a(7) 00511300-0051d94f(6) 00500760-00500bbd(4)	2 cpp, alterada	433	117592	8.1	57.1
+source/client/ProjectG/lobbytask.cpp	ProjectG	cpp	86	<projectg>\LobbyTask.obj	007f70b0	29983	158	12	forte	00abf020	00ac5229	23667	64	11	1	0	3	57		2 cpp, alterada	10	28795	0.9	98.9
+source/client/ProjectG/addfrienddlg.cpp	ProjectG	cpp	85	<projectg>\AddFriendDlg.obj	007fe620	3255	26	8	forte	00ac56b0	00ac5c85	1302	13	7	0	0	6	5		2 cpp, alterada	18	2639	33.2	0.9
+source/client/ProjectG/awarddlg.cpp	ProjectG	cpp	84	<projectg>\AwardDlg.obj	007ff0d0	8991	37	26	forte	00ac62e0	00ac879e	9087	32	24	0	2	14	5		1 cpp, mudou pouco	30	7921	55.5	0.0
+source/client/ProjectG/caddiewarningdlg.cpp	ProjectG	cpp	83	<projectg>\CaddieWarningDlg.obj	00800f00	2706	21	18	forte	00ac88f0	00ac90ac	1776	17	17	0	0	1	8		1 cpp, mudou pouco	14	1972	73.3	0.0
+source/client/ProjectG/changeroominfodlg.cpp	ProjectG	cpp	82	<projectg>\ChangeRoomInfoDlg.obj	008017d0	12458	54	18	forte	00ac9230	00acd05b	15070	73	9	3	1	8	31		2 cpp, alterada	40	10460	7.6	79.3
+source/client/ProjectG/createnickdlg.cpp	ProjectG	cpp	81	<projectg>\CreateNickDlg.obj	00804430	3551	34	16	forte	00acd500	00acdbfd	1542	18	15	0	0	4	11		1 cpp, mudou pouco	23	2783	50.1	0.0
+source/client/ProjectG/detaildlg.cpp	ProjectG	cpp	80	<projectg>\DetailDlg.obj	00805020	818	13	8	forte	00ace160	00ace29e	216	8	7	0	0	0	8		1 cpp, mudou pouco	8	430	100.0	0.0
+source/client/ProjectG/detailedroominfodlg.cpp	ProjectG	cpp	79	<projectg>\DetailedRoomInfoDlg.obj	00805250	9071	100	23	forte	00ace3e0	00acf839	4621	32	21	0	0	4	12		2 cpp, alterada	32	7058	35.8	5.1
+source/client/ProjectG/dlgquickstartsetting.cpp	ProjectG	cpp	78	<projectg>\DlgQuickStartSetting.obj	008074d0	11535	161	63	forte	00ad09c0	00ad2cb8	7265	96	62	0	2	2	76		1 cpp, mudou pouco	56	7284	52.3	3.3
+source/client/ProjectG/equipdlg.cpp	ProjectG	cpp	77	<projectg>\EquipDlg.obj	00809df0	6933	40	20	forte	00ad3420	00ad5071	6598	32	20	0	3	3	21		2 cpp, alterada	25	5548	47.3	0.7
+source/client/ProjectG/eventprizedlg.cpp	ProjectG	cpp	76	<projectg>\EventPrizeDlg.obj	0080b630	1216	10	3	fraco+ordem	00ad5071	00ad5490	860	5							1 cpp, mudou pouco	6	870	100.0	0.0
+source/client/ProjectG/finalrankdlg.cpp	ProjectG	cpp	75	<projectg>\FinalRankDlg.obj	0080ba20	2526	14	8	forte	00ad5490	00ad5d61	2141	11	8	0	0	2	6		2 cpp, alterada	8	2178	37.2	62.8
+source/client/ProjectG/friendinfodlg.cpp	ProjectG	cpp	74	<projectg>\FriendInfoDlg.obj	0080c2f0	2277	21	15	forte	00ad5e70	00ad63d7	1196	13	13	0	0	0	9		1 cpp, mudou pouco	13	1552	100.0	0.0
+source/client/ProjectG/frimagenoticedlg.cpp	ProjectG	cpp	73	<projectg>\FrImageNoticeDlg.obj	0080ca10	3062	25	19	forte	00ad6570	00ad6bb7	1390	19	18	0	0	0	8		1 cpp, mudou pouco	20	2058	71.8	28.2
+source/client/ProjectG/frquickmovedlg.cpp	ProjectG	cpp	72	<projectg>\FrQuickMoveDlg.obj	0080d400	2131	19	15	forte	00ad6ef0	00ad7403	1116	14	14	0	0	0	10		1 cpp, mudou pouco	13	1493	87.1	0.0
+source/client/ProjectG/guilddlg.cpp	ProjectG	cpp	71	<projectg>\GuildDlg.obj	0080dab0	2412	22	15	forte	00ad7560	00ad7d54	1821	17	14	0	0	0	15		1 cpp, mudou pouco	16	1817	100.0	0.0
+source/client/ProjectG/guildnoticedlg.cpp	ProjectG	cpp	70	<projectg>\GuildNoticeDlg.obj	0080e2e0	2398	28	14	forte	00ad7d90	00ad848d	1599	17	14	0	0	1	11		1 cpp, mudou pouco	16	1555	100.0	0.0
+source/client/ProjectG/invitedlg.cpp	ProjectG	cpp	69	<projectg>\InviteDlg.obj	0080ea60	363	6	4	fraco+ordem	00ad848d	00ad85e0	238	6							1 cpp, mudou pouco	4	228	100.0	0.0
+source/client/ProjectG/levelupitemdlg.cpp	ProjectG	cpp	68	<projectg>\LevelUpItemDlg.obj	0080eb90	3993	27	16	forte	00ad85e0	00ad8c07	1373	16	15	0	0	0	10		1 cpp, mudou pouco	18	2694	51.7	20.6
+source/client/ProjectG/logindlg.cpp	ProjectG	cpp	67	<projectg>\LoginDlg.obj	0080f6e0	10950	80	25	forte	00ad9180	00ada6de	4983	42	24	0	13	8	18		2 cpp, alterada	39	11108	8.6	38.0
+source/client/ProjectG/loginrsdlg.cpp	ProjectG	cpp	66	<projectg>\LoginRsDlg.obj	00811c40	959	14	7	forte	00adba00	00adbade	122	7	6	0	0	0	7		2 cpp, alterada	7	676	43.2	0.0
+source/client/ProjectG/logoutdlg.cpp	ProjectG	cpp	65	<projectg>\LogoutDlg.obj	00811fb0	2044	19	12	forte	00adbda0	00adc2b8	1167	12	11	0	0	1	9		1 cpp, mudou pouco	11	1777	66.2	0.0
+source/client/ProjectG/mailboxdlg.cpp	ProjectG	cpp	64	<projectg>\MailBoxDlg.obj	00812650	2015	21	6	forte	00adc6b0	00adca5b	735	6	5	0	0	0	5		1 cpp, mudou pouco	9	1728	52.6	18.3
+source/client/ProjectG/makeroomdlg.cpp	ProjectG	cpp	63	<projectg>\MakeRoomDlg.obj	00812ce0	18587	81	44	forte	00adce90	00ae16a0	17441	80	42	0	0	5	34		2 cpp, alterada	68	16851	26.0	2.8
+source/client/ProjectG/mapselectdlg.cpp	ProjectG	cpp	62	<projectg>\MapSelectDlg.obj	00816c50	3804	16	11	forte	00ae27d0	00ae32ef	2600	18	10	0	0	1	9		1 cpp, mudou pouco	8	2952	80.0	0.0
+source/client/ProjectG/memodlg.cpp	ProjectG	cpp	61	<projectg>\MemoDlg.obj	00817a60	1084	11	7	forte	00ae37c0	00ae3ae1	579	6	7	0	0	1	3		1 cpp, mudou pouco	8	694	89.0	0.0
+source/client/ProjectG/newrecorddlg.cpp	ProjectG	cpp	60	<projectg>\NewRecordDlg.obj	00817d80	843	7	4	fraco+ordem	00ae3ae1	00ae3df0	698	4							1 cpp, mudou pouco	4	645	57.1	0.0
+source/client/ProjectG/notedlg.cpp	ProjectG	cpp	59	<projectg>\NoteDlg.obj	00818000	2432	18	12	forte	00ae3df0	00ae4379	1181	12	11	0	1	1	3		1 cpp, mudou pouco	16	1690	76.5	0.0
+source/client/ProjectG/noticedlg.cpp	ProjectG	cpp	58	<projectg>\NoticeDlg.obj	00818770	4649	31	20	forte	00ae4580	00ae55c1	3878	28	19	0	0	1	21		2 cpp, alterada	22	3846	47.3	0.0
+source/client/ProjectG/parannickdlg.cpp	ProjectG	cpp	57	<projectg>\ParanNickDlg.obj	008197d0	1175	16	7	forte	00ae5810	00ae58a8	82	7	6	0	0	0	7		2 cpp, alterada	7	897	29.4	70.6
+source/client/ProjectG/passworddlg.cpp	ProjectG	cpp	56	<projectg>\PasswordDlg.obj	00819bb0	853	15	9	forte	00ae5c50	00ae5e55	413	10	8	0	0	1	7		1 cpp, mudou pouco	7	354	90.4	0.0
+source/client/ProjectG/reportdlg.cpp	ProjectG	cpp	55	<projectg>\ReportDlg.obj	00819e00	2958	20	13	forte	00ae5ee0	00ae65b1	1575	14	12	0	0	2	9		2 cpp, alterada	12	2506	38.3	6.9
+source/client/ProjectG/resultdlg.cpp	ProjectG	cpp	54	<projectg>\ResultDlg.obj	0081a820	37361	149	41	forte	00ae69e0	00af0114	37212	128	40	1	0	32	46		2 cpp, fora da linha de base				
+source/client/ProjectG/scoredlg.cpp	ProjectG	cpp	53	<projectg>\ScoreDlg.obj	00822ab0	12367	64	46	forte	00af0600	00af2a8f	8442	46	45	0	0	3	14		1 cpp, mudou pouco	57	10063	63.5	7.0
+source/client/ProjectG/serverdlg.cpp	ProjectG	cpp	52	<projectg>\ServerDlg.obj	00825560	17881	146	21	forte	00af30d0	00af747e	16138	75	20	1	1	16	35		2 cpp, fora da linha de base				
+source/client/ProjectG/tikimagicboxdlg.cpp	ProjectG	cpp	51	<projectg>\TikiMagicBoxDlg.obj	00829880	3301	47	19	forte	00af80d0	00af8a27	1793	24	19	0	0	1	21		1 cpp, mudou pouco	41	1788	90.7	0.0
+source/client/ProjectG/trainingdlg.cpp	ProjectG	cpp	50	<projectg>\TrainingDlg.obj	0082a070	2155	16	9	forte	00af8a80	00af8e91	921	8	7	0	0	0	7		1 cpp, mudou pouco	7	1631	88.4	11.6
+source/client/ProjectG/userlistdlg.cpp	ProjectG	cpp	49	<projectg>\UserListDlg.obj	0082a760	5359	45	32	forte	00af9150	00afa36e	4081	30	31	0	0	6	21		1 cpp, mudou pouco	36	4343	67.9	0.0
+source/client/ProjectG/bingoeventdlg.cpp	ProjectG	cpp	48	<projectg>\BingoEventDlg.obj	0082b940	25063	435	27	forte	00afa9f0	00b01458	22350	303	26	0	0	0	294		2 cpp, fora da linha de base				
+source/client/ProjectG/christamseventdlg.cpp	ProjectG	cpp	47	<projectg>\ChristamsEventDlg.obj	008322c0	6049	92	22	forte	00b01aa0	00b030fb	4637	63	21	0	0	0	51		1 cpp, mudou pouco	21	2900	100.0	0.0
+source/client/ProjectG/christmassockeventdlg.cpp	ProjectG	cpp	46	<projectg>\ChristmasSockEventDlg.obj	008339e0	573	10	6	forte	00b03290	00b03318	95	6	5	0	0	0	6		1 cpp, mudou pouco	5	322	100.0	0.0
+source/client/ProjectG/frfindeborteventdlg.cpp	ProjectG	cpp	45	<projectg>\FrFindEbortEventDlg.obj	00833bc0	988	11	10	forte	00b03460	00b036b5	529	9	9	0	0	0	9		1 cpp, mudou pouco	6	795	100.0	0.0
+source/client/ProjectG/frhalloweendlg.cpp	ProjectG	cpp	44	<projectg>\FrHalloweenDlg.obj	00833f30	6485	45	30	forte	00b03820	00b04f85	5439	39	30	0	0	1	27		1 cpp, mudou pouco	27	4936	80.2	15.2
+source/client/ProjectG/frticketexchangedlg.cpp	ProjectG	cpp	43	<projectg>\FrTicketExchangeDlg.obj	00835720	18616	243	34	forte	00b05030	00b08c3c	13042	137	32	0	0	1	124		2 cpp, alterada	63	5881	37.1	6.5
+source/client/ProjectG/missioneventdlg.cpp	ProjectG	cpp	41	<projectg>\MissionEventDlg.obj	00839dd0	4756	44	29	forte	00b09630	00b0a4b5	3369	32	28	0	0	0	22		1 cpp, mudou pouco	27	3440	86.9	3.9
+source/client/ProjectG/newmapeventdlg.cpp	ProjectG	cpp	40	<projectg>\NewMapEventDlg.obj	0083add0	2990	23	20	forte	00b0a650	00b0aede	1996	21	19	0	0	0	8		1 cpp, mudou pouco	18	2180	100.0	0.0
+source/client/ProjectG/pointeventdlg.cpp	ProjectG	cpp	39	<projectg>\PointEventDlg.obj	0083b6f0	15250	157	80	forte	00b0afc0	00b0e27f	11654	115	80	0	0	2	91		1 cpp, mudou pouco	115	12002	51.3	22.9
+source/client/ProjectG/valentineeventdlg.cpp	ProjectG	cpp	38	<projectg>\ValentineEventDlg.obj	0083edb0	13982	141	70	forte	00b0e6d0	00b1036f	6560	72	68	0	1	0	42		1 cpp, mudou pouco	93	9500	63.1	11.7
+source/client/ProjectG/worldtoureventdlg.cpp	ProjectG	cpp	37	<projectg>\WorldTourEventDlg.obj	008418c0	8419	60	39	forte	00b10500	00b122c2	7078	49	38	0	1	2	27		1 cpp, mudou pouco	39	5968	60.6	36.7
+source/client/ProjectG/birthdayeventdlg.cpp	ProjectG	cpp	36	<projectg>\BirthdayEventDlg.obj	00843670	6796	70	32	forte	00b12440	00b13af9	5128	48	32	2	1	3	36		2 cpp, alterada	38	5825	24.8	37.3
+source/client/ProjectG/topiconmanager.cpp	ProjectG	cpp	34	<projectg>\TopIconManager.obj	00844ef0	10353	229	10	ordem	00b13af9	00b16c30	10319	125							2 cpp, alterada	12	3675	3.9	70.5
+source/client/ProjectG/topicons.cpp	ProjectG	cpp	33	<projectg>\TopIcons.obj	00847b00	194	2	0	ordem	00b13af9	00b16c30	10319	125							2 cpp, alterada	2	164	0.0	100.0
+source/client/ProjectG/webicons.cpp	ProjectG	cpp	32	<projectg>\WebIcons.obj	00847bb0	204	4	0	ordem	00b13af9	00b16c30	10319	125							2 cpp, alterada	4	184	1.1	98.9
+source/client/ProjectG/familymain.cpp	ProjectG	cpp	31	<projectg>\FamilyMain.obj	00847c90	30943	257	17	forte	00b16c30	00b1bac8	17974	133	15	1	0	5	84		2 cpp, fora da linha de base				
+source/client/ProjectG/familytask.cpp	ProjectG	cpp	30	<projectg>\FamilyTask.obj	0084d0e0	929	15	12	forte	00b1c410	00b1c7de	829	12	12	0	0	1	11		2 cpp, alterada	9	756	32.8	0.0
+source/client/ProjectG/g_starmode.cpp	ProjectG	cpp	29	<projectg>\G_StarMode.obj	0084d480	2933	23	12	forte	00b1c820	00b1d628	3340	16	11	0	0	1	13		1 cpp, mudou pouco	14	2868	92.9	7.1
+source/client/ProjectG/playerdlg.cpp	ProjectG	cpp	28	<projectg>\PlayerDlg.obj	0084dff0	26120	259	68	forte	00b1d750	00b23dae	22022	214	66	1	0	6	154		2 cpp, alterada	98	16453	43.7	26.5
+source/client/ProjectG/rankingdlg.cpp	ProjectG	cpp	27	<projectg>\RankingDlg.obj	008542f0	27889	213	25	forte	00b24a30	00b2a9c8	21997	128	24	2	2	13	43		2 cpp, fora da linha de base				
+source/client/ProjectG/guildauthcontroller.cpp	ProjectG	cpp	24	<projectg>\GuildAuthController.obj	00859d80	5329	52	0	sem_ancora											2 cpp, alterada	21	5832	0.5	99.5
+source/client/ProjectG/guildformcontroller.cpp	ProjectG	cpp	23	<projectg>\GuildFormController.obj	0085b210	5437	130	0	sem_ancora											2 cpp, alterada	16	1367	1.2	98.8
+source/client/ProjectG/ingameguildlobbydlg.cpp	ProjectG	cpp	22	<projectg>\IngameGuildLobbyDlg.obj	0085cb40	31319	406	0	sem_ancora											2 cpp, fora da linha de base				
+source/client/ProjectG/ingameguildmyroomdlg.cpp	ProjectG	cpp	21	<projectg>\IngameGuildMyRoomDlg.obj	00864070	10627	84	0	sem_ancora											2 cpp, alterada	46	8707	18.3	81.7
+source/client/ProjectG/logininfo.cpp	ProjectG	cpp	20	<projectg>\LoginInfo.obj	00866390	8283	145	35	forte	00b2aea0	00b2c56b	5201	51	34	0	2	3	44		1 cpp, mudou pouco	41	6604	51.9	43.6
+source/client/ProjectG/s5/skinnedtheme.cpp	ProjectG	cpp	19	<projectg>\SkinnedTheme.obj	00868450	1609	34	23	forte	00b2c670	00b2ce51	1804	25	22	0	0	1	23		1 cpp, mudou pouco	7	1190	100.0	0.0
+source/client/ProjectG/s5/utilities.cpp	ProjectG	cpp	18	<projectg>\Utilities.obj	00868b20	6155	66	18	forte	00b2d050	00b2eab2	5272	56	17	0	2	6	43		2 cpp, alterada	28	4749	36.0	42.1
+source/client/ProjectG/s5/classicserver/classicserver.cpp	ProjectG	cpp	17	<projectg>\ClassicServer.obj	0086a4c0	447	5	1	fraco+ordem	00b2eab2	00b30660	6727	38							2 cpp, alterada	5	424	6.4	93.6
+source/shared/s5/sharedutilities.cpp	shared	cpp	16	<projectg>\SharedUtilities.obj	0086a680	1183	15	8	forte	00b30660	00b309e3	748	15	7	0	0	0	12		2 cpp, alterada	15	996	41.5	58.5
+source/client/ProjectG/s5/cutinsystem/cutinsystem.cpp	ProjectG	cpp	15	<projectg>\CutinSystem.obj	0086ab80	6048	47	27	forte	00b30f00	00b33b4e	9667	87	26	0	1	4	79		1 cpp, mudou pouco	29	5918	55.7	12.4
+source/client/ProjectG/s5/rentalextensiondlg.cpp	ProjectG	cpp	14	<projectg>\RentalExtensionDlg.obj	0086c300	2727	31	11	forte	00b33d70	00b346c2	2167	13	10	0	0	1	11		2 cpp, alterada	11	2315	43.3	7.9
+source/client/ProjectG/s5/supplypack.cpp	ProjectG	cpp	12	<projectg>\SupplyPack.obj	0086cc70	7892	100	21	forte	00b347f0	00b36e4e	8697	60	21	0	1	4	51		1 cpp, mudou pouco	23	6561	74.0	0.0
+source/client/ProjectG/audioin.cpp	ProjectG	cpp	11	<projectg>\audioin.obj	0086eaf0	667	9	0	ordem	00b36e4e	00b43480	43091	417							2 cpp, alterada	8	608	4.1	95.9
+source/client/ProjectG/avirecorder.cpp	ProjectG	cpp	10	<projectg>\avirecorder.obj	0086ede0	6658	143	0	ordem	00b36e4e	00b43480	43091	417							2 cpp, alterada	24	3581	1.0	99.0
+source/client/ProjectG/aviwriter.cpp	ProjectG	cpp	9	<projectg>\aviwriter.obj	00870c70	4984	73	0	ordem	00b36e4e	00b43480	43091	417							2 cpp, alterada	12	2481	0.0	100.0
+source/client/ProjectG/vcomp.cpp	ProjectG	cpp	8	<projectg>\vcomp.obj	008721f0	335	9	0	ordem	00b36e4e	00b43480	43091	417							2 cpp, alterada	8	297	5.7	94.3
+source/client/ProjectG/integritycheck.cpp	ProjectG	cpp	1	<projectg>\IntegrityCheck.obj	00872390	6177	95	12	forte	00b43480	00b45451	6967	62	10	0	0	0	60		2 cpp, alterada	8	3543	8.8	0.0
+source/client/Wangreal/source/wreg.cpp	Wangreal	cpp	545	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wreg.obj	00874440	1846	7	5	forte	00b67490	00b67b91	1684	6	5	0	0	1	5		1 cpp, mudou pouco	7	1713	83.9	0.0
+source/client/Wangreal/source/baseobject.cpp	Wangreal	cpp	539	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\BaseObject.obj	00874bc0	337	9	4	fraco	00b67b91	00b68360	1673	21							1 cpp, mudou pouco	6	340	100.0	0.0
+source/client/Fresh/source/frform.cpp	Fresh	cpp	485	<fresh>\FrForm.obj	00874d10	4365	69	29	forte	00be5ed0	00be747c	5216	41	29	0	0	1	38		2 cpp, alterada	34	4742	43.7	2.0
+source/client/Wangreal/source/wview.cpp	Wangreal	cpp	525	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wview.obj	00875e10	15675	66	47	forte	00b4f630	00b54ae4	20814	72	47	1	9	1	61		2 cpp, alterada	54	17622	41.9	10.6
+source/client/Wangreal/source/wdevmng.cpp	Wangreal	cpp	550	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wdevmng.obj	00879d10	6306	61	10	forte	00b68360	00b69262	3541	24	9	0	0	0	24		1 cpp, mudou pouco	9	2366	65.8	0.0
+source/client/Fresh/source/frdesktop.cpp	Fresh	cpp	480	<fresh>\FrDeskTop.obj	0087b680	2739	42	15	forte	00c01080	00c018f6	1997	16	14	0	0	0	16		1 cpp, mudou pouco	12	2913	86.6	0.0
+source/client/Wangreal/source/westpak.cpp	Wangreal	cpp	548	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\westpak.obj	0087c100	8176	80	55	forte	00bad410	00baf26f	7067	61	54	0	0	0	61		1 cpp, mudou pouco	36	5896	90.6	0.0
+source/client/Wangreal/source/wresrcmng.cpp	Wangreal	cpp	551	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wresrcmng.obj	0087e290	30346	266	80	forte	00b55ac0	00b5db64	29892	186	78	1	0	0	186		1 cpp, mudou pouco	76	18850	98.1	1.0
+source/client/Fresh/source/frcombobox.cpp	Fresh	cpp	478	<fresh>\FrComboBox.obj	00885ba0	10363	150	32	forte	00bfe700	00c00da3	9114	53	31	0	0	7	46		2 cpp, alterada	34	8815	31.0	2.7
+source/client/Fresh/source/fredit.cpp	Fresh	cpp	481	<fresh>\FrEdit.obj	00888310	20038	194	34	forte	00bf7570	00bfcfba	20639	105	33	0	6	15	83		2 cpp, alterada	39	21215	16.2	19.5
+source/client/Fresh/source/frcmdtarget.cpp	Fresh	cpp	477	<fresh>\FrCmdTarget.obj	0088d010	476	8	4	fraco	00c0850b	00c08970	668	16							2 cpp, alterada	6	389	26.7	0.0
+source/client/Fresh/source/frwnd.cpp	Fresh	cpp	498	<fresh>\FrWnd.obj	0088d210	7581	123	72	forte	00be7550	00be9624	7142	105	70	0	0	0	97		1 cpp, mudou pouco	81	7775	97.3	0.0
+source/client/Fresh/source/frgroupbox.cpp	Fresh	cpp	489	<fresh>\FrGroupBox.obj	0088f1d0	499	13	7	forte	00c082d0	00c0850b	461	9	7	0	0	0	9		1 cpp, mudou pouco	6	419	100.0	0.0
+source/client/Fresh/source/frbutton.cpp	Fresh	cpp	476	<fresh>\FrButton.obj	0088f3e0	4061	44	20	forte	00bf4f50	00bf6396	4932	20	19	0	0	1	19		2 cpp, alterada	18	4914	48.0	0.0
+source/client/Fresh/source/fresh.cpp	Fresh	cpp	484	<fresh>\Fresh.obj	00890370	1392	51	16	forte	00be9bb0	00bea46e	1810	26	14	0	0	0	26		1 cpp, mudou pouco	14	843	100.0	0.0
+source/client/Fresh/source/frarea.cpp	Fresh	cpp	475	<fresh>\FrArea.obj	00890a30	3954	39	14	forte	00bea500	00bec361	7399	26	14	1	0	0	26		2 cpp, alterada	12	4711	33.5	1.7
+source/client/Fresh/source/frtabbutton.cpp	Fresh	cpp	494	<fresh>\FrTabButton.obj	008918e0	4167	83	22	forte	00c06d80	00c07f16	3663	43	21	0	0	0	43		1 cpp, mudou pouco	19	3679	100.0	0.0
+source/client/Fresh/source/frviewer.cpp	Fresh	cpp	497	<fresh>\FrViewer.obj	00892ae0	2594	37	14	forte	00bf2210	00bf2e48	2973	17	13	0	0	0	17		2 cpp, alterada	14	3055	45.7	0.0
+source/client/Fresh/source/frgraphicinterface.cpp	Fresh	cpp	488	<fresh>\FrGraphicInterface.obj	00893480	7185	92	26	forte	00bec430	00bed7e9	4800	32	23	0	0	0	32		2 cpp, alterada	33	8158	42.0	16.7
+source/client/Wangreal/source/wfont.cpp	Wangreal	cpp	530	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\WFont.obj	00895210	17301	129	72	forte	00b5dbb0	00b63e09	22781	170	71	0	0	6	164		1 cpp, mudou pouco	63	14588	93.1	0.0
+source/client/Fresh/source/frstatic.cpp	Fresh	cpp	493	<fresh>\FrStatic.obj	008997b0	2091	25	7	forte	00c01d00	00c02cb1	3723	18	7	0	0	0	18		2 cpp, alterada	9	2272	35.8	3.5
+source/client/Fresh/source/frwndmanager.cpp	Fresh	cpp	499	<fresh>\FrWndManager.obj	00899f90	10388	119	58	forte	00be2850	00be5c0b	12071	92	56	0	17	2	56		1 cpp, mudou pouco	45	8345	82.8	0.0
+source/client/Wangreal/source/wmath.cpp	Wangreal	cpp	523	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wmath.obj	0089c870	3922	20	1	fraco	00b4ac85	00b4f630	16340	151							2 cpp, fora da linha de base				
+source/client/Fresh/source/frscrollbar.cpp	Fresh	cpp	492	<fresh>\FrScrollBar.obj	0089d870	3430	30	18	forte	00bf6630	00bf7238	2893	21	16	0	0	0	21		1 cpp, mudou pouco	20	3482	64.6	23.4
+source/client/Wangreal/source/bitmap.cpp	Wangreal	cpp	547	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\bitmap.obj	0089e640	2584	20	7	forte	00bb83d0	00bb8c0e	1953	15	6	0	0	0	15		2 cpp, fora da linha de base				
+source/client/Wangreal/source/wpuppet.cpp	Wangreal	cpp	537	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wpuppet.obj	0089f110	62950	573	68	forte	00b69990	00b93b51	148169	1427	66	2	0	0	1427		2 cpp, alterada	111	39835	15.8	24.4
+source/client/Wangreal/source/woverlay.cpp	Wangreal	cpp	531	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\woverlay.obj	008af3e0	13181	35	24	forte	00b63f20	00b673ef	13314	31	23	0	0	0	31		2 cpp, alterada	31	14299	45.9	2.4
+source/client/Fresh/source/fremoticon.cpp	Fresh	cpp	483	<fresh>\FrEmoticon.obj	008b2860	11686	178	17	forte	00c08970	00c0ad6c	8522	41	14	0	0	6	34		2 cpp, alterada	16	6082	46.5	31.7
+source/client/Wangreal/source/w3dspr.cpp	Wangreal	cpp	532	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\w3dSpr.obj	008b59d0	2377	12	11	forte	00bb8d00	00bb940e	1747	10	10	0	0	0	10		1 cpp, mudou pouco	10	2226	100.0	0.0
+source/client/Wangreal/source/w3danispr.cpp	Wangreal	cpp	527	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\w3danispr.obj	008b6360	7623	39	17	forte	00baf560	00bb11fe	6963	34	17	0	0	0	34		1 cpp, mudou pouco	17	5305	91.4	0.0
+source/client/Wangreal/source/wtextureview.cpp	Wangreal	cpp	526	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\WTextureView.obj	008b8200	2524	19	8	forte	00bb1330	00bb196e	1526	8	6	0	0	0	8		2 cpp, alterada	8	2245	35.5	2.9
+source/client/Wangreal/source/wvideo.cpp	Wangreal	cpp	549	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wvideo.obj	008b8c10	26	1	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/Wangreal/source/wbone.cpp	Wangreal	cpp	535	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wbone.obj	008b8c30	67512	528	34	forte	00b94730	00bab7ce	84778	563	32	0	0	0	563		2 cpp, alterada	116	55630	12.6	43.9
+source/client/Fresh/source/frtextbutton.cpp	Fresh	cpp	496	<fresh>\FrTextButton.obj	008ca090	5814	101	20	forte	00bf3100	00bf4e69	6722	41	19	0	0	2	39		2 cpp, alterada	18	5448	34.1	2.1
+source/client/Fresh/source/frgaugebar.cpp	Fresh	cpp	487	<fresh>\FrGaugeBar.obj	008cb850	10261	100	42	forte	00c02d00	00c05a9a	11146	46	40	0	0	0	46		1 cpp, mudou pouco	37	11046	80.0	0.0
+source/client/Fresh/source/frlistbox.cpp	Fresh	cpp	490	<fresh>\FrListBox.obj	008cdeb0	12596	214	43	forte	00beea80	00bf2160	12196	114	41	0	0	0	114		1 cpp, mudou pouco	44	7305	52.8	0.0
+source/client/Wangreal/source/wboneset.cpp	Wangreal	cpp	534	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wboneset.obj	008d1470	1626	14	0	sem_ancora											2 cpp, alterada	5	1165	0.0	100.0
+source/client/Fresh/source/frframe.cpp	Fresh	cpp	486	<fresh>\FrFrame.obj	008d1ad0	4104	29	10	forte	00c05b10	00c066ae	2830	11	8	0	0	0	11		1 cpp, mudou pouco	10	4569	100.0	0.0
+source/client/Fresh/source/frcontextmenuctrl.cpp	Fresh	cpp	502	<fresh>\FrContextMenuCtrl.obj	008d2a70	7182	78	23	forte	00c0f090	00c112d5	7928	43	23	0	0	0	43		1 cpp, mudou pouco	19	7000	100.0	0.0
+source/client/Wangreal/source/xzip.cpp	Wangreal	cpp	541	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\XZip.obj	008d4850	16174	64	55	forte	00bb9630	00bbd731	15952	58	54	0	0	0	58		1 cpp, mudou pouco	63	16103	94.2	0.0
+source/client/Wangreal/source/xunzip.cpp	Wangreal	cpp	542	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\XUnzip.obj	008d89c0	18486	71	65	forte	00bbd7a0	00bc1ef6	17350	61	64	0	0	0	61		1 cpp, mudou pouco	71	17797	100.0	0.0
+source/shared/thirties/gamath.cpp	shared	cpp	504	\build\custom\temp\garbage\s5\client\release\thirties\gaMath.obj	008dd3d0	6200	55	27	forte	00b49330	00b4ac85	6237	31	27	0	0	0	31		1 cpp, mudou pouco	29	5885	97.2	0.8
+source/client/Wangreal/source/wxpuppet.cpp	Wangreal	cpp	536	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wxpuppet.obj	008decf0	2032	28	16	forte	00bc1f50	00bc256e	1429	19	15	0	0	0	19		1 cpp, mudou pouco	18	1679	77.1	2.3
+source/client/Wangreal/source/wmathutil.cpp	Wangreal	cpp	522	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wmathutil.obj	008df510	5076	10	7	forte	00bc26b0	00bc38d2	4593	7	6	0	0	0	7		1 cpp, mudou pouco	10	5427	77.1	0.0
+source/client/Wangreal/source/wshadowview.cpp	Wangreal	cpp	524	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\WShadowView.obj	008e0920	9675	69	51	forte	00bc3c70	00bc63dd	9440	57	51	0	0	0	57		1 cpp, mudou pouco	43	9227	72.2	0.0
+ijl15.dll	lib	fora	505	ijl15.dll	008e30a6	24	4	0	sem_ancora											- biblioteca externa				
+source/shared/tea.cpp	shared	cpp	546	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\tea.obj	008e30c0	442	2	2	fraco+ordem	00bc63dd	00bc65e0	500	5							1 cpp, mudou pouco	2	482	100.0	0.0
+source/client/Wangreal/source/wavi.cpp	Wangreal	cpp	544	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wavi.obj	008e3280	2222	16	11	forte	00bc65e0	00bc6e4d	2030	13	10	1	0	0	13		1 cpp, mudou pouco	12	2003	89.6	0.0
+source/client/Fresh/source/frelement.cpp	Fresh	cpp	482	<fresh>\FrElement.obj	008e3b60	20867	399	34	forte	00c11460	00c18bcb	25433	243	32	0	0	2	241		2 cpp, alterada	23	7977	46.6	0.0
+source/client/Wangreal/source/wlock.cpp	Wangreal	cpp	540	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wlock.obj	008e9200	150	5	4	fraco	00bc6e4d	00bc73d0	1312	16							1 cpp, mudou pouco	5	150	100.0	0.0
+.\Win32_LIB_Release\pngerror.obj	lib	fora	507	.\Win32_LIB_Release\pngerror.obj	008e92b0	832	8	5	fraco	00bc6e4d	00bc73d0	1312	16							- biblioteca externa				
+.\Win32_LIB_Release\pngread.obj	lib	fora	510	.\Win32_LIB_Release\pngread.obj	008e9600	5552	11	11	forte	00bc73d0	00bc8803	4966	14	10	0	0	0	14		- biblioteca externa				
+.\Win32_LIB_Release\pngmem.obj	lib	fora	509	.\Win32_LIB_Release\pngmem.obj	008eabb0	672	12	11	forte	00bc88f0	00bc8b99	596	13	11	1	0	0	13		- biblioteca externa				
+.\Win32_LIB_Release\pngget.obj	lib	fora	508	.\Win32_LIB_Release\pngget.obj	008eae50	3056	5	2	fraco	00bc8b99	00bc98c0	2923	61							- biblioteca externa				
+.\Win32_LIB_Release\pngtrans.obj	lib	fora	515	.\Win32_LIB_Release\pngtrans.obj	008eba40	1392	15	7	fraco	00bc8b99	00bc98c0	2923	61							- biblioteca externa				
+.\Win32_LIB_Release\pngrtran.obj	lib	fora	512	.\Win32_LIB_Release\pngrtran.obj	008ebfb0	20304	23	18	forte	00bc98c0	00bcecaf	20859	40	18	3	0	0	40		- biblioteca externa				
+.\Win32_LIB_Release\png.obj	lib	fora	506	.\Win32_LIB_Release\png.obj	008f0f00	2240	13	12	forte	00bcecf0	00bcf5c1	2036	17	11	0	0	0	17		- biblioteca externa				
+.\Win32_LIB_Release\pngrio.obj	lib	fora	511	.\Win32_LIB_Release\pngrio.obj	008f17c0	208	2	2	fraco	00bcf5c1	00bcff20	2252	12							- biblioteca externa				
+source/client/Wangreal/source/textout.cpp	Wangreal	cpp	528	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\textout.obj	008f1890	9487	164	1	fraco	0082d88e	0082fcd0	8183	89							2 cpp, alterada	15	4045	0.4	93.8
+source/client/Fresh/source/frtooltip.cpp	Fresh	cpp	503	<fresh>\FrToolTip.obj	008f41c0	6955	140	16	forte	00c18dd0	00c1aecb	7207	83	16	0	0	0	75		1 cpp, mudou pouco	15	3318	100.0	0.0
+source/client/Fresh/texturecache/tcachemanager.cpp	Fresh	cpp	501	<fresh>\TCacheManager.obj	008f5ff0	5689	109	14	forte	00c1af10	00c1cb3e	5909	71	12	0	0	0	71		1 cpp, mudou pouco	14	1791	90.3	0.0
+source/client/Fresh/source/frtext.cpp	Fresh	cpp	495	<fresh>\FrText.obj	008f7930	7790	126	13	forte	00c0ad80	00c0d42e	8901	66	10	0	0	0	66		1 cpp, mudou pouco	15	4436	60.2	0.0
+source/client/Fresh/source/frmacroitem.cpp	Fresh	cpp	491	<fresh>\FrMacroItem.obj	008f96b0	106	3	3	fraco	00c112d5	00c11460	269	11							1 cpp, mudou pouco	3	106	100.0	0.0
+source/client/Fresh/source/frcursor.cpp	Fresh	cpp	479	<fresh>\FrCursor.obj	008f9730	148	8	3	fraco	00c112d5	00c11460	269	11							1 cpp, mudou pouco	7	127	88.2	0.0
+source/client/Wangreal/source/wbone_physics.cpp	Wangreal	cpp	533	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wbone_physics.obj	008f9800	1693	5	1	fraco	00bcf5c1	00bcff20	2252	12							2 cpp, alterada	5	1687	19.9	0.0
+source/client/Wangreal/source/wblockmodel.cpp	Wangreal	cpp	543	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\WBlockModel.obj	008f9ec0	8273	35	15	forte	00bcff20	00bd224e	8597	27	14	0	0	0	27		1 cpp, mudou pouco	17	6962	85.8	0.0
+source/client/Wangreal/source/wxtnlbuffer.cpp	Wangreal	cpp	538	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\wxtnlbuffer.obj	008fbfb0	9458	50	16	forte	00bd2340	00bd4e9d	9915	69	15	0	0	0	69		2 cpp, alterada	41	9654	18.1	62.0
+.\Win32_LIB_Release\inflate.obj	lib	fora	518	.\Win32_LIB_Release\inflate.obj	008fe5d0	7040	9	7	forte	00bd5cd0	00bd756e	6071	9	7	0	0	0	9		- biblioteca externa				
+.\Win32_LIB_Release\pngrutil.obj	lib	fora	513	.\Win32_LIB_Release\pngrutil.obj	00900150	13984	34	34	forte	00bd79f0	00bdaf22	13288	33	33	0	0	0	33		- biblioteca externa				
+.\Win32_LIB_Release\crc32.obj	lib	fora	520	.\Win32_LIB_Release\crc32.obj	009037f0	768	2	2	fraco	00bdaf22	00bdc320	4126	16							- biblioteca externa				
+source/client/Wangreal/source/freetype2.cpp	Wangreal	cpp	529	\build\custom\temp\garbage\s5\client\releaseqa\wangreal\freetype2.obj	00903af0	932	7	0	sem_ancora											2 cpp, alterada	7	937	0.0	100.0
+source/client/Fresh/texturecache/rectcache.cpp	Fresh	cpp	500	<fresh>\RectCache.obj	00903ec0	1375	13	6	forte	00c1cff0	00c1d39f	866	7	6	0	0	0	7		1 cpp, mudou pouco	5	737	100.0	0.0
+.\Win32_LIB_Release\zutil.obj	lib	fora	516	.\Win32_LIB_Release\zutil.obj	00904490	112	2	2	fraco	00bdaf22	00bdc320	4126	16							- biblioteca externa				
+.\Win32_LIB_Release\inffast.obj	lib	fora	519	.\Win32_LIB_Release\inffast.obj	00904500	1168	1	1	fraco	00bdaf22	00bdc320	4126	16							- biblioteca externa				
+.\Win32_LIB_Release\inftrees.obj	lib	fora	517	.\Win32_LIB_Release\inftrees.obj	00904990	1200	1	1	fraco	00bdaf22	00bdc320	4126	16							- biblioteca externa				
+.\Win32_LIB_Release\adler32.obj	lib	fora	521	.\Win32_LIB_Release\adler32.obj	00904e40	304	1	1	fraco	00bdaf22	00bdc320	4126	16							- biblioteca externa				
+.\Win32_LIB_Release\pngset.obj	lib	fora	514	.\Win32_LIB_Release\pngset.obj	00904f70	6208	21	15	forte	00bdc320	00bdd682	4785	21	15	0	0	0	21		- biblioteca externa				
+.\release_mdd(fastcall)\lapi.obj	lib	fora	573	.\release_mdd(fastcall)\lapi.obj	009161a0	4676	73	46	forte	00c24470	00c256bb	3843	60	45	0	0	0	60		- biblioteca externa				
+.\release_mdd(fastcall)\lauxlib.obj	lib	fora	574	.\release_mdd(fastcall)\lauxlib.obj	00917610	4163	43	22	forte	00c26980	00c27a4f	3461	31	21	0	0	0	31		- biblioteca externa				
+.\release_mdd(fastcall)\ldo.obj	lib	fora	579	.\release_mdd(fastcall)\ldo.obj	009187b0	3450	24	19	forte	00c27f10	00c28b91	2722	20	19	0	0	0	20		- biblioteca externa				
+.\release_mdd(fastcall)\lstate.obj	lib	fora	593	.\release_mdd(fastcall)\lstate.obj	009195c0	1078	10	4	fraco	00c27a4f	00c27f10	1036	8							- biblioteca externa				
+.\release_mdd(fastcall)\linit.obj	lib	fora	583	.\release_mdd(fastcall)\linit.obj	00919a40	64	1	0	sem_ancora											- biblioteca externa				
+.\release_mdd(fastcall)\ldebug.obj	lib	fora	578	.\release_mdd(fastcall)\ldebug.obj	00919a80	3889	32	24	forte	00c25900	00c2691e	3458	27	24	0	0	0	27		- biblioteca externa				
+.\release_mdd(fastcall)\lobject.obj	lib	fora	589	.\release_mdd(fastcall)\lobject.obj	0091aab0	1528	9	9	forte	00c28d30	00c29311	1326	8	8	0	0	0	8		- biblioteca externa				
+.\release_mdd(fastcall)\lgc.obj	lib	fora	582	.\release_mdd(fastcall)\lgc.obj	0091b0f0	3850	30	22	forte	00c29440	00c2a34a	3311	24	21	0	0	0	24		- biblioteca externa				
+.\release_mdd(fastcall)\ltm.obj	lib	fora	598	.\release_mdd(fastcall)\ltm.obj	0091c100	201	3	3	fraco	00c2a34a	00c2a430	201	3							- biblioteca externa				
+.\release_mdd(fastcall)\lvm.obj	lib	fora	600	.\release_mdd(fastcall)\lvm.obj	0091c1e0	7209	17	16	forte	00c2a430	00c2c0a5	7078	17	16	0	0	0	17		- biblioteca externa				
+.\release_mdd(fastcall)\ltable.obj	lib	fora	596	.\release_mdd(fastcall)\ltable.obj	0091dea0	3467	26	22	forte	00c2c180	00c2cf6d	3201	22	21	0	0	0	22		- biblioteca externa				
+.\release_mdd(fastcall)\lstring.obj	lib	fora	594	.\release_mdd(fastcall)\lstring.obj	0091ecd0	615	4	2	fraco	00c2cf6d	00c2d1f0	615	4							- biblioteca externa				
+.\release_mdd(fastcall)\lfunc.obj	lib	fora	581	.\release_mdd(fastcall)\lfunc.obj	0091ef50	855	11	9	forte	00c2d1f0	00c2d581	837	10	9	0	0	0	10		- biblioteca externa				
+.\release_mdd(fastcall)\lzio.obj	lib	fora	601	.\release_mdd(fastcall)\lzio.obj	0091f2f0	393	5	2	fraco	00c2d581	00c2dec0	1704	12							- biblioteca externa				
+.\release_mdd(fastcall)\ldump.obj	lib	fora	580	.\release_mdd(fastcall)\ldump.obj	0091f4b0	1470	11	0	sem_ancora											- biblioteca externa				
+.\release_mdd(fastcall)\lmem.obj	lib	fora	587	.\release_mdd(fastcall)\lmem.obj	0091fab0	287	3	3	fraco	00c35430	00c35570	287	3							- biblioteca externa				
+.\release_mdd(fastcall)\lparser.obj	lib	fora	592	.\release_mdd(fastcall)\lparser.obj	0091fbf0	11507	69	48	forte	00c36d70	00c39a38	9563	50	47	0	0	0	50		- biblioteca externa				
+.\release_mdd(fastcall)\lundump.obj	lib	fora	599	.\release_mdd(fastcall)\lundump.obj	00922ae0	2645	13	8	forte	00c39c80	00c3a609	2295	8	7	0	0	0	8		- biblioteca externa				
+.\release_mdd(fastcall)\llex.obj	lib	fora	585	.\release_mdd(fastcall)\llex.obj	00923590	6423	19	16	forte	00c35570	00c36cea	5296	16	15	0	0	0	16		- biblioteca externa				
+.\release_mdd(fastcall)\ldblib.obj	lib	fora	577	.\release_mdd(fastcall)\ldblib.obj	00924f00	3509	24	4	forte	00c2dec0	00c2ea9b	1884	6	4	0	0	0	6		- biblioteca externa				
+.\release_mdd(fastcall)\lmathlib.obj	lib	fora	586	.\release_mdd(fastcall)\lmathlib.obj	00925d50	1739	29	1	fraco	00c2ea9b	00c2f5b0	766	7							- biblioteca externa				
+.\release_mdd(fastcall)\lstrlib.obj	lib	fora	595	.\release_mdd(fastcall)\lstrlib.obj	00926520	6858	42	7	forte	00c2f5b0	00c30a22	1387	7	7	0	0	0	7		- biblioteca externa				
+.\release_mdd(fastcall)\loslib.obj	lib	fora	591	.\release_mdd(fastcall)\loslib.obj	00928130	2047	17	1	fraco	00c30a22	00c33490	4635	16							- biblioteca externa				
+.\release_mdd(fastcall)\liolib.obj	lib	fora	584	.\release_mdd(fastcall)\liolib.obj	009289b0	4929	39	1	fraco	00c30a22	00c33490	4635	16							- biblioteca externa				
+.\release_mdd(fastcall)\ltablib.obj	lib	fora	597	.\release_mdd(fastcall)\ltablib.obj	00929e10	2560	13	1	fraco	00c30a22	00c33490	4635	16							- biblioteca externa				
+.\release_mdd(fastcall)\loadlib.obj	lib	fora	588	.\release_mdd(fastcall)\loadlib.obj	0092a860	3411	26	10	forte	00c33490	00c33e18	1476	13	9	0	0	0	13		- biblioteca externa				
+.\release_mdd(fastcall)\lbaselib.obj	lib	fora	575	.\release_mdd(fastcall)\lbaselib.obj	0092b6a0	4342	42	9	forte	00c342c0	00c35430	1672	13	9	0	0	0	13		- biblioteca externa				
+.\release_mdd(fastcall)\lcode.obj	lib	fora	576	.\release_mdd(fastcall)\lcode.obj	0092c8d0	6442	56	47	forte	00c3a690	00c3c18f	5943	49	47	0	0	0	49		- biblioteca externa				
+.\temp\release_mt\ftinit.obj	lib	fora	450	.\temp\release_mt\ftinit.obj	0092f140	133	3	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftbase.obj	lib	fora	446	.\temp\release_mt\ftbase.obj	0092f1e0	25223	204	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\bdf.obj	lib	fora	444	.\temp\release_mt\bdf.obj	00935a90	13384	42	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\smooth.obj	lib	fora	460	.\temp\release_mt\smooth.obj	00939000	6824	33	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\sfnt.obj	lib	fora	459	.\temp\release_mt\sfnt.obj	0093abb0	24060	109	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\raster.obj	lib	fora	458	.\temp\release_mt\raster.obj	00940d00	7786	43	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\pshinter.obj	lib	fora	456	.\temp\release_mt\pshinter.obj	00942cf0	11723	78	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\psmodule.obj	lib	fora	457	.\temp\release_mt\psmodule.obj	00945d00	1021	9	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\psaux.obj	lib	fora	455	.\temp\release_mt\psaux.obj	00946130	12433	76	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\pcf.obj	lib	fora	453	.\temp\release_mt\pcf.obj	009493e0	6726	27	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\winfnt.obj	lib	fora	465	.\temp\release_mt\winfnt.obj	0094af00	2404	13	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\type42.obj	lib	fora	464	.\temp\release_mt\type42.obj	0094b8c0	6427	31	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\pfr.obj	lib	fora	454	.\temp\release_mt\pfr.obj	0094d2c0	11313	47	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\type1cid.obj	lib	fora	463	.\temp\release_mt\type1cid.obj	00950070	5654	27	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\cff.obj	lib	fora	445	.\temp\release_mt\cff.obj	00951740	20509	76	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\type1.obj	lib	fora	462	.\temp\release_mt\type1.obj	00956970	14551	58	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\truetype.obj	lib	fora	461	.\temp\release_mt\truetype.obj	0095a3f0	13766	52	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\autofit.obj	lib	fora	443	.\temp\release_mt\autofit.obj	0095db60	16629	64	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftsystem.obj	lib	fora	452	.\temp\release_mt\ftsystem.obj	00961e50	275	8	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftlzw.obj	lib	fora	451	.\temp\release_mt\ftlzw.obj	00961fa0	2523	18	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftgzip.obj	lib	fora	449	.\temp\release_mt\ftgzip.obj	00962a00	9858	32	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftglyph.obj	lib	fora	448	.\temp\release_mt\ftglyph.obj	00965170	1784	19	0	sem_ancora											- biblioteca externa				
+.\temp\release_mt\ftbitmap.obj	lib	fora	447	.\temp\release_mt\ftbitmap.obj	00965920	2655	6	0	sem_ancora											- biblioteca externa				
+source/client/ProjectG/pakedresource.cpp	ProjectG	cpp	439	<projectg>\PakedResource.obj	00989820	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/grass.cpp	ProjectG	cpp	397	<projectg>\grass.obj	0098b410	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/overlaymixer.cpp	ProjectG	cpp	363	<projectg>\OverlayMixer.obj	0098c610	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searcher.cpp	ProjectG	cpp	359	<projectg>\Searcher.obj	0098e290	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/videorecorder.cpp	ProjectG	cpp	356	<projectg>\VideoRecorder.obj	0098e390	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/igameoverlay.cpp	ProjectG	cpp	355	<projectg>\IGameOverlay.obj	0098e3b0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/gamepartydlg.cpp	ProjectG	cpp	345	<projectg>\GamePartyDlg.obj	00991080	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/tutorialsystem.cpp	ProjectG	cpp	338	<projectg>\TutorialSystem.obj	00995390	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/avatarwaitroommain.cpp	ProjectG	cpp	290	<projectg>\AvatarWaitRoomMain.obj	009a8ff0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/timelimititem.cpp	ProjectG	cpp	288	<projectg>\TimeLimitItem.obj	009a91f0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/demonexecutor.cpp	ProjectG	cpp	287	<projectg>\DemonExecutor.obj	009a9210	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/demonlanddoc.cpp	ProjectG	cpp	285	<projectg>\DemonLandDoc.obj	009a9820	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/frpointshopdlg.cpp	ProjectG	cpp	279	<projectg>\FrPointShopDlg.obj	009ab0c0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/pointshop.cpp	ProjectG	cpp	278	<projectg>\PointShop.obj	009ab0e0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/matchactor.cpp	ProjectG	cpp	277	<projectg>\MatchActor.obj	009ab100	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/pwc2010.cpp	ProjectG	cpp	276	<projectg>\PWC2010.obj	009ab120	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searchdoc.cpp	ProjectG	cpp	245	<projectg>\SearchDoc.obj	009ae7c0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searchinterface.cpp	ProjectG	cpp	244	<projectg>\SearchInterface.obj	009ae7e0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searchitem.cpp	ProjectG	cpp	243	<projectg>\SearchItem.obj	009ae800	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searchmanager.cpp	ProjectG	cpp	242	<projectg>\SearchManager.obj	009ae820	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/recycletable.cpp	ProjectG	cpp	227	<projectg>\RecycleTable.obj	009b49e0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/addguildmemberdlg.cpp	ProjectG	cpp	222	<projectg>\AddGuildMemberDlg.obj	009b6f90	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/guildmanagedlg.cpp	ProjectG	cpp	221	<projectg>\GuildManageDlg.obj	009b6fb0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/messengeroptdlg.cpp	ProjectG	cpp	218	<projectg>\MessengerOptDlg.obj	009b7830	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/hatofsuneventhandler.cpp	ProjectG	cpp	202	<projectg>\HatOfSunEventHandler.obj	009b8bc0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/profiler.cpp	ProjectG	cpp	184	<projectg>\Profiler.obj	009b8ea0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/gameoverlaymanager.cpp	ProjectG	cpp	176	<projectg>\GameOverlayManager.obj	009b8fb0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/crcdef.cpp	ProjectG	cpp	129	<projectg>\crcdef.obj	009b98c0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/packetversion.cpp	ProjectG	cpp	112	<projectg>\PacketVersion.obj	009ba010	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/tea_helper.cpp	ProjectG	cpp	111	<projectg>\tea_helper.obj	009ba030	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/eventshop.cpp	ProjectG	cpp	104	<projectg>\EventShop.obj	009ba950	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/ladderevent.cpp	ProjectG	cpp	42	<projectg>\LadderEvent.obj	009d9470	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/luciabirthdayevent.cpp	ProjectG	cpp	35	<projectg>\LuciaBirthdayEvent.obj	009dbb60	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/searchgoods.cpp	ProjectG	cpp	26	<projectg>\SearchGoods.obj	009e0620	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/eventpartsrevivedlg.cpp	ProjectG	cpp	25	<projectg>\EventPartsReviveDlg.obj	009e0640	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/opentournament.cpp	ProjectG	cpp	13	<projectg>\OpenTournament.obj	009e1f80	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/videoin.cpp	ProjectG	cpp	7	<projectg>\videoin.obj	009e21e0	120	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/aztecmgr.cpp	ProjectG	cpp	6	<projectg>\AztecMgr.obj	009e2280	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/testercmd.cpp	ProjectG	cpp	5	<projectg>\TesterCmd.obj	009e22a0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/selfdesignshopclient.cpp	ProjectG	cpp	4	<projectg>\SelfDesignShopClient.obj	009e22c0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/period.cpp	ProjectG	cpp	3	<projectg>\Period.obj	009e22e0	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+source/client/ProjectG/tikireportopener.cpp	ProjectG	cpp	2	<projectg>\TikiReportOpener.obj	009e2300	32	0	0	sem_ancora											- cpp sem funcao propria	0	0	0.0	0.0
+<projectg>\Script1.res	lib	fora	0	<projectg>\Script1.res		0	0	0	sem_ancora											- biblioteca externa				
+.\release_mdd(fastcall)\lopcodes.obj	lib	fora	590	.\release_mdd(fastcall)\lopcodes.obj		0	0	0	sem_ancora											- biblioteca externa				

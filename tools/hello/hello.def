@@ -1,0 +1,4 @@
+LIBRARY hello.dll
+EXPORTS
+ HelloName @1
+ HelloVersion @2

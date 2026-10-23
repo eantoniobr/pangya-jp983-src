@@ -1,0 +1,8 @@
+tipo	va983	n	bytes_983	bytes_rugburn	funcao_va	funcao	unidade	desl	inicio_de_instrucao	veredito	efeito
+checagem	00a5cf80	4	1c143d83	1c143d83	00a5cf80	?_GGC_Init@@YIHXZ	ggc_wrapper.cpp	0	sim	bate	rugburn reconhece o exe 983 pelos 4 primeiros bytes de _GGC_Init
+patch	00a5cf80	7	833d141cf00000	c3909090909090	00a5cf80	?_GGC_Init@@YIHXZ	ggc_wrapper.cpp	0	sim	certo	entrada de ?_GGC_Init@@YIHXZ vira `ret`
+patch	00a5c010	7	45e873000000e8	c3909090909090	00a5bea0	GGC_Helper::GGC_Helper	ggc_helper.cpp	368	NAO	ENDERECO ERRADO	cai no meio de GGC_Helper::GGC_Helper (+0x170, não é início de instrução): estraga o código se for executado
+patch	00a5c030	7	56e84a12a3ffb9	c3909090909090	00a5bea0	GGC_Helper::GGC_Helper	ggc_helper.cpp	400	sim	ENDERECO ERRADO	cai no meio de GGC_Helper::GGC_Helper (+0x190, é início de instrução): estraga o código se for executado
+patch	00a5c050	7	e82bfcffff8b55	90909090909090	00a5bea0	GGC_Helper::GGC_Helper	ggc_helper.cpp	432	sim	ENDERECO ERRADO	cai no meio de GGC_Helper::GGC_Helper (+0x1b0, é início de instrução): estraga o código se for executado
+patch	00a5ce80	1	01	c3					-	ENDERECO ERRADO	cai fora de função (dados): ver tabela de switch de GGC_Helper::StackError
+patch	00a5ceb0	1	01	c3					-	ENDERECO ERRADO	cai fora de função (dados): ver tabela de switch de GGC_Helper::StackError

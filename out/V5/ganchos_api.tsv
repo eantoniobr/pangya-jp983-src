@@ -1,0 +1,23 @@
+dll	api	arquivo_rugburn	exe_983	iat	usos_jogo	usos_gg_crt	quem_usa_no_jogo	para_que
+kernel32.dll	CreateProcessA	kernel32/inject.c	importa	00cfc248	0	5		finge que GameGuard.des abriu (devolve um mutex como processo)
+kernel32.dll	GetExitCodeProcess	kernel32/inject.c	importa	00cfc240	0	3		devolve 0x755 (NPGAMEMON_SUCCESS) para o processo falso
+kernel32.dll	GetStartupInfoA	comctl32/dynamic_patch.c	nao importa		0	0		gatilho: 1ª chamada vinda do exe aplica o patch do GG + PatchAddress
+kernel32.dll	GetStartupInfoW	comctl32/dynamic_patch.c	importa	00cfc268	0	2		idem
+comctl32.dll	InitCommonControlsEx	comctl32/dynamic_patch.c	importa	00cfc09c	3	0	FUN_00a6b260 [winmain.cpp]; FUN_00a72a30 [parallelwork.cpp]; 00c24376	idem (2º gatilho)
+user32.dll	CreateWindowExA	user32/window.c	importa	00cfcabc	7	0	FUN_008663c0 [browser.cpp]; FUN_008696f0 [browser.cpp]; FUN_0086f310 [browser.cpp]; FUN_00995800 [splash.cpp]; ?RegAndCreateWindow@CSplash@@AAEPAUHWND_ [splash.cpp]; FUN_00a72a30 [parallelwork.cpp]	tira WS_EX_TOPMOST de toda janela
+ws2_32.dll	connect	ws2_32/redir.c	importa	00cfcbd0	2	0	WSocket::Connect [socket.cpp]; 00c2440c	PortRewrites: troca destino pela porta (FromPort -> ToAddr:ToPort)
+wininet.dll	InternetOpenUrlA	wininet/netredir.c	importa	00cfcb44	6	1	FUN_0053f9c0 []; CPPL::IsPPLEnable [ppl.cpp]; GetUrlFile [rssmanager.cpp]; FUN_00a4c1c0 [chttp.cpp]; ?DownLoad@FrGuildDlg@@IAE_NPBD000@Z [guilddlg.cpp]	UrlRewrites (regex) na URL
+wininet.dll	InternetConnectA	wininet/netredir.c	importa	00cfcb38	1	1	?Connect@GenericHTTPClient@@QAEHPBD0G00@ [generichttpclient.cpp]	UrlRewrites (guarda host/porta para o pedido)
+wininet.dll	HttpOpenRequestA	wininet/netredir.c	importa	00cfcb20	3	1	GenericHTTPClient::RequestGet [generichttpclient.cpp]; GenericHTTPClient::RequestPost [generichttpclient.cpp]; GenericHTTPClient::RequestPostMultiParts [generichttpclient.cpp]	UrlRewrites (monta a URL e reabre a conexão se mudar)
+wininet.dll	HttpSendRequestA	wininet/netredir.c	importa	00cfcb18	2	1	GenericHTTPClient::RequestGet [generichttpclient.cpp]; GenericHTTPClient::RequestPost [generichttpclient.cpp]	acompanha o pedido reescrito
+wininet.dll	HttpSendRequestExA	wininet/netredir.c	importa	00cfcb2c	1	1	GenericHTTPClient::RequestPostMultiParts [generichttpclient.cpp]	idem
+wininet.dll	HttpEndRequestA	wininet/netredir.c	importa	00cfcb24	1	1	GenericHTTPClient::RequestPostMultiParts [generichttpclient.cpp]	idem
+wininet.dll	HttpAddRequestHeadersA	wininet/netredir.c	importa	00cfcb1c	3	1	GenericHTTPClient::RequestGet [generichttpclient.cpp]; GenericHTTPClient::RequestPost [generichttpclient.cpp]; GenericHTTPClient::RequestPostMultiParts [generichttpclient.cpp]	idem
+wininet.dll	HttpQueryInfoA	wininet/netredir.c	importa	00cfcb54	6	1	FUN_0053f3a0 []; FUN_0053f410 []; FUN_0053f480 []; ?Response@GenericHTTPClient@@QAEHPAEK0KA [generichttpclient.cpp]; FUN_00a4c1c0 [chttp.cpp]; FUN_00a4c270 [chttp.cpp]	idem
+wininet.dll	InternetQueryDataAvailable	wininet/netredir.c	importa	00cfcb4c	5	1	FUN_0053f9c0 []; CPPL::IsPPLEnable [ppl.cpp]; GetUrlFile [rssmanager.cpp]; ?DownLoad@FrGuildDlg@@IAE_NPBD000@Z [guilddlg.cpp]	idem
+wininet.dll	InternetReadFile	wininet/netredir.c	importa	00cfcb50	6	1	FUN_0053f9c0 []; ?ResponseOfBytes@GenericHTTPClient@@IAEK [generichttpclient.cpp]; GetUrlFile [rssmanager.cpp]; FUN_00a4c270 [chttp.cpp]; _anon_A62399DC::CINetBuffer::FUN_00a4c5d [chttp.cpp]; ?DownLoad@FrGuildDlg@@IAE_NPBD000@Z [guilddlg.cpp]	idem
+wininet.dll	InternetWriteFile	wininet/netredir.c	importa	00cfcb28	1	1	GenericHTTPClient::RequestPostMultiParts [generichttpclient.cpp]	idem
+wininet.dll	InternetCloseHandle	wininet/netredir.c	importa	00cfcb48	15	2	FUN_0053f9c0 []; ?Close@GenericHTTPClient@@QAEHXZ [generichttpclient.cpp]; CPPL::IsPPLEnable [ppl.cpp]; GetUrlFile [rssmanager.cpp]; FUN_00a4c160 [chttp.cpp]; FUN_00a4c3f0 [chttp.cpp]	idem
+ole32.dll	CoCreateInstance	ole32/web_browser.c	importa	00cfcd00	8	0	FUN_0086dd70 [browser.cpp]; ATL::CAtlModule::GetGITPtr [winmain.cpp]; FUN_00a6f6c0 [winmain.cpp]; 00b46d98	UrlRewrites no IWebBrowser2::Navigate (páginas dentro do jogo)
+ole32.dll	CoGetClassObject	ole32/web_browser.c	importa	00cfccf4	3	0	FUN_0086dd70 [browser.cpp]; FUN_00a6f6c0 [winmain.cpp]; 00b46d86	UrlRewrites no IDispatch::Invoke do WebBrowser
+msvcr100.dll	_stricmp	msvcr100/msvcr100.c	importa	00cfc8e8	282	1	00419d5e; 00419ece; 00419f20; FUN_00419f30 []; FUN_0041a170 []; FUN_0041a240 []	só sob Wine com defeito no _stricmp (locale japonês); no Windows não instala

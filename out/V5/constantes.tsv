@@ -1,0 +1,7 @@
+o_que	valor_983	onde_983	nosso_fonte	onde_nosso	veredito
+login: endereço	157.7.173.48	global 00e30834, lido em 00a51f40 LoginUnit::FUN_00a51f40	157.7.173.48	src/projectg/loginunit.cpp LSIP_ADDRESS	igual
+login: portas (sorteia 1 de 2)	10803, 10803	global 00e30838	10803, 10803	src/projectg/loginunit.cpp LOGIN_PORT_LIST	igual
+GameGuard: nome do jogo	PangyaJP	00a5cf80 _GGC_Init	PangyaJP	src/projectg/ggc_wrapper.cpp	igual
+PANGYA_ARG: guid esperado (WinMain)	{E69B65A2-7A7E-4977-85E5-B19516D885CB}	00a72b51 FUN_00a72a30	{E69B65A2-7A7E-4977-85E5-B19516D885CB}	src/projectg/winmain.cpp	igual
+mutex de instância única	{071784A2-EE35-4e6a-92D0-6E7A4B985171}	00a6b352 GetPangYaMutex	{071784A2-EE35-4e6a-92D0-6E7A4B985171}	src/projectg/winmain.cpp	igual
+quem lê a variável PANGYA_ARG	FUN_00a72a30 [parallelwork.cpp]	_WinMain@16	src/projectg/winmain.cpp		igual

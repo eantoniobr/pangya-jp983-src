@@ -1,0 +1,55 @@
+// V3: layout do 983 das classes vistas por src/projectg/jp/clubsetworkshopprogresswnd.cpp (gerado por tools/v3/gen.py; não editar à mão).
+// unidade: src/projectg/jp/clubsetworkshopprogresswnd.cpp
+V3_OFF(CTween983, m_bRunX, 0x34) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:31
+V3_OFF(CTween983, m_bRunY, 0x35) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:32
+V3_SIZE(FrClubSetWorkshopProgressResultWnd, 0x138) // 983: push 0x138; call operator new em 004a3390, construtor 004a2dd0 (rtti=1; 1 new); unidade por construtor
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_pParent, 0x50) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:67
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_pClubBmp, 0x54) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:68
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_pClubBmp2, 0x58) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:69
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_titleOverlay, 0x5c) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:70
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_levelOverlay, 0x6c) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:71
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_rankOverlay, 0x80) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:72
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_state, 0x9c) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:74
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_level, 0xa0) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:75
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_rank, 0xa4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:76
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_stat, 0xa8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:77
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_titlePos, 0xac) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:78
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_luckyPos, 0xb4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:79
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_textPos, 0xbc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:80
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_luckyTextPos, 0xc4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:81
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_clubPos, 0xcc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:82
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_clubDrawPos, 0xd4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:83
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_clubChangePos, 0xdc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:84
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_levelPos, 0xe4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:85
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_rankPos, 0xec) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:86
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_clubTo, 0xf4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:87
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_rankTo, 0xfc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:88
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_levelTo, 0x104) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:89
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_pClubTween, 0x12c) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:90
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_pLevelTween, 0x130) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:91
+V3_OFF(FrClubSetWorkshopProgressResultWnd, m_wait, 0x134) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:92
+V3_SIZE(FrClubSetWorkshopProgressWnd, 0x100) // 983: push 0x100; call operator new em 0049fe06, construtor 0049f720 (rtti=1; 1 new); unidade por construtor
+V3_OFF(FrClubSetWorkshopProgressWnd, m_anim, 0x88) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:152
+V3_OFF(FrClubSetWorkshopProgressWnd, m_animOverlay, 0xa4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:153
+V3_OFF(FrClubSetWorkshopProgressWnd, m_mode, 0xb4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:154
+V3_OFF(FrClubSetWorkshopProgressWnd, m_timer, 0xb8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:155
+V3_OFF(FrClubSetWorkshopProgressWnd, m_timerMax, 0xbc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:156
+V3_OFF(FrClubSetWorkshopProgressWnd, m_pGauge, 0xc0) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:157
+V3_OFF(FrClubSetWorkshopProgressWnd, m_pResult, 0xc4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:158
+V3_OFF(FrClubSetWorkshopProgressWnd, m_resultGuid, 0xc8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:159
+V3_OFF(FrClubSetWorkshopProgressWnd, m_oldRank, 0xcc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:160
+V3_OFF(FrClubSetWorkshopProgressWnd, m_newRank, 0xd0) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:161
+V3_OFF(FrClubSetWorkshopProgressWnd, m_unkd4, 0xd4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:162
+V3_OFF(FrClubSetWorkshopProgressWnd, m_balloonOverlay, 0xd8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:163
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bgOverlay, 0xdc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:164
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bgPos, 0xe0) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:165
+V3_OFF(FrClubSetWorkshopProgressWnd, m_gaugeTime, 0xe8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:166
+V3_OFF(FrClubSetWorkshopProgressWnd, m_gaugeTimeMax, 0xec) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:167
+V3_OFF(FrClubSetWorkshopProgressWnd, m_unkf0, 0xf0) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:168
+V3_OFF(FrClubSetWorkshopProgressWnd, m_unkf4, 0xf4) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:169
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bFx0, 0xf8) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:170
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bFx3, 0xf9) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:171
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bfa983, 0xfa) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:172
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bRunning, 0xfb) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:173
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bWorking, 0xfc) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:174
+V3_OFF(FrClubSetWorkshopProgressWnd, m_bNoCancel, 0xfd) // 983: anotação do cabeçalho include/jp/clubsetworkshopprogresswnd.h:175

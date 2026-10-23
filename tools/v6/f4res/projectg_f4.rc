@@ -1,0 +1,10 @@
+// F4 (frente C): recursos do exe de prova = src/projectg/ProjectG.rc (versão, ícone, bitmaps, strings e o manifesto com
+// nome "MANIFEST_RESOURCE_ID", iguais aos do 983) + ESTE arquivo: o manifesto de ID 1 do 983 (é o único que o Windows lê
+// num exe: requireAdministrator e supportedOS até o Windows 10), tirado byte a byte do ref/ProjectG_983_dump.exe.
+// O tools/v6/linkprova.py junta os dois num .rc UTF-16 (o rc.exe do VC7.1 lê o `#pragma code_page(65001)` errado: as
+// strings coreanas saíam com 1.096 bytes em vez dos 496 do 983).
+// C91 tentou asInvoker (ProjectG_983_teste.manifest) para o robô fechar o jogo; o c91-1 mostrou que sem admin o jogo cai
+// na caixa "파일 에러" aos 1 s. C92 (revisor 14/10 17:05): volta ao requireAdministrator do 983; o robô fecha com taskkill
+// elevado. Portão A8 confere.
+LANGUAGE 0x09, 0x01
+1 24 "ProjectG_983.manifest"
