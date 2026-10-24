@@ -1101,7 +1101,7 @@ void CCreature::PlayEvent()
 
 void CCreature::Record()
 {
-	m_recPath.std::vector<WVector>::~vector();
+	m_recPath.clear(); // 983 0076d510: end = begin (o 645 destruia o vetor)
 	m_recPath.reserve(10);
 	m_recPath.push_back(m_target);
 	m_recTime = m_motionTime;

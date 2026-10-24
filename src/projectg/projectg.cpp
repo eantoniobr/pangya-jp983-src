@@ -1,4 +1,5 @@
 #include "wproc.h"
+#include <mbstring.h>
 #include "miles.h"
 #include "clientsetting.h"
 #include "fpsmonitor.h"
@@ -1347,11 +1348,68 @@ void CProjectG::Paint()
 	}
 }
 
+// 983 00a62d40 / 00a62cb0: Ctrl+V (WinProc) liga o pedido; o chat (CChatMsg::Process 009a03b0) consome e le o texto
+// da area de transferencia do Windows (CF_TEXT, ate 0x3ff bytes)
+static bool s_bClipboardPaste983; // 983 00f0248a
+static bool s_bCtrlDown983;       // 983 00f02a68
+static bool s_bPasteKeyDown983;   // 983 00f02a67
+static char s_clipboardText983[0x400]; // 983 00f02550
+
+bool ConsumeClipboardPaste983()
+{
+	if (s_bClipboardPaste983)
+	{
+		s_bClipboardPaste983 = false;
+		return true;
+	}
+	return false;
+}
+
+const char* GetClipboardText983()
+{
+	if (IsClipboardFormatAvailable(CF_TEXT) && OpenClipboard(g_hwnd))
+	{
+		HANDLE hMem = GetClipboardData(CF_TEXT);
+		if (hMem)
+		{
+			const unsigned char* src = (const unsigned char*)GlobalLock(hMem);
+			if (src)
+			{
+				memset(s_clipboardText983, 0, sizeof(s_clipboardText983));
+				_mbsnbcpy((unsigned char*)s_clipboardText983, src, 0x3ff);
+				GlobalUnlock(hMem);
+			}
+		}
+		CloseClipboard();
+		return s_clipboardText983;
+	}
+	memset(s_clipboardText983, 0, sizeof(s_clipboardText983));
+	return s_clipboardText983;
+}
+
 long __stdcall CProjectG::WinProc(HWND hwnd, unsigned int message,
 	unsigned int wParam, long lParam)
 {
 	switch (message)
 	{
+	case WM_KEYDOWN: // 983 00a67dd0 (0x100)
+		if (s_bCtrlDown983 && !s_bPasteKeyDown983 && (wParam == 'V' || wParam == 'v'))
+		{
+			s_bPasteKeyDown983 = true;
+			s_bClipboardPaste983 = true;
+		}
+		if (wParam == VK_CONTROL)
+			s_bCtrlDown983 = true;
+		break;
+	case WM_KEYUP: // 983 (0x101)
+		if (s_bPasteKeyDown983 && (wParam == 'V' || wParam == 'v'))
+		{
+			s_bClipboardPaste983 = false;
+			s_bPasteKeyDown983 = false;
+		}
+		if (wParam == VK_CONTROL)
+			s_bCtrlDown983 = false;
+		break;
 	case 44468:
 		if (m_crc.IsWorking())
 			m_crc.Resume();

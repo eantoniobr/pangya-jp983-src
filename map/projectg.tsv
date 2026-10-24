@@ -15612,3 +15612,8 @@ _lzo1x_decompress_safe	00a7bfa0
 ?SetCaddieIffMap@FrCheckoutDlg@@QAEXABV?$map@IUsCaddie@IFF_STRUCT@@U?$less@I@std@@V?$allocator@U?$pair@$$CBIUsCaddie@IFF_STRUCT@@@std@@@4@@std@@@Z	00aa25b0
 ?OnConfirm1a100002Result983@FrCheckoutDlg@@IAE_NHPAVFrForm@@@Z	00aa3590
 ?SetOpeningBonusBallInfo983@FrBongdariShopDlg@@IAEXPAUsBonusBall@@H@Z	008bacd0
+?OnJoinJpBtnInit@FrLoginDlg@@IAEXH@Z	00ada070
+?OnQuitBtnInit@FrLoginDlg@@IAEXH@Z	00ada180
+?OnQuitBtnUp@FrLoginDlg@@IAEXXZ	00ad9320
+?OnJoinBtnUp@FrLoginDlg@@IAEXXZ	00ada100
+?OnJoinBtnInit@FrLoginDlg@@IAEXH@Z	00ad9680

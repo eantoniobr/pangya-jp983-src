@@ -315,8 +315,9 @@ void CTutorialContainer983::SetSendResult983(bool bSend)
 // into zero storage that sits after m_RTTI). With plain constants, or with a constructor, VC7.1 folds the table
 // into .data.
 #define TUTORIAL_FIELD(value) (0, value)
+// 983 00cd7b90: name = K2L_Compatibility(texto) em cada uma das 14 entradas (e7b448, passo 0x18).
 #define TUTORIAL_MAP(name, type, number, row, id) \
-	{ TUTORIAL_FIELD(name), TUTORIAL_FIELD(type), TUTORIAL_FIELD(number), \
+	{ K2L_Compatibility(name), TUTORIAL_FIELD(type), TUTORIAL_FIELD(number), \
 		TUTORIAL_FIELD(0), TUTORIAL_FIELD(row), TUTORIAL_FIELD(id), \
 		TUTORIAL_FIELD(0), TUTORIAL_FIELD(0), TUTORIAL_FIELD(1) }
 

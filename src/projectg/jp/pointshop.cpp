@@ -38,7 +38,7 @@ int CPointShop::GetPoint983(unsigned long typeId)
 	default: return point;
 	}
 	if (pItem != NULL)
-		point = pItem->unk983_88[0];
+		point = pItem->TikiPoints;
 	return point;
 }
 
@@ -60,17 +60,17 @@ int CPointShop::GetUnitCount983(unsigned long typeId)
 	case 5:
 		pItem = (IFF_ITEM_COMMON*)ItemManager()->FindBall(typeId);
 		if (pItem != NULL)
-			count = pItem->Point;
+			count = pItem->TikiQtyPerPoint;
 		break;
 	case 6:
 		pItem = (IFF_ITEM_COMMON*)ItemManager()->FindItem(typeId);
 		if (pItem != NULL)
-			count = pItem->Point;
+			count = pItem->TikiQtyPerPoint;
 		break;
 	case 0x1f:
 		pItem = (IFF_ITEM_COMMON*)ItemManager()->FindCard(typeId);
 		if (pItem != NULL)
-			count = pItem->Point;
+			count = pItem->TikiQtyPerPoint;
 		break;
 	}
 	return count;

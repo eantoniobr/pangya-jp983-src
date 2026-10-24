@@ -30,10 +30,12 @@ ON_FRESH_VV("auto_id", FRCMD_LBUTTONUP, FrLoginDlg::OnAutoIdBtnUp)
 ON_FRESH_VI("view", FRCMD_INIT, FrLoginDlg::OnViewInit)
 ON_FRESH_VI("login", FRCMD_INIT, FrLoginDlg::OnLoginInit)
 ON_FRESH_VV("login", FRCMD_LBUTTONUP, FrLoginDlg::OnLoginBtnUp)
+// 983 (msgmap 00e39100): sem "find"; o site abre pelo "join_jp" e o "quit" fecha o jogo; "join" so guarda o botao
+ON_FRESH_VI("join_jp", FRCMD_INIT, FrLoginDlg::OnJoinJpBtnInit)
+ON_FRESH_VV("join_jp", FRCMD_LBUTTONUP, FrLoginDlg::OnJoinBtnUp)
+ON_FRESH_VI("quit", FRCMD_INIT, FrLoginDlg::OnQuitBtnInit)
+ON_FRESH_VV("quit", FRCMD_LBUTTONUP, FrLoginDlg::OnQuitBtnUp)
 ON_FRESH_VI("join", FRCMD_INIT, FrLoginDlg::OnJoinBtnInit)
-ON_FRESH_VI("find", FRCMD_INIT, FrLoginDlg::OnFindBtnInit)
-ON_FRESH_VV("join", FRCMD_LBUTTONUP, FrLoginDlg::OnJoinBtnUp)
-ON_FRESH_VV("find", FRCMD_LBUTTONUP, FrLoginDlg::OnFindBtnUp)
 ON_FRESH_VI("logo1", FRCMD_INIT, FrLoginDlg::OnParanAreaInit)
 ON_FRESH_VI("logo2", FRCMD_INIT, FrLoginDlg::OnParanAreaInit)
 ON_FRESH_VI("bkframe1", FRCMD_INIT, FrLoginDlg::OnHideAreaInit)
@@ -264,6 +266,21 @@ void FrLoginDlg::BeginClientLogin()
 			return;
 		}
 	}
+	// 983 00adac64: com Doc m_unk983_11458 relê id/senha dos controles mesmo escondidos (sem checar vazio)
+	if (Doc()->m_unk983_11458)
+	{
+		char buf[260] = "";
+		if (m_pId)
+		{
+			strcpy(buf, m_pId->GetLine(1, 0));
+			m_id = TrimA(buf, " \t\n\r\0");
+		}
+		if (m_pPassword)
+		{
+			strcpy(buf, m_pPassword->GetLine(1, 0));
+			m_passwd = TrimA(buf, " \t\n\r\0");
+		}
+	}
 	_ValidId valid = std::for_each(m_id.begin(), m_id.end(), _ValidId());
 	if (valid.bInvalid && m_pView)
 	{
@@ -305,14 +322,17 @@ void FrLoginDlg::BeginConnect()
 	strncpy(id, m_id.c_str(), 21);
 	Doc()->m_password = m_passwd;
 	NET()->Init(WNetworkSystem::NET_MAX);
+	// 983 00adaa0b: com Doc m_unk983_11458 a linha sai sem o id ("접속 중...|", d4bbf0)
 	if (m_pView)
-		m_pView->AddLine(MakeStr(K2L_Compatibility("%s \301\242\274\323 \301\337...|"), LOGINID()),
+		m_pView->AddLine(Doc()->m_unk983_11458
+			? K2L_Compatibility("\301\242\274\323 \301\337...|")
+			: MakeStr(K2L_Compatibility("%s \301\242\274\323 \301\337...|"), LOGINID()),
 			0, 0);
-	m_connState = (eLoginState)1;
 	// 983 00adaa4b (A202): login novo (nao a volta da 0x2f0): zera o byte +0x11250 e o conjunto +0x10a20. O 983 ainda grava
-	// 1 no global 00f03228 (00ad9190; lido em 00ada7d0/00adafc0) = estado do login sem par no nosso.
+	// 1 no estado do login (SetState 00ad9190 = m_connState).
 	*(bool*)&Doc()->m_unk983_11250 = false;
 	Doc()->m_unk983_10a20.clear();
+	SetState((eLoginState)1);
 	NET()->SendMessage(WNetworkSystem::NET_LOGIN, (NetworkUnit::eEvent)0);
 }
 
@@ -342,7 +362,7 @@ bool FrLoginDlg::OnJoinDlgResult(int result, FrForm*)
 	if (result == FrOK)
 	{
 		ShellExecuteA(NULL, NULL,
-			"http://qa.www.gametree.co.kr/SignUp/Join.aspx?rsn=9", NULL, NULL,
+			"http://www.pangya.jp", NULL, NULL,
 			SW_MAXIMIZE);
 		if (!COption::Instance()->vIsWindowed())
 			g_bQuit = true;
@@ -377,9 +397,7 @@ bool FrLoginDlg::OnFindDlgResult(int result, FrForm*)
 {
 	if (result == FrOK)
 	{
-		ShellExecuteA(NULL, NULL,
-			"http://qa.www.gametree.co.kr/Secure/MyPage/Member/FindId.aspx",
-			NULL, NULL, SW_MAXIMIZE);
+		ShellExecuteA(NULL, NULL, "about:blank", NULL, NULL, SW_MAXIMIZE);
 		if (!COption::Instance()->vIsWindowed())
 			g_bQuit = true;
 	}
@@ -758,41 +776,49 @@ void FrLoginDlg::OnLoginBtnUp()
 
 void FrLoginDlg::OnJoinBtnInit(int param)
 {
+	// 983 (00ad9680): so guarda o botao
 	m_pJoin = DYNAMIC_CAST(FrButton, (FrWnd*)param);
-	if (m_pJoin && CLoginInfo::Instance()->IsWebLogin())
-		m_pJoin->SetVisible(false);
 }
 
-void FrLoginDlg::OnFindBtnInit(int param)
+void FrLoginDlg::OnJoinJpBtnInit(int param)
 {
-	m_pFind = DYNAMIC_CAST(FrButton, (FrWnd*)param);
-	if (m_pFind && CLoginInfo::Instance()->IsWebLogin())
-		m_pFind->SetVisible(false);
+	// 983 (00ada070)
+	FrButton* pBtn = DYNAMIC_CAST(FrButton, (FrWnd*)param);
+	if (Doc()->m_unk983_11458 && pBtn)
+	{
+		pBtn->SetVisible(false);
+		pBtn->Enable(false);
+	}
+}
+
+void FrLoginDlg::OnQuitBtnInit(int param)
+{
+	// 983 (00ada180)
+	FrButton* pBtn = DYNAMIC_CAST(FrButton, (FrWnd*)param);
+	if (Doc()->m_unk983_11458 && pBtn)
+	{
+		pBtn->SetVisible(false);
+		pBtn->Enable(false);
+	}
+}
+
+void FrLoginDlg::OnQuitBtnUp()
+{
+	// 983 (00ad9320)
+	PostQuitMessage(0);
 }
 
 void FrLoginDlg::OnJoinBtnUp()
 {
+	// 983 (00ada100): botao "join_jp" -> pangya.jp
 	FrForm* dlg = CreateForm<FrForm>(g_pFresh->GetManager(), this,
 		"notify_okcancel", NULL);
 	if (dlg)
 	{
-		dlg->SetMessage(
-			"\306\316\276\337 \276\306\300\314\265\360\270\246 \270\270\265\345\275\303\260\332\275\300\264\317\261\356?",
+		dlg->SetMessage(K2L_Compatibility(
+			"\306\316\276\337 \260\370\275\304 \310\250\306\344\300\314\301\366\267\316 \277\254\260\341 \307\317\275\303\260\332\275\300\264\317\261\356?"),
 			false);
-		dlg->Open((FRESH_PFN_RESULT)&FrLoginDlg::OnJoinDlgResult, 0);
-	}
-}
-
-void FrLoginDlg::OnFindBtnUp()
-{
-	FrForm* dlg = CreateForm<FrForm>(g_pFresh->GetManager(), this,
-		"notify_okcancel", NULL);
-	if (dlg)
-	{
-		dlg->SetMessage(
-			"\306\316\276\337 \276\306\300\314\265\360, \272\361\271\320\271\370\310\243\270\246 \303\243\300\270\275\303\260\332\275\300\264\317\261\356?",
-			false);
-		dlg->Open((FRESH_PFN_RESULT)&FrLoginDlg::OnFindDlgResult, 0);
+		dlg->Open((FRESH_PFN_RESULT)&FrLoginDlg::OnJoinDlgResult, 0x800); // 983: 0x800
 	}
 }
 

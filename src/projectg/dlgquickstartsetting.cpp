@@ -651,7 +651,8 @@ std::string CMatchingSystem::GetNameChecked(const std::string& group)
 				return pInfo->name;
 		}
 	}
-	return "\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4";
+	// 983 ad2245: default text also goes through K2L
+	return K2L_Compatibility("\xc1\xb6\xb0\xc7\xbc\xb3\xc1\xa4\xbe\xc8\xc7\xd4");
 }
 
 int CMatchingSystem::GetDisplayIntrests(const std::string& group,

@@ -88,12 +88,33 @@ ON_FRESH_VI("classictype_btn", FRCMD_INIT, FrChangeRoomInfoDlg::OnClassicTypeIni
 ON_FRESH_VV("classictype_btn", FRCMD_LBUTTONUP, FrChangeRoomInfoDlg::OnClassicTypeUp983)
 END_FRESH_MSGMAP()
 
-static char* s_gameTypeName[16] = { "\xbd\xba\xc6\xae\xb7\xce\xc5\xa9",
-	"\xb8\xc5\xc4\xa1", "\xc3\xa4\xc6\xc3\xb9\xe6", "\xb7\xa1\xb4\xf5",
-	"\xb4\xeb\xc8\xb8", "\xb4\xeb\xc8\xb8\xc6\xc0\xc0\xfc",
-	"\xb1\xe6\xb5\xe5\xb4\xeb\xc0\xfc", "\xc6\xce\xb9\xe8\xc6\xb2", "", "",
-	"\xbe\xee\xc7\xc1\xb7\xce\xc4\xa1", "", "",
-	"\xbc\xc5\xc7\xc3\xc4\xda\xbd\xba", NULL, NULL };
+// 983 00cecfe0 (inicializador dinamico): 23 nomes por K2L em 00f030f8; DrawGameTypeButton 00acd130 indexa pelo tipo.
+// No 983 o indice 5 e "short game" (d06804, nao o texto de 30 pessoas em equipe) e o shuffle fica no 18.
+static const char* s_gameTypeName[23] = {
+	K2L_Compatibility("\xbd\xba\xc6\xae\xb7\xce\xc5\xa9"),
+	K2L_Compatibility("\xb8\xc5\xc4\xa1"),
+	K2L_Compatibility("\xc3\xa4\xc6\xc3\xb9\xe6"),
+	K2L_Compatibility("\xb7\xa1\xb4\xf5"),
+	K2L_Compatibility("\xb4\xeb\xc8\xb8"),
+	K2L_Compatibility("\xbc\xf4\xb0\xd4\xc0\xd3"),
+	K2L_Compatibility("\xb1\xe6\xb5\xe5\xb4\xeb\xc0\xfc"),
+	K2L_Compatibility("\xc6\xce\xb9\xe8\xc6\xb2"),
+	"",
+	"",
+	K2L_Compatibility("\xbe\xee\xc7\xc1\xb7\xce\xc4\xa1"),
+	K2L_Compatibility("\xc8\xa6\xc0\xce\xbf\xf8\xc0\xcf\xb9\xdd"),
+	K2L_Compatibility("\xc8\xa6\xc0\xce\xbf\xf8\xc0\xcf\xb9\xdd\xbd\xcc\xb1\xdb"),
+	K2L_Compatibility("\xc8\xa6\xc0\xce\xbf\xf8\xbb\xf3\xb1\xde"),
+	K2L_Compatibility("\xc8\xa6\xc0\xce\xbf\xf8\xbb\xf3\xb1\xde\xbd\xcc\xb1\xdb"),
+	"",
+	"",
+	"",
+	K2L_Compatibility("\xbc\xc5\xc7\xc3\xc4\xda\xbd\xba"),
+	K2L_Compatibility("\xbd\xcc\xb1\xdb\xc7\xc3\xb7\xb9\xc0\xcc"),
+	NULL,
+	NULL,
+	NULL
+};
 
 extern "C" void _ReadWriteBarrier(void);
 #pragma intrinsic(_ReadWriteBarrier)

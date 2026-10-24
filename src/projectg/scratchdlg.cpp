@@ -892,7 +892,8 @@ void FrScratchDlg::DrawChangeScratchCardNumber()
 				else
 					alpha = 0xff;
 				const Bitmap* pBmp = (&m_pEraser)[1 + m_changeIndex[i]];
-				WRect rc(m_rect.x + 350.0f, m_changePos[i] + m_rect.y + 113.0f,
+				// 983 008e6710: x + 348.0 (d17888; o 645 tinha 350), y + 113.0 + pos
+				WRect rc(m_rect.x + 348.0, m_rect.y + 113.0 + m_changePos[i],
 					pBmp->Width(), pBmp->Height());
 				pGDI->DrawTexture(pBmp, rc, alpha << 24 | 0xffffff, 0);
 			}
@@ -1005,8 +1006,7 @@ void FrScratchDlg::UpdateListMyItem(sBonusBall* pBall)
 		pList = &pDoc->m_cadItemList;
 		break;
 	case 9:
-		m_ballCount = 1;
-		return;
+		return; // 983 008ea3b3: caso 9 vai direto ao fim (o 645 gravava m_ballCount = 1)
 	case 0xe:
 		pDoc = Doc();
 		pList = &pDoc->m_cutinList;
@@ -1045,6 +1045,17 @@ skip:
 		++itS)
 	{
 		if ((*itS).second.guid == pBall->guid)
+		{
+			bNew = false;
+			break;
+		}
+	}
+	// 983 008ea4c0: mascote ja na lista (mesmo guid) = nada a fazer
+	std::map<unsigned int, sMascotInfo>::iterator itM;
+	for (itM = pDoc->m_mascotMap.begin(); itM != pDoc->m_mascotMap.end();
+		++itM)
+	{
+		if ((*itM).second.guid == pBall->guid)
 			return;
 	}
 	if (bNew)
@@ -1066,6 +1077,19 @@ skip:
 			info.Rent_flag = 0;
 			info.Purchase = 0;
 			pDoc->m_caddieMap[key] = info;
+			return;
+		}
+		if (group == 0x10)
+		{
+			// 983 008ea5a0: mascote ganho na raspadinha entra em m_mascotMap
+			key = pBall->guid;
+			sMascotInfo info;
+			memset(&info, 0, sizeof(info));
+			info.guid = key;
+			info.tid = tid;
+			info.Remain_Date = 0;
+			info.Purchase = 0;
+			pDoc->m_mascotMap[key] = info;
 			return;
 		}
 		if (group == 4)

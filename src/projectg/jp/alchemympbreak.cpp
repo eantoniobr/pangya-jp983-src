@@ -96,7 +96,7 @@ int CAlchemyMPBreak::GetBreakType(unsigned long typeId)
 	IFF_ITEM_COMMON* pItem = ItemManager()->FindCommonItem(typeId);
 	if (pItem == NULL)
 		return 0;
-	return pItem->unk983_88[3];
+	return pItem->TikiType;
 }
 
 // 00475f00
@@ -145,7 +145,7 @@ int CAlchemyMPBreak::GetItemMP(unsigned long typeId)
 	case 0x1c: pItem = (IFF_ITEM_COMMON*)ItemManager()->FindAuxPart(typeId); break;
 	}
 	if (pItem != NULL)
-		mp = *(unsigned short*)&pItem->unk983_88[1];
+		mp = pItem->Mileage;
 	return mp;
 }
 
@@ -174,7 +174,7 @@ __int64 CAlchemyMPBreak::GetTotalValue()
 	{
 		IFF_ITEM_COMMON* pItem = ItemManager()->FindCommonItem(it->second.typeId);
 		if (pItem != NULL)
-			total += pItem->unk983_88[4];
+			total += pItem->TikiPang;
 	}
 	return total;
 }
@@ -219,7 +219,7 @@ bool CAlchemyMPBreak::HasType3Item()
 		for (ItemMap::iterator it = m_items.begin(); it != m_items.end(); ++it)
 		{
 			IFF_ITEM_COMMON* pItem = ItemManager()->FindCommonItem(it->second.typeId);
-			if (pItem != NULL && (pItem->TypeId & 0xfc000000) != 0x7c000000 && pItem->unk983_88[3] == 3)
+			if (pItem != NULL && (pItem->TypeId & 0xfc000000) != 0x7c000000 && pItem->TikiType == 3)
 				return true;
 		}
 	}

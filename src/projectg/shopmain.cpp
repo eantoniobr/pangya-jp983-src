@@ -481,7 +481,7 @@ void CShopMain::TurnOffItemStatus()
 }
 
 // 009 a89000 (JP 983): comparador da lista de pecas. Diferencas p/ o 645: (1) tids do set em CSharedDoc+0x113e4
-// vao para o fim/inicio; (2) item de periodo (+0x9c == 2) so conta se estiver no periodo de venda (IsInSalePeriod);
+// vao para o fim/inicio; (2) item com DateFlag == 2 so conta se estiver no periodo de venda (IsInSalePeriod);
 // (3) tid especial (tabela de 35 em 00d45768) antes dos periodos; (4) nivel do jogador (+0x91d) e IsUnderLvl.
 bool IsUccClothes(unsigned long tid);
 static bool IsSpecialPartTid983(unsigned long tid) // 00a82ce0
@@ -524,7 +524,7 @@ bool __fastcall PartCompare(const void* a, const void* b)
 			return false;
 	}
 
-	if (pB->unk983_88[5] == 2 &&
+	if (pB->DateFlag == 2 &&
 		ItemManager()->IsInSalePeriod(pB->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		return false;
 
@@ -556,11 +556,11 @@ bool __fastcall PartCompare(const void* a, const void* b)
 	_SYSTEMTIME* pEndB = NULL;
 	bool bSaleA = ItemManager()->HasSalePeriod(pA->TypeId, &pStartA, &pEndA);
 	bool bSaleB = ItemManager()->HasSalePeriod(pB->TypeId, &pStartB, &pEndB);
-	// item 0x9c==2 (unk983_88[5]) fora do periodo de venda nao conta como "em promocao"
-	if (bSaleA && pA->unk983_88[5] == 2 &&
+	// item com DateFlag == 2 fora do periodo de venda nao conta como "em promocao"
+	if (bSaleA && pA->DateFlag == 2 &&
 		!ItemManager()->IsInSalePeriod(pA->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		bSaleA = false;
-	if (bSaleB && pB->unk983_88[5] == 2 &&
+	if (bSaleB && pB->DateFlag == 2 &&
 		!ItemManager()->IsInSalePeriod(pB->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		bSaleB = false;
 	if (!bSaleA)
@@ -629,8 +629,8 @@ bool __fastcall SpecialHitNewCompare(const void* a, const void* b)
 {
 	const IFF_ITEM_COMMON* pA = (const IFF_ITEM_COMMON*)a;
 	const IFF_ITEM_COMMON* pB = (const IFF_ITEM_COMMON*)b;
-	// 983 00a85400: item 0x9c==2 dentro do periodo de venda vai depois; fora dele nao conta como "em promocao"
-	if (pB->unk983_88[5] == 2 &&
+	// 983 00a85400: item com DateFlag == 2 dentro do periodo de venda vai depois; fora dele nao conta como "em promocao"
+	if (pB->DateFlag == 2 &&
 		ItemManager()->IsInSalePeriod(pB->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		return false;
 	_SYSTEMTIME* pStartA = NULL;
@@ -639,10 +639,10 @@ bool __fastcall SpecialHitNewCompare(const void* a, const void* b)
 	_SYSTEMTIME* pEndB = NULL;
 	bool bSaleA = ItemManager()->HasSalePeriod(pA->TypeId, &pStartA, &pEndA);
 	bool bSaleB = ItemManager()->HasSalePeriod(pB->TypeId, &pStartB, &pEndB);
-	if (bSaleA && pA->unk983_88[5] == 2 &&
+	if (bSaleA && pA->DateFlag == 2 &&
 		!ItemManager()->IsInSalePeriod(pA->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		bSaleA = false;
-	if (bSaleB && pB->unk983_88[5] == 2 &&
+	if (bSaleB && pB->DateFlag == 2 &&
 		!ItemManager()->IsInSalePeriod(pB->TypeId, CSharedDoc::Instance()->GetServerTime()))
 		bSaleB = false;
 	if (!bSaleA)
@@ -705,15 +705,15 @@ bool __fastcall ShopEmptyCompare(const void* a, const void* b)
 	return false;
 }
 
-// 983 a82470: itens de periodo (+0x9c == 2) vao depois; senao ordena pelo TypeId (+4)
+// 983 a82470: itens com DateFlag == 2 vao depois; senao ordena pelo TypeId (+4)
 // (o 983 compara o bit New com 2, sempre diferente: com B de periodo o resultado e sempre false)
 bool __fastcall CaddieCompare(const void* a, const void* b)
 {
 	const IFF_ITEM_COMMON* pA = (const IFF_ITEM_COMMON*)a;
 	const IFF_ITEM_COMMON* pB = (const IFF_ITEM_COMMON*)b;
-	if (pA->unk983_88[5] == 2 && pB->unk983_88[5] != 2)
+	if (pA->DateFlag == 2 && pB->DateFlag != 2)
 		return true;
-	if (pB->unk983_88[5] == 2 && pA->New != 2)
+	if (pB->DateFlag == 2 && pA->New != 2)
 		return false;
 	return pA->TypeId < pB->TypeId;
 }
@@ -1080,9 +1080,9 @@ void CShopMain::DrawItemPrice(FrGraphicInterface* gfx, float x, float y,
 	if (!pItem || item.InStock == 4)
 		return;
 
-	// 983 00a85fe0: com +0x9c == 2 manda o periodo de venda (IsInSalePeriod); senao, SalePrice < Price
+	// 983 00a85fe0: com DateFlag == 2 manda o periodo de venda (IsInSalePeriod); senao, SalePrice < Price
 	bool sale;
-	if (item.unk983_88[5] == 2)
+	if (item.DateFlag == 2)
 	{
 		CSharedDoc* pDoc = CSharedDoc::Instance();
 		sale = ItemManager()->IsInSalePeriod(item.TypeId, pDoc->GetServerTime());
@@ -1746,7 +1746,7 @@ void CShopMain::OnItemListOwnerDraw(int param)
 	// senao Limited (estado de venda), Lim (periodo no item), depois New e Hot
 	const Bitmap* pMark = NULL;
 	bool bFlags = true;
-	if (item->unk983_88[5] == 2)
+	if (item->DateFlag == 2)
 	{
 		bFlags = false;
 		if (ItemManager()->IsInSalePeriod(item->TypeId,
@@ -4368,7 +4368,7 @@ void CShopMain::Build_Package(subTab_t, int)
 			if ((item.InStock != 0 &&
 					pItemMgr->IsInSalePeriod(item.TypeId,
 						CSharedDoc::Instance()->GetServerTime())) ||
-				item.unk983_88[5] == 2)
+				item.DateFlag == 2)
 			{
 				pItem = m_pItemList->AddItem(&item);
 				AddSellMiniButton(item, pItem);
@@ -4386,7 +4386,7 @@ void CShopMain::Build_Hair(subTab_t tab, int)
 	{
 		const IFF_STRUCT::sHairStyle& hair = (*it).second;
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)hair.c;
-		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.unk983_88[5] != 2) && (m_u524 & 0x3ffffff) == hair.cCharID)
+		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.DateFlag != 2) && (m_u524 & 0x3ffffff) == hair.cCharID)
 		{
 			CItemManager* pItemMgr = ItemManager();
 			if (pItemMgr->IsInSalePeriod(item.TypeId,
@@ -4457,7 +4457,7 @@ void CShopMain::Build_Parts(subTab_t tab, int)
 		CItemManager* pItemMgr = ItemManager();
 		if (!((item.InStock != 0 && pItemMgr->IsInSalePeriod(item.TypeId,
 					CSharedDoc::Instance()->GetServerTime())) ||
-				item.unk983_88[5] == 2))
+				item.DateFlag == 2))
 			continue;
 		if (IsAngelWing(item.TypeId) &&
 			!(IsMannerPlayer() && CSharedDoc::Instance()->m_myInfo.stat.Level >= 21))
@@ -4500,7 +4500,7 @@ void CShopMain::Build_Clubset(subTab_t, int)
 		it != ItemManager()->m_ClubSetMap.end(); it++)
 	{
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)(*it).second.c;
-		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.unk983_88[5] != 2))
+		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.DateFlag != 2))
 		{
 			CItemManager* pItemMgr = ItemManager();
 			if (pItemMgr->IsInSalePeriod(item.TypeId,
@@ -4671,7 +4671,7 @@ void CShopMain::Build_Card(subTab_t, int)
 		it != ItemManager()->m_CardMap.end(); it++)
 	{
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)(*it).second.c;
-		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.unk983_88[5] != 2) && (item.TypeId & 0x2000000) == 0)
+		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.DateFlag != 2) && (item.TypeId & 0x2000000) == 0)
 		{
 			CItemManager* pItemMgr = ItemManager();
 			if (pItemMgr->IsInSalePeriod(item.TypeId,
@@ -4711,7 +4711,7 @@ void CShopMain::Build_Interior(subTab_t tab, int)
 		it != ItemManager()->m_FurnitureMap.end(); it++)
 	{
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)(*it).second.c;
-		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.unk983_88[5] != 2) && (item.TypeId & 0x2000000) == 0)
+		if (!IsLevelLocked983(item) && !(item.InStock == 0 && item.DateFlag != 2) && (item.TypeId & 0x2000000) == 0)
 		{
 			CItemManager* pItemMgr = ItemManager();
 			if (pItemMgr->IsInSalePeriod(item.TypeId,
@@ -4736,13 +4736,13 @@ void CShopMain::Build_Furniture(subTab_t, int)
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)(*it).second.c;
 		if (IsLevelLocked983(item))
 			continue;
-		// 983 00a8f170: item de periodo (+0x9c == 2) entra mesmo sem InStock/fora da venda
+		// 983 00a8f170: item com DateFlag == 2 entra mesmo sem InStock/fora da venda
 		{
 			CItemManager* pItemMgr = ItemManager();
 			if (!((item.InStock != 0 && (item.TypeId & 0x2000000) == 0 &&
 					pItemMgr->IsInSalePeriod(item.TypeId,
 						CSharedDoc::Instance()->GetServerTime())) ||
-				item.unk983_88[5] == 2))
+				item.DateFlag == 2))
 				continue;
 			int sub = (item.TypeId >> 11) & 0x7ff;
 			if ((sub >= 0 && sub < 7) || sub >= 10)
@@ -4847,13 +4847,13 @@ void CShopMain::Build_CaddieItem(int, int)
 		it != ItemManager()->m_CadItemMap.end(); it++)
 	{
 		IFF_ITEM_COMMON& item = (IFF_ITEM_COMMON&)(*it).second.c;
-		// 983 00a8f790: item de periodo (+0x9c == 2) testado so depois do caso normal
+		// 983 00a8f790: item com DateFlag == 2 testado so depois do caso normal
 		if ((item.InStock != 0 &&
 				(((item.TypeId >> 21) & 0x1f) + ((item.TypeId >> 16) & 0x1f)) ==
 					(m_u528 & 0x3ffffff) &&
 				ItemManager()->IsInSalePeriod(item.TypeId,
 					CSharedDoc::Instance()->GetServerTime())) ||
-			item.unk983_88[5] == 2)
+			item.DateFlag == 2)
 		{
 			FrListItem* pItem = m_pItemList->AddItem(&item);
 			AddSellMiniButton(item, pItem);
@@ -5744,7 +5744,7 @@ void CShopMain::AddSaleInfo983(FrEdit* pEdit, IFF_ITEM_COMMON* pItem)
 		pEdit->AddText("\n", false, true);
 		return;
 	}
-	bool bDiscount = pItem->unk983_88[5] == 2 &&
+	bool bDiscount = pItem->DateFlag == 2 &&
 		ItemManager()->IsInSalePeriod(tid, pDoc->GetServerTime());
 	pEdit->AddText("\n\n\n", false, true);
 	pEdit->AddText(

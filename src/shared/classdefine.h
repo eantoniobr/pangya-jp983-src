@@ -22,11 +22,25 @@ struct IFF_ITEM_COMMON
 	unsigned char Reserve : 1;
 	unsigned char TimeFlag;
 	unsigned char Time;
-	unsigned int Point;
-	unsigned int unk983_88[6]; // 983: 0x18 bytes novos entre 0x88 e saleStart (0xa0); podem estar antes de Point (provisório)
+	// Tiki Shop (troca de itens por Tiki Points / quebra de mileage); nomes da comunidade em docs/IFF_ITEM_COMMON.md
+	unsigned int TikiQtyPerPoint; // unidades que valem TikiPoints (era Point; quantidade entregue na loja de pontos)
+	unsigned int TikiPoints; // 983: preço na loja de pontos; 0 = fora dela
+	unsigned short Mileage; // 983: mileage ("MP") da quebra na alquimia; 0 = não quebra
+	unsigned short BonusProb; // 983: chance do bônus de mileage em % (só o servidor lê)
+	unsigned short BonusMin; // 983: bônus mínimo de mileage (só o servidor lê)
+	unsigned short BonusMax; // 983: bônus máximo de mileage (só o servidor lê)
+	unsigned int TikiType; // 983: aba da quebra (1 Pang, 2 cash, 3 especial)
+	unsigned int TikiPang; // 983: custo em Pang por item na quebra
+	unsigned int DateFlag; // 983: 2 = saleStart/saleEnd valem só para a promoção, não para a venda
 	_SYSTEMTIME saleStart;
 	_SYSTEMTIME saleEnd;
 };
+C_ASSERT(offsetof(IFF_ITEM_COMMON, Icon) == 0x49);
+C_ASSERT(offsetof(IFF_ITEM_COMMON, Price) == 0x74);
+C_ASSERT(offsetof(IFF_ITEM_COMMON, TikiQtyPerPoint) == 0x84);
+C_ASSERT(offsetof(IFF_ITEM_COMMON, Mileage) == 0x8c);
+C_ASSERT(offsetof(IFF_ITEM_COMMON, DateFlag) == 0x9c);
+C_ASSERT(sizeof(IFF_ITEM_COMMON) == 0xc0);
 
 namespace IFF_STRUCT
 {

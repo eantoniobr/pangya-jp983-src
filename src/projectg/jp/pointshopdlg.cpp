@@ -666,7 +666,7 @@ sPointShopListItem983* FrPointShopDlg::FindListItem983(unsigned long typeId)
 	return pFound;
 }
 
-// 0084e350: só itens com TP de troca (IFF +0x88); peça/taco/bola/item fora de uso e sem carta; pelo menos uma unidade inteira
+// 0084e350: só itens com TP de troca (TikiPoints); peça/taco/bola/item fora de uso e sem carta; pelo menos uma unidade inteira
 bool FrPointShopDlg::CanExchange983(unsigned long typeId, void* pData)
 {
 	bool ok = false;
@@ -694,7 +694,7 @@ bool FrPointShopDlg::CanExchange983(unsigned long typeId, void* pData)
 	default:
 		return false;
 	}
-	if (!pIff || *(int*)&pIff->unk983_88[0] == 0)
+	if (!pIff || pIff->TikiPoints == 0)
 		return false;
 	switch (kind)
 	{
@@ -854,7 +854,7 @@ void FrPointShopDlg::DrawListItem983(FrListItem* pItem, float h, unsigned int ma
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			point = *(int*)&pIff->unk983_88[0];
+			point = pIff->TikiPoints;
 			charIndex = (*pTypeId >> 18) & 0xff;
 		}
 		break;
@@ -864,7 +864,7 @@ void FrPointShopDlg::DrawListItem983(FrListItem* pItem, float h, unsigned int ma
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			point = *(int*)&pIff->unk983_88[0];
+			point = pIff->TikiPoints;
 		}
 		if (!icon.empty())
 			icon = std::string("bar_") + icon;
@@ -875,7 +875,7 @@ void FrPointShopDlg::DrawListItem983(FrListItem* pItem, float h, unsigned int ma
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			point = *(int*)&pIff->unk983_88[0];
+			point = pIff->TikiPoints;
 		}
 		if (!icon.empty())
 			icon = std::string("bar_") + icon;
@@ -886,7 +886,7 @@ void FrPointShopDlg::DrawListItem983(FrListItem* pItem, float h, unsigned int ma
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			point = *(int*)&pIff->unk983_88[0];
+			point = pIff->TikiPoints;
 		}
 		break;
 	case 0x1f:
@@ -895,7 +895,7 @@ void FrPointShopDlg::DrawListItem983(FrListItem* pItem, float h, unsigned int ma
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			point = *(int*)&pIff->unk983_88[0];
+			point = pIff->TikiPoints;
 		}
 		break;
 	}

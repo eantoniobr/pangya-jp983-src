@@ -8,6 +8,10 @@
 #include "fresh.h"
 #include "frdesktop.h"
 #include "frwndmanager.h"
+
+// projectg.cpp (983 00a62d40 / 00a62cb0)
+bool ConsumeClipboardPaste983();
+const char* GetClipboardText983();
 #include "jp/uiframesetmanager.h"
 #include "wfont.h"
 #include "wresrcmng.h"
@@ -262,6 +266,16 @@ void CChatMsg::Process(const float deltaTime)
 				m_bShowCaret = !m_bShowCaret;
 				m_fCaretTime = 0.0f;
 			}
+		}
+		// 983: Ctrl+V cola o texto da area de transferencia do Windows caractere a caractere (ate 0x3ff)
+		if (m_bActive && ConsumeClipboardPaste983())
+		{
+			const char* text = GetClipboardText983();
+			unsigned int len = strlen(text);
+			if (m_iCurByte + len > 0x3ff)
+				len = 0x3ff - m_iCurByte;
+			for (unsigned int i = 0; i < len; i++)
+				WriteCharacter(text[i]);
 		}
 	}
 }

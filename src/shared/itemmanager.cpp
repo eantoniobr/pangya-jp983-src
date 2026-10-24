@@ -4147,7 +4147,7 @@ bool CItemManager::IsSellableItem(IFF_ITEM_COMMON* pItem, _SYSTEMTIME& sysTime)
 	if (pItem->InStock != 0 && pItem->InStock != 5 && pItem->InStock != 6 &&
 		ItemManager()->IsInSalePeriod(pItem->TypeId, sysTime))
 		return true;
-	return pItem->unk983_88[5] == 2;
+	return pItem->DateFlag == 2;
 }
 
 unsigned int CItemManager::IsValidBuyItem(unsigned long in_dwItemType)
@@ -4184,7 +4184,7 @@ unsigned int CItemManager::GetItemSalePrice(unsigned long in_dwTid,
 
 	// JP 983 (00a1f680): so os grupos 6, 8, 14 e 16 (este com o byte +0x82 ligado) usam a tabela de dias;
 	// o resto (inclusive 18) devolve o preco comum (009d8ac0). O 983 ainda le a hora do servidor e testa
-	// IsInSalePeriod quando +0x9c == 2, mas descarta o resultado.
+	// IsInSalePeriod quando DateFlag == 2, mas descarta o resultado.
 	unsigned long itemType = in_dwTid >> 26;
 	bool special = false;
 	switch (itemType)

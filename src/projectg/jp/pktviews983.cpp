@@ -741,7 +741,7 @@ public:
 };
 
 // 00a19530: item que entra na quebra de MP. Grupos (typeId >> 26) 1, 3, 7–14, 16–19, 27, 29, 30 nunca; o resto pelo
-// word +0x8c do registro comum do .iff (campo novo do 983, dentro do `unk983_88`).
+// Mileage (+0x8c) do registro comum do .iff.
 bool CItemManagerJp983::IsMPBreakItem983(unsigned long typeId)
 {
 	switch (typeId >> 26)
@@ -753,7 +753,7 @@ bool CItemManagerJp983::IsMPBreakItem983(unsigned long typeId)
 	IFF_ITEM_COMMON* pIff = FindCommonItem(typeId);
 	if (!pIff)
 		return false;
-	return 0 != *(unsigned short*)((char*)pIff + 0x8c);
+	return 0 != pIff->Mileage;
 }
 
 // 00b304b0: grava o índice do jogador (`SetIndex`) e manda ao "Gateway" 0x753b/1 com o índice e a ficha do personagem

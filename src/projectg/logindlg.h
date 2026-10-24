@@ -37,9 +37,10 @@ protected:
 	void OnLoginInit(int param);
 	void OnLoginBtnUp();
 	void OnJoinBtnInit(int param);
-	void OnFindBtnInit(int param);
+	void OnJoinJpBtnInit(int param);
+	void OnQuitBtnInit(int param);
 	void OnJoinBtnUp();
-	void OnFindBtnUp();
+	void OnQuitBtnUp();
 	void ResetInput(const char* msg);
 	void OnHideStaticInit(int param);
 	void OnParanAreaInit(int param);

@@ -520,10 +520,10 @@ void CWinnerNotice::GetDaynTimefromXml(TiXmlDocument& doc, std::string& out,
 	switch (flag)
 	{
 	case EVENT_DATE:
-		sprintf(buf, "%d \xbf\xf9 %d \xc0\xcf", month, day);
+		sprintf(buf, K2L_Compatibility("%d \xbf\xf9 %d \xc0\xcf"), month, day);
 		break;
 	case EVENT_TIME:
-		sprintf(buf, "%02d\xbd\xc3%02d\xba\xd0", hour, minute);
+		sprintf(buf, K2L_Compatibility("%02d\xbd\xc3%02d\xba\xd0"), hour, minute);
 		break;
 	}
 
@@ -561,7 +561,7 @@ void CWinnerNotice::GetItemCountfromXml(TiXmlDocument& doc, std::string& out)
 		char buf[100] = "";
 		if (atoi(pType->FirstChild()->Value()) == 0x1a000010)
 		{
-			sprintf(buf, "(%d \xc6\xce)", atoi(pQty->FirstChild()->Value()));
+			sprintf(buf, K2L_Compatibility("(%d \xc6\xce)"), atoi(pQty->FirstChild()->Value()));
 			out = buf;
 		}
 		else if (atoi(pQty->FirstChild()->Value()) > 1)

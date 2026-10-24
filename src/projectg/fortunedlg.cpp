@@ -63,7 +63,7 @@ void FrFortuneDlg::SetTypeId(unsigned long typeId, IFF_ITEM_COMMON* item)
 
 	if (m_pDescName)
 	{
-		m_pDescName->SetCaption(MakeStr("\xc0\xcc\xb8\xa7 : %s", item->Name));
+		m_pDescName->SetCaption(MakeStr(K2L_Compatibility("\xc0\xcc\xb8\xa7 : %s"), item->Name));
 	}
 
 	if (m_pDescLevel)
@@ -75,7 +75,7 @@ void FrFortuneDlg::SetTypeId(unsigned long typeId, IFF_ITEM_COMMON* item)
 	if (m_pDescDesc)
 	{
 		m_pDescDesc->SetCaption(MakeStr(
-			"\xbc\xd2\xc0\xaf\xc7\xcf\xb0\xed \xc0\xd6\xb4\xc2 %s\xc0\xbb \xbf\xad\xbe\xee\xba\xb8\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?",
+			K2L_Compatibility("\xbc\xd2\xc0\xaf\xc7\xcf\xb0\xed \xc0\xd6\xb4\xc2 %s\xc0\xbb \xbf\xad\xbe\xee\xba\xb8\xbd\xc3\xb0\xda\xbd\xc0\xb4\xcf\xb1\xee?"),
 			item->Name));
 	}
 }

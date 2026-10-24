@@ -133,23 +133,19 @@ struct sDayInfo
 	int days;
 };
 
-__declspec(dllimport) inline const char* DayName(const char* name)
-{
-	return name;
-}
-
 __declspec(dllimport) inline int DayCount(int d)
 {
 	return d;
 }
 
+// C583: nomes passam por K2L no inicializador como o 983 (00ceb350)
 static sDayInfo days[6] = {
-	{ DayName("1\xc0\xcf"),                DayCount(1)   },
-	{ DayName("7\xc0\xcf"),                DayCount(7)   },
-	{ DayName("15\xc0\xcf"),               DayCount(15)  },
-	{ DayName("30\xc0\xcf"),               DayCount(30)  },
-	{ DayName("365\xc0\xcf"),              DayCount(365) },
-	{ DayName("\xb9\xab\xc1\xa6\xc7\xd1"), DayCount(0)   }
+	{ K2L_Compatibility("1\xc0\xcf"),                DayCount(1)   },
+	{ K2L_Compatibility("7\xc0\xcf"),                DayCount(7)   },
+	{ K2L_Compatibility("15\xc0\xcf"),               DayCount(15)  },
+	{ K2L_Compatibility("30\xc0\xcf"),               DayCount(30)  },
+	{ K2L_Compatibility("365\xc0\xcf"),              DayCount(365) },
+	{ K2L_Compatibility("\xb9\xab\xc1\xa6\xc7\xd1"), DayCount(0)   }
 };
 
 FrCheckoutDlg::FrCheckoutDlg()
@@ -1193,9 +1189,9 @@ void FrCheckoutDlg::OnCheckoutLBtnUp()
 				}
 			}
 		}
-		// 983 00aa3afa: item de periodo (+0x9c == 2) passa fora do periodo de venda
+		// 983 00aa3afa: item com DateFlag == 2 passa fora do periodo de venda
 		if (!ItemManager()->IsInSalePeriod(pCart->pItem->c.TypeId,
-				Doc()->GetServerTime()) && pCart->pItem->c.unk983_88[5] != 2)
+				Doc()->GetServerTime()) && pCart->pItem->c.DateFlag != 2)
 		{
 			AfxGetTask()->GetMainActor() << MsgObject(NULL, M983(0x23),
 				(int)K2L_Compatibility("\xc6\xc7\xb8\xc5\xb1\xe2\xb0\xa3\xc0\xbb \xc8\xae\xc0\xce\xc7\xd8 \xc1\xd6\xbc\xbc\xbf\xe4."),
@@ -1462,10 +1458,10 @@ void FrCheckoutDlg::OnCartOwnerDraw(int param)
 			"%s%s", cart->pItem->c.Name,
 			cart->pItem->c.InStock == 3 ? K2L_Compatibility("(\xb1\xb8\xc0\xd4\xc0\xfc\xbf\xeb)")
 										: "");
-	// 983 00a9f8e5: o aviso de fim de venda so vale para item que nao e 0x9c == 2
+	// 983 00a9f8e5: o aviso de fim de venda so vale para item sem DateFlag == 2
 	if (!ItemManager()->IsInSalePeriod(cart->pItem->c.TypeId,
 			Doc()->GetServerTime()) &&
-		cart->pItem->c.unk983_88[5] != 2)
+		cart->pItem->c.DateFlag != 2)
 	{
 		device->SetTextColor(0xffff0000, 0xffffffff);
 		device->Print(
@@ -1593,10 +1589,10 @@ void FrCheckoutDlg::OnCartOwnerDraw(int param)
 			int priceWidth = float2int(
 				device->Print(WPoint(priceX + item->pos.x, item->pos.y + 34.0f),
 					0, "%d%s", cart->pItem->c.Price, unit));
-			// 983 00a9fe82: item 0x9c == 2 fora do periodo de venda nao mostra o preco riscado
+			// 983 00a9fe82: item com DateFlag == 2 fora do periodo de venda nao mostra o preco riscado
 			if (cart->pItem->c.SalePrice &&
 				cart->pItem->c.SalePrice < cart->pItem->c.Price &&
-				!(cart->pItem->c.unk983_88[5] == 2 &&
+				!(cart->pItem->c.DateFlag == 2 &&
 					!ItemManager()->IsInSalePeriod(cart->pItem->c.TypeId,
 						Doc()->GetServerTime())))
 			{

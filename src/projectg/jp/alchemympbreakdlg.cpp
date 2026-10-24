@@ -1086,15 +1086,15 @@ void FrAlchemyMPBreakDlg::SyncOwnList983()
 		switch (m_tab)
 		{
 		case 1:
-			if (pIff->unk983_88[3] != 1)
+			if (pIff->TikiType != 1)
 				continue;
 			break;
 		case 2:
-			if (pIff->unk983_88[3] != 2)
+			if (pIff->TikiType != 2)
 				continue;
 			break;
 		case 3:
-			if (pIff->unk983_88[3] != 3)
+			if (pIff->TikiType != 3)
 				continue;
 			break;
 		}
@@ -1285,7 +1285,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 			icon = pIff->Icon;
 			name = pIff->Name;
 			charIndex = (*pTypeId >> 18) & 0xff;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		break;
 	case 4:
@@ -1294,7 +1294,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		if (!icon.empty())
 			icon = std::string("bar_") + icon;
@@ -1305,7 +1305,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		if (!icon.empty())
 			icon = std::string("bar_") + icon;
@@ -1316,7 +1316,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		break;
 	case 0x1f:
@@ -1325,7 +1325,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		break;
 	case 0x1c:
@@ -1334,7 +1334,7 @@ void FrAlchemyMPBreakDlg::DrawListItem983(FrListItem* pItem, float h, int maxLen
 		{
 			icon = pIff->Icon;
 			name = pIff->Name;
-			mp = *(unsigned short*)&pIff->unk983_88[1];
+			mp = pIff->Mileage;
 		}
 		break;
 	}

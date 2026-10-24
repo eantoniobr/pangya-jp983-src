@@ -664,7 +664,7 @@ public:
 	bool IsInSalePeriod(unsigned long tid, _SYSTEMTIME& sysTime);
 	// 983 009d8a80: item restrito por nivel (InStock==3): Level > nivel+1 (ou, com IsUnderLvl, Level < nivel)
 	bool IsLevelLocked(IFF_ITEM_COMMON* pItem, unsigned long* pLevel);
-	// 983 00a1f570: a venda (InStock != 0/5/6 e no periodo) ou item de periodo (+0x9c == 2)
+	// 983 00a1f570: a venda (InStock != 0/5/6 e no periodo) ou item com DateFlag == 2
 	bool IsSellableItem(IFF_ITEM_COMMON* pItem, _SYSTEMTIME& sysTime);
 	bool IsBetween(_SYSTEMTIME* pStart, _SYSTEMTIME* pEnd,
 		_SYSTEMTIME& sysTime);

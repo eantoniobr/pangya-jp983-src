@@ -32,6 +32,7 @@ de `fs:[0x2c]` é TLS, não campo. Tabelas desta sessão: out/F5/layouts/*.tsv (
 | sBriefUserInfo (jogador da lista) | 200 (entrada do 0x0046) | 9 | 9 | 0 | — | igual (A215; 983 00af98f0) |
 | sUserInfo / sPlayerData | 0x31c6 / 0xdb0 | — | — | — | — | sizeof confere (V3); chatBlock +0x56c |
 | sPangYaUserInfo (jogador, 0x0044) | 0x12d | 24 | 13 | 1 → corrigido | 10 (+0x4c..+0x6b sem leitura) | corrigido A223: sGuild 20 (não 21), emblema em +0x40; C_ASSERT |
+| IFF_ITEM_COMMON (cabeçalho dos itens do .iff) | 0xc0 | 26 | — (medido nos dados do .iff, não pelo campos983) | 0 | — | 24/10: bloco Tiki Shop (+0x84..+0x9b) e DateFlag (+0x9c) com nome; C_ASSERT; ver docs/IFF_ITEM_COMMON.md |
 
 ## Defeitos achados e corrigidos (A193)
 1. **CSharedDoc +0x381c/+0x3834**: o nosso tinha `m_questList` (sQuest, 16 B) em +0x381c, onde o 983 guarda a lista de períodos
